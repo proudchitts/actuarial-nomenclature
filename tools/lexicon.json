@@ -1,0 +1,1259 @@
+{
+  "comment": "Extra phrases for the rule-based namer. The glossary supplies full terms and 'also called' words automatically. This file adds everyday wording, fixes phrases that need two tokens, and lists the words that are too vague to name.",
+  "phrases": {
+    "number of": [
+      "CNT"
+    ],
+    "count of": [
+      "CNT"
+    ],
+    "numbers of": [
+      "CNT"
+    ],
+    "rate of": [
+      "RATE"
+    ],
+    "rate": [
+      "RATE"
+    ],
+    "rates": [
+      "RATE"
+    ],
+    "rate at which": [
+      "RATE"
+    ],
+    "probability": [
+      "PROB"
+    ],
+    "probability that": [
+      "PROB"
+    ],
+    "probability of": [
+      "PROB"
+    ],
+    "force of": [
+      "FORCE"
+    ],
+    "present value": [
+      "PV"
+    ],
+    "present value of": [
+      "PV"
+    ],
+    "pv": [
+      "PV"
+    ],
+    "pv of": [
+      "PV"
+    ],
+    "factor": [
+      "FAC"
+    ],
+    "indicator": [
+      "IND"
+    ],
+    "indicator that": [
+      "IND"
+    ],
+    "flag": [
+      "FLG"
+    ],
+    "flag that": [
+      "FLG"
+    ],
+    "index": [
+      "IDX"
+    ],
+    "to date": [
+      "CUM"
+    ],
+    "cumulative": [
+      "CUM"
+    ],
+    "accumulated with interest": [
+      "ACC"
+    ],
+    "with interest": [
+      "ACC"
+    ],
+    "future periods": [
+      "FUT"
+    ],
+    "all future periods": [
+      "FUT"
+    ],
+    "average": [
+      "AVG"
+    ],
+    "start of the period": [
+      "BOP"
+    ],
+    "start of period": [
+      "BOP"
+    ],
+    "beginning of the period": [
+      "BOP"
+    ],
+    "start of the month": [
+      "BOP"
+    ],
+    "start of the year": [
+      "BOP"
+    ],
+    "end of the period": [
+      "EOP"
+    ],
+    "end of period": [
+      "EOP"
+    ],
+    "end of the month": [
+      "EOP"
+    ],
+    "end of the year": [
+      "EOP"
+    ],
+    "middle of the period": [
+      "MOP"
+    ],
+    "mid period": [
+      "MOP"
+    ],
+    "valuation date": [
+      "T0"
+    ],
+    "time zero": [
+      "T0"
+    ],
+    "at inception": [
+      "INC"
+    ],
+    "inception": [
+      "INC"
+    ],
+    "at outset": [
+      "INC"
+    ],
+    "at issue": [
+      "INC"
+    ],
+    "point of sale": [
+      "INC"
+    ],
+    "at entry": [
+      "INC"
+    ],
+    "annual": [
+      "ANN"
+    ],
+    "annualised": [
+      "ANN"
+    ],
+    "annualized": [
+      "ANN"
+    ],
+    "yearly": [
+      "ANN"
+    ],
+    "per year": [
+      "ANN"
+    ],
+    "per annum": [
+      "ANN"
+    ],
+    "a year": [
+      "ANN"
+    ],
+    "monthly": [
+      "MTH"
+    ],
+    "per month": [
+      "MTH"
+    ],
+    "a month": [
+      "MTH"
+    ],
+    "per model period": [
+      "PRD"
+    ],
+    "per period": [
+      "PRD"
+    ],
+    "reinsurance": [
+      "RI"
+    ],
+    "reinsurers": [
+      "RI"
+    ],
+    "reinsurer": [
+      "RI"
+    ],
+    "reinsurers share": [
+      "RI"
+    ],
+    "reinsurers share of": [
+      "RI"
+    ],
+    "reinsured": [
+      "RI"
+    ],
+    "recovered from reinsurers": [
+      "RI"
+    ],
+    "ceded": [
+      "RI"
+    ],
+    "reinsurance held": [
+      "RI"
+    ],
+    "reinsurance ceded": [
+      "RI"
+    ],
+    "net of reinsurance": [
+      "NET"
+    ],
+    "after reinsurance": [
+      "NET"
+    ],
+    "gross of reinsurance": [
+      "@GROSS"
+    ],
+    "before reinsurance": [
+      "@GROSS"
+    ],
+    "shareholder": [
+      "SH"
+    ],
+    "shareholders": [
+      "SH"
+    ],
+    "policyholder": [
+      "PH"
+    ],
+    "policyholders": [
+      "PH"
+    ],
+    "borne by policyholders": [
+      "PH"
+    ],
+    "best estimate": [
+      "BE"
+    ],
+    "best estimate basis": [
+      "BE"
+    ],
+    "pricing basis": [
+      "PRC"
+    ],
+    "pricing": [
+      "PRC"
+    ],
+    "prudent basis": [
+      "PRU"
+    ],
+    "prudent": [
+      "PRU"
+    ],
+    "locked in": [
+      "IFL"
+    ],
+    "locked in rates": [
+      "IFL"
+    ],
+    "current rates": [
+      "IFC"
+    ],
+    "ifrs 17 current rates": [
+      "IFC"
+    ],
+    "embedded value basis": [
+      "@EVBASIS"
+    ],
+    "ev basis": [
+      "@EVBASIS"
+    ],
+    "sam basis": [
+      "SAM"
+    ],
+    "sam": [
+      "SAM"
+    ],
+    "solvency ii basis": [
+      "SII"
+    ],
+    "fsv": [
+      "FSV"
+    ],
+    "fsv basis": [
+      "FSV"
+    ],
+    "risk neutral basis": [
+      "RN"
+    ],
+    "real world basis": [
+      "RW"
+    ],
+    "new business": [
+      "NB"
+    ],
+    "from new business": [
+      "NB"
+    ],
+    "added by new business": [
+      "NB"
+    ],
+    "new policies": [
+      "POL",
+      "NB"
+    ],
+    "released": [
+      "REL"
+    ],
+    "release of": [
+      "REL"
+    ],
+    "accreted": [
+      "ACCR"
+    ],
+    "unwind": [
+      "UNW"
+    ],
+    "change in": [
+      "CHG"
+    ],
+    "movement in": [
+      "CHG"
+    ],
+    "experience adjustment": [
+      "EXPV"
+    ],
+    "policies that become paid up": [
+      "PUP"
+    ],
+    "policies become paid up": [
+      "PUP"
+    ],
+    "becoming paid up": [
+      "PUP"
+    ],
+    "become paid up": [
+      "PUP"
+    ],
+    "becoming disabled": [
+      "DIS"
+    ],
+    "disablement": [
+      "DIS"
+    ],
+    "disabled": [
+      "DIS"
+    ],
+    "recovery from disability": [
+      "REC"
+    ],
+    "mortality": [
+      "DTH"
+    ],
+    "deaths": [
+      "DTH"
+    ],
+    "die": [
+      "DTH"
+    ],
+    "dies": [
+      "DTH"
+    ],
+    "mortality improvement": [
+      "DTH",
+      "IMP"
+    ],
+    "risk premium": [
+      "PREM",
+      "RISK"
+    ],
+    "risk premiums": [
+      "PREM",
+      "RISK"
+    ],
+    "office premium": [
+      "PREM",
+      "OFF"
+    ],
+    "office premiums": [
+      "PREM",
+      "OFF"
+    ],
+    "extra premium": [
+      "PREM",
+      "EXTRA"
+    ],
+    "extra premiums": [
+      "PREM",
+      "EXTRA"
+    ],
+    "policy fee": [
+      "CHRG",
+      "POLF"
+    ],
+    "policy fees": [
+      "CHRG",
+      "POLF"
+    ],
+    "allocated": [
+      "ALLOC"
+    ],
+    "allocated premium": [
+      "PREM",
+      "ALLOC"
+    ],
+    "allocated premiums": [
+      "PREM",
+      "ALLOC"
+    ],
+    "payments": [
+      "CLM"
+    ],
+    "payment": [
+      "CLM"
+    ],
+    "payouts": [
+      "CLM"
+    ],
+    "outgo": [
+      "CLM"
+    ],
+    "disability income": [
+      "DIS",
+      "INCM"
+    ],
+    "fund management charge": [
+      "CHRG",
+      "FMC"
+    ],
+    "fund management charges": [
+      "CHRG",
+      "FMC"
+    ],
+    "surrender charge": [
+      "CHRG",
+      "SUR"
+    ],
+    "surrender charges": [
+      "CHRG",
+      "SUR"
+    ],
+    "surrender penalty": [
+      "CHRG",
+      "SUR"
+    ],
+    "risk charge": [
+      "CHRG",
+      "RISK"
+    ],
+    "risk charges": [
+      "CHRG",
+      "RISK"
+    ],
+    "bid price": [
+      "UPRC",
+      "BID"
+    ],
+    "offer price": [
+      "UPRC",
+      "OFFER"
+    ],
+    "discount rate": [
+      "DISC",
+      "RATE"
+    ],
+    "discount rates": [
+      "DISC",
+      "RATE"
+    ],
+    "risk discount rate": [
+      "DISC",
+      "RATE"
+    ],
+    "discount factor": [
+      "DISC",
+      "FAC"
+    ],
+    "interest rate": [
+      "INT",
+      "RATE"
+    ],
+    "interest rate risk": [
+      "INT"
+    ],
+    "inflation rate": [
+      "INFL",
+      "RATE"
+    ],
+    "annuity factor": [
+      "ANTY",
+      "FAC"
+    ],
+    "up shock": [
+      "UP"
+    ],
+    "down shock": [
+      "DOWN"
+    ],
+    "mass lapse": [
+      "MASS",
+      "LPSR"
+    ],
+    "shock size": [
+      "SHK"
+    ],
+    "size of the shock": [
+      "SHK"
+    ],
+    "lives": [
+      "LIFE"
+    ],
+    "life": [
+      "LIFE"
+    ],
+    "policies": [
+      "POL"
+    ],
+    "claims paid": [
+      "CLM"
+    ],
+    "claims": [
+      "CLM"
+    ],
+    "expenses": [
+      "EXP"
+    ],
+    "premiums": [
+      "PREM"
+    ],
+    "in force": [
+      "IF"
+    ],
+    "inforce": [
+      "IF"
+    ],
+    "unit reserve": [
+      "RES",
+      "UNIT"
+    ],
+    "non unit reserve": [
+      "RES",
+      "NUNIT"
+    ],
+    "reversionary bonus": [
+      "BON",
+      "RVS"
+    ],
+    "terminal bonus": [
+      "BON",
+      "TMNL"
+    ],
+    "dread disease": [
+      "CI"
+    ],
+    "second life": [
+      "@L2"
+    ],
+    "first life": [
+      "@L1"
+    ],
+    "hiv": [
+      "HIV"
+    ],
+    "aids": [
+      "HIV"
+    ],
+    "ifrs 17 locked in": [
+      "IFL"
+    ],
+    "ifrs 17 current": [
+      "IFC"
+    ],
+    "investment components": [
+      "INVC"
+    ],
+    "profit before tax": [
+      "PROF",
+      "@BEF",
+      "TAX"
+    ],
+    "profit after tax": [
+      "PROF",
+      "@AFT",
+      "TAX"
+    ],
+    "profits after tax": [
+      "PROF",
+      "@AFT",
+      "TAX"
+    ],
+    "profits before tax": [
+      "PROF",
+      "@BEF",
+      "TAX"
+    ],
+    "profits": [
+      "PROF"
+    ],
+    "without interest": [],
+    "no interest": [],
+    "in the period": [],
+    "over the period": [],
+    "during the period": [],
+    "as at": [],
+    "for the period": [],
+    "incurred but not reported reserve": [
+      "IBNR"
+    ],
+    "ibnr reserve": [
+      "IBNR"
+    ],
+    "ibnr": [
+      "IBNR"
+    ],
+    "retention limit": [
+      "RET"
+    ],
+    "csm": [
+      "CSM"
+    ],
+    "bel": [
+      "BEL"
+    ],
+    "scr": [
+      "SCR"
+    ],
+    "mcr": [
+      "MCR"
+    ],
+    "vnb": [
+      "VNB"
+    ],
+    "vif": [
+      "VIF"
+    ],
+    "ape": [
+      "APE"
+    ],
+    "tvog": [
+      "TVOG"
+    ],
+    "lrc": [
+      "LRC"
+    ],
+    "lic": [
+      "LIC"
+    ],
+    "valuation net premium": [
+      "PREM",
+      "NETP"
+    ],
+    "valuation net premiums": [
+      "PREM",
+      "NETP"
+    ],
+    "with profits": [
+      "WP"
+    ],
+    "without profits": [
+      "NPAR"
+    ],
+    "term": [
+      "TERM"
+    ],
+    "age": [
+      "AGE"
+    ],
+    "duration": [
+      "DUR"
+    ],
+    "start of month": [
+      "BOP"
+    ],
+    "end of month": [
+      "EOP"
+    ],
+    "start of year": [
+      "BOP"
+    ],
+    "end of year": [
+      "EOP"
+    ],
+    "beginning of period": [
+      "BOP"
+    ],
+    "for the month": [],
+    "during the month": [],
+    "in the month": [],
+    "for the year": [],
+    "in the year": [],
+    "during the year": [],
+    "lapsing": [
+      "LPS"
+    ],
+    "lapsed": [
+      "LPS"
+    ],
+    "policies lapsing": [
+      "LPS"
+    ],
+    "policies that lapse": [
+      "LPS"
+    ],
+    "policies surrendering": [
+      "SUR"
+    ],
+    "policies that surrender": [
+      "SUR"
+    ],
+    "surrendered": [
+      "SUR"
+    ],
+    "surrendering": [
+      "SUR"
+    ],
+    "maturing": [
+      "MAT"
+    ],
+    "matured": [
+      "MAT"
+    ],
+    "dying": [
+      "DTH"
+    ],
+    "premium income": [
+      "PREM"
+    ],
+    "funeral": [
+      "FUN"
+    ],
+    "qx": [
+      "DTH",
+      "RATE"
+    ],
+    "attributable to shareholders": [
+      "SH"
+    ],
+    "attributable to policyholders": [
+      "PH"
+    ],
+    "to shareholders": [
+      "SH"
+    ],
+    "per policy": [
+      "@PERPOL"
+    ]
+  },
+  "special": {
+    "per": "@PER",
+    "per unit of": "@PER",
+    "as a proportion of": "@PER",
+    "as a percentage of": "@PER",
+    "as a fraction of": "@PER",
+    "divided by": "@PER",
+    "per mille of": "@PER",
+    "before": "@BEF",
+    "after": "@AFT"
+  },
+  "dropAliases": [
+    "t",
+    "off",
+    "cost",
+    "value",
+    "cover",
+    "increase",
+    "decrease",
+    "mean",
+    "contract",
+    "member",
+    "option",
+    "fee",
+    "sales",
+    "opening",
+    "closing",
+    "interest dividends and rent",
+    "expected",
+    "realistic",
+    "on the books",
+    "active",
+    "movement",
+    "money amount",
+    "shares",
+    "investments",
+    "extra",
+    "addition",
+    "switch",
+    "setting",
+    "outset",
+    "entry",
+    "issue",
+    "earnings",
+    "deduction",
+    "scaling",
+    "pricing basis",
+    "premium basis",
+    "cash value",
+    "covers",
+    "gross premium",
+    "net premium",
+    "withdrawal in the umbrella sense",
+    "full withdrawal",
+    "surplus arising",
+    "attained age",
+    "age at entry",
+    "qx"
+  ],
+  "stock": [
+    "BEL",
+    "RES",
+    "CSM",
+    "RA",
+    "LC",
+    "LOREC",
+    "LRC",
+    "LIC",
+    "FCF",
+    "TP",
+    "RM",
+    "SCR",
+    "MCR",
+    "OF",
+    "CAP",
+    "RCAP",
+    "FV",
+    "SV",
+    "SAR",
+    "BEN",
+    "EV",
+    "ANW",
+    "VIF",
+    "FSUR",
+    "ASSET",
+    "UPR",
+    "IBNR",
+    "OCR",
+    "ASHR",
+    "BSR",
+    "CAR",
+    "UNDL",
+    "UPRC",
+    "SURP",
+    "TVOG"
+  ],
+  "perPolicyItems": [
+    "BEN",
+    "SV",
+    "SA",
+    "SAR"
+  ],
+  "decrements": [
+    "DTH",
+    "LPS",
+    "SUR",
+    "DCON",
+    "PUP",
+    "DIS",
+    "CI",
+    "MAT",
+    "EXIT",
+    "DEC",
+    "RETR"
+  ],
+  "preps": [
+    "of",
+    "on",
+    "for",
+    "from",
+    "in",
+    "under",
+    "within",
+    "to",
+    "at",
+    "by",
+    "that",
+    "which",
+    "as",
+    "with",
+    "over",
+    "during",
+    "where",
+    "when",
+    "into",
+    "against"
+  ],
+  "stop": [
+    "the",
+    "a",
+    "an",
+    "is",
+    "are",
+    "was",
+    "be",
+    "been",
+    "and",
+    "or",
+    "this",
+    "these",
+    "those",
+    "its",
+    "their",
+    "all",
+    "each",
+    "any",
+    "total",
+    "amount",
+    "amounts",
+    "value",
+    "values",
+    "paid",
+    "payable",
+    "period",
+    "periods",
+    "basis",
+    "share",
+    "size",
+    "level",
+    "expected",
+    "future",
+    "added",
+    "written",
+    "provided",
+    "presented",
+    "measured",
+    "group",
+    "groups",
+    "contracts",
+    "contract",
+    "applied",
+    "read",
+    "taken",
+    "off",
+    "held",
+    "turns",
+    "money",
+    "whole",
+    "business",
+    "without",
+    "interest",
+    "not",
+    "no",
+    "it",
+    "who",
+    "units",
+    "only",
+    "have",
+    "has",
+    "been",
+    "between",
+    "out",
+    "up",
+    "if",
+    "there",
+    "also",
+    "less",
+    "plus",
+    "per",
+    "one",
+    "date",
+    "time",
+    "model",
+    "projection",
+    "variable",
+    "then",
+    "than",
+    "are",
+    "made",
+    "arise",
+    "arises",
+    "arising",
+    "received",
+    "incurred",
+    "payments",
+    "made",
+    "so",
+    "far",
+    "books",
+    "end",
+    "start",
+    "cover",
+    "benefit",
+    "benefits",
+    "risk",
+    "limit",
+    "now",
+    "new",
+    "handling",
+    "extra",
+    "cost",
+    "costs",
+    "use",
+    "used",
+    "does",
+    "do",
+    "method",
+    "set",
+    "given",
+    "stated",
+    "relevant",
+    "current",
+    "currently",
+    "can",
+    "may",
+    "will",
+    "would",
+    "should",
+    "must",
+    "on",
+    "turn",
+    "turned",
+    "under",
+    "ones",
+    "them",
+    "they",
+    "of"
+  ],
+  "vague": [
+    {
+      "word": "withdrawal",
+      "unless": [
+        "partial withdrawal",
+        "partial withdrawals",
+        "full withdrawal"
+      ],
+      "question": "\"Withdrawal\" can mean three things. Which one?",
+      "options": [
+        [
+          "Part of the value is taken and the policy continues",
+          "partial withdrawal"
+        ],
+        [
+          "The policy ends and a value is paid",
+          "surrender"
+        ],
+        [
+          "Lapse and surrender together",
+          "discontinuance"
+        ]
+      ]
+    },
+    {
+      "word": "withdrawals",
+      "unless": [
+        "partial withdrawal",
+        "partial withdrawals"
+      ],
+      "question": "\"Withdrawals\" can mean three things. Which one?",
+      "options": [
+        [
+          "Part of the value is taken and the policy continues",
+          "partial withdrawals"
+        ],
+        [
+          "The policy ends and a value is paid",
+          "surrenders"
+        ],
+        [
+          "Lapse and surrender together",
+          "discontinuances"
+        ]
+      ]
+    },
+    {
+      "word": "gross premium",
+      "unless": [],
+      "question": "\"Gross premium\" has two meanings. Which one?",
+      "options": [
+        [
+          "Premium before reinsurance",
+          "premium"
+        ],
+        [
+          "The full premium charged to the policyholder",
+          "office premium"
+        ]
+      ]
+    },
+    {
+      "word": "gross premiums",
+      "unless": [],
+      "question": "\"Gross premiums\" has two meanings. Which one?",
+      "options": [
+        [
+          "Premiums before reinsurance",
+          "premiums"
+        ],
+        [
+          "The full premiums charged to policyholders",
+          "office premiums"
+        ]
+      ]
+    },
+    {
+      "word": "net premium",
+      "unless": [
+        "net premium valuation"
+      ],
+      "question": "\"Net premium\" has two meanings. Which one?",
+      "options": [
+        [
+          "Premium net of reinsurance",
+          "premium net of reinsurance"
+        ],
+        [
+          "The valuation net premium, with no loadings",
+          "valuation net premium"
+        ]
+      ]
+    },
+    {
+      "word": "net premiums",
+      "unless": [],
+      "question": "\"Net premiums\" has two meanings. Which one?",
+      "options": [
+        [
+          "Premiums net of reinsurance",
+          "premiums net of reinsurance"
+        ],
+        [
+          "Valuation net premiums, with no loadings",
+          "valuation net premiums"
+        ]
+      ]
+    },
+    {
+      "word": "gross",
+      "unless": [
+        "gross of reinsurance",
+        "gross premium",
+        "gross premiums"
+      ],
+      "question": "Gross of what?",
+      "options": [
+        [
+          "Gross of reinsurance",
+          "gross of reinsurance"
+        ],
+        [
+          "Before tax",
+          "before tax"
+        ]
+      ]
+    },
+    {
+      "word": "net",
+      "unless": [
+        "net of reinsurance",
+        "net cash flow",
+        "net cash flows",
+        "adjusted net worth",
+        "net premium",
+        "net premiums",
+        "valuation net premium",
+        "valuation net premiums",
+        "net amount at risk",
+        "net income",
+        "net of tax"
+      ],
+      "question": "Net of what?",
+      "options": [
+        [
+          "Net of reinsurance",
+          "net of reinsurance"
+        ],
+        [
+          "After tax",
+          "after tax"
+        ]
+      ]
+    },
+    {
+      "word": "net of tax",
+      "unless": [],
+      "question": "Say this as \"after tax\".",
+      "options": [
+        [
+          "After tax",
+          "after tax"
+        ]
+      ]
+    },
+    {
+      "word": "lapse rate",
+      "unless": [],
+      "question": "Does \"lapse\" here mean strict lapse only, or lapse and surrender together?",
+      "options": [
+        [
+          "Strict lapse: no value is paid",
+          "rate of lapse"
+        ],
+        [
+          "Lapse and surrender together",
+          "rate of discontinuance"
+        ]
+      ]
+    },
+    {
+      "word": "the reserve",
+      "unless": [],
+      "question": "Which reserve?",
+      "options": [
+        [
+          "A reserve on a basis I will state",
+          "reserve"
+        ],
+        [
+          "The best estimate liability",
+          "best estimate liability"
+        ],
+        [
+          "The unit reserve",
+          "unit reserve"
+        ],
+        [
+          "The non-unit reserve",
+          "non-unit reserve"
+        ]
+      ],
+      "soft": true
+    },
+    {
+      "word": "the discount rate",
+      "unless": [],
+      "question": "Spot or forward?",
+      "options": [
+        [
+          "Forward rate",
+          "forward discount rate"
+        ],
+        [
+          "Spot rate",
+          "spot discount rate"
+        ]
+      ],
+      "soft": true
+    },
+    {
+      "word": "disability claims",
+      "unless": [],
+      "question": "Which disability claims?",
+      "options": [
+        [
+          "All disability claims together",
+          "disability claim payments"
+        ],
+        [
+          "Income benefits only",
+          "disability income claim payments"
+        ],
+        [
+          "Lump sums only",
+          "lump sum disability claim payments"
+        ]
+      ],
+      "soft": true
+    }
+  ]
+}

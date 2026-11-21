@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actuarial nomenclature</title>
+<meta name="description" content="Describe a life insurance projection model variable in plain English and get its standard name. Rule-based, no AI, nothing leaves your browser.">
+<style>
+:root{--bg:#f6f4ef;--panel:#ffffff;--ink:#1c2430;--muted:#5d6878;--line:#d9d5cb;--accent:#0b5d5a;--accent-ink:#ffffff;--ok:#1b6e3c;--okbg:#e4f3e9;--warn:#8a5a00;--warnbg:#fbefd2;--bad:#9b2c2c;--badbg:#fbe3e0;--chip:#edeae2;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--panel:#1b212a;--ink:#e8ecf1;--muted:#9aa6b6;--line:#2f3844;--accent:#58c4bd;--accent-ink:#0c1a1a;--ok:#7fd49d;--okbg:#17301f;--warn:#f0c264;--warnbg:#33290f;--bad:#f09a94;--badbg:#3a1a18;--chip:#262e39}}
+:root[data-theme="dark"]{--bg:#12161c;--panel:#1b212a;--ink:#e8ecf1;--muted:#9aa6b6;--line:#2f3844;--accent:#58c4bd;--accent-ink:#0c1a1a;--ok:#7fd49d;--okbg:#17301f;--warn:#f0c264;--warnbg:#33290f;--bad:#f09a94;--badbg:#3a1a18;--chip:#262e39}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.6rem;margin:0 0 4px;letter-spacing:-.01em}
+.lede{color:var(--muted);margin:0 0 20px;max-width:62ch}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+nav button{font:inherit;border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+label{display:block;font-weight:600;margin-bottom:6px}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+textarea{min-height:84px;resize:vertical}
+.hint{color:var(--muted);font-size:.9rem;margin:6px 0 0}
+.btn{font:inherit;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:8px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
+.result{margin-top:16px;border-radius:10px;padding:14px 16px;border:1px solid var(--line)}
+.result.ok{background:var(--okbg);border-color:transparent}
+.result.warn,.result.needs{background:var(--warnbg);border-color:transparent}
+.result.fail{background:var(--badbg);border-color:transparent}
+.tag{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.ok .tag{color:var(--ok)}.warn .tag,.needs .tag{color:var(--warn)}.fail .tag{color:var(--bad)}
+.name{font-family:var(--mono);font-size:1.5rem;font-weight:700;overflow-wrap:anywhere;margin:4px 0}
+.name.draft{opacity:.55;text-decoration:line-through}
+.reads{margin:0 0 4px}
+.slots{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.slot{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:.85rem}
+.slot b{font-family:var(--mono)}
+.slot span{color:var(--muted);display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em}
+.q{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.q p{margin:0 0 8px;font-weight:600}
+.q.soft p{font-weight:400}
+.q button{font:inherit;margin:0 6px 6px 0;padding:6px 10px;border-radius:8px;border:1px solid var(--ink);background:var(--panel);color:var(--ink);cursor:pointer}
+ul.notes{margin:10px 0 0;padding-left:20px}
+.examples{margin-top:14px}
+.examples button{font:inherit;font-size:.9rem;margin:0 6px 6px 0;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid var(--line)}
+td.mono{font-family:var(--mono);overflow-wrap:anywhere}
+.tablewrap{overflow-x:auto;margin-top:14px}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:.78rem;font-weight:700}
+.pill.ok{background:var(--okbg);color:var(--ok)}.pill.warn{background:var(--warnbg);color:var(--warn)}.pill.fail{background:var(--badbg);color:var(--bad)}
+.term{border-bottom:1px solid var(--line);padding:12px 0}
+.term h3{margin:0;font-size:1rem}
+.term h3 code{font-family:var(--mono);font-size:1.05rem}
+.term p{margin:4px 0}
+.term .meta{color:var(--muted);font-size:.85rem}
+.term a{color:var(--accent);cursor:pointer;font-family:var(--mono);margin-right:8px}
+footer{margin-top:28px;color:var(--muted);font-size:.9rem}
+footer a{color:var(--accent)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Actuarial nomenclature</h1>
+  <p class="lede">Describe a life insurance projection model variable in plain English and get its standard name. The name is built by fixed rules from an open glossary. There is no AI, and nothing you type leaves your browser.</p>
+
+  <nav role="tablist">
+    <button role="tab" data-tab="name" aria-selected="true">Name a variable</button>
+    <button role="tab" data-tab="read" aria-selected="false">Read a name</button>
+    <button role="tab" data-tab="list" aria-selected="false">Check a list</button>
+    <button role="tab" data-tab="gloss" aria-selected="false">Glossary</button>
+  </nav>
+
+  <section id="tab-name" class="panel">
+    <label for="desc">Describe the variable</label>
+    <textarea id="desc" placeholder="For example: present value at the end of the period of future death claims recovered from reinsurers, best estimate"></textarea>
+    <p class="hint">Say what it is, whose share, on which basis, and when. If the description could mean two things, you will be asked which one. The tool never guesses.</p>
+    <div class="examples" id="examples"></div>
+    <div id="nameOut"></div>
+  </section>
+
+  <section id="tab-read" class="panel" hidden>
+    <label for="code">Name</label>
+    <input type="text" id="code" placeholder="CLM_DTH_RI_BE_PV_EOP" autocapitalize="characters" spellcheck="false">
+    <p class="hint">Type a name to read it back in English and to check it against the rules.</p>
+    <div id="readOut"></div>
+  </section>
+
+  <section id="tab-list" class="panel" hidden>
+    <label for="list">One variable per line</label>
+    <textarea id="list" style="min-height:180px" placeholder="Death claims in the period&#10;PREM_RI | Reinsurance premiums in the period&#10;Number of policies in force at the end of the period"></textarea>
+    <p class="hint">Write a description on each line. To check names you already use, write the name, then a bar, tab or comma, then the description. The check flags vague descriptions, names that break the rules, names that do not match their description, and two different descriptions that end up with the same name.</p>
+    <div class="row"><button class="btn" id="runList">Check the list</button><button class="btn ghost" id="csv" hidden>Download as CSV</button><span id="listSummary" class="hint"></span></div>
+    <div class="tablewrap" id="listOut"></div>
+  </section>
+
+  <section id="tab-gloss" class="panel" hidden>
+    <label for="find">Search the glossary</label>
+    <input type="text" id="find" placeholder="Try surrender, dread disease, CSM or reinsurance">
+    <p class="hint" id="glossCount"></p>
+    <div id="glossOut"></div>
+  </section>
+
+  <footer>
+    <p>Version <span id="ver"></span>, a draft for review. The standard, the glossary and this tool are open: <a href="https://github.com/proudchitts/actuarial-nomenclature">github.com/proudchitts/actuarial-nomenclature</a>. Definitions have not yet been reviewed by a second actuary.</p>
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script src="namer.js"></script>
+<script>
+(function () {
+  "use strict";
+  var N = Nomen.create(NOMEN_DATA), T = N.terms;
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (text !== undefined) { e.textContent = text; } return e; }
+  $("ver").textContent = N.version;
+
+  // tabs
+  var tabs = document.querySelectorAll("nav button");
+  function show(tab) {
+    tabs.forEach(function (b) { var on = b.dataset.tab === tab; b.setAttribute("aria-selected", on ? "true" : "false"); $("tab-" + b.dataset.tab).hidden = !on; });
+    try { localStorage.setItem("nomen-tab", tab); } catch (e) {}
+  }
+  tabs.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.tab); }); });
+  try { var saved = localStorage.getItem("nomen-tab"); if (saved && $("tab-" + saved)) { show(saved); } } catch (e) {}
+
+  function slotChips(slots) {
+    var box = el("div", "slots");
+    slots.forEach(function (s) {
+      var c = el("div", "slot");
+      c.appendChild(el("span", "", s.slot));
+      c.appendChild(el("b", "", s.arg ? s.tok + " " + s.arg : s.tok));
+      var full = T[s.tok] ? T[s.tok].full + (s.arg && T[s.arg] ? " " + T[s.arg].full.toLowerCase() : "") : (s.slot === "INSTANCE" ? "instance" : "");
+      c.appendChild(document.createTextNode(" " + full));
+      box.appendChild(c);
+    });
+    return box;
+  }
+
+  // ---- name a variable ----
+  var desc = $("desc"), out = $("nameOut");
+  function renderName() {
+    out.textContent = "";
+    if (!desc.value.trim()) { return; }
+    var r = N.name(desc.value);
+    var state = r.status === "ok" ? (r.warn ? "warn" : "ok") : r.status;
+    var box = el("div", "result " + state);
+    var label = { ok: "Name", warn: "Name, but check the notes", needs: "More detail needed", fail: "Could not be named" }[state];
+    box.appendChild(el("div", "tag", label));
+    if (r.name) {
+      box.appendChild(el("div", "name", r.name));
+      box.appendChild(el("p", "reads", "Reads as: " + r.canonical));
+      var copy = el("button", "btn ghost", "Copy name");
+      copy.addEventListener("click", function () { if (navigator.clipboard) { navigator.clipboard.writeText(r.name); copy.textContent = "Copied"; } });
+      box.appendChild(copy);
+    } else if (r.draft) {
+      box.appendChild(el("div", "name draft", r.draft));
+      box.appendChild(el("p", "reads", "This is not a valid name yet. Answer the question below."));
+    }
+    if (r.slots && r.slots.length && r.name) { box.appendChild(slotChips(r.slots)); }
+    r.questions.forEach(function (q) {
+      var d = el("div", "q" + (q.hard ? "" : " soft"));
+      d.appendChild(el("p", "", q.text));
+      q.options.forEach(function (o) {
+        var b = el("button", "", o.label);
+        b.addEventListener("click", function () { desc.value = N.applyOption(desc.value, o); renderName(); desc.focus(); });
+        d.appendChild(b);
+      });
+      box.appendChild(d);
+    });
+    var notes = r.notes.slice();
+    if (r.unknown.length) { notes.push("Words I did not use: " + r.unknown.join(", ") + ". The name ignores them. If they matter, say it with a glossary term."); }
+    if (notes.length) { var ul = el("ul", "notes"); notes.forEach(function (n) { ul.appendChild(el("li", "", n)); }); box.appendChild(ul); }
+    out.appendChild(box);
+  }
+  desc.addEventListener("input", renderName);
+  ["Dependent monthly rate of lapse", "Number of policies in force at the end of the period", "Contractual service margin released in the period", "Reinsurance premiums per unit of sum at risk, annual", "Gross premium", "Withdrawals in the period"].forEach(function (x) {
+    var b = el("button", "", x);
+    b.addEventListener("click", function () { desc.value = x; renderName(); });
+    $("examples").appendChild(b);
+  });
+
+  // ---- read a name ----
+  var code = $("code"), rout = $("readOut");
+  function renderRead() {
+    rout.textContent = "";
+    var v = code.value.trim();
+    if (!v) { return; }
+    var d = N.decode(v);
+    var box = el("div", "result " + (d.ok ? "ok" : "fail"));
+    box.appendChild(el("div", "tag", d.ok ? "Valid name" : "Not a valid name"));
+    box.appendChild(el("div", "name", d.name));
+    if (d.canonical) { box.appendChild(el("p", "reads", "Reads as: " + d.canonical)); }
+    if (d.private) { box.appendChild(el("p", "reads", "This name uses a private token that starts with Z. Its meaning is in the owner's local glossary.")); }
+    if (d.slots.length && d.ok) { box.appendChild(slotChips(d.slots)); }
+    if (d.problems.length) { var ul = el("ul", "notes"); d.problems.forEach(function (n) { ul.appendChild(el("li", "", n)); }); box.appendChild(ul); }
+    rout.appendChild(box);
+  }
+  code.addEventListener("input", renderRead);
+
+  // ---- check a list ----
+  var lastRows = [];
+  $("runList").addEventListener("click", function () {
+    var rows = N.batch($("list").value);
+    lastRows = rows;
+    var o = $("listOut"); o.textContent = "";
+    if (!rows.length) { $("listSummary").textContent = "Nothing to check."; $("csv").hidden = true; return; }
+    var t = el("table"), h = el("tr");
+    ["Line", "Description", "Name", "Result", "What to fix"].forEach(function (x) { h.appendChild(el("th", "", x)); });
+    t.appendChild(h);
+    var clean = 0, dup = 0;
+    rows.forEach(function (r) {
+      var tr = el("tr");
+      tr.appendChild(el("td", "", String(r.line)));
+      tr.appendChild(el("td", "", r.description));
+      var nm = r.result.name || r.given || "";
+      var td = el("td", "mono", nm);
+      if (r.given && r.result.name && r.given !== r.result.name) { td.textContent = r.given + " (given), " + r.result.name + " (from description)"; }
+      tr.appendChild(td);
+      var notes = r.flags.slice();
+      if (r.result.status === "ok" && r.result.warn) { notes.push(r.result.notes.concat(r.result.unknown.length ? ["Words not used: " + r.result.unknown.join(", ") + "."] : []).join(" ")); }
+      var state = r.flags.length ? "fail" : (r.result.warn ? "warn" : "ok");
+      if (state === "ok") { clean++; }
+      if (r.duplicate) { dup++; }
+      var st = el("td"); st.appendChild(el("span", "pill " + state, state === "ok" ? "OK" : state === "warn" ? "Check" : "Fix")); tr.appendChild(st);
+      tr.appendChild(el("td", "", notes.join(" ")));
+      r.state = state; r.notesText = notes.join(" ");
+      t.appendChild(tr);
+    });
+    o.appendChild(t);
+    $("listSummary").textContent = rows.length + " lines. " + clean + " clean. " + dup + " share a name with another line.";
+    $("csv").hidden = false;
+  });
+  $("csv").addEventListener("click", function () {
+    var q = function (s) { return '"' + String(s == null ? "" : s).replace(/"/g, '""') + '"'; };
+    var lines = ["line,given_name,name,status,description,canonical_description,notes"];
+    lastRows.forEach(function (r) { lines.push([r.line, q(r.given), q(r.result.name), q(r.state), q(r.description), q(r.result.canonical), q(r.notesText)].join(",")); });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+    a.download = "variable-names.csv";
+    a.click();
+  });
+
+  // ---- glossary ----
+  var find = $("find"), gout = $("glossOut");
+  var all = Object.keys(T).sort();
+  function renderGloss() {
+    var q = find.value.trim().toLowerCase();
+    gout.textContent = "";
+    var hits = all.filter(function (k) {
+      if (!q) { return true; }
+      var t = T[k];
+      return k.toLowerCase() === q || k.toLowerCase().indexOf(q) === 0 || t.full.toLowerCase().indexOf(q) >= 0 || t.also.join(" ").toLowerCase().indexOf(q) >= 0 || (q.length > 3 && t.def.toLowerCase().indexOf(q) >= 0);
+    });
+    hits.sort(function (a, b) {
+      var s = function (k) { return k.toLowerCase() === q ? 0 : T[k].full.toLowerCase().indexOf(q) === 0 ? 1 : T[k].full.toLowerCase().indexOf(q) >= 0 ? 2 : T[k].also.join(" ").toLowerCase().indexOf(q) >= 0 ? 3 : 4; };
+      return s(a) - s(b) || (a < b ? -1 : 1);
+    });
+    $("glossCount").textContent = hits.length + " of " + all.length + " terms";
+    hits.slice(0, q ? 40 : 230).forEach(function (k) {
+      var t = T[k], d = el("div", "term");
+      var h = el("h3"); h.appendChild(el("code", "", k)); h.appendChild(document.createTextNode("  " + t.full)); d.appendChild(h);
+      d.appendChild(el("p", "meta", t.slot + " · " + t.family + (t.also.length ? " · also called: " + t.also.join(", ") : "")));
+      d.appendChild(el("p", "", t.def));
+      d.appendChild(el("p", "meta", "Not to be confused with: " + t.not));
+      if (t.source) { d.appendChild(el("p", "meta", "Source checked: " + t.source)); }
+      var rel = el("p", "meta"); rel.appendChild(document.createTextNode("Related: "));
+      (t.related || []).forEach(function (r) { var a = el("a", "", r); a.title = T[r] ? T[r].full : ""; a.addEventListener("click", function () { find.value = r; renderGloss(); window.scrollTo(0, 0); }); rel.appendChild(a); });
+      d.appendChild(rel);
+      gout.appendChild(d);
+    });
+  }
+  find.addEventListener("input", renderGloss);
+  renderGloss();
+})();
+</script>
+</body>
+</html>
