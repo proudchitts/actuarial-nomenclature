@@ -3,7 +3,7 @@ MIT License
 Copyright (c) 2026 The actuarial-nomenclature contributors
 
 This licence applies to the code in this repository: check.py and the
-contents of tools/ and docs/. The text of the standard is licensed
+contents of tools/, docs/, lib/ and bin/. The text of the standard is licensed
 separately. See LICENSE-TEXT.md.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

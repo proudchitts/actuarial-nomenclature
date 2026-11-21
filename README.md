@@ -58,7 +58,65 @@ The namer uses fixed rules. It does not use AI, it does not call any server, and
 
 It does not understand free English the way a person does. It will miss an idea that is said with no glossary term or known phrase. A sentence such as "what we expect to pay out when people die" will not work. "Death claims in the period" will.
 
-An AI layer could be added in front, to turn loose wording into a description in glossary terms. The rule-based namer would still build and check the name, so the AI could never invent one. That is not built.
+An AI assistant can sit in front, to turn loose wording into a description in glossary terms. The MCP server and the API below exist for that. The rule-based namer still builds and checks the name, so the AI can never invent one.
+
+## Use it from an AI tool or a modelling platform
+
+The same rule-based namer is offered three more ways, so that an AI assistant or a platform can pass in a description and get the name back. All three give the same answer as the web page. None of them uses AI or calls another service. They need Node 16 or later and have no other dependencies.
+
+Every route returns the same JSON. The `status` field is `ok`, `needs_detail` or `failed`. With `ok` the `name` field holds the name and `reads_as` reads it back. With `needs_detail` the name is empty and `questions` lists what is missing. Each option carries a `revised_description` to send back. A caller must never invent a name when the status is not `ok`.
+
+### 1. MCP server, for AI tools
+
+Add this to the MCP settings of the AI tool.
+
+```json
+{
+  "mcpServers": {
+    "actuarial-nomenclature": {
+      "command": "npx",
+      "args": ["-y", "github:proudchitts/actuarial-nomenclature", "mcp"]
+    }
+  }
+}
+```
+
+The server offers five tools.
+
+| Tool | What it does |
+|---|---|
+| `name_variable` | Description to name. Refuses to guess and returns questions when the description is vague. |
+| `read_name` | Name to English, with a check against the rules. |
+| `check_list` | Many variables at once. Flags vague lines, names that break the rules, names that do not match their description, and different descriptions that share a name. |
+| `search_glossary` | Look up terms by short form, full term, everyday word or definition. |
+| `naming_rules` | The grammar in short, for the AI to read. |
+
+### 2. Command line
+
+```bash
+npx -y github:proudchitts/actuarial-nomenclature name "Death claims in the period"
+npx -y github:proudchitts/actuarial-nomenclature read CLM_DTH_RI_BE_PV_EOP
+npx -y github:proudchitts/actuarial-nomenclature check variables.txt
+```
+
+The exit code is 0 when the name is good and 2 when more detail is needed, so a build script can stop on a vague description.
+
+### 3. HTTP API, to run on your own machine or server
+
+```bash
+npx -y github:proudchitts/actuarial-nomenclature serve --port 8787
+curl -s localhost:8787/name -d '{"description": "Number of policies in force at the end of the period"}'
+```
+
+| Route | Input | Output |
+|---|---|---|
+| `POST /name` or `GET /name?description=` | A description | The name, or questions |
+| `POST /read` or `GET /read?name=` | A name | The English reading and any rule broken |
+| `POST /check` | A list of items, each with a description and an optional name | One result per line, with shared names flagged |
+| `GET /glossary?q=` | A word | Matching terms |
+| `GET /rules` | Nothing | The grammar in short |
+
+There is no public hosted API. The server listens on your own machine by default. A platform written in JavaScript can also load `docs/namer.js` and `docs/data.js` directly and call the namer in process.
 
 ## The files
 
@@ -72,6 +130,9 @@ An AI layer could be added in front, to turn loose wording into a description in
 | `tools/build.py` | Builds `docs/data.js` from `glossary.md` and the lexicon |
 | `tools/test.js` | Runs every example through the namer |
 | `check.py` | Tests the glossary and every example name against the rules |
+| `lib/api.js` | One shared interface that the command line, the HTTP API and the MCP server all call |
+| `bin/cli.js`, `bin/mcp.js` | The command line with the HTTP API, and the MCP server |
+| `tools/test_api.js` | Tests the command line, the HTTP API and the MCP server |
 
 ## How to use it by hand
 
@@ -99,7 +160,7 @@ Only the item is always required. Gross of reinsurance and plain amounts are imp
 
 1. Edit `glossary.md`, `examples.md` or `tools/lexicon.json`.
 2. Run `python3 tools/build.py` to rebuild the data for the web page.
-3. Run `python3 check.py` and `node tools/test.js`. Both must pass.
+3. Run `python3 check.py`, `node tools/test.js` and `node tools/test_api.js`. All three must pass.
 
 `check.py` tests that no two entries share a short form, that every related link goes both ways, that every example name uses only glossary terms and obeys the slot order, and that the prose has no dashes or semicolons. `tools/test.js` tests that every example description gives exactly the expected name, that every name reads back, and that every vague case is refused.
 
@@ -159,7 +220,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 11. Should the solvency capital terms be in the core, as now, because Solvency II and South Africa share them? Should the five tax funds stay in the extension?
 12. Embedded value: the glossary follows APN 107, where the value of in-force is before the cost of required capital. Other frameworks quote it after. Is one fixed meaning right for an international standard?
 13. The namer keeps its own list of items that are balances, so that it can ask for a time point. Should that tag move into the glossary?
-14. Should an AI layer be offered for loose wording, with the rule-based namer as the gatekeeper?
+14. Should a public hosted API be offered, and who would run it?
 
 ## How to take part
 
@@ -169,4 +230,4 @@ Open an issue on this repository for a wrong definition, a missing term, a descr
 
 The standard, the glossary and the examples are under the Creative Commons Attribution 4.0 International licence (CC BY 4.0). Anyone may use and adapt them, including in commercial products, if they credit the source. See `LICENSE-TEXT.md`.
 
-The code (`check.py`, `tools/` and `docs/`) is under the MIT licence. See the LICENSE file.
+The code (`check.py`, `tools/`, `docs/`, `lib/` and `bin/`) is under the MIT licence. See the LICENSE file.

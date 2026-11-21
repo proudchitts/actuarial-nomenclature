@@ -1,0 +1,14 @@
+{
+  "name": "actuarial-nomenclature",
+  "version": "0.1.0",
+  "description": "An open nomenclature for naming variables in life insurance actuarial projection models, with a rule-based namer for people, platforms and AI tools.",
+  "license": "MIT",
+  "homepage": "https://proudchitts.github.io/actuarial-nomenclature/",
+  "repository": { "type": "git", "url": "git+https://github.com/proudchitts/actuarial-nomenclature.git" },
+  "bin": { "actuarial-nomenclature": "bin/cli.js" },
+  "main": "lib/api.js",
+  "files": ["bin", "lib", "docs/namer.js", "docs/data.js", "LICENSE", "LICENSE-TEXT.md", "README.md"],
+  "engines": { "node": ">=16" },
+  "scripts": { "test": "python3 check.py && node tools/test.js && node tools/test_api.js", "build": "python3 tools/build.py" },
+  "keywords": ["actuarial", "life-insurance", "ifrs17", "naming", "mcp"]
+}
