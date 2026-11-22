@@ -1,0 +1,35 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: The glossary is tidy (run python3 tools/format_glossary.py if this fails)
+        run: |
+          python3 tools/format_glossary.py
+          git diff --exit-code glossary.md
+      - name: The built data matches the glossary (run python3 tools/build.py if this fails)
+        run: |
+          python3 tools/build.py
+          git diff --exit-code docs/data.js
+      - name: Glossary and examples obey the rules
+        run: python3 check.py
+      - name: Every example description gives the expected name
+        run: node tools/test.js
+      - name: Command line, HTTP API and MCP server
+        run: node tools/test_api.js
