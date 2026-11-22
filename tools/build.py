@@ -47,7 +47,17 @@ for t in terms.values():
     t.setdefault("also", [])
     t["ext"] = "ZA" if t["family"].startswith("ZA extension") else ""
 
-data = {"version": "0.1", "terms": terms, "lexicon": lex}
+grp = json.load(open(os.path.join(ROOT, "tools", "groups.json"), encoding="utf-8"))
+item_group = {}
+for tok, t in terms.items():
+    if "ITEM" in t["slot"]:
+        g = grp["items"].get(tok) or grp["families"].get(t["family"])
+        if not g:
+            raise SystemExit("No group for item %s (family %s). Add it to tools/groups.json." % (tok, t["family"]))
+        if g not in grp["order"]:
+            raise SystemExit("Group %r for %s is not in the order list." % (g, tok))
+        item_group[tok] = g
+data = {"version": "0.1", "terms": terms, "lexicon": lex, "groups": {"order": grp["order"], "items": item_group}}
 out = os.path.join(ROOT, "docs", "data.js")
 with open(out, "w", encoding="utf-8") as f:
     f.write("// Built by tools/build.py from glossary.md. Do not edit by hand.\n")

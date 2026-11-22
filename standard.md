@@ -319,3 +319,20 @@ A model conforms to version 0.1 when all of these hold.
 - A short form is never reused for a different concept. A retired short form stays retired.
 - A minor version may add tokens. Only a major version may change the slot order or a definition.
 - Version 0.1 is a draft. Everything in it is open to change after review.
+
+## 14. Groups
+
+A model with hundreds of variables needs them sorted into a few groups for browsing. Every name falls in exactly one group. The group is worked out from the tokens of the name, so nobody chooses it and two people cannot file the same variable in different places.
+
+The thirteen groups are: Time and policy data. Assumptions and tables. Decrements. Policy counts. Premiums and benefits. Commission and expenses. Unit funds and bonuses. Investment and tax. Reinsurance. Reserving and capital. IFRS 17. Profit, EV and VNB. Indicators and flags.
+
+The rules are applied in this order, and the first one that fits decides.
+
+1. A name that starts with `TBL` is in Assumptions and tables.
+2. A name whose measure is `IND` or `FLG` is in Indicators and flags.
+3. A name whose item is an IFRS 17 term, or whose basis is `IFL` or `IFC`, is in IFRS 17.
+4. A name with the party `RI` is in Reinsurance.
+5. A count of a decrement, such as `DTH_CNT`, is in Policy counts.
+6. Otherwise the group is the group of the item. `tools/groups.json` lists the group of every item.
+
+A group says what a variable is about. It does not say what the variable is used for. Roles such as output, data check or alternative basis depend on the model and are not part of this standard. A platform can add them as its own tags.

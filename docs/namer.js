@@ -151,6 +151,23 @@
       });
     }
 
+    // ---------- group of a name ----------
+    // one group per name, from its tokens alone. See standard.md section 14.
+    function groupOf(slots) {
+      var G = DATA.groups.items;
+      var get = function (s) { return slots.filter(function (x) { return x.slot === s; }); };
+      var item = get("ITEM")[0];
+      if (!item) { return null; }
+      if (get("TABLE").length) { return "Assumptions and tables"; }
+      var meas = get("MEASURE").map(function (x) { return x.tok; });
+      if (has(meas, "IND") || has(meas, "FLG")) { return "Indicators and flags"; }
+      var basis = get("BASIS").map(function (x) { return x.tok; });
+      if (G[item.tok] === "IFRS 17" || has(basis, "IFL") || has(basis, "IFC")) { return "IFRS 17"; }
+      if (get("PARTY").some(function (x) { return x.tok === "RI"; })) { return "Reinsurance"; }
+      if (G[item.tok] === "Decrements" && has(meas, "CNT")) { return "Policy counts"; }
+      return G[item.tok] || null;
+    }
+
     // ---------- name to English ----------
     function lc(t) {
       var f = T[t].full;
@@ -183,7 +200,7 @@
     }
     function decode(name) {
       var v = validate(String(name).trim().toUpperCase());
-      if (v.ok && !v.private) { v.canonical = canonical(v.slots); }
+      if (v.ok && !v.private) { v.canonical = canonical(v.slots); v.group = groupOf(v.slots); }
       return v;
     }
 
@@ -402,6 +419,7 @@
       if (res.unknown.length) { res.warn = true; }
       res.name = name;
       res.canonical = canonical(v.slots);
+      res.group = groupOf(v.slots);
       return res;
     }
 
@@ -460,7 +478,7 @@
     function collisions() {
       return Object.keys(P).filter(function (k) { return P[k].alts.length > 1; }).map(function (k) { return k + " = " + P[k].alts.join(" / "); });
     }
-    return { collisions: collisions, name: nameOf, decode: decode, validate: validate, batch: batch, applyOption: applyOption, terms: T, version: DATA.version };
+    return { collisions: collisions, groupOf: groupOf, groups: DATA.groups.order, name: nameOf, decode: decode, validate: validate, batch: batch, applyOption: applyOption, terms: T, version: DATA.version };
   }
 
   var api = { create: create };

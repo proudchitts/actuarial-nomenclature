@@ -214,6 +214,7 @@ footer a{color:var(--accent)}
     if (r.name) {
       box.appendChild(el("div", "name", r.name));
       box.appendChild(el("p", "reads", "Reads as: " + r.canonical));
+      if (r.group) { box.appendChild(el("p", "reads", "Group: " + r.group)); }
       var copy = el("button", "btn ghost", "Copy name");
       copy.addEventListener("click", function () { if (navigator.clipboard) { navigator.clipboard.writeText(r.name); copy.textContent = "Copied"; } });
       box.appendChild(copy);
@@ -256,6 +257,7 @@ footer a{color:var(--accent)}
     box.appendChild(el("div", "tag", d.ok ? "Valid name" : "Not a valid name"));
     box.appendChild(el("div", "name", d.name));
     if (d.canonical) { box.appendChild(el("p", "reads", "Reads as: " + d.canonical)); }
+    if (d.group) { box.appendChild(el("p", "reads", "Group: " + d.group)); }
     if (d.private) { box.appendChild(el("p", "reads", "This name uses a private token that starts with Z. Its meaning is in the owner's local glossary.")); }
     if (d.slots.length && d.ok) { box.appendChild(slotChips(d.slots)); }
     if (d.problems.length) { var ul = el("ul", "notes"); d.problems.forEach(function (n) { ul.appendChild(el("li", "", n)); }); box.appendChild(ul); }
@@ -271,7 +273,7 @@ footer a{color:var(--accent)}
     var o = $("listOut"); o.textContent = "";
     if (!rows.length) { $("listSummary").textContent = "Nothing to check."; $("csv").hidden = true; return; }
     var t = el("table"), h = el("tr");
-    ["Line", "Description", "Name", "Result", "What to fix"].forEach(function (x) { h.appendChild(el("th", "", x)); });
+    ["Line", "Description", "Name", "Group", "Result", "What to fix"].forEach(function (x) { h.appendChild(el("th", "", x)); });
     t.appendChild(h);
     var clean = 0, dup = 0;
     rows.forEach(function (r) {
@@ -282,6 +284,7 @@ footer a{color:var(--accent)}
       var td = el("td", "mono", nm);
       if (r.given && r.result.name && r.given !== r.result.name) { td.textContent = r.given + " (given), " + r.result.name + " (from description)"; }
       tr.appendChild(td);
+      tr.appendChild(el("td", "", r.result.group || ""));
       var notes = r.flags.slice();
       if (r.result.status === "ok" && r.result.warn) { notes.push(r.result.notes.concat(r.result.unknown.length ? ["Words not used: " + r.result.unknown.join(", ") + "."] : []).join(" ")); }
       var state = r.flags.length ? "fail" : (r.result.warn ? "warn" : "ok");
@@ -298,8 +301,8 @@ footer a{color:var(--accent)}
   });
   $("csv").addEventListener("click", function () {
     var q = function (s) { return '"' + String(s == null ? "" : s).replace(/"/g, '""') + '"'; };
-    var lines = ["line,given_name,name,status,description,canonical_description,notes"];
-    lastRows.forEach(function (r) { lines.push([r.line, q(r.given), q(r.result.name), q(r.state), q(r.description), q(r.result.canonical), q(r.notesText)].join(",")); });
+    var lines = ["line,given_name,name,group,status,description,canonical_description,notes"];
+    lastRows.forEach(function (r) { lines.push([r.line, q(r.given), q(r.result.name), q(r.result.group), q(r.state), q(r.description), q(r.result.canonical), q(r.notesText)].join(",")); });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
     a.download = "variable-names.csv";

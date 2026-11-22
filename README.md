@@ -33,7 +33,7 @@ The web page has four parts.
 
 | Part | What it does |
 |---|---|
-| Name a variable | You write a description. It gives the name, reads the name back in standard wording, and shows which word went into which slot. |
+| Name a variable | You write a description. It gives the name and its group, reads the name back in standard wording, and shows which word went into which slot. |
 | Read a name | You type a name. It reads it back in English and tells you if it breaks a rule. |
 | Check a list | You paste many descriptions, or names with descriptions. It flags vague descriptions, names that break the rules, names that do not match their description, and two different descriptions that end up with the same name. |
 | Glossary | Search all terms by short form, full term, everyday word or definition. |
@@ -48,6 +48,10 @@ The name is always built by fixed rules. No AI writes or chooses a name, and not
 4. It shows what it did not use. Words it does not know are listed under the name. The name ignores them, so you can see at once if something that matters was lost. If most of the description was not understood, it gives no name at all.
 5. It suggests terms for the words it did not use. See the next section.
 6. It reads the name back. If the reading is not what you meant, the description needs another word.
+
+### Groups
+
+Every name falls in one of thirteen groups, such as Decrements, Policy counts, Premiums and benefits, Reinsurance, IFRS 17, and Profit, EV and VNB. The group is worked out from the name by the rules in section 14 of `standard.md`, so it needs no extra input. The page shows it, "Check a list" has a group column, and the API and MCP server return it with every name.
 
 ### Suggestions for words it does not know
 
@@ -141,6 +145,7 @@ There is no public hosted API. The server listens on your own machine by default
 | `examples.md` | 206 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
 | `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
+| `tools/groups.json` | The group of every item |
 | `tools/build.py` | Builds `docs/data.js` from `glossary.md` and the lexicon |
 | `tools/build_embeddings.mjs` | Builds `docs/embeddings.js`. Needs the embedding library installed. |
 | `tools/test.js` | Runs every example through the namer |

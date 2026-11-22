@@ -1,0 +1,29 @@
+{
+  "comment": "Variable groups. Every name falls in exactly one group, worked out from its tokens by the rules in standard.md section 14. Each glossary family gives a default group for its items, and 'items' overrides single tokens.",
+  "order": ["Time and policy data", "Assumptions and tables", "Decrements", "Policy counts", "Premiums and benefits", "Commission and expenses", "Unit funds and bonuses", "Investment and tax", "Reinsurance", "Reserving and capital", "IFRS 17", "Profit, EV and VNB", "Indicators and flags"],
+  "families": {
+    "Time and age items": "Time and policy data",
+    "Policy data": "Time and policy data",
+    "Basis": "Profit, EV and VNB",
+    "Decrements and policy status": "Decrements",
+    "Assumption building": "Assumptions and tables",
+    "Cash flows in general": "Profit, EV and VNB",
+    "Premiums": "Premiums and benefits",
+    "Claims and benefits": "Premiums and benefits",
+    "Expenses and commission": "Commission and expenses",
+    "Policy values, unit-linked and with-profits": "Unit funds and bonuses",
+    "Economic and investment": "Investment and tax",
+    "Reinsurance": "Reinsurance",
+    "Reserves and liabilities": "Reserving and capital",
+    "IFRS 17": "IFRS 17",
+    "Capital and risk": "Reserving and capital",
+    "Profit, embedded value and new business": "Profit, EV and VNB",
+    "Tables, assumptions and model data": "Assumptions and tables",
+    "ZA extension: South Africa": "Reserving and capital"
+  },
+  "items": {
+    "POL": "Policy counts", "LIFE": "Policy counts", "MPT": "Policy counts",
+    "TAX": "Investment and tax", "SV": "Premiums and benefits", "BSR": "Unit funds and bonuses", "RETR": "Decrements",
+    "SURP": "Reserving and capital", "CAPRQ": "Reserving and capital"
+  }
+}

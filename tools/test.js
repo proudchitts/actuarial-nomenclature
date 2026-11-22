@@ -55,5 +55,13 @@ console.log(`Part C: ${okC} of ${heads.length} vague descriptions are refused or
 const seen = {};
 for (const [, no, , want] of rowsA) { if (seen[want]) { fail++; console.log(`DUPLICATE: ${want} in rows ${seen[want]} and ${no}`); } seen[want] = no; }
 
+// every example name must fall in exactly one known group
+const counts = {};
+for (const [, no, , want] of rowsA) {
+  const g = N.decode(want).group;
+  if (!g || !N.groups.includes(g)) { fail++; console.log(`A${no} NO GROUP: ${want}`); } else { counts[g] = (counts[g] || 0) + 1; }
+}
+console.log("Groups: " + N.groups.map((g) => `${g} ${counts[g] || 0}`).join(", "));
+
 if (fail) { console.log(`\nFAILED: ${fail} problem(s)`); process.exit(1); }
 console.log("\nAll namer tests passed.");
