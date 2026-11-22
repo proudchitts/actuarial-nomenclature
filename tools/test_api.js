@@ -53,7 +53,7 @@ function httpTest() {
 (async () => {
   const g = await mcp();
   ok(g[1] && g[1].result.protocolVersion === "2025-06-18" && g[1].result.capabilities.tools, "mcp initialize");
-  ok(g[2] && g[2].result.tools.length === 5, "mcp lists 5 tools");
+  ok(g[2] && g[2].result.tools.length === 6, "mcp lists 6 tools");
   ok(g[3] && g[3].result.structuredContent.name === "CLM_DTH_RI_BE_PV_EOP" && !g[3].result.isError, "mcp name_variable");
   ok(g[4] && g[4].result.structuredContent.status === "needs_detail" && g[4].result.structuredContent.name === null, "mcp refuses a vague description");
   const c = g[5] && g[5].result.structuredContent;
@@ -62,6 +62,14 @@ function httpTest() {
   const [h1, h2] = await httpTest();
   ok(h1.name === "POL_IF_CNT_EOP", "http POST /name");
   ok(h2.valid && /lapse/.test(h2.reads_as), "http GET /read");
+  // suggestions by wording must work with no embedding library
+  const api = require(path.join(path.dirname(__dirname), "lib", "api.js"));
+  const s = await api.suggestTerms("Commision paid in the period", { semantic: false });
+  ok(s.suggestions.length === 1 && s.suggestions[0].closest_terms[0].short_form === "COMM", "suggest finds commission from a misspelling");
+  const nv = api.nameVariable(s.suggestions[0].closest_terms[0].revised_description);
+  ok(nv.status === "ok" && nv.name === "COMM", "the revised description then names cleanly");
+  const SG = require(path.join(path.dirname(__dirname), "docs", "suggest.js")).create(require(path.join(path.dirname(__dirname), "docs", "data.js")));
+  ok(require(path.join(path.dirname(__dirname), "docs", "embeddings.js")).key === SG.key, "docs/embeddings.js is up to date with the glossary");
   if (fail) { console.log("\nFAILED: " + fail); process.exit(1); }
   console.log("\nAll interface tests passed.");
 })();

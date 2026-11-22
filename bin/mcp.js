@@ -13,6 +13,11 @@ const TOOLS = [
     inputSchema: { type: "object", properties: { description: { type: "string", description: "What the variable is, in plain English. Say whose share (reinsurance, net), the basis if one is stated, the kind of number (rate, count, present value) and when (start or end of period, valuation date)." } }, required: ["description"] },
   },
   {
+    name: "suggest_terms",
+    description: "For a description that name_variable could not fully use, return the closest glossary terms for each unused part, with definitions. Matching is by wording, and also by meaning when the optional local embedding model is installed. The results are candidates to confirm, never a final answer.",
+    inputSchema: { type: "object", properties: { description: { type: "string" } }, required: ["description"] },
+  },
+  {
     name: "read_name",
     description: "Read a standard variable name back into English and check it against the naming rules. Use it to understand a name in model code or to validate a name before using it.",
     inputSchema: { type: "object", properties: { name: { type: "string", description: "A variable name such as CLM_DTH_RI_BE_PV_EOP." } }, required: ["name"] },
@@ -46,7 +51,7 @@ function call(name, args) {
 
 function send(msg) { process.stdout.write(JSON.stringify(msg) + "\n"); }
 
-function handle(msg) {
+async function handle(msg) {
   const id = msg.id;
   const isRequest = id !== undefined && id !== null;
   try {
@@ -63,7 +68,7 @@ function handle(msg) {
     if (msg.method === "tools/list") { return send({ jsonrpc: "2.0", id, result: { tools: TOOLS } }); }
     if (msg.method === "tools/call") {
       let result, isError = false;
-      try { result = call(msg.params.name, msg.params.arguments); }
+      try { result = msg.params.name === "suggest_terms" ? await api.suggestTerms((msg.params.arguments || {}).description) : call(msg.params.name, msg.params.arguments); }
       catch (e) { result = { error: e.message }; isError = true; }
       return send({ jsonrpc: "2.0", id, result: { content: [{ type: "text", text: JSON.stringify(result, null, 2) }], structuredContent: result, isError } });
     }
@@ -76,14 +81,15 @@ function handle(msg) {
 
 function start() {
   const rl = readline.createInterface({ input: process.stdin, terminal: false });
+  let chain = Promise.resolve();
   rl.on("line", (line) => {
     line = line.trim();
     if (!line) { return; }
     let msg;
     try { msg = JSON.parse(line); } catch (e) { return send({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "Parse error" } }); }
-    (Array.isArray(msg) ? msg : [msg]).forEach(handle);
+    (Array.isArray(msg) ? msg : [msg]).forEach((one) => { chain = chain.then(() => handle(one)); });
   });
-  rl.on("close", () => process.exit(0));
+  rl.on("close", () => { chain.then(() => process.exit(0)); });
 }
 
 module.exports = { start, TOOLS };

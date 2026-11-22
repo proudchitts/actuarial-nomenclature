@@ -7,7 +7,7 @@
   "repository": { "type": "git", "url": "git+https://github.com/proudchitts/actuarial-nomenclature.git" },
   "bin": { "actuarial-nomenclature": "bin/cli.js" },
   "main": "lib/api.js",
-  "files": ["bin", "lib", "docs/namer.js", "docs/data.js", "LICENSE", "LICENSE-TEXT.md", "README.md"],
+  "files": ["bin", "lib", "docs/namer.js", "docs/suggest.js", "docs/data.js", "docs/embeddings.js", "LICENSE", "LICENSE-TEXT.md", "README.md"],
   "engines": { "node": ">=16" },
   "scripts": { "test": "python3 check.py && node tools/test.js && node tools/test_api.js", "build": "python3 tools/build.py" },
   "keywords": ["actuarial", "life-insurance", "ifrs17", "naming", "mcp"]

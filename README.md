@@ -40,18 +40,30 @@ The web page has four parts.
 
 ### How it works
 
-The namer uses fixed rules. It does not use AI, it does not call any server, and nothing you type leaves your browser.
+The name is always built by fixed rules. No AI writes or chooses a name, and nothing you type leaves your browser.
 
 1. It looks for words and phrases it knows. These are the full terms in the glossary, the "also called" words, and a list of everyday phrases in `tools/lexicon.json`. It does not need your wording to match a definition. It needs your wording to contain terms it knows.
 2. It puts each term in its slot. The head noun becomes the item. Words such as "rate of", "number of" and "present value" become the measure. Words such as "reinsurance", "best estimate" and "end of the period" fill the party, basis and time.
 3. It refuses to guess. If a word has two meanings, such as withdrawal or gross premium, it asks which one. If a rate has no time base or a balance has no time point, it asks. Each answer rewrites your description, so the description itself becomes exact.
-4. It shows what it did not use. Words it does not know are listed under the name. The name ignores them, so you can see at once if something that matters was lost.
-5. It reads the name back. If the reading is not what you meant, the description needs another word.
+4. It shows what it did not use. Words it does not know are listed under the name. The name ignores them, so you can see at once if something that matters was lost. If most of the description was not understood, it gives no name at all.
+5. It suggests terms for the words it did not use. See the next section.
+6. It reads the name back. If the reading is not what you meant, the description needs another word.
+
+### Suggestions for words it does not know
+
+For each run of unused words, the namer offers the three closest glossary terms with their definitions. Choosing one rewrites the description with that term, and the rules then build the name. The suggestion never becomes a name without that choice.
+
+There are two ways of matching.
+
+- **By wording.** Word stems, spelling distance and overlap with the definitions. This is always on and needs nothing extra. It catches misspellings and close wordings.
+- **By meaning.** A small language model (all-MiniLM-L6-v2, 23 MB) that runs on your own machine and scores how close two pieces of text are. It writes nothing and gives the same answer every time. On the web page it is switched on with "Also search by meaning", which downloads the model once. For the command line and the MCP server, install it with `npm install @huggingface/transformers`.
+
+How much it helps was measured on 60 loose phrases, such as "people die" and "money paid to the broker". The right term was in the top three for 41 phrases by wording alone, 46 by meaning alone and 47 with both. So it helps, and it is still wrong about one time in five. It also always offers something, even for an idea the glossary does not have. That is why it only suggests.
 
 ### How we know one name is not given to two meanings
 
 - Each short form has one definition. `check.py` fails if two entries share a short form or a full term.
-- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 193 example names read back to a description that gives the same name again.
+- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 201 example names read back to a description that gives the same name again.
 - Two different descriptions that give the same name are either the same variable in different words, or one of them left out a detail. "Check a list" flags every such pair for a person to decide.
 
 ### What it cannot do
@@ -62,7 +74,7 @@ An AI assistant can sit in front, to turn loose wording into a description in gl
 
 ## Use it from an AI tool or a modelling platform
 
-The same rule-based namer is offered three more ways, so that an AI assistant or a platform can pass in a description and get the name back. All three give the same answer as the web page. None of them uses AI or calls another service. They need Node 16 or later and have no other dependencies.
+The same rule-based namer is offered three more ways, so that an AI assistant or a platform can pass in a description and get the name back. All three give the same answer as the web page. None of them calls another service, and none lets AI write a name. They need Node 16 or later and have no other dependencies. Search by meaning is the one optional extra.
 
 Every route returns the same JSON. The `status` field is `ok`, `needs_detail` or `failed`. With `ok` the `name` field holds the name and `reads_as` reads it back. With `needs_detail` the name is empty and `questions` lists what is missing. Each option carries a `revised_description` to send back. A caller must never invent a name when the status is not `ok`.
 
@@ -81,11 +93,12 @@ Add this to the MCP settings of the AI tool.
 }
 ```
 
-The server offers five tools.
+The server offers six tools.
 
 | Tool | What it does |
 |---|---|
 | `name_variable` | Description to name. Refuses to guess and returns questions when the description is vague. |
+| `suggest_terms` | The closest glossary terms for each part of a description that was not used. Candidates to confirm, never a final answer. |
 | `read_name` | Name to English, with a check against the rules. |
 | `check_list` | Many variables at once. Flags vague lines, names that break the rules, names that do not match their description, and different descriptions that share a name. |
 | `search_glossary` | Look up terms by short form, full term, everyday word or definition. |
@@ -111,6 +124,7 @@ curl -s localhost:8787/name -d '{"description": "Number of policies in force at 
 | Route | Input | Output |
 |---|---|---|
 | `POST /name` or `GET /name?description=` | A description | The name, or questions |
+| `POST /suggest` or `GET /suggest?description=` | A description | Candidate terms for the words that were not used |
 | `POST /read` or `GET /read?name=` | A name | The English reading and any rule broken |
 | `POST /check` | A list of items, each with a description and an optional name | One result per line, with shared names flagged |
 | `GET /glossary?q=` | A word | Matching terms |
@@ -123,11 +137,12 @@ There is no public hosted API. The server listens on your own machine by default
 | File | What it holds |
 |---|---|
 | `standard.md` | The grammar: characters, length, the seven slots, measures, time, bases, parties, extensions |
-| `glossary.md` | The controlled word list: 259 terms in 22 families, 244 in the core and 15 in the South African extension set. This file is the master. |
-| `examples.md` | 193 descriptions turned into names, 10 names read back into English, 8 descriptions that are too vague to name |
-| `docs/` | The web page: `index.html`, the namer `namer.js`, and `data.js` which is built from the glossary |
+| `glossary.md` | The controlled word list: 268 terms in 22 families, 253 in the core and 15 in the South African extension set. This file is the master. |
+| `examples.md` | 201 descriptions turned into names, 10 names read back into English, 8 descriptions that are too vague to name |
+| `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
 | `tools/build.py` | Builds `docs/data.js` from `glossary.md` and the lexicon |
+| `tools/build_embeddings.mjs` | Builds `docs/embeddings.js`. Needs the embedding library installed. |
 | `tools/test.js` | Runs every example through the namer |
 | `check.py` | Tests the glossary and every example name against the rules |
 | `lib/api.js` | One shared interface that the command line, the HTTP API and the MCP server all call |
@@ -159,14 +174,14 @@ Only the item is always required. Gross of reinsurance and plain amounts are imp
 ## To change the standard
 
 1. Edit `glossary.md`, `examples.md` or `tools/lexicon.json`.
-2. Run `python3 tools/build.py` to rebuild the data for the web page.
+2. Run `python3 tools/build.py` to rebuild the data for the web page. If a term, an everyday word or a definition changed, also run `node tools/build_embeddings.mjs`. The tests fail if the vectors are out of date.
 3. Run `python3 check.py`, `node tools/test.js` and `node tools/test_api.js`. All three must pass.
 
 `check.py` tests that no two entries share a short form, that every related link goes both ways, that every example name uses only glossary terms and obeys the slot order, and that the prose has no dashes or semicolons. `tools/test.js` tests that every example description gives exactly the expected name, that every name reads back, and that every vague case is refused.
 
 ## What the definitions were checked against
 
-92 of the 259 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
+92 of the 268 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
 
 | Source | What was read | Result |
 |---|---|---|
@@ -184,8 +199,8 @@ Points to know about the South African guidance. PGNs were renamed SAPs and APNs
 - The check scripts test form. They cannot test that a definition is right. That needs actuarial review.
 - The checks against published texts were done by AI research and spot-checked. They have not been reviewed by a second actuary.
 - Not confirmed from a primary source: later amendments to the Delegated Regulation and to the South African standards since 2018, the current rand cap on funeral cover, the annual premium equivalent formula (a market convention), and any formal definition of paid-up, partial withdrawal and not taken up.
-- The 167 entries with no source line are general actuarial terms that these texts do not define.
-- The namer passes all 193 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
+- The 176 entries with no source line are general actuarial terms that these texts do not define.
+- The namer passes all 201 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
 - No name has yet been tried in a real model on a real platform.
 
 ## Where the grammar strained during testing, and what changed
@@ -220,7 +235,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 7. Should the denominator of a ratio be allowed to carry qualifiers?
 8. Are the definitions of lapse, surrender, partial withdrawal, discontinuance, paid-up, maturity and expiry right for every market?
 9. Are initial and acquisition, and renewal and maintenance, usefully different, or does the split cause more trouble than it saves?
-10. Which terms are missing? 59 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
+10. Which terms are missing? 60 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
 11. Should the solvency capital terms be in the core, as now, because Solvency II and South Africa share them? Should the five tax funds stay in the extension?
 12. Embedded value: the glossary follows APN 107, where the value of in-force is before the cost of required capital. Other frameworks quote it after. Is one fixed meaning right for an international standard?
 13. The namer keeps its own list of items that are balances, so that it can ask for a time point. Should that tag move into the glossary?

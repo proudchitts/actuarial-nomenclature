@@ -922,6 +922,71 @@
     ],
     "read from the base table": [
       "TBL"
+    ],
+    "actuarially funded": [
+      "FND"
+    ],
+    "actuarial funding factor": [
+      "ACTF",
+      "FAC"
+    ],
+    "funding factor": [
+      "ACTF",
+      "FAC"
+    ],
+    "actual units": [
+      "UNIT",
+      "FND"
+    ],
+    "nominal units": [
+      "UNIT",
+      "NOML"
+    ],
+    "funded units": [
+      "UNIT",
+      "FND"
+    ],
+    "unfunded units": [
+      "UNIT",
+      "UNFND"
+    ],
+    "fluctuation reserve": [
+      "RES",
+      "FLUC"
+    ],
+    "mortality fluctuation reserve": [
+      "RES",
+      "DTH",
+      "FLUC"
+    ],
+    "morbidity fluctuation reserve": [
+      "RES",
+      "DIS",
+      "FLUC"
+    ],
+    "contingency reserve": [
+      "RES",
+      "CTGY"
+    ],
+    "expense overrun reserve": [
+      "RES",
+      "OVRN"
+    ],
+    "aids reserve": [
+      "RES",
+      "HIV"
+    ],
+    "capital units": [
+      "UNIT",
+      "CAPU"
+    ],
+    "accumulation units": [
+      "UNIT",
+      "ACMU"
+    ],
+    "initial units": [
+      "UNIT",
+      "CAPU"
     ]
   },
   "special": {
@@ -996,7 +1061,12 @@
     "trial",
     "mode",
     "financial",
-    "market"
+    "market",
+    "allocated",
+    "general reserve",
+    "ordinary units",
+    "initial units",
+    "actual units"
   ],
   "stock": [
     "BEL",

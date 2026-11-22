@@ -43,6 +43,11 @@ textarea{min-height:84px;resize:vertical}
 .q.soft p{font-weight:400}
 .q button{font:inherit;margin:0 6px 6px 0;padding:6px 10px;border-radius:8px;border:1px solid var(--ink);background:var(--panel);color:var(--ink);cursor:pointer}
 ul.notes{margin:10px 0 0;padding-left:20px}
+.sugg{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.sugg p{margin:0 0 6px}
+.sugg button{font:inherit;margin:0 6px 6px 0;padding:5px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;text-align:left}
+.sugg button small{display:block;color:var(--muted);max-width:44ch}
+.sugg .link{border:none;background:none;color:var(--accent);text-decoration:underline;padding:0}
 .examples{margin-top:14px}
 .examples button{font:inherit;font-size:.9rem;margin:0 6px 6px 0;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:var(--ink);cursor:pointer}
 table{border-collapse:collapse;width:100%;font-size:.92rem}
@@ -65,7 +70,7 @@ footer a{color:var(--accent)}
 <body>
 <div class="wrap">
   <h1>Actuarial nomenclature</h1>
-  <p class="lede">Describe a life insurance projection model variable in plain English and get its standard name. The name is built by fixed rules from an open glossary. There is no AI, and nothing you type leaves your browser.</p>
+  <p class="lede">Describe a life insurance projection model variable in plain English and get its standard name. The name is built by fixed rules from an open glossary. The name is never written by AI, and nothing you type leaves your browser.</p>
 
   <nav role="tablist">
     <button role="tab" data-tab="name" aria-selected="true">Name a variable</button>
@@ -111,6 +116,7 @@ footer a{color:var(--accent)}
 
 <script src="data.js"></script>
 <script src="namer.js"></script>
+<script src="suggest.js"></script>
 <script>
 (function () {
   "use strict";
@@ -140,6 +146,60 @@ footer a{color:var(--accent)}
     });
     return box;
   }
+
+  // ---- suggestions for words that were not used ----
+  var SG = NomenSuggest.create(NOMEN_DATA);
+  var sem = { state: "off", embed: null, cache: {} };
+  function loadScript(src) { return new Promise(function (ok, bad) { var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = bad; document.head.appendChild(s); }); }
+  function loadMeaning() {
+    if (sem.state === "loading" || sem.state === "on") { return; }
+    sem.state = "loading"; renderName();
+    Promise.all([import("https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.2"), loadScript("embeddings.js")]).then(function (r) {
+      if (NOMEN_EMB.key !== SG.key) { throw new Error("stale"); }
+      return r[0].pipeline("feature-extraction", NOMEN_EMB.model, { dtype: "q8" });
+    }).then(function (ex) {
+      sem.embed = function (t) { return ex([t], { pooling: "mean", normalize: true }).then(function (o) { return Float32Array.from(o.tolist()[0]); }); };
+      sem.state = "on";
+      try { localStorage.setItem("nomen-meaning", "1"); } catch (e) {}
+      renderName();
+    }).catch(function () { sem.state = "failed"; renderName(); });
+  }
+  function suggestBlock(text, unknown) {
+    var box = el("div", "sugg");
+    var phrases = SG.unusedPhrases(text, unknown);
+    function draw(vecs) {
+      box.textContent = "";
+      box.appendChild(el("p", "", "Closest glossary terms for the words I did not use. Pick one only if its definition is what you mean."));
+      phrases.forEach(function (ph, i) {
+        var c = SG.rank(ph, 3, vecs ? vecs[i] : null, vecs ? NOMEN_EMB : null);
+        var p = el("p", "", "\u201c" + ph + "\u201d" + (c.length ? "" : ": nothing close. This idea may not be in the glossary yet."));
+        box.appendChild(p);
+        c.forEach(function (t) {
+          var b = el("button", "", t.full_term + " (" + t.token + ")");
+          b.appendChild(el("small", "", t.definition));
+          b.addEventListener("click", function () { desc.value = N.applyOption(desc.value, { find: ph, replace: t.full_term.charAt(0).toLowerCase() + t.full_term.slice(1) }); renderName(); desc.focus(); });
+          box.appendChild(b);
+        });
+      });
+      var foot = el("p", "hint");
+      if (sem.state === "off") {
+        var l = el("button", "link", "Also search by meaning");
+        l.addEventListener("click", loadMeaning);
+        foot.appendChild(l);
+        foot.appendChild(document.createTextNode(". This downloads a 23 MB language model once and runs it in your browser. What you type still stays on your machine."));
+      } else if (sem.state === "loading") { foot.textContent = "Loading the model for search by meaning. The first time takes a little while."; }
+      else if (sem.state === "on") { foot.textContent = vecs ? "Matched by wording and by meaning." : "Searching by meaning."; }
+      else { foot.textContent = "Search by meaning could not be loaded. These matches are by wording only."; }
+      box.appendChild(foot);
+    }
+    draw(null);
+    if (sem.state === "on") {
+      Promise.all(phrases.map(function (ph) { return sem.cache[ph] ? Promise.resolve(sem.cache[ph]) : sem.embed(ph).then(function (v) { sem.cache[ph] = v; return v; }); }))
+        .then(function (vecs) { if (desc.value === text) { draw(vecs); } });
+    }
+    return box;
+  }
+  try { if (localStorage.getItem("nomen-meaning") === "1") { setTimeout(loadMeaning, 0); } } catch (e) {}
 
   // ---- name a variable ----
   var desc = $("desc"), out = $("nameOut");
@@ -175,6 +235,7 @@ footer a{color:var(--accent)}
     var notes = r.notes.slice();
     if (r.unknown.length) { notes.push("Words I did not use: " + r.unknown.join(", ") + ". The name ignores them. If they matter, say it with a glossary term."); }
     if (notes.length) { var ul = el("ul", "notes"); notes.forEach(function (n) { ul.appendChild(el("li", "", n)); }); box.appendChild(ul); }
+    if (r.unknown.length) { box.appendChild(suggestBlock(desc.value, r.unknown)); }
     out.appendChild(box);
   }
   desc.addEventListener("input", renderName);

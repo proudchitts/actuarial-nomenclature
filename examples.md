@@ -288,6 +288,19 @@ A table is named with the table token first, followed by the name of the variabl
 | 192 | Financial reinsurance premiums in the period | `PREM_FINRE` |
 | 193 | Requirement for capital at inception | `CAPRQ_INC` |
 
+### A16. Actuarial funding and special reserves
+
+| No. | Description | Name |
+|---|---|---|
+| 194 | Actuarially funded fund value at the end of the period | `FV_FND_EOP` |
+| 195 | Unfunded fund value at the end of the period | `FV_UNFND_EOP` |
+| 196 | Nominal fund value at the end of the period | `FV_NOML_EOP` |
+| 197 | Actuarial funding factor | `ACTF_FAC` |
+| 198 | Number of capital units at the end of the period | `UNIT_CAPU_CNT_EOP` |
+| 199 | Mortality fluctuation reserve at the end of the period | `RES_DTH_FLUC_EOP` |
+| 200 | Contingency reserve at the end of the period | `RES_CTGY_EOP` |
+| 201 | Expense overrun reserve at the end of the period | `RES_OVRN_EOP` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.

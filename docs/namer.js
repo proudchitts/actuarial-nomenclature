@@ -365,6 +365,12 @@
         res.questions.push({ hard: false, text: "This counts policies that leave by this cause. On joint life, group or family business, say \"number of lives\" if lives are meant.", options: [] });
       }
 
+      // refuse when most of the description was not understood
+      var understood = els.filter(function (x) { return x.k === "tok" || x.k === "sp"; }).length;
+      if (res.unknown.length >= 2 && res.unknown.length > understood) {
+        res.questions.push({ hard: true, text: "Most of this description was not understood (" + res.unknown.join(", ") + "). Say it again with terms from the glossary.", options: [] });
+      }
+
       // assemble in slot order
       var toks = [item.t].concat(kinds);
       if (move) { toks.push(move); }

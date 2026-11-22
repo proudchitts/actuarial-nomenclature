@@ -2,6 +2,7 @@
 /* Command line, HTTP API and MCP entry point. No dependencies.
  *
  *   actuarial-nomenclature name "Death claims in the period"
+ *   actuarial-nomenclature suggest "Money paid to the broker in the period"
  *   actuarial-nomenclature read CLM_DTH_RI_BE_PV_EOP
  *   actuarial-nomenclature check variables.txt
  *   actuarial-nomenclature find "dread disease"
@@ -27,9 +28,10 @@ function serve(port, host) {
     if (req.method === "OPTIONS") { return send(res, 204, {}); }
     if (req.method === "GET") {
       const q = url.searchParams;
-      if (url.pathname === "/") { return send(res, 200, { service: "actuarial-nomenclature", version: api.version, terms: api.termCount, routes: ["GET or POST /name (description)", "GET or POST /read (name)", "POST /check (items)", "GET /glossary?q=", "GET /rules"] }); }
+      if (url.pathname === "/") { return send(res, 200, { service: "actuarial-nomenclature", version: api.version, terms: api.termCount, routes: ["GET or POST /name (description)", "GET or POST /read (name)", "POST /check (items)", "GET or POST /suggest (description)", "GET /glossary?q=", "GET /rules"] }); }
       if (url.pathname === "/name") { return send(res, 200, api.nameVariable(q.get("description"))); }
       if (url.pathname === "/read") { return send(res, 200, api.readName(q.get("name"))); }
+      if (url.pathname === "/suggest") { return api.suggestTerms(q.get("description")).then((r) => send(res, 200, r)); }
       if (url.pathname === "/glossary") { return send(res, 200, api.searchGlossary(q.get("q"), Number(q.get("limit")) || 10)); }
       if (url.pathname === "/rules") { return send(res, 200, { rules: api.RULES }); }
       return send(res, 404, { error: "Not found" });
@@ -43,6 +45,7 @@ function serve(port, host) {
       if (url.pathname === "/name") { return send(res, 200, api.nameVariable(j.description)); }
       if (url.pathname === "/read") { return send(res, 200, api.readName(j.name)); }
       if (url.pathname === "/check") { return send(res, 200, api.checkList(j.items)); }
+      if (url.pathname === "/suggest") { return api.suggestTerms(j.description).then((r) => send(res, 200, r)); }
       send(res, 404, { error: "Not found" });
     });
   });
@@ -66,6 +69,8 @@ if (cmd === "mcp") {
   const r = api.checkList(lines);
   print(r);
   process.exitCode = r.fix ? 2 : 0;
+} else if (cmd === "suggest" && args[1]) {
+  api.suggestTerms(args.slice(1).filter((a) => a !== "--no-meaning").join(" "), { semantic: args.indexOf("--no-meaning") < 0 }).then(print);
 } else if (cmd === "find" && args[1]) {
   print(api.searchGlossary(args.slice(1).join(" "), 10));
 } else if (cmd === "rules") {
@@ -77,6 +82,7 @@ if (cmd === "mcp") {
     "actuarial-nomenclature " + api.version + " (" + api.termCount + " terms). Rule-based, no AI, no network calls.",
     "",
     "  name \"<description>\"   description to name, as JSON",
+    "  suggest \"<description>\" closest glossary terms for the words that were not used",
     "  read <NAME>            name to English, with a rule check",
     "  check <file|->         one variable per line: a description, or NAME | description",
     "  find \"<word>\"          search the glossary",
