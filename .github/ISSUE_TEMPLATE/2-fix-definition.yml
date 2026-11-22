@@ -20,4 +20,4 @@ body:
     attributes: { label: Source, description: "A public text that supports it, if there is one." }
   - type: input
     id: market
-    attributes: { label: Market and background, description: "For example: South Africa, with-profits valuation. It helps to weigh different views." }
+    attributes: { label: Market and background, description: "For example: United Kingdom, with-profits valuation. It helps to weigh different views." }

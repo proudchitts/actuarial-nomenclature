@@ -45,7 +45,7 @@ for line in text.split("\n"):
 
 for t in terms.values():
     t.setdefault("also", [])
-    t["ext"] = "ZA" if t["family"].startswith("ZA extension") else ""
+    t["ext"] = t["family"].split(" extension: ")[0] if " extension: " in t["family"] else ""
 
 grp = json.load(open(os.path.join(ROOT, "tools", "groups.json"), encoding="utf-8"))
 item_group = {}

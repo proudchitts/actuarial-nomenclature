@@ -4,11 +4,11 @@ Version 0.1 (draft for review)
 
 ## 1. Purpose and scope
 
-This standard gives every variable in a life insurance projection model one predictable name.
+This standard gives every variable in a life insurance projection model one predictable name. It is for life insurance in every market.
 
 It works in both directions. A plain English description of a variable gives exactly one name. A name can be read back into the same English description.
 
-It covers variables in cash flow projection models for life insurance: decrements, policy counts, cash flows, policy values, reserves, IFRS 17 quantities, capital, profit and embedded value. It does not cover general insurance, asset models in detail, or data file layouts.
+It covers variables in cash flow projection models for life insurance: decrements, policy counts, cash flows, policy values, reserves, IFRS 17 quantities, capital, profit and embedded value. It does not cover non-life insurance, asset models in detail, or data file layouts. A separate standard for non-life insurance may follow.
 
 The standard has three parts.
 
@@ -283,7 +283,7 @@ The core list cannot cover every market and every company. Extensions add tokens
 
 ### 11.1 Registered extension sets
 
-A registered set covers one market or one line of business. It has a two letter code. Version 0.1 has one set: **ZA** for South Africa.
+The core is for every market. A registered set holds the terms that only one market uses, such as a local tax fund or a local solvency basis. It has a two letter code. The first registered set is **ZA** for South Africa, because that is where the work started. Sets for other markets are welcome and are added in the same way.
 
 - Tokens in a registered set are unique across the core and all registered sets.
 - A model states the sets it uses, for example "Nomenclature 0.1 with ZA".

@@ -29,7 +29,7 @@ body:
     attributes: { label: Source, description: "A public text that defines it, if there is one. Standard, paragraph, version." }
   - type: dropdown
     id: scope
-    attributes: { label: Where does it apply?, options: ["All markets", "South Africa only", "Another single market (say which below)"] }
+    attributes: { label: Where does it apply?, options: ["Every market", "One market only (say which below)"] }
     validations: { required: true }
   - type: textarea
     id: notes

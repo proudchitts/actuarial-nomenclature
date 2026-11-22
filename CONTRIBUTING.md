@@ -1,6 +1,6 @@
 # How to take part
 
-This standard is only as good as the actuaries who test it. If you build or review projection models, your corrections are wanted. You do not need to write code, and you do not need to agree with what is here.
+This standard is only as good as the actuaries who test it. If you build or review life insurance projection models, in any market, your corrections are wanted. You do not need to write code, and you do not need to agree with what is here.
 
 Every change is reviewed and approved by the maintainer before it goes in.
 
@@ -58,7 +58,7 @@ node tools/test_api.js
 - **A short form** is 2 to 6 capital letters or digits, starts with a letter, does not start with Z, and is not already used.
 - **A definition** is one or two plain sentences that a second actuary would read the same way. Say what the thing is, not how one model calculates it.
 - **Say what it is not.** Name the terms it is most often confused with.
-- **General, not local to one company.** Product names, system names and house codes do not belong here. A term used in one market only goes in that market's extension set.
+- **General, not local to one company.** Product names, system names and house codes do not belong here. A term used in one market only goes in that market's extension set. Any market can have a set: say which market your term belongs to and one will be started.
 
 ## Rules for sources
 

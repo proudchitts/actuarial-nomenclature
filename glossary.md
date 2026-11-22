@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 293 terms: 278 in the core and 15 in the South African extension set.
+There are 293 terms: 278 in the core, which is for every market, and 15 in market extension sets.
 
 ## How to read an entry
 
@@ -2661,7 +2661,7 @@ The inputs a model reads: assumption sets, the tables that hold them, model poin
 
 ## ZA extension: South Africa
 
-Marked extension set ZA. These tokens are part of a name only when a model declares the ZA set.
+Market extension set ZA, for terms used only in South Africa. These tokens are part of a name only when a model declares the ZA set. It is the first market set. Any other market can have its own set in the same way.
 
 ### SAM
 

@@ -1,6 +1,6 @@
 # An open nomenclature for life insurance projection models
 
-Version 0.1. A draft for review.
+Version 0.1. A draft for review. For life insurance in every market.
 
 **Try it:** [proudchitts.github.io/actuarial-nomenclature](https://proudchitts.github.io/actuarial-nomenclature/). Describe a variable in plain English and get its standard name.
 
@@ -14,6 +14,12 @@ If you build or review projection models, this standard needs you. The definitio
 - **Argue with the rules.** The slot order, the defaults and the open questions below can all still change.
 
 Use the [issue forms](https://github.com/proudchitts/actuarial-nomenclature/issues/new/choose). No code is needed. `CONTRIBUTING.md` explains how to send a change directly. Every change is reviewed and approved by the maintainer.
+
+## Scope
+
+Life insurance, in every market. The core glossary holds terms that apply everywhere. Terms that only one market uses, such as a local tax fund or a local solvency basis, go in that market's extension set. South Africa has the first set only because the work started there. Sets for other markets are welcome.
+
+Non-life insurance is out of scope for now. A separate standard for it may follow.
 
 ## The problem
 
@@ -168,7 +174,7 @@ There is no public hosted API. The server listens on your own machine by default
 | File | What it holds |
 |---|---|
 | `standard.md` | The grammar: characters, length, the seven slots, measures, time, bases, parties, extensions |
-| `glossary.md` | The controlled word list: 293 terms in 22 families, 278 in the core and 15 in the South African extension set. This file is the master. |
+| `glossary.md` | The controlled word list: 293 terms in 22 families, 278 in the core, which is for every market, and 15 in the first market extension set (South Africa). This file is the master. |
 | `examples.md` | 221 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
 | `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
@@ -215,6 +221,8 @@ Only the item is always required. Gross of reinsurance and plain amounts are imp
 ## What the definitions were checked against
 
 94 of the 293 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
+
+The core was checked against the two international texts, IFRS 17 and Solvency II. The local texts checked so far are South African, because that is where the work started. Checks against the rules of other markets are wanted.
 
 | Source | What was read | Result |
 |---|---|---|
@@ -271,7 +279,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 8. Are the definitions of lapse, surrender, partial withdrawal, discontinuance, paid-up, maturity and expiry right for every market?
 9. Are initial and acquisition, and renewal and maintenance, usefully different, or does the split cause more trouble than it saves?
 10. Which terms are missing? 66 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
-11. Should the solvency capital terms be in the core, as now, because Solvency II and South Africa share them? Should the five tax funds stay in the extension?
+11. Which markets need their own extension set first, and which of their terms belong in the core? Should the solvency capital terms stay in the core, as now, because several regimes share them?
 12. Embedded value: the glossary follows APN 107, where the value of in-force is before the cost of required capital. Other frameworks quote it after. Is one fixed meaning right for an international standard?
 13. The namer keeps its own list of items that are balances, so that it can ask for a time point. Should that tag move into the glossary?
 14. Should a public hosted API be offered, and who would run it?

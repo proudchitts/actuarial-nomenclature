@@ -101,10 +101,10 @@ def shown(tok):
     return full if full.startswith(("IFRS", "HIV", "Solvency")) else full.lower()
 
 
-ext = [f for f in fams if f[0].startswith("ZA extension")]
+ext = [f for f in fams if " extension: " in f[0]]
 n_ext = sum(len(f[2]) for f in ext)
-head = re.sub(r"There are \d+ terms: \d+ in the core and \d+ in the South African extension set\.",
-              "There are %d terms: %d in the core and %d in the South African extension set." % (len(ents), len(ents) - n_ext, n_ext), head)
+head = re.sub(r"There are \d+ terms: \d+ in the core, which is for every market, and \d+ in market extension sets\.",
+              "There are %d terms: %d in the core, which is for every market, and %d in market extension sets." % (len(ents), len(ents) - n_ext, n_ext), head)
 
 o = [head.rstrip("\n"), "", START, "", "| Family | Terms |", "|---|---|"]
 for title, blurb, toks in fams:
