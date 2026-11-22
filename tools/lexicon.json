@@ -987,6 +987,34 @@
     "initial units": [
       "UNIT",
       "CAPU"
+    ],
+    "fully allocated": [
+      "FULL"
+    ],
+    "marginal": [
+      "MARG"
+    ],
+    "marginal expenses": [
+      "EXP",
+      "MARG"
+    ],
+    "zero acquisition cost": [
+      "NOACQ"
+    ],
+    "zero acquisition costs": [
+      "NOACQ"
+    ],
+    "zero acquisition expenses": [
+      "NOACQ"
+    ],
+    "zero cost": [
+      "NOACQ"
+    ],
+    "pvnbp": [
+      "PVNBP"
+    ],
+    "new business premiums present value": [
+      "PVNBP"
     ]
   },
   "special": {
@@ -1066,7 +1094,8 @@
     "general reserve",
     "ordinary units",
     "initial units",
-    "actual units"
+    "actual units",
+    "zero cost"
   ],
   "stock": [
     "BEL",
@@ -1553,6 +1582,36 @@
         [
           "The full length of the policy",
           "policy term in months"
+        ]
+      ]
+    },
+    {
+      "word": "new business margin",
+      "unless": [],
+      "question": "New business margin is a ratio. Of value of new business to which premium measure?",
+      "options": [
+        [
+          "Annual premium equivalent",
+          "value of new business as a proportion of annual premium equivalent"
+        ],
+        [
+          "Present value of new business premiums",
+          "value of new business as a proportion of present value of new business premiums"
+        ]
+      ]
+    },
+    {
+      "word": "profit margin",
+      "unless": [],
+      "question": "Profit margin is a ratio. Of profit to what?",
+      "options": [
+        [
+          "Premium",
+          "profit as a proportion of premium"
+        ],
+        [
+          "Present value of new business premiums",
+          "profit as a proportion of present value of new business premiums"
         ]
       ]
     }

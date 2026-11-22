@@ -188,7 +188,7 @@ Reminders from `standard.md`:
 | 125 | Annual discount rate on the embedded value basis | `DISC_EV_RATE_ANN` |
 | 126 | Investment return in the period | `INVR` |
 | 127 | Tax borne by policyholders in the period | `TAX_PH` |
-| 128 | Present value at inception of new business premiums, embedded value basis | `PREM_NB_EV_PV_INC` |
+| 128 | Present value of new business premiums | `PVNBP` |
 | 129 | Cost of required capital at the valuation date, embedded value basis | `COC_EV_T0` |
 | 130 | Solvency capital requirement for interest rate risk at the end of the period | `SCR_INT_EOP` |
 | 131 | Solvency capital requirement for revision risk at the end of the period | `SCR_REVN_EOP` |
@@ -301,6 +301,16 @@ A table is named with the table token first, followed by the name of the variabl
 | 200 | Contingency reserve at the end of the period | `RES_CTGY_EOP` |
 | 201 | Expense overrun reserve at the end of the period | `RES_OVRN_EOP` |
 
+### A17. Expense bases for value of new business
+
+| No. | Description | Name |
+|---|---|---|
+| 202 | Marginal cost value of new business in the period | `VNB_MARG` |
+| 203 | Full cost value of new business in the period | `VNB_FULL` |
+| 204 | Zero acquisition cost value of new business in the period | `VNB_NOACQ` |
+| 205 | Fully allocated acquisition expenses in the period | `EXP_ACQ_FULL` |
+| 206 | Value of new business as a proportion of present value of new business premiums | `VNB_PER_PVNBP` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.
@@ -388,3 +398,12 @@ The user must say which period.
 - Time since the valuation date: `TIME_YRS`.
 - Time since the policy started, at the start of the period: `DUR_YRS_BOP`.
 - The full length of the policy: `TERM_YRS`.
+
+### C9. "New business margin"
+
+A margin is a ratio, and the user must say of what to what.
+
+- Value of new business to annual premium equivalent: `VNB_PER_APE`.
+- Value of new business to the present value of new business premiums: `VNB_PER_PVNBP`.
+
+The word margin alone means the margin for prudence in an assumption, which is a different thing.

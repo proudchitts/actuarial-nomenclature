@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 268 terms: 253 in the core and 15 in the South African extension set.
+There are 272 terms: 257 in the core and 15 in the South African extension set.
 
 ## How to read an entry
 
@@ -29,7 +29,7 @@ There are 268 terms: 253 in the core and 15 in the South African extension set.
 | [Cash flows in general](#cash-flows-in-general) | [CF](#cf) [NCF](#ncf) [TAX](#tax) |
 | [Premiums](#premiums) | [PREM](#prem) [SGL](#sgl) [REG](#reg) [OFF](#off) [RISK](#risk) [WAIV](#waiv) [ESC](#esc) [EXTRA](#extra) [NETP](#netp) |
 | [Claims and benefits](#claims-and-benefits) | [CLM](#clm) [BEN](#ben) [SA](#sa) [SAR](#sar) [ANTY](#anty) [LS](#ls) [INCM](#incm) [ACEL](#acel) [SALN](#saln) |
-| [Expenses and commission](#expenses-and-commission) | [EXP](#exp) [INIT](#init) [REN](#ren) [ACQ](#acq) [MAINT](#maint) [ATTR](#attr) [NATTR](#nattr) [INV](#inv) [COMM](#comm) [CLAW](#claw) [INFL](#infl) [OH](#oh) |
+| [Expenses and commission](#expenses-and-commission) | [EXP](#exp) [INIT](#init) [REN](#ren) [ACQ](#acq) [MAINT](#maint) [ATTR](#attr) [NATTR](#nattr) [INV](#inv) [COMM](#comm) [CLAW](#claw) [INFL](#infl) [OH](#oh) [MARG](#marg) [FULL](#full) [NOACQ](#noacq) |
 | [Policy values, unit-linked and with-profits](#policy-values-unit-linked-and-with-profits) | [FV](#fv) [SV](#sv) [UNIT](#unit) [NUNIT](#nunit) [UPRC](#uprc) [ALLOC](#alloc) [CHRG](#chrg) [FMC](#fmc) [BON](#bon) [RVS](#rvs) [TMNL](#tmnl) [ASHR](#ashr) [GTEE](#gtee) [BID](#bid) [OFFER](#offer) [MVR](#mvr) [POLF](#polf) [WP](#wp) [NPAR](#npar) [APPR](#appr) [EXPR](#expr) [BEC](#bec) [AGG](#agg) [ACTF](#actf) [NOML](#noml) [FND](#fnd) [UNFND](#unfnd) [CAPU](#capu) [ACMU](#acmu) |
 | [Economic and investment](#economic-and-investment) | [DISC](#disc) [INT](#int) [FWD](#fwd) [SPOT](#spot) [INVI](#invi) [INVR](#invr) [ASSET](#asset) [EQ](#eq) |
 | [Reinsurance](#reinsurance) | [RET](#ret) [QS](#qs) [XL](#xl) [FACL](#facl) [TRTY](#trty) [COINS](#coins) [FINRE](#finre) |
@@ -37,7 +37,7 @@ There are 268 terms: 253 in the core and 15 in the South African extension set.
 | [IFRS 17](#ifrs-17) | [CSM](#csm) [RA](#ra) [LC](#lc) [LOREC](#lorec) [LRC](#lrc) [LIC](#lic) [FCF](#fcf) [CU](#cu) [IACF](#iacf) [IFE](#ife) [IREV](#irev) [ISE](#ise) [ISR](#isr) [OCI](#oci) [PL](#pl) [INVC](#invc) [ONER](#oner) [GMM](#gmm) [PAA](#paa) [VFA](#vfa) [UNDL](#undl) |
 | [Movements](#movements) | [NB](#nb) [CHG](#chg) [ACCR](#accr) [UNW](#unw) [REL](#rel) [ESTCH](#estch) [EXPV](#expv) |
 | [Capital and risk](#capital-and-risk) | [CAP](#cap) [RCAP](#rcap) [SCR](#scr) [MCR](#mcr) [OF](#of) [MORT](#mort) [LONG](#long) [MORB](#morb) [CAT](#cat) [MKT](#mkt) [SPRD](#sprd) [FX](#fx) [CPTY](#cpty) [OPR](#opr) [DIV](#div) [UP](#up) [DOWN](#down) [MASS](#mass) [LPSR](#lpsr) [REVN](#revn) [PROP](#prop) [CONC](#conc) [LAC](#lac) |
-| [Profit, embedded value and new business](#profit-embedded-value-and-new-business) | [PROF](#prof) [DISTE](#diste) [TRF](#trf) [ANW](#anw) [VIF](#vif) [VNB](#vnb) [APE](#ape) [COC](#coc) [TVOG](#tvog) [FSUR](#fsur) [SURP](#surp) [NBS](#nbs) [IRR](#irr) [DPP](#dpp) [APV](#apv) [CAPRQ](#caprq) |
+| [Profit, embedded value and new business](#profit-embedded-value-and-new-business) | [PROF](#prof) [DISTE](#diste) [TRF](#trf) [ANW](#anw) [VIF](#vif) [VNB](#vnb) [APE](#ape) [COC](#coc) [TVOG](#tvog) [FSUR](#fsur) [SURP](#surp) [NBS](#nbs) [IRR](#irr) [DPP](#dpp) [APV](#apv) [CAPRQ](#caprq) [PVNBP](#pvnbp) |
 | [Policy data](#policy-data) | [SEX](#sex) [SMK](#smk) [OCC](#occ) [FREQ](#freq) |
 | [Tables, assumptions and model data](#tables-assumptions-and-model-data) | [ASM](#asm) [ECON](#econ) [DEMOG](#demog) [MPT](#mpt) [SCEN](#scen) |
 | [ZA extension: South Africa](#za-extension-south-africa) | [SAM](#sam) [FSV](#fsv) [FUN](#fun) [HIV](#hiv) [RETR](#retr) [IPF](#ipf) [CPF](#cpf) [UPF](#upf) [RPF](#rpf) [BSR](#bsr) [CORF](#corf) [CRDL](#crdl) [COMP](#comp) [DISCR](#discr) [CAR](#car) |
@@ -550,7 +550,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Definition:** As an item, the value of shareholders' interests in the covered business: adjusted net worth plus the value of in-force less the cost of required capital. It excludes future new business. As a basis, the assumptions and rules used to calculate it.
 - **Not to be confused with:** Not VIF, which is one part of it. Not VNB, which covers new business only. EEV and MCEV are other embedded value frameworks with their own rules, so a description must say which framework applies.
 - **Source checked:** ASSA APN 107 version 8 sections 2.1 and 2.3
-- **Related terms:** [ANW](#anw) adjusted net worth, [VIF](#vif) value of in-force, [VNB](#vnb) value of new business, [COC](#coc) cost of capital, [TVOG](#tvog) time value of options and guarantees, [PROF](#prof) profit, [FSUR](#fsur) free surplus, [RCAP](#rcap) required capital, [APV](#apv) appraisal value
+- **Related terms:** [ANW](#anw) adjusted net worth, [VIF](#vif) value of in-force, [VNB](#vnb) value of new business, [COC](#coc) cost of capital, [TVOG](#tvog) time value of options and guarantees, [PROF](#prof) profit, [FSUR](#fsur) free surplus, [RCAP](#rcap) required capital, [APV](#apv) appraisal value, [PVNBP](#pvnbp) present value of new business premiums
 
 ### RN
 
@@ -900,7 +900,7 @@ Premium items and the tokens that narrow them.
 - **Also called:** contribution, consideration
 - **Definition:** The amount payable by the policyholder to the insurer for cover or investment in the model period.
 - **Not to be confused with:** Not CHRG, which is deducted from a fund and not paid in. Not a reinsurance premium unless party RI is stated.
-- **Related terms:** [SGL](#sgl) single, [REG](#reg) regular, [OFF](#off) office premium, [RISK](#risk) risk premium, [WAIV](#waiv) waiver of premium, [ESC](#esc) escalation, [ALLOC](#alloc) allocation, [APE](#ape) annual premium equivalent, [CHRG](#chrg) charge, [CF](#cf) cash flow, [EXTRA](#extra) extra, [NETP](#netp) net premium, [POLF](#polf) policy fee, [UPR](#upr) unearned premium reserve, [FREQ](#freq) frequency
+- **Related terms:** [SGL](#sgl) single, [REG](#reg) regular, [OFF](#off) office premium, [RISK](#risk) risk premium, [WAIV](#waiv) waiver of premium, [ESC](#esc) escalation, [ALLOC](#alloc) allocation, [APE](#ape) annual premium equivalent, [CHRG](#chrg) charge, [CF](#cf) cash flow, [EXTRA](#extra) extra, [NETP](#netp) net premium, [POLF](#polf) policy fee, [UPR](#upr) unearned premium reserve, [PVNBP](#pvnbp) present value of new business premiums, [FREQ](#freq) frequency
 
 ### SGL
 
@@ -1070,7 +1070,7 @@ The insurer's own costs and what it pays to intermediaries.
 - **Also called:** cost
 - **Definition:** A cost the insurer incurs in running its business, other than claims, commission and tax.
 - **Not to be confused with:** Not EXPY (expiry). Not EXPV (experience variance). Not COMM: commission is a separate item in this standard and is never included in EXP.
-- **Related terms:** [COMM](#comm) commission, [INIT](#init) initial, [REN](#ren) renewal, [ACQ](#acq) acquisition, [MAINT](#maint) maintenance, [ATTR](#attr) directly attributable, [NATTR](#nattr) not directly attributable, [INV](#inv) investment, [INFL](#infl) inflation, [CF](#cf) cash flow, [IACF](#iacf) insurance acquisition cash flows, [ISE](#ise) insurance service expenses, [OH](#oh) overhead, [OVRN](#ovrn) expense overrun
+- **Related terms:** [COMM](#comm) commission, [INIT](#init) initial, [REN](#ren) renewal, [ACQ](#acq) acquisition, [MAINT](#maint) maintenance, [ATTR](#attr) directly attributable, [NATTR](#nattr) not directly attributable, [INV](#inv) investment, [INFL](#infl) inflation, [CF](#cf) cash flow, [IACF](#iacf) insurance acquisition cash flows, [ISE](#ise) insurance service expenses, [OH](#oh) overhead, [MARG](#marg) marginal cost, [FULL](#full) full cost, [NOACQ](#noacq) zero acquisition cost, [OVRN](#ovrn) expense overrun
 
 ### INIT
 
@@ -1097,7 +1097,7 @@ The insurer's own costs and what it pays to intermediaries.
 - **Also called:** new business cost
 - **Definition:** Narrows an expense to the cost of selling, underwriting and starting contracts. It is defined by purpose, and can arise after the first period.
 - **Not to be confused with:** Not INIT, which is defined by timing. Not IACF, which is the IFRS 17 measure of acquisition cash flows including commission.
-- **Related terms:** [INIT](#init) initial, [MAINT](#maint) maintenance, [IACF](#iacf) insurance acquisition cash flows, [EXP](#exp) expense, [NB](#nb) new business, [ATTR](#attr) directly attributable
+- **Related terms:** [INIT](#init) initial, [MAINT](#maint) maintenance, [IACF](#iacf) insurance acquisition cash flows, [EXP](#exp) expense, [NB](#nb) new business, [ATTR](#attr) directly attributable, [MARG](#marg) marginal cost, [FULL](#full) full cost, [NOACQ](#noacq) zero acquisition cost
 
 ### MAINT
 
@@ -1143,7 +1143,7 @@ The insurer's own costs and what it pays to intermediaries.
 - **Also called:** brokerage, intermediary remuneration
 - **Definition:** An amount paid to an intermediary for selling or servicing a policy. With party RI it is commission the reinsurer pays to the insurer.
 - **Not to be confused with:** Not EXP. Not CHRG.
-- **Related terms:** [EXP](#exp) expense, [INIT](#init) initial, [REN](#ren) renewal, [CLAW](#claw) clawback, [IACF](#iacf) insurance acquisition cash flows, [CF](#cf) cash flow
+- **Related terms:** [EXP](#exp) expense, [INIT](#init) initial, [REN](#ren) renewal, [CLAW](#claw) clawback, [IACF](#iacf) insurance acquisition cash flows, [CF](#cf) cash flow, [NOACQ](#noacq) zero acquisition cost
 
 ### CLAW
 
@@ -1170,7 +1170,34 @@ The insurer's own costs and what it pays to intermediaries.
 - **Also called:** overheads, fixed expenses
 - **Definition:** Narrows an expense to costs that do not vary with the amount of business written or in force.
 - **Not to be confused with:** Not NATTR. An overhead can still be directly attributable to fulfilling contracts.
-- **Related terms:** [EXP](#exp) expense, [MAINT](#maint) maintenance, [ATTR](#attr) directly attributable, [NATTR](#nattr) not directly attributable, [POLF](#polf) policy fee, [OVRN](#ovrn) expense overrun
+- **Related terms:** [EXP](#exp) expense, [MAINT](#maint) maintenance, [ATTR](#attr) directly attributable, [NATTR](#nattr) not directly attributable, [POLF](#polf) policy fee, [MARG](#marg) marginal cost, [FULL](#full) full cost, [OVRN](#ovrn) expense overrun
+
+### MARG
+
+- **Full term:** Marginal cost
+- **Slot:** KIND
+- **Also called:** marginal, incremental cost, variable cost
+- **Definition:** Narrows an expense, or a value that depends on expenses, to a basis that counts only the extra expenses caused by writing or keeping the business in question.
+- **Not to be confused with:** Not MGN (margin for prudence). Not FULL, which also takes a share of overheads.
+- **Related terms:** [FULL](#full) full cost, [NOACQ](#noacq) zero acquisition cost, [EXP](#exp) expense, [ACQ](#acq) acquisition, [OH](#oh) overhead, [VNB](#vnb) value of new business
+
+### FULL
+
+- **Full term:** Full cost
+- **Slot:** KIND
+- **Also called:** fully allocated, fully absorbed cost
+- **Definition:** Narrows an expense, or a value that depends on expenses, to a basis that counts all expenses allocated to the business, including a share of overheads.
+- **Not to be confused with:** Not MARG. Not the whole of an item in the sense of gross.
+- **Related terms:** [MARG](#marg) marginal cost, [NOACQ](#noacq) zero acquisition cost, [EXP](#exp) expense, [ACQ](#acq) acquisition, [OH](#oh) overhead, [VNB](#vnb) value of new business
+
+### NOACQ
+
+- **Full term:** Zero acquisition cost
+- **Slot:** KIND
+- **Also called:** zero cost, before acquisition expenses
+- **Definition:** Narrows a value to one calculated with no acquisition expenses charged at all.
+- **Not to be confused with:** Not MARG, which still charges the incremental acquisition expenses. Commission is not an expense in this standard, so the description must say if commission is left out as well.
+- **Related terms:** [MARG](#marg) marginal cost, [FULL](#full) full cost, [ACQ](#acq) acquisition, [EXP](#exp) expense, [VNB](#vnb) value of new business, [COMM](#comm) commission
 
 ## Policy values, unit-linked and with-profits
 
@@ -1909,7 +1936,7 @@ Tokens for the MOVE slot. They turn a balance into the flow that explains part o
 - **Also called:** new contracts, sales
 - **Definition:** The part of a flow or of the change in a balance that comes from contracts first recognised in the model period.
 - **Not to be confused with:** Not VNB, which is a value measure. Not RINST. Not NTU.
-- **Related terms:** [VNB](#vnb) value of new business, [APE](#ape) annual premium equivalent, [ACQ](#acq) acquisition, [INC](#inc) inception, [IF](#if) in force, [POL](#pol) policy, [RINST](#rinst) reinstatement, [NTU](#ntu) not taken up, [CSM](#csm) contractual service margin, [CHG](#chg) change, [NBS](#nbs) new business strain
+- **Related terms:** [VNB](#vnb) value of new business, [APE](#ape) annual premium equivalent, [ACQ](#acq) acquisition, [INC](#inc) inception, [IF](#if) in force, [POL](#pol) policy, [RINST](#rinst) reinstatement, [NTU](#ntu) not taken up, [CSM](#csm) contractual service margin, [CHG](#chg) change, [NBS](#nbs) new business strain, [PVNBP](#pvnbp) present value of new business premiums
 
 ### CHG
 
@@ -2252,7 +2279,7 @@ Measures of profit and of value to shareholders.
 - **Definition:** The present value at the point of sale of future after tax shareholder profits from business written in the period, less the cost of required capital.
 - **Not to be confused with:** Not NB. Not VIF. Not the CSM on new business.
 - **Source checked:** ASSA APN 107 version 8 sections 2.9 and 5.6
-- **Related terms:** [NB](#nb) new business, [EV](#ev) embedded value, [VIF](#vif) value of in-force, [APE](#ape) annual premium equivalent, [PROF](#prof) profit, [NBS](#nbs) new business strain, [IRR](#irr) internal rate of return, [APV](#apv) appraisal value
+- **Related terms:** [NB](#nb) new business, [EV](#ev) embedded value, [VIF](#vif) value of in-force, [APE](#ape) annual premium equivalent, [PROF](#prof) profit, [MARG](#marg) marginal cost, [FULL](#full) full cost, [NOACQ](#noacq) zero acquisition cost, [NBS](#nbs) new business strain, [IRR](#irr) internal rate of return, [APV](#apv) appraisal value, [PVNBP](#pvnbp) present value of new business premiums
 
 ### APE
 
@@ -2261,7 +2288,7 @@ Measures of profit and of value to shareholders.
 - **Definition:** New regular premiums expressed per year plus one tenth of new single premiums.
 - **Not to be confused with:** Not a premium that is actually received. Not the present value of new business premiums, which is what APN 107 asks to be disclosed.
 - **Source checked:** Market convention. Not defined in the sources checked
-- **Related terms:** [VNB](#vnb) value of new business, [NB](#nb) new business, [PREM](#prem) premium, [SGL](#sgl) single, [REG](#reg) regular
+- **Related terms:** [VNB](#vnb) value of new business, [NB](#nb) new business, [PREM](#prem) premium, [SGL](#sgl) single, [REG](#reg) regular, [PVNBP](#pvnbp) present value of new business premiums
 
 ### COC
 
@@ -2343,6 +2370,14 @@ Measures of profit and of value to shareholders.
 - **Definition:** The finance the insurer needs in order to write a contract or carry out its business plan. For one contract it is the new business strain.
 - **Not to be confused with:** Not RCAP, which is the capital that must be held against business already written. Not SCR.
 - **Related terms:** [RCAP](#rcap) required capital, [NBS](#nbs) new business strain, [CAP](#cap) capital, [FINRE](#finre) financial reinsurance
+
+### PVNBP
+
+- **Full term:** Present value of new business premiums
+- **Slot:** ITEM
+- **Definition:** The present value at the point of sale of all premiums expected from the business written in the period, on the embedded value basis.
+- **Not to be confused with:** Not APE, which is a simple annualised measure with no discounting. Use this item and not a built present value of premiums when the embedded value measure is meant.
+- **Related terms:** [VNB](#vnb) value of new business, [APE](#ape) annual premium equivalent, [NB](#nb) new business, [PREM](#prem) premium, [EV](#ev) embedded value
 
 ## Policy data
 
@@ -2692,6 +2727,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [FREQ](#freq) | Frequency | ITEM | Policy data |
 | [FSUR](#fsur) | Free surplus | ITEM | Profit, embedded value and new business |
 | [FSV](#fsv) | Financial soundness valuation | BASIS | ZA extension: South Africa |
+| [FULL](#full) | Full cost | KIND | Expenses and commission |
 | [FUN](#fun) | Funeral cover | KIND | ZA extension: South Africa |
 | [FUT](#fut) | Future total | MEASURE | Measures |
 | [FV](#fv) | Fund value | ITEM | Policy values, unit-linked and with-profits |
@@ -2737,6 +2773,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [LRC](#lrc) | Liability for remaining coverage | ITEM | IFRS 17 |
 | [LS](#ls) | Lump sum | KIND | Claims and benefits |
 | [MAINT](#maint) | Maintenance | KIND | Expenses and commission |
+| [MARG](#marg) | Marginal cost | KIND | Expenses and commission |
 | [MASS](#mass) | Mass | KIND | Capital and risk |
 | [MAT](#mat) | Maturity | ITEM or KIND | Decrements and policy status |
 | [MCR](#mcr) | Minimum capital requirement | ITEM | Capital and risk |
@@ -2757,6 +2794,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [NEG](#neg) | Negative | KIND | Reserves and liabilities |
 | [NET](#net) | Net of reinsurance | PARTY | Party |
 | [NETP](#netp) | Net premium | KIND | Premiums |
+| [NOACQ](#noacq) | Zero acquisition cost | KIND | Expenses and commission |
 | [NOML](#noml) | Nominal | KIND | Policy values, unit-linked and with-profits |
 | [NPAR](#npar) | Without-profits | KIND | Policy values, unit-linked and with-profits |
 | [NTU](#ntu) | Not taken up | ITEM | Decrements and policy status |
@@ -2788,6 +2826,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [PRU](#pru) | Prudent | BASIS | Basis |
 | [PUP](#pup) | Paid-up | ITEM or KIND | Decrements and policy status |
 | [PV](#pv) | Present value | MEASURE | Measures |
+| [PVNBP](#pvnbp) | Present value of new business premiums | ITEM | Profit, embedded value and new business |
 | [QS](#qs) | Quota share | KIND | Reinsurance |
 | [RA](#ra) | Risk adjustment | ITEM | IFRS 17 |
 | [RATE](#rate) | Rate | MEASURE | Measures |
@@ -2894,6 +2933,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | base table | [TBL](#tbl) |
 | basis change | [ESTCH](#estch) |
 | basis item | [ASM](#asm) |
+| before acquisition expenses | [NOACQ](#noacq) |
 | before reinsurance | [GRS](#grs) |
 | beginning of period | [BOP](#bop) |
 | benefit level | [BEN](#ben) |
@@ -3014,6 +3054,8 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | frictional cost | [COC](#coc) |
 | FSI basis | [SAM](#sam) |
 | full withdrawal | [SUR](#sur) |
+| fully absorbed cost | [FULL](#full) |
+| fully allocated | [FULL](#full) |
 | funding credit | [UNFND](#unfnd) |
 | funding of units | [ACTF](#actf) |
 | funeral benefit | [FUN](#fun) |
@@ -3031,6 +3073,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | income stream | [ANTY](#anty) |
 | increase | [CHG](#chg) |
 | increase | [UP](#up) |
+| incremental cost | [MARG](#marg) |
 | independent benefit | [SALN](#saln) |
 | index level | [IDX](#idx) |
 | indexation | [ESC](#esc) |
@@ -3055,6 +3098,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | loss-making | [ONER](#oner) |
 | lump sum premium | [SGL](#sgl) |
 | made paid-up | [PUP](#pup) |
+| marginal | [MARG](#marg) |
 | market | [ECON](#econ) |
 | market consistent value | [FAIR](#fair) |
 | market value adjustment | [MVR](#mvr) |
@@ -3234,6 +3278,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | valuation net premium | [NETP](#netp) |
 | valuation strain | [NBS](#nbs) |
 | value | [AMT](#amt) |
+| variable cost | [MARG](#marg) |
 | vested bonus | [RVS](#rvs) |
 | voluntary termination | [DCON](#dcon) |
 | VONB | [VNB](#vnb) |
@@ -3243,4 +3288,5 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | year of policy | [POLYR](#polyr) |
 | yearly | [ANN](#ann) |
 | years | [YRS](#yrs) |
+| zero cost | [NOACQ](#noacq) |
 | zero coupon rate | [SPOT](#spot) |
