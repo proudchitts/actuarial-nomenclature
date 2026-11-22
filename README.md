@@ -51,7 +51,7 @@ The namer uses fixed rules. It does not use AI, it does not call any server, and
 ### How we know one name is not given to two meanings
 
 - Each short form has one definition. `check.py` fails if two entries share a short form or a full term.
-- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 158 example names read back to a description that gives the same name again.
+- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 193 example names read back to a description that gives the same name again.
 - Two different descriptions that give the same name are either the same variable in different words, or one of them left out a detail. "Check a list" flags every such pair for a person to decide.
 
 ### What it cannot do
@@ -123,8 +123,8 @@ There is no public hosted API. The server listens on your own machine by default
 | File | What it holds |
 |---|---|
 | `standard.md` | The grammar: characters, length, the seven slots, measures, time, bases, parties, extensions |
-| `glossary.md` | The controlled word list: 230 terms in 20 families, 215 in the core and 15 in the South African extension set. This file is the master. |
-| `examples.md` | 158 descriptions turned into names, 10 names read back into English, 7 descriptions that are too vague to name |
+| `glossary.md` | The controlled word list: 259 terms in 22 families, 244 in the core and 15 in the South African extension set. This file is the master. |
+| `examples.md` | 193 descriptions turned into names, 10 names read back into English, 8 descriptions that are too vague to name |
 | `docs/` | The web page: `index.html`, the namer `namer.js`, and `data.js` which is built from the glossary |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
 | `tools/build.py` | Builds `docs/data.js` from `glossary.md` and the lexicon |
@@ -166,7 +166,7 @@ Only the item is always required. Gross of reinsurance and plain amounts are imp
 
 ## What the definitions were checked against
 
-92 of the 230 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
+92 of the 259 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
 
 | Source | What was read | Result |
 |---|---|---|
@@ -179,11 +179,13 @@ Points to know about the South African guidance. PGNs were renamed SAPs and APNs
 
 ## Limits of this draft
 
+- The glossary is not a complete list of life insurance terms. It grows as real variable lists are run through it. Every failure in "Check a list" is a missing term or phrase, and a company can cover a gap at once with a private token that starts with Z.
+
 - The check scripts test form. They cannot test that a definition is right. That needs actuarial review.
 - The checks against published texts were done by AI research and spot-checked. They have not been reviewed by a second actuary.
 - Not confirmed from a primary source: later amendments to the Delegated Regulation and to the South African standards since 2018, the current rand cap on funeral cover, the annual premium equivalent formula (a market convention), and any formal definition of paid-up, partial withdrawal and not taken up.
-- The 138 entries with no source line are general actuarial terms that these texts do not define.
-- The namer passes all 158 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
+- The 167 entries with no source line are general actuarial terms that these texts do not define.
+- The namer passes all 193 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
 - No name has yet been tried in a real model on a real platform.
 
 ## Where the grammar strained during testing, and what changed
@@ -203,7 +205,9 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 11. **Same concept, two local names.** Dread disease and critical illness are one concept, so they cannot have two short forms. The glossary gained an "also called" field and a table of everyday words. It also gained a "slot" field so that names can be checked by a program.
 12. **Short forms that clashed.** Annual and annuity, accumulated and accident and accretion, inception and income and initial, change and charge, indicator and independent. Each pair was given clearly different short forms. Excess of loss took the short form that starts with X, so private tokens use Z.
 13. **Embedded value is both an item and a basis.** It is one concept, so it has one short form that may sit in either slot. The first token of a name is always the item, so there is no doubt when reading.
-14. **Things the grammar cannot yet say.** Persistency at a stated duration, such as 13 months, because names carry no numbers. Select periods of a stated length. Anything indexed by fund, benefit or life beyond the simple instance suffix.
+14. **Time lengths needed a unit.** The first draft said names carry no units. That broke on policy duration, which models hold in months and in years side by side. Lengths of time and ages now say years or months. Nothing else carries a unit.
+15. **Tables needed a name of their own.** A mortality table is not a variable, so the slot order had no place for it. A table is now the table token followed by the name of the variable it holds, as in `TBL_LPS_INDP_RATE_ANN`.
+16. **Things the grammar cannot yet say.** Persistency at a stated duration, such as 13 months, because names carry no numbers. Select periods of a stated length. Anything indexed by fund, benefit or life beyond the simple instance suffix.
 
 ## Open questions for reviewers
 
@@ -216,7 +220,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 7. Should the denominator of a ratio be allowed to carry qualifiers?
 8. Are the definitions of lapse, surrender, partial withdrawal, discontinuance, paid-up, maturity and expiry right for every market?
 9. Are initial and acquisition, and renewal and maintenance, usefully different, or does the split cause more trouble than it saves?
-10. Which terms are missing? 63 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
+10. Which terms are missing? 59 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
 11. Should the solvency capital terms be in the core, as now, because Solvency II and South Africa share them? Should the five tax funds stay in the extension?
 12. Embedded value: the glossary follows APN 107, where the value of in-force is before the cost of required capital. Other frameworks quote it after. Is one fixed meaning right for an international standard?
 13. The namer keeps its own list of items that are balances, so that it can ask for a time point. Should that tag move into the glossary?

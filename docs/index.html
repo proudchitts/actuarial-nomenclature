@@ -261,7 +261,7 @@ footer a{color:var(--accent)}
       return s(a) - s(b) || (a < b ? -1 : 1);
     });
     $("glossCount").textContent = hits.length + " of " + all.length + " terms";
-    hits.slice(0, q ? 40 : 230).forEach(function (k) {
+    hits.slice(0, q ? 40 : 999).forEach(function (k) {
       var t = T[k], d = el("div", "term");
       var h = el("h3"); h.appendChild(el("code", "", k)); h.appendChild(document.createTextNode("  " + t.full)); d.appendChild(h);
       d.appendChild(el("p", "meta", t.slot + " · " + t.family + (t.also.length ? " · also called: " + t.also.join(", ") : "")));

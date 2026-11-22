@@ -18,7 +18,7 @@ Reminders from `standard.md`:
 |---|---|---|
 | 1 | Independent annual rate of death | `DTH_INDP_RATE_ANN` |
 | 2 | Dependent monthly rate of death | `DTH_DEP_RATE_MTH` |
-| 3 | Independent annual rate of death read from the base table | `DTH_INDP_TBL_RATE_ANN` |
+| 3 | Independent annual rate of death read from the base table | `DTH_TBL_INDP_RATE_ANN` |
 | 4 | Adjustment factor applied to rates of death | `DTH_ADJ_FAC` |
 | 5 | Annual rate of mortality improvement | `DTH_IMP_RATE_ANN` |
 | 6 | Dependent monthly rate of lapse | `LPS_DEP_RATE_MTH` |
@@ -234,6 +234,60 @@ Dread disease is the South African name for critical illness. It is the same con
 | 157 | Overhead expenses in the period | `EXP_OH` |
 | 158 | Maturity payments on with-profits business in the period | `CLM_MAT_WP` |
 
+### A13. Time and policy data
+
+A length of time or an age says its unit. This is the one place where a name carries a unit.
+
+| No. | Description | Name |
+|---|---|---|
+| 159 | Policy duration in months at the end of the period | `DUR_MTHS_EOP` |
+| 160 | Policy term in years | `TERM_YRS` |
+| 161 | Premium payment term in years | `TERM_PREM_YRS` |
+| 162 | Remaining policy term in months at the start of the period | `TERM_REM_MTHS_BOP` |
+| 163 | Projection time in months | `TIME_MTHS` |
+| 164 | Policy year at the start of the period | `POLYR_BOP` |
+| 165 | Indicator that the period contains a policy anniversary | `ANNIV_IND` |
+| 166 | Inception date | `DATE_INC` |
+| 167 | Maturity date | `DATE_MAT` |
+| 168 | Date of birth | `DOB` |
+| 169 | Calendar year at the end of the period | `CALYR_EOP` |
+| 170 | Age last birthday at inception | `AGE_ALB_INC` |
+| 171 | Sex | `SEX` |
+| 172 | Smoker status | `SMK` |
+| 173 | Premium frequency | `FREQ_PREM` |
+
+### A14. Tables, assumptions and model data
+
+A table is named with the table token first, followed by the name of the variable it holds.
+
+| No. | Description | Name |
+|---|---|---|
+| 174 | Mortality table | `TBL_DTH` |
+| 175 | Select mortality table | `TBL_DTH_SEL` |
+| 176 | Table of independent annual lapse rates | `TBL_LPS_INDP_RATE_ANN` |
+| 177 | Economic assumption table | `TBL_ASM_ECON` |
+| 178 | Demographic assumption set | `ASM_DEMOG` |
+| 179 | Expense assumption table | `TBL_ASM_EXP` |
+| 180 | Table of initial commission as a proportion of premium | `TBL_COMM_INIT_PER_PREM` |
+| 181 | Table of annual spot discount rates | `TBL_DISC_SPOT_RATE_ANN` |
+| 182 | Number of model points | `MPT_CNT` |
+| 183 | Scenario | `SCEN` |
+
+### A15. Unit pricing, reserves and value
+
+| No. | Description | Name |
+|---|---|---|
+| 184 | Appropriation price at the end of the period | `UPRC_APPR_EOP` |
+| 185 | Expropriation price at the end of the period | `UPRC_EXPR_EOP` |
+| 186 | Negative non-unit reserve at the end of the period | `RES_NEG_NUNIT_EOP` |
+| 187 | Mismatching reserve at the end of the period | `RES_MISM_EOP` |
+| 188 | Reserve on the fair value basis at the end of the period | `RES_FAIR_EOP` |
+| 189 | Bonus earning capacity | `BEC` |
+| 190 | Appraisal value at the valuation date | `APV_T0` |
+| 191 | Aggregate asset share at the end of the period | `ASHR_AGG_EOP` |
+| 192 | Financial reinsurance premiums in the period | `PREM_FINRE` |
+| 193 | Requirement for capital at inception | `CAPRQ_INC` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.
@@ -313,3 +367,11 @@ The user must say whether lump sum or income benefits are meant, or both, and wh
 - All disability claims together: `CLM_DIS`.
 - Income benefits only: `CLM_DIS_INCM`.
 - Premiums waived while disabled are a separate claim: `CLM_WAIV`.
+
+### C8. "Period in years"
+
+The user must say which period.
+
+- Time since the valuation date: `TIME_YRS`.
+- Time since the policy started, at the start of the period: `DUR_YRS_BOP`.
+- The full length of the policy: `TERM_YRS`.

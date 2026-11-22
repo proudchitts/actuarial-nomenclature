@@ -96,7 +96,7 @@ for tok in entries:
 slot = {t: e.get("Slot", "") for t, e in entries.items()}
 
 # ---------- grammar ----------
-PRIMARY = {"CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX"}
+PRIMARY = {"CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"}
 AGGR = {"CUM", "ACC", "FUT", "AVG"}
 BASE = {"ANN", "MTH", "PRD"}
 POINT = {"BOP", "MOP", "EOP", "T0", "INC"}
@@ -126,6 +126,9 @@ def check_name(name, where):
             p.append("%s: %s writes %s, which is implied and never written" % (where, name, t))
     if p:
         return p
+    if toks[0] == "TBL" and len(toks) > 1:
+        # a table is named TBL plus the name of the variable it holds
+        return [x for x in check_name("_".join(name.split("_")[1:]), where) if "longer than" not in x and "more than 9" not in x]
     if "ITEM" not in slot[toks[0]]:
         return ["%s: %s starts with %s, which is not an ITEM" % (where, name, toks[0])]
     rest = toks[1:]

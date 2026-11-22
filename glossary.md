@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 230 terms: 215 in the core and 15 in the South African extension set.
+There are 259 terms: 244 in the core and 15 in the South African extension set.
 
 ## How to read an entry
 
@@ -20,24 +20,26 @@ There are 230 terms: 215 in the core and 15 in the South African extension set.
 | Family | Terms |
 |---|---|
 | [Time points and time bases](#time-points-and-time-bases) | [BOP](#bop) [EOP](#eop) [MOP](#mop) [T0](#t0) [INC](#inc) [BEF](#bef) [AFT](#aft) [ANN](#ann) [MTH](#mth) [PRD](#prd) |
-| [Time and age items](#time-and-age-items) | [TIME](#time) [DUR](#dur) [TERM](#term) [REM](#rem) [AGE](#age) [DATE](#date) [DEFP](#defp) [WAITP](#waitp) |
-| [Measures](#measures) | [AMT](#amt) [CNT](#cnt) [RATE](#rate) [PROB](#prob) [FORCE](#force) [PV](#pv) [FAC](#fac) [IND](#ind) [FLG](#flg) [IDX](#idx) [PER](#per) [CUM](#cum) [FUT](#fut) [ACC](#acc) [AVG](#avg) |
+| [Time and age items](#time-and-age-items) | [TIME](#time) [DUR](#dur) [TERM](#term) [REM](#rem) [AGE](#age) [DATE](#date) [DEFP](#defp) [WAITP](#waitp) [POLYR](#polyr) [ANNIV](#anniv) [CALYR](#calyr) [CALMTH](#calmth) [DOB](#dob) [ALB](#alb) [ANB](#anb) [ANRB](#anrb) |
+| [Measures](#measures) | [AMT](#amt) [CNT](#cnt) [RATE](#rate) [PROB](#prob) [FORCE](#force) [PV](#pv) [FAC](#fac) [IND](#ind) [FLG](#flg) [IDX](#idx) [PER](#per) [CUM](#cum) [FUT](#fut) [ACC](#acc) [AVG](#avg) [YRS](#yrs) [MTHS](#mths) |
 | [Party](#party) | [GRS](#grs) [RI](#ri) [NET](#net) [SH](#sh) [PH](#ph) |
-| [Basis](#basis) | [BE](#be) [PRU](#pru) [PRC](#prc) [IFL](#ifl) [IFC](#ifc) [SII](#sii) [EV](#ev) [RN](#rn) [RW](#rw) |
+| [Basis](#basis) | [BE](#be) [PRU](#pru) [PRC](#prc) [IFL](#ifl) [IFC](#ifc) [SII](#sii) [EV](#ev) [RN](#rn) [RW](#rw) [FAIR](#fair) |
 | [Decrements and policy status](#decrements-and-policy-status) | [DEC](#dec) [EXIT](#exit) [DTH](#dth) [LPS](#lps) [SUR](#sur) [WDL](#wdl) [DCON](#dcon) [PUP](#pup) [RINST](#rinst) [PERS](#pers) [MAT](#mat) [EXPY](#expy) [NTU](#ntu) [DIS](#dis) [REC](#rec) [CI](#ci) [ACCD](#accd) [IF](#if) [POL](#pol) [LIFE](#life) |
 | [Assumption building](#assumption-building) | [DEP](#dep) [INDP](#indp) [SEL](#sel) [ULT](#ult) [TBL](#tbl) [ADJ](#adj) [IMP](#imp) [LOAD](#load) [MGN](#mgn) [SHK](#shk) |
 | [Cash flows in general](#cash-flows-in-general) | [CF](#cf) [NCF](#ncf) [TAX](#tax) |
 | [Premiums](#premiums) | [PREM](#prem) [SGL](#sgl) [REG](#reg) [OFF](#off) [RISK](#risk) [WAIV](#waiv) [ESC](#esc) [EXTRA](#extra) [NETP](#netp) |
 | [Claims and benefits](#claims-and-benefits) | [CLM](#clm) [BEN](#ben) [SA](#sa) [SAR](#sar) [ANTY](#anty) [LS](#ls) [INCM](#incm) [ACEL](#acel) [SALN](#saln) |
 | [Expenses and commission](#expenses-and-commission) | [EXP](#exp) [INIT](#init) [REN](#ren) [ACQ](#acq) [MAINT](#maint) [ATTR](#attr) [NATTR](#nattr) [INV](#inv) [COMM](#comm) [CLAW](#claw) [INFL](#infl) [OH](#oh) |
-| [Policy values, unit-linked and with-profits](#policy-values-unit-linked-and-with-profits) | [FV](#fv) [SV](#sv) [UNIT](#unit) [NUNIT](#nunit) [UPRC](#uprc) [ALLOC](#alloc) [CHRG](#chrg) [FMC](#fmc) [BON](#bon) [RVS](#rvs) [TMNL](#tmnl) [ASHR](#ashr) [GTEE](#gtee) [BID](#bid) [OFFER](#offer) [MVR](#mvr) [POLF](#polf) [WP](#wp) [NPAR](#npar) |
+| [Policy values, unit-linked and with-profits](#policy-values-unit-linked-and-with-profits) | [FV](#fv) [SV](#sv) [UNIT](#unit) [NUNIT](#nunit) [UPRC](#uprc) [ALLOC](#alloc) [CHRG](#chrg) [FMC](#fmc) [BON](#bon) [RVS](#rvs) [TMNL](#tmnl) [ASHR](#ashr) [GTEE](#gtee) [BID](#bid) [OFFER](#offer) [MVR](#mvr) [POLF](#polf) [WP](#wp) [NPAR](#npar) [APPR](#appr) [EXPR](#expr) [BEC](#bec) [AGG](#agg) |
 | [Economic and investment](#economic-and-investment) | [DISC](#disc) [INT](#int) [FWD](#fwd) [SPOT](#spot) [INVI](#invi) [INVR](#invr) [ASSET](#asset) [EQ](#eq) |
-| [Reinsurance](#reinsurance) | [RET](#ret) [QS](#qs) [XL](#xl) [FACL](#facl) [TRTY](#trty) [COINS](#coins) |
-| [Reserves and liabilities](#reserves-and-liabilities) | [RES](#res) [BEL](#bel) [TP](#tp) [RM](#rm) [UPR](#upr) [IBNR](#ibnr) [OCR](#ocr) |
+| [Reinsurance](#reinsurance) | [RET](#ret) [QS](#qs) [XL](#xl) [FACL](#facl) [TRTY](#trty) [COINS](#coins) [FINRE](#finre) |
+| [Reserves and liabilities](#reserves-and-liabilities) | [RES](#res) [BEL](#bel) [TP](#tp) [RM](#rm) [UPR](#upr) [IBNR](#ibnr) [OCR](#ocr) [NEG](#neg) [MISM](#mism) |
 | [IFRS 17](#ifrs-17) | [CSM](#csm) [RA](#ra) [LC](#lc) [LOREC](#lorec) [LRC](#lrc) [LIC](#lic) [FCF](#fcf) [CU](#cu) [IACF](#iacf) [IFE](#ife) [IREV](#irev) [ISE](#ise) [ISR](#isr) [OCI](#oci) [PL](#pl) [INVC](#invc) [ONER](#oner) [GMM](#gmm) [PAA](#paa) [VFA](#vfa) [UNDL](#undl) |
 | [Movements](#movements) | [NB](#nb) [CHG](#chg) [ACCR](#accr) [UNW](#unw) [REL](#rel) [ESTCH](#estch) [EXPV](#expv) |
 | [Capital and risk](#capital-and-risk) | [CAP](#cap) [RCAP](#rcap) [SCR](#scr) [MCR](#mcr) [OF](#of) [MORT](#mort) [LONG](#long) [MORB](#morb) [CAT](#cat) [MKT](#mkt) [SPRD](#sprd) [FX](#fx) [CPTY](#cpty) [OPR](#opr) [DIV](#div) [UP](#up) [DOWN](#down) [MASS](#mass) [LPSR](#lpsr) [REVN](#revn) [PROP](#prop) [CONC](#conc) [LAC](#lac) |
-| [Profit, embedded value and new business](#profit-embedded-value-and-new-business) | [PROF](#prof) [DISTE](#diste) [TRF](#trf) [ANW](#anw) [VIF](#vif) [VNB](#vnb) [APE](#ape) [COC](#coc) [TVOG](#tvog) [FSUR](#fsur) [SURP](#surp) [NBS](#nbs) [IRR](#irr) [DPP](#dpp) |
+| [Profit, embedded value and new business](#profit-embedded-value-and-new-business) | [PROF](#prof) [DISTE](#diste) [TRF](#trf) [ANW](#anw) [VIF](#vif) [VNB](#vnb) [APE](#ape) [COC](#coc) [TVOG](#tvog) [FSUR](#fsur) [SURP](#surp) [NBS](#nbs) [IRR](#irr) [DPP](#dpp) [APV](#apv) [CAPRQ](#caprq) |
+| [Policy data](#policy-data) | [SEX](#sex) [SMK](#smk) [OCC](#occ) [FREQ](#freq) |
+| [Tables, assumptions and model data](#tables-assumptions-and-model-data) | [ASM](#asm) [ECON](#econ) [DEMOG](#demog) [MPT](#mpt) [SCEN](#scen) |
 | [ZA extension: South Africa](#za-extension-south-africa) | [SAM](#sam) [FSV](#fsv) [FUN](#fun) [HIV](#hiv) [RETR](#retr) [IPF](#ipf) [CPF](#cpf) [UPF](#upf) [RPF](#rpf) [BSR](#bsr) [CORF](#corf) [CRDL](#crdl) [COMP](#comp) [DISCR](#discr) [CAR](#car) |
 
 ## Time points and time bases
@@ -87,7 +89,7 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Also called:** issue, entry, commencement, outset
 - **Definition:** The date on which the policy starts. A value at INC is fixed for the life of the policy.
 - **Not to be confused with:** Not INCM (income benefit). Not INIT, which describes costs that arise around inception. Not T0.
-- **Related terms:** [T0](#t0) valuation date, [BOP](#bop) start of period, [INIT](#init) initial, [NB](#nb) new business, [DUR](#dur) policy duration, [WAITP](#waitp) waiting period
+- **Related terms:** [T0](#t0) valuation date, [BOP](#bop) start of period, [INIT](#init) initial, [NB](#nb) new business, [DUR](#dur) policy duration, [WAITP](#waitp) waiting period, [POLYR](#polyr) policy year, [ANNIV](#anniv) policy anniversary
 
 ### BEF
 
@@ -112,7 +114,7 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Also called:** per year, yearly, annualised
 - **Definition:** Time base of one year. On a rate it means the rate applies over a year. On an amount it means the amount is expressed per year.
 - **Not to be confused with:** Not ANTY (annuity). Not PRD: an annual value in a monthly model is not the value for the model period.
-- **Related terms:** [MTH](#mth) monthly, [PRD](#prd) per model period, [RATE](#rate) rate
+- **Related terms:** [MTH](#mth) monthly, [PRD](#prd) per model period, [RATE](#rate) rate, [YRS](#yrs) in years, [FREQ](#freq) frequency
 
 ### MTH
 
@@ -121,7 +123,7 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Also called:** per month
 - **Definition:** Time base of one calendar month.
 - **Not to be confused with:** Not MAT (maturity). Not PRD unless the model period happens to be a month.
-- **Related terms:** [ANN](#ann) annual, [PRD](#prd) per model period, [RATE](#rate) rate
+- **Related terms:** [ANN](#ann) annual, [PRD](#prd) per model period, [RATE](#rate) rate, [MTHS](#mths) in months, [FREQ](#freq) frequency
 
 ### PRD
 
@@ -143,16 +145,16 @@ Items that measure time itself.
 - **Also called:** t, projection period number
 - **Definition:** The number of model periods elapsed since the valuation date.
 - **Not to be confused with:** Not DUR, which counts from policy inception. Not TERM, which is a contractual length.
-- **Related terms:** [DUR](#dur) policy duration, [TERM](#term) policy term, [T0](#t0) valuation date, [DATE](#date) calendar date, [AGE](#age) age
+- **Related terms:** [DUR](#dur) policy duration, [TERM](#term) policy term, [T0](#t0) valuation date, [DATE](#date) calendar date, [AGE](#age) age, [CALYR](#calyr) calendar year, [CALMTH](#calmth) calendar month, [YRS](#yrs) in years, [MTHS](#mths) in months
 
 ### DUR
 
 - **Full term:** Policy duration
 - **Slot:** ITEM
-- **Also called:** duration in force, policy year, curtate duration
+- **Also called:** duration in force, curtate duration
 - **Definition:** The time elapsed since the policy started, measured at the stated time point.
-- **Not to be confused with:** Not TERM (the full contractual length). Not the financial sense of duration as interest rate sensitivity, which this version does not cover.
-- **Related terms:** [TIME](#time) projection time, [TERM](#term) policy term, [INC](#inc) inception, [REM](#rem) remaining, [AGE](#age) age, [DPP](#dpp) discounted payback period
+- **Not to be confused with:** Not TERM (the full contractual length). Not POLYR, which is the number of the policy year and starts at 1. Not the financial sense of duration as interest rate sensitivity, which this version does not cover. Say the unit with YRS or MTHS.
+- **Related terms:** [TIME](#time) projection time, [TERM](#term) policy term, [INC](#inc) inception, [REM](#rem) remaining, [AGE](#age) age, [POLYR](#polyr) policy year, [ANNIV](#anniv) policy anniversary, [YRS](#yrs) in years, [MTHS](#mths) in months, [DPP](#dpp) discounted payback period
 
 ### TERM
 
@@ -161,7 +163,7 @@ Items that measure time itself.
 - **Also called:** contract term, benefit term
 - **Definition:** The contractual length of the policy or of a named feature, from start to scheduled end.
 - **Not to be confused with:** Not DUR (time elapsed so far). Not TMNL (terminal bonus). Not termination, for which see EXIT.
-- **Related terms:** [DUR](#dur) policy duration, [REM](#rem) remaining, [MAT](#mat) maturity, [EXPY](#expy) expiry, [TIME](#time) projection time, [DEFP](#defp) deferred period, [WAITP](#waitp) waiting period
+- **Related terms:** [DUR](#dur) policy duration, [REM](#rem) remaining, [MAT](#mat) maturity, [EXPY](#expy) expiry, [TIME](#time) projection time, [DEFP](#defp) deferred period, [WAITP](#waitp) waiting period, [POLYR](#polyr) policy year, [YRS](#yrs) in years, [MTHS](#mths) in months
 
 ### REM
 
@@ -179,7 +181,7 @@ Items that measure time itself.
 - **Also called:** attained age, age at entry
 - **Definition:** The age of the life assured at the stated time point. The description must say which age definition the model uses.
 - **Not to be confused with:** Not DUR. Age at entry is AGE at INC. Attained age is AGE at BOP or EOP.
-- **Related terms:** [DUR](#dur) policy duration, [TIME](#time) projection time, [LIFE](#life) life assured, [DATE](#date) calendar date
+- **Related terms:** [DUR](#dur) policy duration, [TIME](#time) projection time, [LIFE](#life) life assured, [DATE](#date) calendar date, [DOB](#dob) date of birth, [ALB](#alb) age last birthday, [ANB](#anb) age next birthday, [ANRB](#anrb) age nearest birthday, [YRS](#yrs) in years, [SEX](#sex) sex
 
 ### DATE
 
@@ -187,7 +189,7 @@ Items that measure time itself.
 - **Slot:** ITEM
 - **Definition:** A calendar date for the stated time point.
 - **Not to be confused with:** Not TIME, which is a count of periods and not a date.
-- **Related terms:** [TIME](#time) projection time, [T0](#t0) valuation date, [AGE](#age) age
+- **Related terms:** [TIME](#time) projection time, [T0](#t0) valuation date, [AGE](#age) age, [ANNIV](#anniv) policy anniversary, [CALYR](#calyr) calendar year, [CALMTH](#calmth) calendar month, [DOB](#dob) date of birth
 
 ### DEFP
 
@@ -206,6 +208,74 @@ Items that measure time itself.
 - **Definition:** The length of time from the start of the policy, or of an added benefit, during which no claim is paid.
 - **Not to be confused with:** Not DEFP, which runs from the start of each disability.
 - **Related terms:** [DEFP](#defp) deferred period, [TERM](#term) policy term, [INC](#inc) inception, [FUN](#fun) funeral cover
+
+### POLYR
+
+- **Full term:** Policy year
+- **Slot:** ITEM
+- **Also called:** year of policy
+- **Definition:** The number of the policy year that the stated time point falls in. It is 1 in the first year of the policy.
+- **Not to be confused with:** Not DUR, which is the time elapsed and starts at 0. Not CALYR.
+- **Related terms:** [DUR](#dur) policy duration, [ANNIV](#anniv) policy anniversary, [CALYR](#calyr) calendar year, [TERM](#term) policy term, [INC](#inc) inception
+
+### ANNIV
+
+- **Full term:** Policy anniversary
+- **Slot:** ITEM or KIND
+- **Also called:** renewal date, anniversary date
+- **Definition:** The date in each year on which the policy reaches a whole number of years in force.
+- **Not to be confused with:** Not INC, which is the first start date only. Not the end of a calendar year.
+- **Related terms:** [POLYR](#polyr) policy year, [DUR](#dur) policy duration, [DATE](#date) calendar date, [INC](#inc) inception, [ESC](#esc) escalation
+
+### CALYR
+
+- **Full term:** Calendar year
+- **Slot:** ITEM
+- **Definition:** The calendar year that the stated time point falls in.
+- **Not to be confused with:** Not POLYR. Not TIME, which counts periods from the valuation date.
+- **Related terms:** [CALMTH](#calmth) calendar month, [DATE](#date) calendar date, [POLYR](#polyr) policy year, [TIME](#time) projection time, [IMP](#imp) improvement
+
+### CALMTH
+
+- **Full term:** Calendar month
+- **Slot:** ITEM
+- **Also called:** month of year
+- **Definition:** The month of the calendar year, from 1 to 12, that the stated time point falls in.
+- **Not to be confused with:** Not MTH, which is a time base. Not MTHS, which is a unit. Not TIME in months, which counts from the valuation date.
+- **Related terms:** [CALYR](#calyr) calendar year, [DATE](#date) calendar date, [TIME](#time) projection time, [MTHS](#mths) in months
+
+### DOB
+
+- **Full term:** Date of birth
+- **Slot:** ITEM
+- **Also called:** birth date
+- **Definition:** The date on which the life assured was born.
+- **Not to be confused with:** Not AGE, which is derived from it.
+- **Related terms:** [AGE](#age) age, [DATE](#date) calendar date, [LIFE](#life) life assured
+
+### ALB
+
+- **Full term:** Age last birthday
+- **Slot:** KIND
+- **Definition:** Narrows an age to the whole number of years completed at the stated time point.
+- **Not to be confused with:** Not ANB or ANRB. The three differ by up to a year and rate tables are built for one of them.
+- **Related terms:** [ANB](#anb) age next birthday, [ANRB](#anrb) age nearest birthday, [AGE](#age) age
+
+### ANB
+
+- **Full term:** Age next birthday
+- **Slot:** KIND
+- **Definition:** Narrows an age to the age that will be reached at the next birthday after the stated time point.
+- **Not to be confused with:** Not ALB or ANRB.
+- **Related terms:** [ALB](#alb) age last birthday, [ANRB](#anrb) age nearest birthday, [AGE](#age) age
+
+### ANRB
+
+- **Full term:** Age nearest birthday
+- **Slot:** KIND
+- **Definition:** Narrows an age to the age at the birthday closest to the stated time point.
+- **Not to be confused with:** Not ALB or ANB.
+- **Related terms:** [ALB](#alb) age last birthday, [ANB](#anb) age next birthday, [AGE](#age) age
 
 ## Measures
 
@@ -346,6 +416,24 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Not to be confused with:** Not MOP, which is a single instant.
 - **Related terms:** [MOP](#mop) middle of period, [CUM](#cum) cumulative
 
+### YRS
+
+- **Full term:** In years
+- **Slot:** MEASURE
+- **Also called:** years, number of years
+- **Definition:** States that a length of time is measured in years. It is used only on items that are lengths of time or ages.
+- **Not to be confused with:** Not ANN, which means per year and applies to rates and amounts.
+- **Related terms:** [MTHS](#mths) in months, [ANN](#ann) annual, [DUR](#dur) policy duration, [TERM](#term) policy term, [AGE](#age) age, [TIME](#time) projection time
+
+### MTHS
+
+- **Full term:** In months
+- **Slot:** MEASURE
+- **Also called:** months, number of months
+- **Definition:** States that a length of time is measured in months. It is used only on items that are lengths of time or ages.
+- **Not to be confused with:** Not MTH, which means per month and applies to rates and amounts. Not CALMTH.
+- **Related terms:** [YRS](#yrs) in years, [MTH](#mth) monthly, [DUR](#dur) policy duration, [TERM](#term) policy term, [TIME](#time) projection time, [CALMTH](#calmth) calendar month
+
 ## Party
 
 Tokens for the PARTY slot. They say whose share of the item the variable holds.
@@ -366,7 +454,7 @@ Tokens for the PARTY slot. They say whose share of the item the variable holds.
 - **Also called:** reinsurers' share, reinsurance held, ceded
 - **Definition:** The part of the item that passes between the insurer and its reinsurers under reinsurance the insurer has bought.
 - **Not to be confused with:** Not RINST (reinstatement). Not reinsurance accepted, which is direct business for the accepting insurer. Not RISK.
-- **Related terms:** [GRS](#grs) gross of reinsurance, [NET](#net) net of reinsurance, [RET](#ret) retention, [QS](#qs) quota share, [XL](#xl) excess of loss, [LOREC](#lorec) loss-recovery component, [CPTY](#cpty) counterparty default risk, [FACL](#facl) facultative, [TRTY](#trty) treaty, [COINS](#coins) coinsurance
+- **Related terms:** [GRS](#grs) gross of reinsurance, [NET](#net) net of reinsurance, [RET](#ret) retention, [QS](#qs) quota share, [XL](#xl) excess of loss, [LOREC](#lorec) loss-recovery component, [CPTY](#cpty) counterparty default risk, [FACL](#facl) facultative, [TRTY](#trty) treaty, [COINS](#coins) coinsurance, [FINRE](#finre) financial reinsurance
 
 ### NET
 
@@ -406,7 +494,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Also called:** central estimate, realistic, expected
 - **Definition:** Assumptions set at the expected value with no margin for prudence or for risk.
 - **Not to be confused with:** Not BEL, which is a liability calculated on best estimate assumptions under a reporting framework. Not PRU.
-- **Related terms:** [PRU](#pru) prudent, [PRC](#prc) pricing, [MGN](#mgn) margin, [BEL](#bel) best estimate liability, [IFC](#ifc) IFRS 17 current, [IFL](#ifl) IFRS 17 locked-in
+- **Related terms:** [PRU](#pru) prudent, [PRC](#prc) pricing, [MGN](#mgn) margin, [BEL](#bel) best estimate liability, [IFC](#ifc) IFRS 17 current, [IFL](#ifl) IFRS 17 locked-in, [FAIR](#fair) fair value, [ASM](#asm) assumption
 
 ### PRU
 
@@ -444,7 +532,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Definition:** The IFRS 17 basis that uses discount rates and assumptions current at the measurement date.
 - **Not to be confused with:** Not IFL. Not IF (in force).
 - **Source checked:** IFRS 17 paragraphs 36 and B72(a)
-- **Related terms:** [IFL](#ifl) IFRS 17 locked-in, [BE](#be) best estimate, [FCF](#fcf) fulfilment cash flows, [IFE](#ife) insurance finance income or expenses, [OCI](#oci) other comprehensive income, [DISC](#disc) discount
+- **Related terms:** [IFL](#ifl) IFRS 17 locked-in, [BE](#be) best estimate, [FCF](#fcf) fulfilment cash flows, [IFE](#ife) insurance finance income or expenses, [OCI](#oci) other comprehensive income, [DISC](#disc) discount, [FAIR](#fair) fair value
 
 ### SII
 
@@ -462,7 +550,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Definition:** As an item, the value of shareholders' interests in the covered business: adjusted net worth plus the value of in-force less the cost of required capital. It excludes future new business. As a basis, the assumptions and rules used to calculate it.
 - **Not to be confused with:** Not VIF, which is one part of it. Not VNB, which covers new business only. EEV and MCEV are other embedded value frameworks with their own rules, so a description must say which framework applies.
 - **Source checked:** ASSA APN 107 version 8 sections 2.1 and 2.3
-- **Related terms:** [ANW](#anw) adjusted net worth, [VIF](#vif) value of in-force, [VNB](#vnb) value of new business, [COC](#coc) cost of capital, [TVOG](#tvog) time value of options and guarantees, [PROF](#prof) profit, [FSUR](#fsur) free surplus, [RCAP](#rcap) required capital
+- **Related terms:** [ANW](#anw) adjusted net worth, [VIF](#vif) value of in-force, [VNB](#vnb) value of new business, [COC](#coc) cost of capital, [TVOG](#tvog) time value of options and guarantees, [PROF](#prof) profit, [FSUR](#fsur) free surplus, [RCAP](#rcap) required capital, [APV](#apv) appraisal value
 
 ### RN
 
@@ -471,7 +559,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Definition:** An economic basis in which all assets are expected to earn the risk-free rate, used to value options and guarantees.
 - **Not to be confused with:** Not RW. Not a statement about how prudent the non-economic assumptions are. Not the same as market consistent, which means reproducing market prices and can also be done with real world scenarios and deflators.
 - **Source checked:** ASSA APN 110 version 5 appendices 2 and 3
-- **Related terms:** [RW](#rw) real world, [TVOG](#tvog) time value of options and guarantees, [GTEE](#gtee) guarantee, [DISC](#disc) discount
+- **Related terms:** [RW](#rw) real world, [TVOG](#tvog) time value of options and guarantees, [GTEE](#gtee) guarantee, [DISC](#disc) discount, [FAIR](#fair) fair value, [SCEN](#scen) scenario
 
 ### RW
 
@@ -479,7 +567,16 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Slot:** BASIS
 - **Definition:** An economic basis in which assets are expected to earn their realistic returns including risk premiums.
 - **Not to be confused with:** Not RN. Not BE: a real world economic basis can be paired with any non-economic basis.
-- **Related terms:** [RN](#rn) risk neutral, [INVR](#invr) investment return
+- **Related terms:** [RN](#rn) risk neutral, [INVR](#invr) investment return, [SCEN](#scen) scenario
+
+### FAIR
+
+- **Full term:** Fair value
+- **Slot:** BASIS
+- **Also called:** market consistent value
+- **Definition:** A basis that values assets and liabilities at the amount for which they could be exchanged between willing and informed parties.
+- **Not to be confused with:** Not FV (fund value). Not RN, which is one way of reaching a market consistent value.
+- **Related terms:** [RN](#rn) risk neutral, [BE](#be) best estimate, [RES](#res) reserve, [ASSET](#asset) assets, [IFC](#ifc) IFRS 17 current
 
 ## Decrements and policy status
 
@@ -492,7 +589,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** exit cause, mode of exit
 - **Definition:** Any event that removes a policy from a state in the model. It is the umbrella term for all causes together.
 - **Not to be confused with:** Not EXIT. A decrement can move a policy to another state such as paid-up without ending it. EXIT always ends the policy.
-- **Related terms:** [EXIT](#exit) exit, [DTH](#dth) death, [LPS](#lps) lapse, [SUR](#sur) surrender, [MAT](#mat) maturity, [EXPY](#expy) expiry, [PUP](#pup) paid-up, [DIS](#dis) disability, [DEP](#dep) dependent, [INDP](#indp) independent, [DCON](#dcon) discontinuance
+- **Related terms:** [EXIT](#exit) exit, [DTH](#dth) death, [LPS](#lps) lapse, [SUR](#sur) surrender, [MAT](#mat) maturity, [EXPY](#expy) expiry, [PUP](#pup) paid-up, [DIS](#dis) disability, [DEP](#dep) dependent, [INDP](#indp) independent, [DCON](#dcon) discontinuance, [DEMOG](#demog) demographic
 
 ### EXIT
 
@@ -510,7 +607,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** mortality
 - **Definition:** The death of the life assured. As an item it is the event. As a kind it marks a claim or benefit triggered by death.
 - **Not to be confused with:** Not MORT, which is the capital risk that death rates turn out higher than expected. A mortality rate is the rate of death and uses DTH.
-- **Related terms:** [MORT](#mort) mortality risk, [LONG](#long) longevity risk, [DEC](#dec) decrement, [EXIT](#exit) exit, [ACCD](#accd) accident, [CI](#ci) critical illness, [DIS](#dis) disability, [SAR](#sar) sum at risk, [LIFE](#life) life assured, [SEL](#sel) select, [ULT](#ult) ultimate, [TBL](#tbl) table, [IMP](#imp) improvement, [EXTRA](#extra) extra, [CLM](#clm) claim, [ACEL](#acel) accelerated, [FUN](#fun) funeral cover, [HIV](#hiv) HIV and AIDS, [CRDL](#crdl) credit life
+- **Related terms:** [MORT](#mort) mortality risk, [LONG](#long) longevity risk, [DEC](#dec) decrement, [EXIT](#exit) exit, [ACCD](#accd) accident, [CI](#ci) critical illness, [DIS](#dis) disability, [SAR](#sar) sum at risk, [LIFE](#life) life assured, [SEL](#sel) select, [ULT](#ult) ultimate, [TBL](#tbl) table, [IMP](#imp) improvement, [EXTRA](#extra) extra, [CLM](#clm) claim, [ACEL](#acel) accelerated, [DEMOG](#demog) demographic, [FUN](#fun) funeral cover, [HIV](#hiv) HIV and AIDS, [CRDL](#crdl) credit life
 
 ### LPS
 
@@ -520,7 +617,7 @@ Events that change the state of a policy, and the states themselves.
 - **Definition:** The policy ends because premiums due were not paid, and no value is paid to the policyholder.
 - **Not to be confused with:** Not SUR, where a value is paid. Not PUP, where the policy continues without premiums. Not WDL, where the policy continues. Not NTU, where the policy is cancelled from the start. Not LPSR, the capital risk, which covers far more than lapse.
 - **Source checked:** SAP 104 version 9 section 6.8 (ASSA, withdrawn 2023) treats lapse as the case with no surrender value
-- **Related terms:** [SUR](#sur) surrender, [WDL](#wdl) partial withdrawal, [PUP](#pup) paid-up, [RINST](#rinst) reinstatement, [PERS](#pers) persistency, [DCON](#dcon) discontinuance, [NTU](#ntu) not taken up, [EXIT](#exit) exit, [DEC](#dec) decrement, [EXPY](#expy) expiry, [LPSR](#lpsr) lapse risk, [CLAW](#claw) clawback, [MASS](#mass) mass
+- **Related terms:** [SUR](#sur) surrender, [WDL](#wdl) partial withdrawal, [PUP](#pup) paid-up, [RINST](#rinst) reinstatement, [PERS](#pers) persistency, [DCON](#dcon) discontinuance, [NTU](#ntu) not taken up, [EXIT](#exit) exit, [DEC](#dec) decrement, [EXPY](#expy) expiry, [LPSR](#lpsr) lapse risk, [CLAW](#claw) clawback, [MASS](#mass) mass, [DEMOG](#demog) demographic
 
 ### SUR
 
@@ -612,7 +709,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** incapacity, disablement
 - **Definition:** The life assured becomes unable to work or to perform defined activities under the policy definition. As an item it is the event of becoming disabled.
 - **Not to be confused with:** Not DISC (discount) or DISTE or DIV. Not CI, which pays on diagnosis of a listed condition whatever the ability to work. Not MORB, which is the capital risk.
-- **Related terms:** [REC](#rec) recovery, [CI](#ci) critical illness, [MORB](#morb) morbidity risk, [INCM](#incm) income benefit, [LS](#ls) lump sum, [WAIV](#waiv) waiver of premium, [DTH](#dth) death, [ACCD](#accd) accident, [DEC](#dec) decrement, [DEFP](#defp) deferred period, [CLM](#clm) claim, [ACEL](#acel) accelerated, [SALN](#saln) stand-alone, [CRDL](#crdl) credit life
+- **Related terms:** [REC](#rec) recovery, [CI](#ci) critical illness, [MORB](#morb) morbidity risk, [INCM](#incm) income benefit, [LS](#ls) lump sum, [WAIV](#waiv) waiver of premium, [DTH](#dth) death, [ACCD](#accd) accident, [DEC](#dec) decrement, [DEFP](#defp) deferred period, [CLM](#clm) claim, [ACEL](#acel) accelerated, [SALN](#saln) stand-alone, [OCC](#occ) occupation class, [CRDL](#crdl) credit life
 
 ### REC
 
@@ -640,7 +737,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** accidental
 - **Definition:** Narrows an event or benefit to cases caused by accident as defined in the policy.
 - **Not to be confused with:** Not ACC (accumulated). Not ACCR.
-- **Related terms:** [DTH](#dth) death, [DIS](#dis) disability, [CI](#ci) critical illness, [ACC](#acc) accumulated
+- **Related terms:** [DTH](#dth) death, [DIS](#dis) disability, [CI](#ci) critical illness, [ACC](#acc) accumulated, [OCC](#occ) occupation class
 
 ### IF
 
@@ -658,7 +755,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** contract
 - **Definition:** One insurance contract as the unit of count. Amounts per policy use PER with POL.
 - **Not to be confused with:** Not PH (policyholder as a party). Not LIFE: one policy can cover several lives and one life can hold several policies.
-- **Related terms:** [LIFE](#life) life assured, [IF](#if) in force, [NB](#nb) new business, [CNT](#cnt) count, [PER](#per) per, [PH](#ph) policyholder, [PUP](#pup) paid-up
+- **Related terms:** [LIFE](#life) life assured, [IF](#if) in force, [NB](#nb) new business, [CNT](#cnt) count, [PER](#per) per, [PH](#ph) policyholder, [PUP](#pup) paid-up, [AGG](#agg) aggregate, [MPT](#mpt) model point
 
 ### LIFE
 
@@ -667,7 +764,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** insured life, member
 - **Definition:** One insured person as the unit of count.
 - **Not to be confused with:** Not POL. On joint life and group business the two counts differ.
-- **Related terms:** [POL](#pol) policy, [IF](#if) in force, [CNT](#cnt) count, [AGE](#age) age, [DTH](#dth) death, [FUN](#fun) funeral cover
+- **Related terms:** [POL](#pol) policy, [IF](#if) in force, [CNT](#cnt) count, [AGE](#age) age, [DTH](#dth) death, [DOB](#dob) date of birth, [SEX](#sex) sex, [SMK](#smk) smoker status, [MPT](#mpt) model point, [FUN](#fun) funeral cover
 
 ## Assumption building
 
@@ -711,11 +808,11 @@ Tokens that describe how a rate or assumption is built up.
 ### TBL
 
 - **Full term:** Table
-- **Slot:** KIND
+- **Slot:** ITEM or KIND
 - **Also called:** base table, standard table
-- **Definition:** Narrows a rate to the value read from a published or company base table, before any adjustment.
-- **Not to be confused with:** Not the adjusted rate the model finally uses, which carries no TBL token.
-- **Related terms:** [ADJ](#adj) adjustment, [SEL](#sel) select, [ULT](#ult) ultimate, [IMP](#imp) improvement, [DTH](#dth) death, [INDP](#indp) independent
+- **Definition:** As a kind, narrows a rate to the value read from a published or company base table, before any adjustment. As the first token of a name, it marks the table itself: the rest of the name is the variable that the table holds.
+- **Not to be confused with:** Not the adjusted rate the model finally uses, which carries no TBL token. Not ASM, which is the assumption and not the table that stores it.
+- **Related terms:** [ADJ](#adj) adjustment, [SEL](#sel) select, [ULT](#ult) ultimate, [IMP](#imp) improvement, [DTH](#dth) death, [INDP](#indp) independent, [ASM](#asm) assumption, [ECON](#econ) economic, [DEMOG](#demog) demographic
 
 ### ADJ
 
@@ -733,7 +830,7 @@ Tokens that describe how a rate or assumption is built up.
 - **Also called:** mortality improvement, trend
 - **Definition:** Narrows a rate or factor to the expected change in a decrement rate from one calendar year to the next.
 - **Not to be confused with:** Not impairment of assets. Not ADJ, which is a level change and not a trend over calendar time.
-- **Related terms:** [TBL](#tbl) table, [ADJ](#adj) adjustment, [DTH](#dth) death, [LONG](#long) longevity risk
+- **Related terms:** [TBL](#tbl) table, [ADJ](#adj) adjustment, [DTH](#dth) death, [LONG](#long) longevity risk, [CALYR](#calyr) calendar year
 
 ### LOAD
 
@@ -752,7 +849,7 @@ Tokens that describe how a rate or assumption is built up.
 - **Definition:** The deliberate difference between a prudent assumption and the best estimate assumption.
 - **Not to be confused with:** Not LOAD. Not a profit margin, which is a PER ratio of profit to premium. Not RM or RA, which are liabilities.
 - **Source checked:** ASSA SAP 104 version 9 section 3.3
-- **Related terms:** [LOAD](#load) loading, [ADJ](#adj) adjustment, [BE](#be) best estimate, [PRU](#pru) prudent, [RA](#ra) risk adjustment, [RM](#rm) risk margin, [COMP](#comp) compulsory, [DISCR](#discr) discretionary, [FSV](#fsv) financial soundness valuation
+- **Related terms:** [LOAD](#load) loading, [ADJ](#adj) adjustment, [BE](#be) best estimate, [PRU](#pru) prudent, [RA](#ra) risk adjustment, [RM](#rm) risk margin, [COMP](#comp) compulsory, [DISCR](#discr) discretionary, [ASM](#asm) assumption, [FSV](#fsv) financial soundness valuation
 
 ### SHK
 
@@ -761,7 +858,7 @@ Tokens that describe how a rate or assumption is built up.
 - **Also called:** stress size
 - **Definition:** The size of the change applied to an assumption in a stress test or capital calculation.
 - **Not to be confused with:** Not the result of the stress, which is a capital amount such as SCR. Not EXPV.
-- **Related terms:** [SCR](#scr) Solvency capital requirement, [UP](#up) up, [DOWN](#down) down, [MASS](#mass) mass, [MORT](#mort) mortality risk, [CAT](#cat) catastrophe risk, [LPSR](#lpsr) lapse risk, [REVN](#revn) revision risk
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [UP](#up) up, [DOWN](#down) down, [MASS](#mass) mass, [MORT](#mort) mortality risk, [CAT](#cat) catastrophe risk, [LPSR](#lpsr) lapse risk, [REVN](#revn) revision risk, [SCEN](#scen) scenario
 
 ## Cash flows in general
 
@@ -803,7 +900,7 @@ Premium items and the tokens that narrow them.
 - **Also called:** contribution, consideration
 - **Definition:** The amount payable by the policyholder to the insurer for cover or investment in the model period.
 - **Not to be confused with:** Not CHRG, which is deducted from a fund and not paid in. Not a reinsurance premium unless party RI is stated.
-- **Related terms:** [SGL](#sgl) single, [REG](#reg) regular, [OFF](#off) office premium, [RISK](#risk) risk premium, [WAIV](#waiv) waiver of premium, [ESC](#esc) escalation, [ALLOC](#alloc) allocation, [APE](#ape) annual premium equivalent, [CHRG](#chrg) charge, [CF](#cf) cash flow, [EXTRA](#extra) extra, [NETP](#netp) net premium, [POLF](#polf) policy fee, [UPR](#upr) unearned premium reserve
+- **Related terms:** [SGL](#sgl) single, [REG](#reg) regular, [OFF](#off) office premium, [RISK](#risk) risk premium, [WAIV](#waiv) waiver of premium, [ESC](#esc) escalation, [ALLOC](#alloc) allocation, [APE](#ape) annual premium equivalent, [CHRG](#chrg) charge, [CF](#cf) cash flow, [EXTRA](#extra) extra, [NETP](#netp) net premium, [POLF](#polf) policy fee, [UPR](#upr) unearned premium reserve, [FREQ](#freq) frequency
 
 ### SGL
 
@@ -821,7 +918,7 @@ Premium items and the tokens that narrow them.
 - **Also called:** recurring, periodic
 - **Definition:** Narrows a premium to one payable at regular intervals over a premium term.
 - **Not to be confused with:** Not REN. A regular premium includes the first one. Renewal refers only to those after the first period.
-- **Related terms:** [SGL](#sgl) single, [REN](#ren) renewal, [PREM](#prem) premium, [APE](#ape) annual premium equivalent, [ESC](#esc) escalation
+- **Related terms:** [SGL](#sgl) single, [REN](#ren) renewal, [PREM](#prem) premium, [APE](#ape) annual premium equivalent, [ESC](#esc) escalation, [FREQ](#freq) frequency
 
 ### OFF
 
@@ -857,7 +954,7 @@ Premium items and the tokens that narrow them.
 - **Also called:** indexation, automatic increase
 - **Definition:** The scheduled contractual increase in a premium or benefit from year to year.
 - **Not to be confused with:** Not INFL, which is an economic assumption and not a policy term. Not BON, which is added at the insurer's discretion.
-- **Related terms:** [INFL](#infl) inflation, [IDX](#idx) index, [PREM](#prem) premium, [BEN](#ben) benefit, [REG](#reg) regular, [BON](#bon) bonus
+- **Related terms:** [INFL](#infl) inflation, [IDX](#idx) index, [PREM](#prem) premium, [BEN](#ben) benefit, [REG](#reg) regular, [ANNIV](#anniv) policy anniversary, [BON](#bon) bonus
 
 ### EXTRA
 
@@ -866,7 +963,7 @@ Premium items and the tokens that narrow them.
 - **Also called:** extra premium, extra risk, substandard, rated
 - **Definition:** Narrows a premium or a rate to the addition made because the life is not acceptable at standard rates.
 - **Not to be confused with:** Not LOAD in general. An extra is a loading for one cause only: a risk that is worse than standard.
-- **Related terms:** [LOAD](#load) loading, [PREM](#prem) premium, [OFF](#off) office premium, [DTH](#dth) death
+- **Related terms:** [LOAD](#load) loading, [PREM](#prem) premium, [OFF](#off) office premium, [DTH](#dth) death, [SMK](#smk) smoker status
 
 ### NETP
 
@@ -924,7 +1021,7 @@ What the insurer pays under the contract and the levels of cover.
 - **Also called:** pension in payment, income stream
 - **Definition:** A series of payments made at regular intervals while a stated condition holds, usually the survival of a life.
 - **Not to be confused with:** Not ANN (annual). Not INCM, which is a disability income benefit. Not WDL.
-- **Related terms:** [CLM](#clm) claim, [INCM](#incm) income benefit, [LONG](#long) longevity risk, [FAC](#fac) factor, [GTEE](#gtee) guarantee, [REVN](#revn) revision risk, [UPF](#upf) untaxed policyholder fund
+- **Related terms:** [CLM](#clm) claim, [INCM](#incm) income benefit, [LONG](#long) longevity risk, [FAC](#fac) factor, [GTEE](#gtee) guarantee, [REVN](#revn) revision risk, [FREQ](#freq) frequency, [UPF](#upf) untaxed policyholder fund
 
 ### LS
 
@@ -1064,7 +1161,7 @@ The insurer's own costs and what it pays to intermediaries.
 - **Also called:** price inflation, cost escalation
 - **Definition:** The general rise in prices or costs assumed in the economic basis.
 - **Not to be confused with:** Not ESC, which is a contractual increase written into a policy.
-- **Related terms:** [ESC](#esc) escalation, [IDX](#idx) index, [EXP](#exp) expense, [RATE](#rate) rate, [DISC](#disc) discount
+- **Related terms:** [ESC](#esc) escalation, [IDX](#idx) index, [EXP](#exp) expense, [RATE](#rate) rate, [DISC](#disc) discount, [ECON](#econ) economic
 
 ### OH
 
@@ -1104,7 +1201,7 @@ Values attached to one policy and the features of savings business.
 - **Also called:** unit-linked
 - **Definition:** As an item, one unit of an investment fund held for a policy. As a kind, the part of a reserve or cash flow that relates to the unit fund.
 - **Not to be confused with:** Not NUNIT. Not a unit of measure. Not CU (coverage units).
-- **Related terms:** [NUNIT](#nunit) non-unit, [UPRC](#uprc) unit price, [FV](#fv) fund value, [ALLOC](#alloc) allocation, [RES](#res) reserve, [BID](#bid) bid, [OFFER](#offer) offer
+- **Related terms:** [NUNIT](#nunit) non-unit, [UPRC](#uprc) unit price, [FV](#fv) fund value, [ALLOC](#alloc) allocation, [RES](#res) reserve, [BID](#bid) bid, [OFFER](#offer) offer, [APPR](#appr) appropriation, [EXPR](#expr) expropriation
 
 ### NUNIT
 
@@ -1113,7 +1210,7 @@ Values attached to one policy and the features of savings business.
 - **Also called:** sterling, rand or dollar reserve
 - **Definition:** Narrows a reserve or cash flow to the part held outside the unit fund, covering expenses and benefits that charges do not meet.
 - **Not to be confused with:** Not UNIT.
-- **Related terms:** [UNIT](#unit) unit, [RES](#res) reserve, [CHRG](#chrg) charge, [FV](#fv) fund value
+- **Related terms:** [UNIT](#unit) unit, [RES](#res) reserve, [CHRG](#chrg) charge, [FV](#fv) fund value, [NEG](#neg) negative
 
 ### UPRC
 
@@ -1121,7 +1218,7 @@ Values attached to one policy and the features of savings business.
 - **Slot:** ITEM
 - **Definition:** The price of one unit of an investment fund at the stated time point.
 - **Not to be confused with:** Not PRC (pricing basis). Not UPR (unearned premium reserve).
-- **Related terms:** [UNIT](#unit) unit, [FV](#fv) fund value, [INVR](#invr) investment return, [BID](#bid) bid, [OFFER](#offer) offer
+- **Related terms:** [UNIT](#unit) unit, [FV](#fv) fund value, [INVR](#invr) investment return, [BID](#bid) bid, [OFFER](#offer) offer, [APPR](#appr) appropriation, [EXPR](#expr) expropriation
 
 ### ALLOC
 
@@ -1157,7 +1254,7 @@ Values attached to one policy and the features of savings business.
 - **Also called:** profit share, declared bonus
 - **Definition:** An addition to benefits on with-profits business, made at the insurer's discretion out of surplus.
 - **Not to be confused with:** Not ESC, which is contractual. Not a commission bonus to an intermediary.
-- **Related terms:** [RVS](#rvs) reversionary, [TMNL](#tmnl) terminal, [ASHR](#ashr) asset share, [PH](#ph) policyholder, [BEN](#ben) benefit, [SA](#sa) sum assured, [GTEE](#gtee) guarantee, [ESC](#esc) escalation, [MVR](#mvr) market value reduction, [WP](#wp) with-profits, [UNDL](#undl) underlying items, [LAC](#lac) loss-absorbing capacity, [BSR](#bsr) bonus stabilisation reserve
+- **Related terms:** [RVS](#rvs) reversionary, [TMNL](#tmnl) terminal, [ASHR](#ashr) asset share, [PH](#ph) policyholder, [BEN](#ben) benefit, [SA](#sa) sum assured, [GTEE](#gtee) guarantee, [ESC](#esc) escalation, [MVR](#mvr) market value reduction, [WP](#wp) with-profits, [BEC](#bec) bonus earning capacity, [UNDL](#undl) underlying items, [LAC](#lac) loss-absorbing capacity, [BSR](#bsr) bonus stabilisation reserve
 
 ### RVS
 
@@ -1166,7 +1263,7 @@ Values attached to one policy and the features of savings business.
 - **Also called:** regular bonus, annual bonus, vested bonus
 - **Definition:** Narrows a bonus to one that is added during the term and is guaranteed once declared.
 - **Not to be confused with:** Not TMNL. Not REV as a short form of revenue, for which see IREV.
-- **Related terms:** [TMNL](#tmnl) terminal, [BON](#bon) bonus, [GTEE](#gtee) guarantee
+- **Related terms:** [TMNL](#tmnl) terminal, [BON](#bon) bonus, [GTEE](#gtee) guarantee, [BEC](#bec) bonus earning capacity
 
 ### TMNL
 
@@ -1175,7 +1272,7 @@ Values attached to one policy and the features of savings business.
 - **Also called:** final bonus, non-vested bonus
 - **Definition:** Narrows a bonus to one that is added only when a claim is paid and is not guaranteed before then.
 - **Not to be confused with:** Not TERM (policy term). Not RVS.
-- **Related terms:** [RVS](#rvs) reversionary, [BON](#bon) bonus, [ASHR](#ashr) asset share
+- **Related terms:** [RVS](#rvs) reversionary, [BON](#bon) bonus, [ASHR](#ashr) asset share, [BEC](#bec) bonus earning capacity
 
 ### ASHR
 
@@ -1184,7 +1281,7 @@ Values attached to one policy and the features of savings business.
 - **Definition:** The accumulation of premiums less expenses, charges and the cost of cover, with the investment return actually earned, for a with-profits policy.
 - **Not to be confused with:** Not FV, which is a contractual balance. Asset share is a calculated guide to a fair payout. In South African guidance on smoothed bonus business the term can mean the fund account plus its share of the bonus stabilisation reserve.
 - **Source checked:** ASSA APN 110 version 5, definitions
-- **Related terms:** [FV](#fv) fund value, [BON](#bon) bonus, [TMNL](#tmnl) terminal, [SV](#sv) surrender value, [PH](#ph) policyholder, [MVR](#mvr) market value reduction, [WP](#wp) with-profits
+- **Related terms:** [FV](#fv) fund value, [BON](#bon) bonus, [TMNL](#tmnl) terminal, [SV](#sv) surrender value, [PH](#ph) policyholder, [MVR](#mvr) market value reduction, [WP](#wp) with-profits, [BEC](#bec) bonus earning capacity, [AGG](#agg) aggregate
 
 ### GTEE
 
@@ -1202,8 +1299,8 @@ Values attached to one policy and the features of savings business.
 - **Slot:** KIND
 - **Also called:** bid price, cancellation price
 - **Definition:** Narrows a unit price to the price at which the insurer cancels units when benefits are paid.
-- **Not to be confused with:** Not OFFER. The expropriation price, which is the amount taken out of the fund when a unit is cancelled, is a different thing and has no token yet.
-- **Related terms:** [OFFER](#offer) offer, [UPRC](#uprc) unit price, [UNIT](#unit) unit, [FV](#fv) fund value
+- **Not to be confused with:** Not OFFER. Not EXPR, which is the amount taken out of the fund when a unit is cancelled.
+- **Related terms:** [OFFER](#offer) offer, [UPRC](#uprc) unit price, [UNIT](#unit) unit, [FV](#fv) fund value, [EXPR](#expr) expropriation, [APPR](#appr) appropriation
 
 ### OFFER
 
@@ -1211,8 +1308,8 @@ Values attached to one policy and the features of savings business.
 - **Slot:** KIND
 - **Also called:** offer price, creation price for the policyholder
 - **Definition:** Narrows a unit price to the price at which the insurer allocates units to a policy.
-- **Not to be confused with:** Not BID. The appropriation price, which is the amount put into the fund when a unit is created, is a different thing and has no token yet.
-- **Related terms:** [BID](#bid) bid, [UPRC](#uprc) unit price, [UNIT](#unit) unit, [ALLOC](#alloc) allocation
+- **Not to be confused with:** Not BID. Not APPR, which is the amount put into the fund when a unit is created.
+- **Related terms:** [BID](#bid) bid, [UPRC](#uprc) unit price, [UNIT](#unit) unit, [ALLOC](#alloc) allocation, [APPR](#appr) appropriation, [EXPR](#expr) expropriation
 
 ### MVR
 
@@ -1239,7 +1336,7 @@ Values attached to one policy and the features of savings business.
 - **Also called:** participating
 - **Definition:** Narrows an item to business where the policyholder is entitled to a share of surplus, usually at the insurer's discretion.
 - **Not to be confused with:** Not NPAR. Not unit-linked business, which is UNIT.
-- **Related terms:** [NPAR](#npar) without-profits, [BON](#bon) bonus, [ASHR](#ashr) asset share, [MVR](#mvr) market value reduction, [PH](#ph) policyholder
+- **Related terms:** [NPAR](#npar) without-profits, [BON](#bon) bonus, [ASHR](#ashr) asset share, [MVR](#mvr) market value reduction, [PH](#ph) policyholder, [BEC](#bec) bonus earning capacity, [AGG](#agg) aggregate
 
 ### NPAR
 
@@ -1249,6 +1346,42 @@ Values attached to one policy and the features of savings business.
 - **Definition:** Narrows an item to business where the benefits, or the way they are calculated, are fixed at the start and the insurer has no discretion over them.
 - **Not to be confused with:** Not WP. Unit-linked business is usually treated as its own class.
 - **Related terms:** [WP](#wp) with-profits, [GTEE](#gtee) guarantee
+
+### APPR
+
+- **Full term:** Appropriation
+- **Slot:** KIND
+- **Also called:** appropriation price, creation price
+- **Definition:** Narrows a unit price to the amount put into the fund for each new unit created, set so that the value of existing units is not changed.
+- **Not to be confused with:** Not OFFER, which is the price charged to the policy and may include a spread.
+- **Related terms:** [EXPR](#expr) expropriation, [OFFER](#offer) offer, [BID](#bid) bid, [UPRC](#uprc) unit price, [UNIT](#unit) unit
+
+### EXPR
+
+- **Full term:** Expropriation
+- **Slot:** KIND
+- **Also called:** expropriation price, cancellation price of the fund
+- **Definition:** Narrows a unit price to the amount taken out of the fund for each unit cancelled, set so that the value of the remaining units is not changed.
+- **Not to be confused with:** Not BID, which is the price credited to the policy. Not EXP or EXPV.
+- **Related terms:** [APPR](#appr) appropriation, [BID](#bid) bid, [OFFER](#offer) offer, [UPRC](#uprc) unit price, [UNIT](#unit) unit
+
+### BEC
+
+- **Full term:** Bonus earning capacity
+- **Slot:** ITEM
+- **Also called:** supportable bonus rate
+- **Definition:** The rate of bonus that a block of with-profits business can support over its remaining lifetime on the stated assumptions.
+- **Not to be confused with:** Not the bonus actually declared, which is BON.
+- **Related terms:** [BON](#bon) bonus, [RVS](#rvs) reversionary, [TMNL](#tmnl) terminal, [ASHR](#ashr) asset share, [WP](#wp) with-profits
+
+### AGG
+
+- **Full term:** Aggregate
+- **Slot:** KIND
+- **Also called:** pooled, total across policies
+- **Definition:** Narrows an item that is normally held for one policy to the same item calculated for a whole group of policies together.
+- **Not to be confused with:** Not a simple sum when the description says the calculation is done on pooled data.
+- **Related terms:** [ASHR](#ashr) asset share, [WP](#wp) with-profits, [POL](#pol) policy
 
 ## Economic and investment
 
@@ -1261,7 +1394,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** discounting, valuation interest
 - **Definition:** The interest allowance used to turn future amounts into present values. It takes RATE, FORCE or FAC as its measure.
 - **Not to be confused with:** Not DIS (disability). Not DCON (discontinuance). Not a premium discount. Not INT or INVR, which describe what is earned or credited.
-- **Related terms:** [INT](#int) interest, [INVR](#invr) investment return, [FWD](#fwd) forward, [SPOT](#spot) spot, [PV](#pv) present value, [FAC](#fac) factor, [FORCE](#force) force, [IFL](#ifl) IFRS 17 locked-in, [IFC](#ifc) IFRS 17 current, [RN](#rn) risk neutral, [INFL](#infl) inflation, [UNW](#unw) unwind of discount, [IRR](#irr) internal rate of return
+- **Related terms:** [INT](#int) interest, [INVR](#invr) investment return, [FWD](#fwd) forward, [SPOT](#spot) spot, [PV](#pv) present value, [FAC](#fac) factor, [FORCE](#force) force, [IFL](#ifl) IFRS 17 locked-in, [IFC](#ifc) IFRS 17 current, [RN](#rn) risk neutral, [INFL](#infl) inflation, [UNW](#unw) unwind of discount, [IRR](#irr) internal rate of return, [ECON](#econ) economic
 
 ### INT
 
@@ -1306,7 +1439,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** total return
 - **Definition:** Investment income plus realised and unrealised changes in asset values in the model period.
 - **Not to be confused with:** Not INVI. Not INT. Not DISC.
-- **Related terms:** [INVI](#invi) investment income, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [DISC](#disc) discount, [RW](#rw) real world, [UPRC](#uprc) unit price, [EQ](#eq) equity
+- **Related terms:** [INVI](#invi) investment income, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [DISC](#disc) discount, [RW](#rw) real world, [UPRC](#uprc) unit price, [EQ](#eq) equity, [ECON](#econ) economic
 
 ### ASSET
 
@@ -1315,7 +1448,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** investments
 - **Definition:** The assets held to back liabilities or capital, valued at the stated time point.
 - **Not to be confused with:** Not ASHR (asset share). Not FV.
-- **Related terms:** [INVI](#invi) investment income, [INVR](#invr) investment return, [INV](#inv) investment, [EQ](#eq) equity, [RES](#res) reserve, [OF](#of) own funds, [UNDL](#undl) underlying items, [PROP](#prop) property, [SURP](#surp) surplus
+- **Related terms:** [INVI](#invi) investment income, [INVR](#invr) investment return, [INV](#inv) investment, [EQ](#eq) equity, [RES](#res) reserve, [OF](#of) own funds, [FAIR](#fair) fair value, [MISM](#mism) mismatching, [UNDL](#undl) underlying items, [PROP](#prop) property, [SURP](#surp) surplus
 
 ### EQ
 
@@ -1383,7 +1516,16 @@ Tokens specific to reinsurance. The parties RI and NET are in the Party family.
 - **Also called:** original terms reinsurance
 - **Definition:** Narrows a reinsurance item to a treaty where the reinsurer shares in every part of the original contract, including premiums, claims, reserves and expenses.
 - **Not to be confused with:** Not risk premium reinsurance, where only the sum at risk is reinsured on the reinsurer's own rates, and which uses RISK. Not co-insurance between two direct insurers.
-- **Related terms:** [TRTY](#trty) treaty, [QS](#qs) quota share, [RISK](#risk) risk premium, [RI](#ri) reinsurance ceded
+- **Related terms:** [TRTY](#trty) treaty, [QS](#qs) quota share, [RISK](#risk) risk premium, [RI](#ri) reinsurance ceded, [FINRE](#finre) financial reinsurance
+
+### FINRE
+
+- **Full term:** Financial reinsurance
+- **Slot:** KIND
+- **Also called:** financing reinsurance, surplus relief
+- **Definition:** Narrows a reinsurance item to an arrangement whose main purpose is to give the insurer capital or financing, with only limited transfer of risk.
+- **Not to be confused with:** Not COINS, where risk is fully shared.
+- **Related terms:** [RI](#ri) reinsurance ceded, [COINS](#coins) coinsurance, [CAP](#cap) capital, [NBS](#nbs) new business strain, [CAPRQ](#caprq) requirement for capital
 
 ## Reserves and liabilities
 
@@ -1396,7 +1538,7 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Also called:** provision, policy liability, mathematical reserve
 - **Definition:** The amount held at the stated time point to meet future obligations on the stated basis. It is the generic term and the description must give the basis.
 - **Not to be confused with:** Not BEL, TP or LRC, which are reserves defined by a specific framework. Not REC or REM.
-- **Related terms:** [BEL](#bel) best estimate liability, [TP](#tp) technical provisions, [UPR](#upr) unearned premium reserve, [IBNR](#ibnr) incurred but not reported, [OCR](#ocr) outstanding claims reserve, [UNIT](#unit) unit, [NUNIT](#nunit) non-unit, [SAR](#sar) sum at risk, [CHG](#chg) change, [ASSET](#asset) assets, [LRC](#lrc) liability for remaining coverage, [LIC](#lic) liability for incurred claims, [NETP](#netp) net premium, [SURP](#surp) surplus
+- **Related terms:** [BEL](#bel) best estimate liability, [TP](#tp) technical provisions, [UPR](#upr) unearned premium reserve, [IBNR](#ibnr) incurred but not reported, [OCR](#ocr) outstanding claims reserve, [UNIT](#unit) unit, [NUNIT](#nunit) non-unit, [SAR](#sar) sum at risk, [CHG](#chg) change, [ASSET](#asset) assets, [LRC](#lrc) liability for remaining coverage, [LIC](#lic) liability for incurred claims, [FAIR](#fair) fair value, [NETP](#netp) net premium, [NEG](#neg) negative, [MISM](#mism) mismatching, [SURP](#surp) surplus
 
 ### BEL
 
@@ -1406,7 +1548,7 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Definition:** The probability-weighted present value of future cash outflows less inflows on best estimate assumptions, with no margins. Under Solvency II and the South African standards it is discounted at the prescribed risk-free rates.
 - **Not to be confused with:** Not BE, which is the basis. Not TP, which adds the risk margin. Not FCF, which adds the IFRS 17 risk adjustment.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 77(2). South African Prudential Standard FSI 2.2 section 6
-- **Related terms:** [BE](#be) best estimate, [TP](#tp) technical provisions, [RM](#rm) risk margin, [RES](#res) reserve, [FCF](#fcf) fulfilment cash flows, [PV](#pv) present value, [UNW](#unw) unwind of discount, [TVOG](#tvog) time value of options and guarantees
+- **Related terms:** [BE](#be) best estimate, [TP](#tp) technical provisions, [RM](#rm) risk margin, [RES](#res) reserve, [FCF](#fcf) fulfilment cash flows, [PV](#pv) present value, [UNW](#unw) unwind of discount, [TVOG](#tvog) time value of options and guarantees, [NEG](#neg) negative
 
 ### TP
 
@@ -1454,6 +1596,24 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Not to be confused with:** Not IBNR. Not OCI. Some guidance uses outstanding claims provision as a wider heading that includes IBNR. In this standard it is reported claims only.
 - **Source checked:** ASSA APN 116 version 1 section 2
 - **Related terms:** [IBNR](#ibnr) incurred but not reported, [RES](#res) reserve, [CLM](#clm) claim, [LIC](#lic) liability for incurred claims, [UPR](#upr) unearned premium reserve
+
+### NEG
+
+- **Full term:** Negative
+- **Slot:** KIND
+- **Also called:** negative reserve
+- **Definition:** Narrows a reserve to the case where future income is worth more than future outgo, so that the contract is treated as an asset.
+- **Not to be confused with:** Not a sign convention. It marks a reserve that is allowed to fall below zero, or the negative part of one.
+- **Related terms:** [RES](#res) reserve, [NUNIT](#nunit) non-unit, [BEL](#bel) best estimate liability, [SURP](#surp) surplus
+
+### MISM
+
+- **Full term:** Mismatching
+- **Slot:** KIND
+- **Also called:** mismatch reserve, resilience reserve
+- **Definition:** Narrows a reserve to the extra amount held because assets and liabilities are not matched and conditions may turn against the insurer.
+- **Not to be confused with:** Not MKT, which is a capital risk and not a reserve.
+- **Related terms:** [RES](#res) reserve, [ASSET](#asset) assets, [MKT](#mkt) market risk, [CAP](#cap) capital
 
 ## IFRS 17
 
@@ -1717,7 +1877,7 @@ Tokens for the MOVE slot. They turn a balance into the flow that explains part o
 - **Definition:** The change in a balance caused by revising the estimates of future cash flows or the assumptions behind them. Under IFRS 17, changes that relate to future service adjust the CSM, and changes in financial assumptions go to insurance finance income or expenses.
 - **Not to be confused with:** Not EXPV, which compares actual with expected for the current period. Not CHG, which is the whole change.
 - **Source checked:** IFRS 17 paragraphs 44(c), B96 and B97
-- **Related terms:** [EXPV](#expv) experience variance, [CHG](#chg) change, [CSM](#csm) contractual service margin
+- **Related terms:** [EXPV](#expv) experience variance, [CHG](#chg) change, [CSM](#csm) contractual service margin, [ASM](#asm) assumption
 
 ### EXPV
 
@@ -1739,7 +1899,7 @@ Capital amounts and the risks they are held for.
 - **Slot:** ITEM
 - **Definition:** Assets held in excess of liabilities, in general. The description must say which measure of capital it means.
 - **Not to be confused with:** Not RCAP, SCR or OF, which are specific measures. Not a capital (lump sum) benefit, which is LS.
-- **Related terms:** [RCAP](#rcap) required capital, [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [OF](#of) own funds, [FSUR](#fsur) free surplus, [COC](#coc) cost of capital, [CAR](#car) capital adequacy requirement
+- **Related terms:** [RCAP](#rcap) required capital, [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [OF](#of) own funds, [FSUR](#fsur) free surplus, [COC](#coc) cost of capital, [FINRE](#finre) financial reinsurance, [MISM](#mism) mismatching, [CAPRQ](#caprq) requirement for capital, [CAR](#car) capital adequacy requirement
 
 ### RCAP
 
@@ -1749,7 +1909,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Assets held above liabilities whose distribution to shareholders is restricted, on the stated basis. It reflects the company's own targets and is at least the regulatory requirement.
 - **Not to be confused with:** Not SCR, which is one regulatory definition of it. Not FSUR.
 - **Source checked:** ASSA APN 107 version 8 sections 2.5 and 3.5
-- **Related terms:** [CAP](#cap) capital, [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [FSUR](#fsur) free surplus, [COC](#coc) cost of capital, [EV](#ev) embedded value, [OF](#of) own funds, [DISTE](#diste) distributable earnings, [ANW](#anw) adjusted net worth, [NBS](#nbs) new business strain
+- **Related terms:** [CAP](#cap) capital, [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [FSUR](#fsur) free surplus, [COC](#coc) cost of capital, [EV](#ev) embedded value, [OF](#of) own funds, [DISTE](#diste) distributable earnings, [ANW](#anw) adjusted net worth, [NBS](#nbs) new business strain, [CAPRQ](#caprq) requirement for capital
 
 ### SCR
 
@@ -1823,7 +1983,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk of loss from changes in market prices and rates.
 - **Not to be confused with:** Not marketing.
 - **Source checked:** Solvency II Directive 2009/138/EC Articles 13(31) and 105(5)
-- **Related terms:** [EQ](#eq) equity, [SPRD](#sprd) spread risk, [FX](#fx) currency risk, [SCR](#scr) Solvency capital requirement, [PROP](#prop) property, [CONC](#conc) concentration risk
+- **Related terms:** [EQ](#eq) equity, [SPRD](#sprd) spread risk, [FX](#fx) currency risk, [SCR](#scr) Solvency capital requirement, [MISM](#mism) mismatching, [PROP](#prop) property, [CONC](#conc) concentration risk
 
 ### SPRD
 
@@ -1991,7 +2151,7 @@ Measures of profit and of value to shareholders.
 - **Definition:** The market value of shareholders' assets allocated to the covered business in excess of its liabilities, being required capital plus free surplus.
 - **Not to be confused with:** Not OF, which is a regulatory measure.
 - **Source checked:** ASSA APN 107 version 8 section 2.6
-- **Related terms:** [EV](#ev) embedded value, [VIF](#vif) value of in-force, [FSUR](#fsur) free surplus, [RCAP](#rcap) required capital
+- **Related terms:** [EV](#ev) embedded value, [VIF](#vif) value of in-force, [FSUR](#fsur) free surplus, [RCAP](#rcap) required capital, [APV](#apv) appraisal value
 
 ### VIF
 
@@ -2001,7 +2161,7 @@ Measures of profit and of value to shareholders.
 - **Definition:** The present value of future after tax shareholder profits from business in force at the valuation date, before the cost of required capital is deducted.
 - **Not to be confused with:** Not EV, which adds adjusted net worth and deducts the cost of required capital. Not VNB. Not CSM. Some frameworks quote it after the cost of capital, so a description must say which.
 - **Source checked:** ASSA APN 107 version 8 sections 2.7 and 5.5
-- **Related terms:** [EV](#ev) embedded value, [ANW](#anw) adjusted net worth, [VNB](#vnb) value of new business, [COC](#coc) cost of capital, [TVOG](#tvog) time value of options and guarantees, [PROF](#prof) profit, [DISTE](#diste) distributable earnings
+- **Related terms:** [EV](#ev) embedded value, [ANW](#anw) adjusted net worth, [VNB](#vnb) value of new business, [COC](#coc) cost of capital, [TVOG](#tvog) time value of options and guarantees, [PROF](#prof) profit, [DISTE](#diste) distributable earnings, [APV](#apv) appraisal value
 
 ### VNB
 
@@ -2011,7 +2171,7 @@ Measures of profit and of value to shareholders.
 - **Definition:** The present value at the point of sale of future after tax shareholder profits from business written in the period, less the cost of required capital.
 - **Not to be confused with:** Not NB. Not VIF. Not the CSM on new business.
 - **Source checked:** ASSA APN 107 version 8 sections 2.9 and 5.6
-- **Related terms:** [NB](#nb) new business, [EV](#ev) embedded value, [VIF](#vif) value of in-force, [APE](#ape) annual premium equivalent, [PROF](#prof) profit, [NBS](#nbs) new business strain, [IRR](#irr) internal rate of return
+- **Related terms:** [NB](#nb) new business, [EV](#ev) embedded value, [VIF](#vif) value of in-force, [APE](#ape) annual premium equivalent, [PROF](#prof) profit, [NBS](#nbs) new business strain, [IRR](#irr) internal rate of return, [APV](#apv) appraisal value
 
 ### APE
 
@@ -2058,7 +2218,7 @@ Measures of profit and of value to shareholders.
 - **Also called:** solvency margin, free assets, estate
 - **Definition:** The value of assets less the value of liabilities at the stated time point, on the stated basis.
 - **Not to be confused with:** Not PROF, which is the surplus arising in a period. Not FSUR, which also deducts required capital. The description must give the basis, because the answer depends on how assets and liabilities are valued.
-- **Related terms:** [PROF](#prof) profit, [FSUR](#fsur) free surplus, [OF](#of) own funds, [ASSET](#asset) assets, [RES](#res) reserve, [NBS](#nbs) new business strain
+- **Related terms:** [PROF](#prof) profit, [FSUR](#fsur) free surplus, [OF](#of) own funds, [ASSET](#asset) assets, [RES](#res) reserve, [NBS](#nbs) new business strain, [NEG](#neg) negative
 
 ### NBS
 
@@ -2067,7 +2227,7 @@ Measures of profit and of value to shareholders.
 - **Also called:** valuation strain
 - **Definition:** The amount by which the first premium falls short of the initial expenses, commission, reserve and capital that the insurer must set up when a policy starts.
 - **Not to be confused with:** Not a loss. The strain is a need for finance and is expected to be repaid by later profits.
-- **Related terms:** [SURP](#surp) surplus, [NB](#nb) new business, [PROF](#prof) profit, [RCAP](#rcap) required capital, [VNB](#vnb) value of new business, [DPP](#dpp) discounted payback period
+- **Related terms:** [SURP](#surp) surplus, [NB](#nb) new business, [PROF](#prof) profit, [RCAP](#rcap) required capital, [VNB](#vnb) value of new business, [DPP](#dpp) discounted payback period, [FINRE](#finre) financial reinsurance, [CAPRQ](#caprq) requirement for capital
 
 ### IRR
 
@@ -2085,6 +2245,112 @@ Measures of profit and of value to shareholders.
 - **Definition:** The policy duration at which the profits that have emerged so far first have a present value of zero or more.
 - **Not to be confused with:** Not TERM or DUR. It is a result of a profit test and not a feature of the policy.
 - **Related terms:** [IRR](#irr) internal rate of return, [PROF](#prof) profit, [DUR](#dur) policy duration, [NBS](#nbs) new business strain
+
+### APV
+
+- **Full term:** Appraisal value
+- **Slot:** ITEM
+- **Definition:** The embedded value plus the value to shareholders of the profits expected from future new business.
+- **Not to be confused with:** Not EV, which leaves future new business out.
+- **Related terms:** [EV](#ev) embedded value, [VIF](#vif) value of in-force, [VNB](#vnb) value of new business, [ANW](#anw) adjusted net worth
+
+### CAPRQ
+
+- **Full term:** Requirement for capital
+- **Slot:** ITEM
+- **Also called:** financing requirement, capital strain
+- **Definition:** The finance the insurer needs in order to write a contract or carry out its business plan. For one contract it is the new business strain.
+- **Not to be confused with:** Not RCAP, which is the capital that must be held against business already written. Not SCR.
+- **Related terms:** [RCAP](#rcap) required capital, [NBS](#nbs) new business strain, [CAP](#cap) capital, [FINRE](#finre) financial reinsurance
+
+## Policy data
+
+Facts about the policy and the life that the model reads as input.
+
+### SEX
+
+- **Full term:** Sex
+- **Slot:** ITEM
+- **Also called:** gender
+- **Definition:** The sex of the life assured as recorded for rating.
+- **Not to be confused with:** Not a rate. It is a code, and the description should say how it is coded.
+- **Related terms:** [SMK](#smk) smoker status, [OCC](#occ) occupation class, [AGE](#age) age, [LIFE](#life) life assured
+
+### SMK
+
+- **Full term:** Smoker status
+- **Slot:** ITEM
+- **Also called:** smoker indicator, tobacco status
+- **Definition:** Whether the life assured is rated as a smoker or a non-smoker.
+- **Not to be confused with:** Not a loading. It selects which rates apply.
+- **Related terms:** [SEX](#sex) sex, [OCC](#occ) occupation class, [LIFE](#life) life assured, [EXTRA](#extra) extra
+
+### OCC
+
+- **Full term:** Occupation class
+- **Slot:** ITEM
+- **Also called:** occupational class
+- **Definition:** The class that the occupation of the life assured falls in for rating disability and accident benefits.
+- **Not to be confused with:** Not the occupation itself.
+- **Related terms:** [SEX](#sex) sex, [SMK](#smk) smoker status, [DIS](#dis) disability, [ACCD](#accd) accident
+
+### FREQ
+
+- **Full term:** Frequency
+- **Slot:** ITEM
+- **Also called:** payment frequency, mode
+- **Definition:** The number of times in a year that a premium, annuity or other regular payment is made.
+- **Not to be confused with:** Not a claim frequency, which is a rate. Not ANN or MTH, which are time bases.
+- **Related terms:** [PREM](#prem) premium, [REG](#reg) regular, [ANTY](#anty) annuity, [ANN](#ann) annual, [MTH](#mth) monthly
+
+## Tables, assumptions and model data
+
+The inputs a model reads: assumption sets, the tables that hold them, model points and scenarios.
+
+### ASM
+
+- **Full term:** Assumption
+- **Slot:** ITEM or KIND
+- **Also called:** assumption set, basis item, parameter
+- **Definition:** A value or set of values that the model takes as given and does not calculate. As a kind it narrows a table to one that holds assumptions.
+- **Not to be confused with:** Not TBL, which is the table that stores it. Not a basis: a basis such as BE is the whole collection of assumptions used together.
+- **Related terms:** [TBL](#tbl) table, [ECON](#econ) economic, [DEMOG](#demog) demographic, [BE](#be) best estimate, [MGN](#mgn) margin, [ESTCH](#estch) change in estimates, [MPT](#mpt) model point
+
+### ECON
+
+- **Full term:** Economic
+- **Slot:** KIND
+- **Also called:** financial, market
+- **Definition:** Narrows an assumption or table to interest, inflation, investment return and other market variables.
+- **Not to be confused with:** Not DEMOG.
+- **Related terms:** [DEMOG](#demog) demographic, [ASM](#asm) assumption, [TBL](#tbl) table, [DISC](#disc) discount, [INFL](#infl) inflation, [INVR](#invr) investment return, [SCEN](#scen) scenario
+
+### DEMOG
+
+- **Full term:** Demographic
+- **Slot:** KIND
+- **Also called:** non-economic, decrement
+- **Definition:** Narrows an assumption or table to mortality, morbidity, persistency and other assumptions about lives and policyholder behaviour.
+- **Not to be confused with:** Not ECON. Expense assumptions are usually treated as a third group and use EXP.
+- **Related terms:** [ECON](#econ) economic, [ASM](#asm) assumption, [TBL](#tbl) table, [DTH](#dth) death, [LPS](#lps) lapse, [DEC](#dec) decrement
+
+### MPT
+
+- **Full term:** Model point
+- **Slot:** ITEM
+- **Also called:** model point record, policy record
+- **Definition:** One record of policy data that the model projects, standing for a single policy or a group of similar policies.
+- **Not to be confused with:** Not POL. One model point can stand for many policies.
+- **Related terms:** [POL](#pol) policy, [LIFE](#life) life assured, [SCEN](#scen) scenario, [ASM](#asm) assumption
+
+### SCEN
+
+- **Full term:** Scenario
+- **Slot:** ITEM
+- **Also called:** scenario number, simulation, trial
+- **Definition:** The identifier of one set of economic or other conditions under which the model is run.
+- **Not to be confused with:** Not a basis. Results under a scenario keep the same names and the run carries the scenario.
+- **Related terms:** [ECON](#econ) economic, [RN](#rn) risk neutral, [RW](#rw) real world, [SHK](#shk) shock, [MPT](#mpt) model point
 
 ## ZA extension: South Africa
 
@@ -2248,17 +2514,26 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [ADJ](#adj) | Adjustment | KIND | Assumption building |
 | [AFT](#aft) | After | TIME | Time points and time bases |
 | [AGE](#age) | Age | ITEM | Time and age items |
+| [AGG](#agg) | Aggregate | KIND | Policy values, unit-linked and with-profits |
+| [ALB](#alb) | Age last birthday | KIND | Time and age items |
 | [ALLOC](#alloc) | Allocation | KIND | Policy values, unit-linked and with-profits |
 | [AMT](#amt) | Amount | MEASURE | Measures |
+| [ANB](#anb) | Age next birthday | KIND | Time and age items |
 | [ANN](#ann) | Annual | TIME | Time points and time bases |
+| [ANNIV](#anniv) | Policy anniversary | ITEM or KIND | Time and age items |
+| [ANRB](#anrb) | Age nearest birthday | KIND | Time and age items |
 | [ANTY](#anty) | Annuity | ITEM or KIND | Claims and benefits |
 | [ANW](#anw) | Adjusted net worth | ITEM | Profit, embedded value and new business |
 | [APE](#ape) | Annual premium equivalent | ITEM | Profit, embedded value and new business |
+| [APPR](#appr) | Appropriation | KIND | Policy values, unit-linked and with-profits |
+| [APV](#apv) | Appraisal value | ITEM | Profit, embedded value and new business |
 | [ASHR](#ashr) | Asset share | ITEM | Policy values, unit-linked and with-profits |
+| [ASM](#asm) | Assumption | ITEM or KIND | Tables, assumptions and model data |
 | [ASSET](#asset) | Assets | ITEM | Economic and investment |
 | [ATTR](#attr) | Directly attributable | KIND | Expenses and commission |
 | [AVG](#avg) | Average | MEASURE | Measures |
 | [BE](#be) | Best estimate | BASIS | Basis |
+| [BEC](#bec) | Bonus earning capacity | ITEM | Policy values, unit-linked and with-profits |
 | [BEF](#bef) | Before | TIME | Time points and time bases |
 | [BEL](#bel) | Best estimate liability | ITEM | Reserves and liabilities |
 | [BEN](#ben) | Benefit | ITEM | Claims and benefits |
@@ -2266,7 +2541,10 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [BON](#bon) | Bonus | ITEM | Policy values, unit-linked and with-profits |
 | [BOP](#bop) | Start of period | TIME | Time points and time bases |
 | [BSR](#bsr) | Bonus stabilisation reserve | ITEM | ZA extension: South Africa |
+| [CALMTH](#calmth) | Calendar month | ITEM | Time and age items |
+| [CALYR](#calyr) | Calendar year | ITEM | Time and age items |
 | [CAP](#cap) | Capital | ITEM | Capital and risk |
+| [CAPRQ](#caprq) | Requirement for capital | ITEM | Profit, embedded value and new business |
 | [CAR](#car) | Capital adequacy requirement | ITEM | ZA extension: South Africa |
 | [CAT](#cat) | Catastrophe risk | KIND | Capital and risk |
 | [CF](#cf) | Cash flow | ITEM | Cash flows in general |
@@ -2292,16 +2570,19 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [DCON](#dcon) | Discontinuance | ITEM | Decrements and policy status |
 | [DEC](#dec) | Decrement | ITEM | Decrements and policy status |
 | [DEFP](#defp) | Deferred period | ITEM | Time and age items |
+| [DEMOG](#demog) | Demographic | KIND | Tables, assumptions and model data |
 | [DEP](#dep) | Dependent | KIND | Assumption building |
 | [DIS](#dis) | Disability | ITEM or KIND | Decrements and policy status |
 | [DISC](#disc) | Discount | ITEM | Economic and investment |
 | [DISCR](#discr) | Discretionary | KIND | ZA extension: South Africa |
 | [DISTE](#diste) | Distributable earnings | ITEM | Profit, embedded value and new business |
 | [DIV](#div) | Diversification | KIND | Capital and risk |
+| [DOB](#dob) | Date of birth | ITEM | Time and age items |
 | [DOWN](#down) | Down | KIND | Capital and risk |
 | [DPP](#dpp) | Discounted payback period | ITEM | Profit, embedded value and new business |
 | [DTH](#dth) | Death | ITEM or KIND | Decrements and policy status |
 | [DUR](#dur) | Policy duration | ITEM | Time and age items |
+| [ECON](#econ) | Economic | KIND | Tables, assumptions and model data |
 | [EOP](#eop) | End of period | TIME | Time points and time bases |
 | [EQ](#eq) | Equity | KIND | Economic and investment |
 | [ESC](#esc) | Escalation | ITEM or KIND | Premiums |
@@ -2309,15 +2590,19 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [EV](#ev) | Embedded value | ITEM or BASIS | Basis |
 | [EXIT](#exit) | Exit | ITEM | Decrements and policy status |
 | [EXP](#exp) | Expense | ITEM or KIND | Expenses and commission |
+| [EXPR](#expr) | Expropriation | KIND | Policy values, unit-linked and with-profits |
 | [EXPV](#expv) | Experience variance | MOVE | Movements |
 | [EXPY](#expy) | Expiry | ITEM | Decrements and policy status |
 | [EXTRA](#extra) | Extra | KIND | Premiums |
 | [FAC](#fac) | Factor | MEASURE | Measures |
 | [FACL](#facl) | Facultative | KIND | Reinsurance |
+| [FAIR](#fair) | Fair value | BASIS | Basis |
 | [FCF](#fcf) | Fulfilment cash flows | ITEM | IFRS 17 |
+| [FINRE](#finre) | Financial reinsurance | KIND | Reinsurance |
 | [FLG](#flg) | Flag | MEASURE | Measures |
 | [FMC](#fmc) | Fund management charge | KIND | Policy values, unit-linked and with-profits |
 | [FORCE](#force) | Force | MEASURE | Measures |
+| [FREQ](#freq) | Frequency | ITEM | Policy data |
 | [FSUR](#fsur) | Free surplus | ITEM | Profit, embedded value and new business |
 | [FSV](#fsv) | Financial soundness valuation | BASIS | ZA extension: South Africa |
 | [FUN](#fun) | Funeral cover | KIND | ZA extension: South Africa |
@@ -2369,21 +2654,26 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [MAT](#mat) | Maturity | ITEM or KIND | Decrements and policy status |
 | [MCR](#mcr) | Minimum capital requirement | ITEM | Capital and risk |
 | [MGN](#mgn) | Margin | ITEM or KIND | Assumption building |
+| [MISM](#mism) | Mismatching | KIND | Reserves and liabilities |
 | [MKT](#mkt) | Market risk | KIND | Capital and risk |
 | [MOP](#mop) | Middle of period | TIME | Time points and time bases |
 | [MORB](#morb) | Morbidity risk | KIND | Capital and risk |
 | [MORT](#mort) | Mortality risk | KIND | Capital and risk |
+| [MPT](#mpt) | Model point | ITEM | Tables, assumptions and model data |
 | [MTH](#mth) | Monthly | TIME | Time points and time bases |
+| [MTHS](#mths) | In months | MEASURE | Measures |
 | [MVR](#mvr) | Market value reduction | ITEM | Policy values, unit-linked and with-profits |
 | [NATTR](#nattr) | Not directly attributable | KIND | Expenses and commission |
 | [NB](#nb) | New business | MOVE | Movements |
 | [NBS](#nbs) | New business strain | ITEM | Profit, embedded value and new business |
 | [NCF](#ncf) | Net cash flow | ITEM | Cash flows in general |
+| [NEG](#neg) | Negative | KIND | Reserves and liabilities |
 | [NET](#net) | Net of reinsurance | PARTY | Party |
 | [NETP](#netp) | Net premium | KIND | Premiums |
 | [NPAR](#npar) | Without-profits | KIND | Policy values, unit-linked and with-profits |
 | [NTU](#ntu) | Not taken up | ITEM | Decrements and policy status |
 | [NUNIT](#nunit) | Non-unit | KIND | Policy values, unit-linked and with-profits |
+| [OCC](#occ) | Occupation class | ITEM | Policy data |
 | [OCI](#oci) | Other comprehensive income | ITEM or KIND | IFRS 17 |
 | [OCR](#ocr) | Outstanding claims reserve | ITEM | Reserves and liabilities |
 | [OF](#of) | Own funds | ITEM | Capital and risk |
@@ -2399,6 +2689,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [PL](#pl) | Profit or loss | KIND | IFRS 17 |
 | [POL](#pol) | Policy | ITEM | Decrements and policy status |
 | [POLF](#polf) | Policy fee | KIND | Policy values, unit-linked and with-profits |
+| [POLYR](#polyr) | Policy year | ITEM | Time and age items |
 | [PRC](#prc) | Pricing | BASIS | Basis |
 | [PRD](#prd) | Per model period | TIME | Time points and time bases |
 | [PREM](#prem) | Premium | ITEM or KIND | Premiums |
@@ -2433,12 +2724,15 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [SALN](#saln) | Stand-alone | KIND | Claims and benefits |
 | [SAM](#sam) | Solvency Assessment and Management | BASIS | ZA extension: South Africa |
 | [SAR](#sar) | Sum at risk | ITEM | Claims and benefits |
+| [SCEN](#scen) | Scenario | ITEM | Tables, assumptions and model data |
 | [SCR](#scr) | Solvency capital requirement | ITEM | Capital and risk |
 | [SEL](#sel) | Select | KIND | Assumption building |
+| [SEX](#sex) | Sex | ITEM | Policy data |
 | [SGL](#sgl) | Single | KIND | Premiums |
 | [SH](#sh) | Shareholder | PARTY | Party |
 | [SHK](#shk) | Shock | ITEM | Assumption building |
 | [SII](#sii) | Solvency II | BASIS | Basis |
+| [SMK](#smk) | Smoker status | ITEM | Policy data |
 | [SPOT](#spot) | Spot | KIND | Economic and investment |
 | [SPRD](#sprd) | Spread risk | KIND | Capital and risk |
 | [SUR](#sur) | Surrender | ITEM or KIND | Decrements and policy status |
@@ -2446,7 +2740,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [SV](#sv) | Surrender value | ITEM | Policy values, unit-linked and with-profits |
 | [T0](#t0) | Valuation date | TIME | Time points and time bases |
 | [TAX](#tax) | Tax | ITEM or KIND | Cash flows in general |
-| [TBL](#tbl) | Table | KIND | Assumption building |
+| [TBL](#tbl) | Table | ITEM or KIND | Assumption building |
 | [TERM](#term) | Policy term | ITEM or KIND | Time and age items |
 | [TIME](#time) | Projection time | ITEM | Time and age items |
 | [TMNL](#tmnl) | Terminal | KIND | Policy values, unit-linked and with-profits |
@@ -2470,6 +2764,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | [WDL](#wdl) | Partial withdrawal | ITEM or KIND | Decrements and policy status |
 | [WP](#wp) | With-profits | KIND | Policy values, unit-linked and with-profits |
 | [XL](#xl) | Excess of loss | KIND | Reinsurance |
+| [YRS](#yrs) | In years | MEASURE | Measures |
 
 ## Words in everyday use and where to find them
 
@@ -2489,19 +2784,23 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | age at entry | [AGE](#age) |
 | AIDS extra mortality | [HIV](#hiv) |
 | amortisation | [REL](#rel) |
+| anniversary date | [ANNIV](#anniv) |
 | annual bonus | [RVS](#rvs) |
 | annual management charge | [FMC](#fmc) |
 | annualised | [ANN](#ann) |
+| appropriation price | [APPR](#appr) |
 | as a proportion of | [PER](#per) |
 | asset management | [INV](#inv) |
 | asset-based fee | [FMC](#fmc) |
 | assumption change | [ESTCH](#estch) |
+| assumption set | [ASM](#asm) |
 | attained age | [AGE](#age) |
 | automatic increase | [ESC](#esc) |
 | automatic reinsurance | [TRTY](#trty) |
 | available capital | [OF](#of) |
 | base table | [TBL](#tbl) |
 | basis change | [ESTCH](#estch) |
+| basis item | [ASM](#asm) |
 | before reinsurance | [GRS](#grs) |
 | beginning of period | [BOP](#bop) |
 | benefit level | [BEN](#ben) |
@@ -2509,6 +2808,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | benefit term | [TERM](#term) |
 | best estimate of liabilities | [BEL](#bel) |
 | bid price | [BID](#bid) |
+| birth date | [DOB](#dob) |
 | bonus smoothing reserve | [BSR](#bsr) |
 | boolean | [IND](#ind) |
 | break-even period | [DPP](#dpp) |
@@ -2517,9 +2817,11 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | burial cover | [FUN](#fun) |
 | calculation date | [T0](#t0) |
 | cancellation price | [BID](#bid) |
+| cancellation price of the fund | [EXPR](#expr) |
 | cancelled from inception | [NTU](#ntu) |
 | capital benefit | [LS](#ls) |
 | capital requirement | [RCAP](#rcap) |
+| capital strain | [CAPRQ](#caprq) |
 | CAR cover | [CAR](#car) |
 | case by case reinsurance | [FACL](#facl) |
 | case reserve | [OCR](#ocr) |
@@ -2545,6 +2847,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | cost of required capital | [COC](#coc) |
 | cover | [SA](#sa) |
 | cover amount | [BEN](#ben) |
+| creation price | [APPR](#appr) |
 | creation price for the policyholder | [OFFER](#offer) |
 | credit default risk | [CPTY](#cpty) |
 | credit protection | [CRDL](#crdl) |
@@ -2555,6 +2858,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | death strain at risk | [SAR](#sar) |
 | declared bonus | [BON](#bon) |
 | decrease | [DOWN](#down) |
+| decrement | [DEMOG](#demog) |
 | deduction | [CHRG](#chrg) |
 | direct | [GRS](#grs) |
 | direct participating contracts | [VFA](#vfa) |
@@ -2589,12 +2893,16 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | expected | [BE](#be) |
 | experience adjustment | [EXPV](#expv) |
 | experience adjustment to a table | [ADJ](#adj) |
+| expropriation price | [EXPR](#expr) |
 | extra | [LOAD](#load) |
 | extra premium | [EXTRA](#extra) |
 | extra risk | [EXTRA](#extra) |
 | face amount | [SA](#sa) |
 | fee | [CHRG](#chrg) |
 | final bonus | [TMNL](#tmnl) |
+| financial | [ECON](#econ) |
+| financing reinsurance | [FINRE](#finre) |
+| financing requirement | [CAPRQ](#caprq) |
 | first tier margin | [COMP](#comp) |
 | first year | [INIT](#init) |
 | fixed expenses | [OH](#oh) |
@@ -2608,6 +2916,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | FSI basis | [SAM](#sam) |
 | full withdrawal | [SUR](#sur) |
 | funeral benefit | [FUN](#fun) |
+| gender | [SEX](#sex) |
 | general model | [GMM](#gmm) |
 | gross premium | [OFF](#off) |
 | guaranteed benefit | [GTEE](#gtee) |
@@ -2643,19 +2952,27 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | loss-making | [ONER](#oner) |
 | lump sum premium | [SGL](#sgl) |
 | made paid-up | [PUP](#pup) |
+| market | [ECON](#econ) |
+| market consistent value | [FAIR](#fair) |
 | market value adjustment | [MVR](#mvr) |
 | mass lapse | [MASS](#mass) |
 | mathematical reserve | [RES](#res) |
 | mean | [AVG](#avg) |
 | member | [LIFE](#life) |
 | mid-period | [MOP](#mop) |
+| mismatch reserve | [MISM](#mism) |
+| mode | [FREQ](#freq) |
 | mode of exit | [DEC](#dec) |
+| model point record | [MPT](#mpt) |
 | money amount | [AMT](#amt) |
+| month of year | [CALMTH](#calmth) |
+| months | [MTHS](#mths) |
 | mortality | [DTH](#dth) |
 | mortality improvement | [IMP](#imp) |
 | movement | [CHG](#chg) |
 | multiple decrement rate | [DEP](#dep) |
 | multiplier | [FAC](#fac) |
+| negative reserve | [NEG](#neg) |
 | net amount at risk | [SAR](#sar) |
 | net income | [NCF](#ncf) |
 | new business cost | [ACQ](#acq) |
@@ -2663,13 +2980,17 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | new contracts | [NB](#nb) |
 | no-claim period | [WAITP](#waitp) |
 | non-attributable | [NATTR](#nattr) |
+| non-economic | [DEMOG](#demog) |
 | non-participating | [NPAR](#npar) |
 | non-profit | [NPAR](#npar) |
 | non-proportional reinsurance | [XL](#xl) |
 | non-vested bonus | [TMNL](#tmnl) |
 | notified claims reserve | [OCR](#ocr) |
 | number of | [CNT](#cnt) |
+| number of months | [MTHS](#mths) |
+| number of years | [YRS](#yrs) |
 | obligatory reinsurance | [TRTY](#trty) |
+| occupational class | [OCC](#occ) |
 | off | [EXIT](#exit) |
 | offer price | [OFFER](#offer) |
 | on the books | [IF](#if) |
@@ -2684,9 +3005,11 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | outstanding | [REM](#rem) |
 | overheads | [OH](#oh) |
 | P&L | [PL](#pl) |
+| parameter | [ASM](#asm) |
 | partial encashment | [WDL](#wdl) |
 | partial surrender | [WDL](#wdl) |
 | participating | [WP](#wp) |
+| payment frequency | [FREQ](#freq) |
 | pension in payment | [ANTY](#anty) |
 | per month | [MTH](#mth) |
 | per policy charge | [POLF](#polf) |
@@ -2699,9 +3022,10 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | policy ending | [EXIT](#exit) |
 | policy liability | [RES](#res) |
 | policy outgo | [CLM](#clm) |
-| policy year | [DUR](#dur) |
+| policy record | [MPT](#mpt) |
 | policyholder behaviour risk | [LPSR](#lpsr) |
 | policyholders' share | [PH](#ph) |
+| pooled | [AGG](#agg) |
 | premium basis | [PRC](#prc) |
 | premium cessation | [PUP](#pup) |
 | premium protection | [WAIV](#waiv) |
@@ -2734,8 +3058,10 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | reinsurance held | [RI](#ri) |
 | reinsurers' share | [RI](#ri) |
 | remaining | [FUT](#fut) |
+| renewal date | [ANNIV](#anniv) |
 | reporting date | [T0](#t0) |
 | reserving basis | [PRU](#pru) |
+| resilience reserve | [MISM](#mism) |
 | retained | [NET](#net) |
 | retained amount | [RET](#ret) |
 | retention | [PERS](#pers) |
@@ -2751,6 +3077,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | sales | [NB](#nb) |
 | scalar | [FAC](#fac) |
 | scaling | [ADJ](#adj) |
+| scenario number | [SCEN](#scen) |
 | second tier margin | [DISCR](#discr) |
 | select period | [SEL](#sel) |
 | servicing | [MAINT](#maint) |
@@ -2761,7 +3088,9 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | shareholders' share | [SH](#sh) |
 | shares | [EQ](#eq) |
 | simplified approach | [PAA](#paa) |
+| simulation | [SCEN](#scen) |
 | single decrement rate | [INDP](#indp) |
+| smoker indicator | [SMK](#smk) |
 | solvency margin | [SURP](#surp) |
 | South African solvency basis | [SAM](#sam) |
 | standard table | [TBL](#tbl) |
@@ -2769,7 +3098,9 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | stress size | [SHK](#shk) |
 | substandard | [EXTRA](#extra) |
 | sum insured | [SA](#sa) |
+| supportable bonus rate | [BEC](#bec) |
 | surplus arising | [PROF](#prof) |
+| surplus relief | [FINRE](#finre) |
 | survival probability | [PROB](#prob) |
 | survival to term | [MAT](#mat) |
 | switch | [FLG](#flg) |
@@ -2779,10 +3110,13 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | termination (older South African guidance) | [DCON](#dcon) |
 | time zero | [T0](#t0) |
 | to date | [CUM](#cum) |
+| tobacco status | [SMK](#smk) |
+| total across policies | [AGG](#agg) |
 | total return | [INVR](#invr) |
 | transition intensity | [FORCE](#force) |
 | trauma cover | [CI](#ci) |
 | trend | [IMP](#imp) |
+| trial | [SCEN](#scen) |
 | undiscounted future | [FUT](#fut) |
 | unearned premium provision | [UPR](#upr) |
 | unearned profit | [CSM](#csm) |
@@ -2801,5 +3135,7 @@ Marked extension set ZA. These tokens are part of a name only when a model decla
 | with interest | [ACC](#acc) |
 | with margins | [PRU](#pru) |
 | withdrawal in the umbrella sense | [DCON](#dcon) |
+| year of policy | [POLYR](#polyr) |
 | yearly | [ANN](#ann) |
+| years | [YRS](#yrs) |
 | zero coupon rate | [SPOT](#spot) |

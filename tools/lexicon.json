@@ -745,6 +745,183 @@
     ],
     "per policy": [
       "@PERPOL"
+    ],
+    "in years": [
+      "YRS"
+    ],
+    "in months": [
+      "MTHS"
+    ],
+    "date": [
+      "DATE"
+    ],
+    "inception date": [
+      "DATE",
+      "INC"
+    ],
+    "date of inception": [
+      "DATE",
+      "INC"
+    ],
+    "commencement date": [
+      "DATE",
+      "INC"
+    ],
+    "entry date": [
+      "DATE",
+      "INC"
+    ],
+    "start date": [
+      "DATE",
+      "INC"
+    ],
+    "issue date": [
+      "DATE",
+      "INC"
+    ],
+    "entry age": [
+      "AGE",
+      "INC"
+    ],
+    "age at entry": [
+      "AGE",
+      "INC"
+    ],
+    "age at inception": [
+      "AGE",
+      "INC"
+    ],
+    "age last birthday": [
+      "AGE",
+      "ALB"
+    ],
+    "age next birthday": [
+      "AGE",
+      "ANB"
+    ],
+    "age nearest birthday": [
+      "AGE",
+      "ANRB"
+    ],
+    "premium payment term": [
+      "TERM",
+      "PREM"
+    ],
+    "premium paying term": [
+      "TERM",
+      "PREM"
+    ],
+    "premium term": [
+      "TERM",
+      "PREM"
+    ],
+    "premium payments": [
+      "PREM"
+    ],
+    "premium payment": [
+      "PREM"
+    ],
+    "commission payments": [
+      "COMM"
+    ],
+    "commission payment": [
+      "COMM"
+    ],
+    "expense payments": [
+      "EXP"
+    ],
+    "tax payments": [
+      "TAX"
+    ],
+    "tax payment": [
+      "TAX"
+    ],
+    "premium frequency": [
+      "FREQ",
+      "PREM"
+    ],
+    "premiums per year": [
+      "FREQ",
+      "PREM"
+    ],
+    "number of premiums per year": [
+      "FREQ",
+      "PREM"
+    ],
+    "annuity frequency": [
+      "FREQ",
+      "ANTY"
+    ],
+    "projection month": [
+      "TIME",
+      "MTHS"
+    ],
+    "projection year": [
+      "TIME",
+      "YRS"
+    ],
+    "appropriation price": [
+      "UPRC",
+      "APPR"
+    ],
+    "expropriation price": [
+      "UPRC",
+      "EXPR"
+    ],
+    "negative reserve": [
+      "RES",
+      "NEG"
+    ],
+    "negative non unit reserve": [
+      "RES",
+      "NEG",
+      "NUNIT"
+    ],
+    "mismatching reserve": [
+      "RES",
+      "MISM"
+    ],
+    "mismatch reserve": [
+      "RES",
+      "MISM"
+    ],
+    "fair value basis": [
+      "FAIR"
+    ],
+    "fair value reserve": [
+      "RES",
+      "FAIR"
+    ],
+    "aggregate asset share": [
+      "ASHR",
+      "AGG"
+    ],
+    "model points": [
+      "MPT"
+    ],
+    "assumptions": [
+      "ASM"
+    ],
+    "gender": [
+      "SEX"
+    ],
+    "base table": [
+      "TBL"
+    ],
+    "standard table": [
+      "TBL"
+    ],
+    "from the table": [
+      "TBL"
+    ],
+    "from the base table": [
+      "TBL"
+    ],
+    "read from the table": [
+      "TBL"
+    ],
+    "read from the base table": [
+      "TBL"
     ]
   },
   "special": {
@@ -756,7 +933,13 @@
     "divided by": "@PER",
     "per mille of": "@PER",
     "before": "@BEF",
-    "after": "@AFT"
+    "after": "@AFT",
+    "table": "@TABLE",
+    "tables": "@TABLE",
+    "table of": "@TABLE",
+    "tables of": "@TABLE",
+    "lookup table": "@TABLE",
+    "lookup table of": "@TABLE"
   },
   "dropAliases": [
     "t",
@@ -804,7 +987,16 @@
     "surplus arising",
     "attained age",
     "age at entry",
-    "qx"
+    "qx",
+    "years",
+    "months",
+    "number of years",
+    "number of months",
+    "parameter",
+    "trial",
+    "mode",
+    "financial",
+    "market"
   ],
   "stock": [
     "BEL",
@@ -841,7 +1033,8 @@
     "UNDL",
     "UPRC",
     "SURP",
-    "TVOG"
+    "TVOG",
+    "APV"
   ],
   "perPolicyItems": [
     "BEN",
@@ -1254,6 +1447,44 @@
         ]
       ],
       "soft": true
+    },
+    {
+      "word": "period in years",
+      "unless": [],
+      "question": "Which period, in years?",
+      "options": [
+        [
+          "Time since the valuation date",
+          "projection time in years"
+        ],
+        [
+          "Time since the policy started",
+          "policy duration in years"
+        ],
+        [
+          "The full length of the policy",
+          "policy term in years"
+        ]
+      ]
+    },
+    {
+      "word": "period in months",
+      "unless": [],
+      "question": "Which period, in months?",
+      "options": [
+        [
+          "Time since the valuation date",
+          "projection time in months"
+        ],
+        [
+          "Time since the policy started",
+          "policy duration in months"
+        ],
+        [
+          "The full length of the policy",
+          "policy term in months"
+        ]
+      ]
     }
   ]
 }

@@ -117,6 +117,7 @@ A stress or scenario is not a basis. See section 8.
 - Every amount is stored as a positive number in its natural direction. Premiums are positive income. Claims and expenses are positive outgo.
 - Items that are a difference, such as `NCF` and `PROF`, are income less outgo.
 - Names carry no sign, no unit and no currency. Whether a rate is held as 0.05 or as 5 is a matter for the model's metadata, not for the name.
+- There is one exception. A length of time or an age says whether it is in years or in months, because models often hold both side by side. `DUR_MTHS_EOP` is the policy duration in months and `TERM_YRS` is the policy term in years.
 
 ## 6. The MEASURE slot
 
@@ -134,6 +135,8 @@ The measure says what kind of number the variable holds. With no measure token t
 | Indicator | `IND` | 1 or 0, calculated by the model, can vary with time. |
 | Flag | `FLG` | A setting fixed for the run. |
 | Index | `IDX` | Level of an index. Must have a time point. |
+| In years | `YRS` | Only for lengths of time and ages. |
+| In months | `MTHS` | Only for lengths of time and ages. |
 
 The slot can hold up to three parts, in this order.
 
@@ -203,11 +206,23 @@ A name says what a variable means. It does not say where the variable lives or h
 
 - Product, fund, portfolio or cohort.
 - Scenario, stress, sensitivity or run number. A stress is a run. Results under a stress keep the same names, and the run carries the stress label.
-- Units, currency, sign and data type.
+- Units, currency, sign and data type. The only unit a name carries is years or months on a length of time.
 - Whether the variable is an input, an output or an intermediate step.
 - Array dimensions and time subscripts.
 
-### 8.1 Instances
+### 8.1 Tables and assumption sets
+
+A model reads tables as well as calculating variables. A table is named with `TBL` as the first token, followed by the full name of the variable that the table holds. The part after `TBL` must be a valid name by itself.
+
+- `TBL_DTH` is a mortality table.
+- `TBL_LPS_INDP_RATE_ANN` is a table of independent annual lapse rates. The variable read from it is `LPS_INDP_RATE_ANN`.
+- `TBL_ASM_ECON` is the table of economic assumptions. `ASM_DEMOG` is the demographic assumption set.
+
+As a kind, in any later position, the same token means a value read from a base table before adjustment: `DTH_TBL_INDP_RATE_ANN`.
+
+What a table is indexed by, such as age, sex or duration, is not part of its name.
+
+### 8.2 Instances
 
 Some platforms cannot hold a dimension and need separate variables for the first and second life, or for each benefit. For this one case a name may end with an instance token after the TIME slot.
 

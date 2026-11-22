@@ -6,7 +6,8 @@
 (function (root) {
   "use strict";
 
-  var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX"];
+  var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"];
+  var UNIT = ["YRS", "MTHS"];
   var AGGR = ["CUM", "ACC", "FUT", "AVG"];
   var BASE = ["ANN", "MTH", "PRD"];
   var POINT = ["BOP", "MOP", "EOP", "T0", "INC"];
@@ -87,6 +88,15 @@
       if (name.length > 40) { p.push("The name is longer than 40 characters."); }
       var toks = name.split("_");
       if (toks.length > 9) { p.push("The name has more than 9 tokens."); }
+      if (toks[0] === "TBL" && toks.length > 1) {
+        // a table is named TBL plus the name of the variable it holds
+        var inner = validate(toks.slice(1).join("_"));
+        inner.problems.forEach(function (x) { p.push(x); });
+        out.slots = [{ slot: "TABLE", tok: "TBL" }].concat(inner.slots);
+        out.private = inner.private;
+        out.ok = p.length === 0;
+        return out;
+      }
       var inst = null;
       if (toks.length > 1 && INSTANCE.test(toks[toks.length - 1]) && !T[toks[toks.length - 1]]) { inst = toks.pop(); }
       for (var j = 0; j < toks.length; j++) {
@@ -149,10 +159,13 @@
     function canonical(slots) {
       var by = function (s) { return slots.filter(function (x) { return x.slot === s; }); };
       var meas = by("MEASURE"), time = by("TIME");
-      var m = meas.filter(function (x) { return x.tok !== "PER"; }).map(function (x) { return lc(x.tok); });
+      var m = meas.filter(function (x) { return x.tok !== "PER" && !has(UNIT, x.tok); }).map(function (x) { return lc(x.tok); });
+      var unit = meas.filter(function (x) { return has(UNIT, x.tok); })[0];
       var per = meas.filter(function (x) { return x.tok === "PER"; })[0];
-      var head = by("KIND").map(function (x) { return lc(x.tok); }).concat(lc(by("ITEM")[0].tok)).join(" ");
+      var head = by("KIND").map(function (x) { return x.tok === "TBL" ? "base table" : lc(x.tok); }).concat(lc(by("ITEM")[0].tok)).join(" ");
       var s = m.length ? m.join(" ") + " of " + head : head;
+      if (by("TABLE").length) { s = "table of " + s; }
+      if (unit) { s += ", " + lc(unit.tok); }
       by("MOVE").forEach(function (x) { s += ", " + lc(x.tok); });
       by("PARTY").forEach(function (x) { s += ", " + lc(x.tok); });
       by("BASIS").forEach(function (x) { s += ", " + lc(x.tok) + " basis"; });
@@ -225,7 +238,7 @@
       if (!norm(description)) { res.notes.push("Write a description first."); return res; }
       res.questions = vagueChecks(description);
       var els = scan(description);
-      var per = null, order = null, inst = null, basis = null, party = null, move = null;
+      var per = null, order = null, inst = null, basis = null, party = null, move = null, isTable = false;
       var prim = null, aggr = null, base = null, point = null;
       var cands = [];
       var i, e, j;
@@ -248,6 +261,8 @@
           } else { order = { tok: e.t === "@BEF" ? "BEF" : "AFT", arg: found.t }; }
         } else if (e.t === "@PERPOL") {
           if (!per) { per = "POL"; }
+        } else if (e.t === "@TABLE") {
+          isTable = true;
         } else if (e.t === "@GROSS") {
           res.notes.push("Gross of reinsurance is implied, so it is not written in the name.");
         } else if (e.t === "@EVBASIS") {
@@ -294,7 +309,7 @@
       // the item is the head noun: the last item-capable term in the first phrase that has one
       var item = null, headSeg = null;
       cands.forEach(function (c) {
-        if (!itemCapable(c.t) || c.sub) { return; }
+        if (!itemCapable(c.t) || c.sub || c.t === "TBL") { return; }
         if (headSeg === null) { headSeg = c.seg; }
         if (c.seg === headSeg) { item = c; }
       });
@@ -334,7 +349,8 @@
         { label: "Valuation date", append: ", at the valuation date" }, { label: "Inception", append: ", at inception" }];
       var needs = [prim, aggr].filter(function (m) { return m && has(NEED_POINT, m); });
       var inForce = (item.t === "POL" || item.t === "LIFE") && (has(kinds, "IF") || has(kinds, "PUP")) && !move;
-      var stock = has(LX.stock, item.t) && !move && (!prim || prim === "IND");
+      var stock = has(LX.stock, item.t) && !move && (!prim || prim === "IND") && !isTable;
+      if (isTable) { inForce = false; }
       if (!point && needs.length) {
         res.questions.push({ hard: true, text: "A " + lc(needs[0]) + " must say at which instant it is measured. Which one?", options: pointOpts });
       } else if (!point && (inForce || stock) && prim !== "FLG") {
@@ -361,7 +377,7 @@
       if (point) { toks.push(point); }
       if (order) { toks.push(order.tok, order.arg); }
       if (inst) { toks.push(inst); }
-      var name = toks.join("_");
+      var name = (isTable ? "TBL_" : "") + toks.join("_");
       var hard = res.questions.filter(function (q) { return q.hard; });
       var v = validate(name);
       res.slots = v.slots;
