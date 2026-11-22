@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Try the namer
+    url: https://proudchitts.github.io/actuarial-nomenclature/
+    about: Describe a variable and see the name before you report anything.

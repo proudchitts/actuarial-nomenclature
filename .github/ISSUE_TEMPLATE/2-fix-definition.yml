@@ -1,0 +1,23 @@
+name: Correct a definition
+description: A definition that is wrong, loose, or not right for your market.
+title: "Definition: "
+labels: ["definition"]
+body:
+  - type: input
+    id: term
+    attributes: { label: Short form or term, placeholder: "PUP" }
+    validations: { required: true }
+  - type: textarea
+    id: wrong
+    attributes: { label: What is wrong with it? }
+    validations: { required: true }
+  - type: textarea
+    id: better
+    attributes: { label: Your wording, description: "One or two plain sentences, in your own words." }
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes: { label: Source, description: "A public text that supports it, if there is one." }
+  - type: input
+    id: market
+    attributes: { label: Market and background, description: "For example: South Africa, with-profits valuation. It helps to weigh different views." }

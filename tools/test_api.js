@@ -69,7 +69,11 @@ function httpTest() {
   const nv = api.nameVariable(s.suggestions[0].closest_terms[0].revised_description);
   ok(nv.status === "ok" && nv.name === "COMM", "the revised description then names cleanly");
   const SG = require(path.join(path.dirname(__dirname), "docs", "suggest.js")).create(require(path.join(path.dirname(__dirname), "docs", "data.js")));
-  ok(require(path.join(path.dirname(__dirname), "docs", "embeddings.js")).key === SG.key, "docs/embeddings.js is up to date with the glossary");
+  const fresh = require(path.join(path.dirname(__dirname), "docs", "embeddings.js")).key === SG.key;
+  if (process.argv.includes("--release")) { ok(fresh, "docs/embeddings.js is up to date with the glossary"); }
+  else if (!fresh) { console.log("note: docs/embeddings.js is out of date. The maintainer rebuilds it before a release (node tools/build_embeddings.mjs)."); }
+  const full = api.nameVariable("Death claims recovered from reinsurers in the period");
+  ok(full.group === "Reinsurance" && full.value_type && full.terms.length === 3 && full.see_also.some((s) => s.name === "CLM_DTH") && full.standard_version, "the response carries group, value type, terms and see_also");
   if (fail) { console.log("\nFAILED: " + fail); process.exit(1); }
   console.log("\nAll interface tests passed.");
 })();

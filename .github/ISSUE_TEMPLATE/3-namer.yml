@@ -1,0 +1,19 @@
+name: The namer got it wrong
+description: A description that gave the wrong name, or was refused when it was clear.
+title: "Namer: "
+labels: ["namer"]
+body:
+  - type: textarea
+    id: description
+    attributes: { label: The description you typed, description: "Do not paste confidential model content." }
+    validations: { required: true }
+  - type: input
+    id: got
+    attributes: { label: What it returned, placeholder: "RES_DTH_EOP, or the question it asked" }
+    validations: { required: true }
+  - type: input
+    id: expected
+    attributes: { label: What you expected, placeholder: "RES_DTH_FLUC_EOP" }
+  - type: textarea
+    id: why
+    attributes: { label: Why }

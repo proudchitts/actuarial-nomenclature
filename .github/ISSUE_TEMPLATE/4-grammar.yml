@@ -1,0 +1,13 @@
+name: Question the rules
+description: The slot order, the defaults, the limits, the groups, or one of the open questions.
+title: "Rules: "
+labels: ["rules"]
+body:
+  - type: textarea
+    id: point
+    attributes: { label: Which rule, and what would you change? }
+    validations: { required: true }
+  - type: textarea
+    id: case
+    attributes: { label: A variable that shows the problem, description: "A real kind of variable where the present rule gives a poor name or no name." }
+    validations: { required: true }

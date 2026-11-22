@@ -1,0 +1,36 @@
+name: Propose a new term
+description: A concept that a projection model needs and the glossary cannot name.
+title: "New term: "
+labels: ["new term"]
+body:
+  - type: input
+    id: full
+    attributes: { label: Full term, description: "The plain English term.", placeholder: "Mortality fluctuation reserve" }
+    validations: { required: true }
+  - type: input
+    id: short
+    attributes: { label: Suggested short form, description: "2 to 6 capital letters or digits. Optional.", placeholder: "FLUC" }
+  - type: textarea
+    id: definition
+    attributes: { label: Definition, description: "One or two plain sentences, in your own words. Say what it is, not how one model calculates it." }
+    validations: { required: true }
+  - type: textarea
+    id: confused
+    attributes: { label: Not to be confused with, description: "Which existing terms is it close to, and how does it differ?" }
+    validations: { required: true }
+  - type: input
+    id: also
+    attributes: { label: Also called, description: "Other words people use for the same thing." }
+  - type: input
+    id: example
+    attributes: { label: An example variable, description: "A description of a variable that would use this term.", placeholder: "Mortality fluctuation reserve at the end of the period" }
+  - type: input
+    id: source
+    attributes: { label: Source, description: "A public text that defines it, if there is one. Standard, paragraph, version." }
+  - type: dropdown
+    id: scope
+    attributes: { label: Where does it apply?, options: ["All markets", "South Africa only", "Another single market (say which below)"] }
+    validations: { required: true }
+  - type: textarea
+    id: notes
+    attributes: { label: Anything else }

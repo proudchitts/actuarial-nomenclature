@@ -171,6 +171,32 @@
       return G[item.tok] || null;
     }
 
+    // ---------- what kind of number a name holds ----------
+    function kindOf(slots) {
+      var get = function (s) { return slots.filter(function (x) { return x.slot === s; }); };
+      var meas = get("MEASURE").map(function (x) { return x.tok; });
+      var time = get("TIME").map(function (x) { return x.tok; });
+      var point = time.filter(function (t) { return has(POINT, t); })[0];
+      var item = get("ITEM")[0];
+      var k;
+      if (get("TABLE").length) { return { value_type: "table", unit: "not a single number" }; }
+      if (has(meas, "IND")) { k = ["indicator", "0 or 1"]; }
+      else if (has(meas, "FLG")) { k = ["flag", "a setting"]; }
+      else if (has(meas, "CNT")) { k = ["count", "a number"]; }
+      else if (has(meas, "RATE")) { k = ["rate", "a proportion per " + (has(time, "ANN") ? "year" : has(time, "MTH") ? "month" : "model period")]; }
+      else if (has(meas, "PROB")) { k = ["probability", "a proportion"]; }
+      else if (has(meas, "FORCE")) { k = ["force", "a rate per year"]; }
+      else if (has(meas, "FAC")) { k = ["factor", "no unit"]; }
+      else if (has(meas, "IDX")) { k = ["index", "no unit"]; }
+      else if (has(meas, "YRS")) { k = ["length of time", "years"]; }
+      else if (has(meas, "MTHS")) { k = ["length of time", "months"]; }
+      else if (has(meas, "PER")) { k = ["ratio", "a proportion"]; }
+      else if (has(meas, "PV")) { k = ["present value", "money"]; }
+      else if (point || (item && has(LX.stock, item.tok) && !get("MOVE").length)) { k = ["amount at an instant", "money, or the natural unit of the item"]; }
+      else { k = ["amount over the period, or a constant", "money, or the natural unit of the item"]; }
+      return { value_type: k[0], unit: k[1] };
+    }
+
     // ---------- name to English ----------
     function lc(t) {
       var f = T[t].full;
@@ -203,7 +229,7 @@
     }
     function decode(name) {
       var v = validate(String(name).trim().toUpperCase());
-      if (v.ok && !v.private) { v.canonical = canonical(v.slots); v.group = groupOf(v.slots); }
+      if (v.ok && !v.private) { v.canonical = canonical(v.slots); v.group = groupOf(v.slots); v.kind = kindOf(v.slots); }
       return v;
     }
 
@@ -423,6 +449,7 @@
       res.name = name;
       res.canonical = canonical(v.slots);
       res.group = groupOf(v.slots);
+      res.kind = kindOf(v.slots);
       return res;
     }
 

@@ -110,7 +110,7 @@ footer a{color:var(--accent)}
   </section>
 
   <footer>
-    <p>Version <span id="ver"></span>, a draft for review. The standard, the glossary and this tool are open: <a href="https://github.com/proudchitts/actuarial-nomenclature">github.com/proudchitts/actuarial-nomenclature</a>. Definitions have not yet been reviewed by a second actuary.</p>
+    <p>Version <span id="ver"></span>, a draft for review. The standard, the glossary and this tool are open: <a href="https://github.com/proudchitts/actuarial-nomenclature">github.com/proudchitts/actuarial-nomenclature</a>. Definitions have not yet been reviewed by a second actuary. If you build or review models, <a href="https://github.com/proudchitts/actuarial-nomenclature/issues/new/choose">suggest a term, correct a definition or report a wrong name</a>.</p>
   </footer>
 </div>
 
@@ -214,7 +214,7 @@ footer a{color:var(--accent)}
     if (r.name) {
       box.appendChild(el("div", "name", r.name));
       box.appendChild(el("p", "reads", "Reads as: " + r.canonical));
-      if (r.group) { box.appendChild(el("p", "reads", "Group: " + r.group)); }
+      if (r.group) { box.appendChild(el("p", "reads", "Group: " + r.group + ". Kind of value: " + r.kind.value_type + " (" + r.kind.unit + ").")); }
       var copy = el("button", "btn ghost", "Copy name");
       copy.addEventListener("click", function () { if (navigator.clipboard) { navigator.clipboard.writeText(r.name); copy.textContent = "Copied"; } });
       box.appendChild(copy);
@@ -257,7 +257,7 @@ footer a{color:var(--accent)}
     box.appendChild(el("div", "tag", d.ok ? "Valid name" : "Not a valid name"));
     box.appendChild(el("div", "name", d.name));
     if (d.canonical) { box.appendChild(el("p", "reads", "Reads as: " + d.canonical)); }
-    if (d.group) { box.appendChild(el("p", "reads", "Group: " + d.group)); }
+    if (d.group) { box.appendChild(el("p", "reads", "Group: " + d.group + ". Kind of value: " + d.kind.value_type + " (" + d.kind.unit + ").")); }
     if (d.private) { box.appendChild(el("p", "reads", "This name uses a private token that starts with Z. Its meaning is in the owner's local glossary.")); }
     if (d.slots.length && d.ok) { box.appendChild(slotChips(d.slots)); }
     if (d.problems.length) { var ul = el("ul", "notes"); d.problems.forEach(function (n) { ul.appendChild(el("li", "", n)); }); box.appendChild(ul); }

@@ -4,6 +4,17 @@ Version 0.1. A draft for review.
 
 **Try it:** [proudchitts.github.io/actuarial-nomenclature](https://proudchitts.github.io/actuarial-nomenclature/). Describe a variable in plain English and get its standard name.
 
+## Actuaries wanted
+
+If you build or review projection models, this standard needs you. The definitions have not yet been reviewed by a second actuary, and the glossary is far from complete.
+
+- **Correct a definition** that is loose, wrong for your market, or mixes two ideas.
+- **Propose a term** that your models need and the glossary cannot name.
+- **Report a description** that the namer gets wrong.
+- **Argue with the rules.** The slot order, the defaults and the open questions below can all still change.
+
+Use the [issue forms](https://github.com/proudchitts/actuarial-nomenclature/issues/new/choose). No code is needed. `CONTRIBUTING.md` explains how to send a change directly. Every change is reviewed and approved by the maintainer.
+
 ## The problem
 
 Every actuarial modelling platform has its own habits for naming variables. An actuary who moves from one platform to another has to learn a new vocabulary for the same ideas. Inside one company, two teams often give the same quantity two names, or give two quantities the same name.
@@ -82,6 +93,22 @@ The same rule-based namer is offered three more ways, so that an AI assistant or
 
 Every route returns the same JSON. The `status` field is `ok`, `needs_detail` or `failed`. With `ok` the `name` field holds the name and `reads_as` reads it back. With `needs_detail` the name is empty and `questions` lists what is missing. Each option carries a `revised_description` to send back. A caller must never invent a name when the status is not `ok`.
 
+| Field | What it holds |
+|---|---|
+| `status` | `ok`, `needs_detail` or `failed` |
+| `name`, `name_lower_case` | The variable name, in upper case and in lower case for languages that prefer it |
+| `reads_as` | The name read back in standard wording. Use it as the variable's description. |
+| `group` | The group the variable falls in, such as Reinsurance or Policy counts |
+| `value_type`, `unit` | What kind of number it is (amount over the period, amount at an instant, rate, count, present value, indicator and so on) and its unit |
+| `slots` | Which token sits in which slot |
+| `terms` | The glossary entry of every token: full term, definition, what it is not to be confused with, and the source it was checked against |
+| `see_also` | Sibling names a model usually holds beside this one: gross, reinsurance and net, and the start and end of the period |
+| `questions` | What is missing, when the description is vague. Each option carries a `revised_description`. |
+| `warnings`, `unused_words`, `suggestions` | Words that were not used, and the closest glossary terms for them |
+| `clean` | True when a name was built and every word was used |
+| `extension_sets` | Extension sets the name relies on, such as ZA |
+| `standard_version` | The version of the standard that built the name |
+
 ### 1. MCP server, for AI tools
 
 Add this to the MCP settings of the AI tool.
@@ -146,6 +173,7 @@ There is no public hosted API. The server listens on your own machine by default
 | `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
 | `tools/groups.json` | The group of every item |
+| `tools/format_glossary.py` | Tidies `glossary.md` after a hand edit: links both ways and rebuilds the indexes |
 | `tools/build.py` | Builds `docs/data.js` from `glossary.md` and the lexicon |
 | `tools/build_embeddings.mjs` | Builds `docs/embeddings.js`. Needs the embedding library installed. |
 | `tools/test.js` | Runs every example through the namer |
@@ -178,8 +206,8 @@ Only the item is always required. Gross of reinsurance and plain amounts are imp
 
 ## To change the standard
 
-1. Edit `glossary.md`, `examples.md` or `tools/lexicon.json`.
-2. Run `python3 tools/build.py` to rebuild the data for the web page. If a term, an everyday word or a definition changed, also run `node tools/build_embeddings.mjs`. The tests fail if the vectors are out of date.
+1. Edit `glossary.md`, `examples.md` or `tools/lexicon.json`. After editing the glossary, run `python3 tools/format_glossary.py`.
+2. Run `python3 tools/build.py` to rebuild the data for the web page. If a term, an everyday word or a definition changed, also run `node tools/build_embeddings.mjs`. `node tools/test_api.js --release` fails if the vectors are out of date.
 3. Run `python3 check.py`, `node tools/test.js` and `node tools/test_api.js`. All three must pass.
 
 `check.py` tests that no two entries share a short form, that every related link goes both ways, that every example name uses only glossary terms and obeys the slot order, and that the prose has no dashes or semicolons. `tools/test.js` tests that every example description gives exactly the expected name, that every name reads back, and that every vague case is refused.
@@ -250,7 +278,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 
 ## How to take part
 
-Open an issue on this repository for a wrong definition, a missing term, a description the namer gets wrong, or a view on any open question. A proposal for a new term should give the short form, the full term, a one or two sentence definition, what it is not to be confused with, and its related terms.
+See the section "Actuaries wanted" at the top and `CONTRIBUTING.md`. In short: open an issue with one of the forms, or edit `glossary.md`, run `python3 tools/format_glossary.py` and send a pull request.
 
 ## Licence
 
