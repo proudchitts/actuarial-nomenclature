@@ -1015,6 +1015,222 @@
     ],
     "new business premiums present value": [
       "PVNBP"
+    ],
+    "surr": [
+      "SUR"
+    ],
+    "surrs": [
+      "SUR"
+    ],
+    "mort": [
+      "DTH"
+    ],
+    "reins": [
+      "RI"
+    ],
+    "valn": [
+      "VAL"
+    ],
+    "mthly": [
+      "MTH"
+    ],
+    "pols": [
+      "POL"
+    ],
+    "policys": [
+      "POL"
+    ],
+    "admin": [
+      "MAINT"
+    ],
+    "guar": [
+      "GTEE"
+    ],
+    "guaranteed": [
+      "GTEE"
+    ],
+    "infl": [
+      "INFL"
+    ],
+    "acq": [
+      "ACQ"
+    ],
+    "init": [
+      "INIT"
+    ],
+    "ann": [
+      "ANN"
+    ],
+    "ul": [
+      "UNIT"
+    ],
+    "unit linked": [
+      "UNIT"
+    ],
+    "amc": [
+      "CHRG",
+      "FMC"
+    ],
+    "rdr": [
+      "DISC",
+      "RATE"
+    ],
+    "fee": [
+      "CHRG"
+    ],
+    "fees": [
+      "CHRG"
+    ],
+    "deduction": [
+      "CHRG"
+    ],
+    "deductions": [
+      "CHRG"
+    ],
+    "dedn": [
+      "CHRG"
+    ],
+    "dedns": [
+      "CHRG"
+    ],
+    "sterling reserve": [
+      "RES",
+      "NUNIT"
+    ],
+    "ster": [
+      "NUNIT"
+    ],
+    "trauma": [
+      "CI"
+    ],
+    "stress": [
+      "SHK"
+    ],
+    "pgn 104": [
+      "FSV"
+    ],
+    "pgn104": [
+      "FSV"
+    ],
+    "statutory": [
+      "VAL"
+    ],
+    "valuation basis": [
+      "VAL"
+    ],
+    "valuation": [
+      "VAL"
+    ],
+    "sop": [
+      "BOP"
+    ],
+    "eom": [
+      "EOP"
+    ],
+    "som": [
+      "BOP"
+    ],
+    "maximum": [
+      "MAX"
+    ],
+    "max": [
+      "MAX"
+    ],
+    "minimum": [
+      "MIN"
+    ],
+    "min": [
+      "MIN"
+    ],
+    "top up": [
+      "TOPUP"
+    ],
+    "topup": [
+      "TOPUP"
+    ],
+    "loyalty bonus": [
+      "BON",
+      "LOY"
+    ],
+    "capital gains": [
+      "GAIN"
+    ],
+    "gains": [
+      "GAIN"
+    ],
+    "policy loan": [
+      "LOAN"
+    ],
+    "loans": [
+      "LOAN"
+    ],
+    "actual": [
+      "ACTL"
+    ],
+    "actuals": [
+      "ACTL"
+    ],
+    "taxable income": [
+      "PROF",
+      "TXBL"
+    ],
+    "tax relief": [
+      "TAX",
+      "RELF"
+    ],
+    "switch": [
+      "SWCH"
+    ],
+    "switches": [
+      "SWCH"
+    ],
+    "conversions": [
+      "CONV"
+    ],
+    "alterations": [
+      "ALTR"
+    ],
+    "cohorts": [
+      "COH"
+    ],
+    "transition": [
+      "TRNS"
+    ],
+    "fixed": [
+      "FIX"
+    ],
+    "variable": [
+      "VAR"
+    ],
+    "vat": [
+      "VAT"
+    ],
+    "dac": [
+      "DAC"
+    ],
+    "savings": [
+      "SAV"
+    ],
+    "returns": [
+      "INVR"
+    ],
+    "investment returns": [
+      "INVR"
+    ],
+    "fund growth": [
+      "INVR"
+    ],
+    "pp": [
+      "@PERPOL"
+    ],
+    "ifrs17": [],
+    "ifrs 17": [],
+    "ifrs": [],
+    "pups": [
+      "PUP"
+    ],
+    "expected for the period": [
+      "EXPC"
     ]
   },
   "special": {
@@ -1095,7 +1311,18 @@
     "ordinary units",
     "initial units",
     "actual units",
-    "zero cost"
+    "zero cost",
+    "switch",
+    "cap",
+    "floor",
+    "relief",
+    "valuation basis",
+    "largest",
+    "smallest",
+    "experienced",
+    "appreciation",
+    "gst",
+    "sales tax"
   ],
   "stock": [
     "BEL",
@@ -1208,7 +1435,6 @@
     "share",
     "size",
     "level",
-    "expected",
     "future",
     "added",
     "written",
@@ -1305,7 +1531,8 @@
     "ones",
     "them",
     "they",
-    "of"
+    "of",
+    "expected"
   ],
   "vague": [
     {
@@ -1615,5 +1842,70 @@
         ]
       ]
     }
+  ],
+  "notWords": [
+    "OF",
+    "IF",
+    "BE",
+    "UP",
+    "DOWN",
+    "LONG",
+    "MASS",
+    "FULL",
+    "FUN",
+    "CAT",
+    "OFF",
+    "PER",
+    "NET",
+    "OH",
+    "INC",
+    "ACC",
+    "RET",
+    "REC",
+    "CAP",
+    "GRS",
+    "AMT",
+    "TIME",
+    "DATE",
+    "LIFE",
+    "RISK",
+    "LOAD",
+    "EXIT",
+    "FAIR",
+    "BID",
+    "OFFER",
+    "EXTRA",
+    "UNIT",
+    "TERM",
+    "AGE",
+    "TAX",
+    "SEX",
+    "VAR",
+    "FIX",
+    "MAX",
+    "MIN",
+    "AFT",
+    "BEF",
+    "IND",
+    "FLG",
+    "TBL",
+    "PV",
+    "T0",
+    "PRD",
+    "LS",
+    "PL",
+    "PH",
+    "SH",
+    "WP",
+    "GAIN",
+    "LOAN",
+    "NEG",
+    "AGG",
+    "REL",
+    "DEC",
+    "DIV",
+    "EQ",
+    "REM",
+    "VAL"
   ]
 }

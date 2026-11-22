@@ -8,7 +8,7 @@
 
   var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"];
   var UNIT = ["YRS", "MTHS"];
-  var AGGR = ["CUM", "ACC", "FUT", "AVG"];
+  var AGGR = ["CUM", "ACC", "FUT", "AVG", "MAX", "MIN"];
   var BASE = ["ANN", "MTH", "PRD"];
   var POINT = ["BOP", "MOP", "EOP", "T0", "INC"];
   var NEVER = ["GRS", "AMT"];
@@ -65,6 +65,9 @@
         addBoth(a, [tok], 1);
       });
     });
+    // the standard's own short forms may be written in a description, unless they are ordinary words
+    var notWords = LX.notWords || [];
+    Object.keys(T).forEach(function (tok) { if (!has(notWords, tok)) { add(tok.toLowerCase(), [tok], 0.4); } });
     Object.keys(LX.phrases).forEach(function (ph) { add(ph, LX.phrases[ph], 3); });
     Object.keys(LX.special).forEach(function (ph) { add(ph, [LX.special[ph]], 3); });
     var PREP = {}, STOP = {};

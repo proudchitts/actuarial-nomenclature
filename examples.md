@@ -311,6 +311,26 @@ A table is named with the table token first, followed by the name of the variabl
 | 205 | Fully allocated acquisition expenses in the period | `EXP_ACQ_FULL` |
 | 206 | Value of new business as a proportion of present value of new business premiums | `VNB_PER_PVNBP` |
 
+### A18. Further terms found by testing on a real model
+
+| No. | Description | Name |
+|---|---|---|
+| 207 | Fixed renewal expenses in the period | `EXP_FIX_REN` |
+| 208 | VAT on initial commission in the period | `COMM_INIT_VAT` |
+| 209 | Top-up premiums in the period | `PREM_TOPUP` |
+| 210 | Savings premiums in the period | `PREM_SAV` |
+| 211 | Loyalty bonus added in the period | `BON_LOY` |
+| 212 | Policy loan at the end of the period | `LOAN_EOP` |
+| 213 | Capital gains in the period | `GAIN` |
+| 214 | Deferred acquisition costs at the end of the period | `DAC_EOP` |
+| 215 | Number of fund switches in the period | `SWCH_CNT` |
+| 216 | Number of policy alterations in the period | `ALTR_CNT` |
+| 217 | Actual premiums in the period | `PREM_ACTL` |
+| 218 | Maximum fund management charge | `CHRG_FMC_MAX` |
+| 219 | Reserve on the valuation basis at the end of the period | `RES_VAL_EOP` |
+| 220 | Cohort | `COH` |
+| 221 | Taxable profit in the period | `PROF_TXBL` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.

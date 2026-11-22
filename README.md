@@ -67,7 +67,7 @@ How much it helps was measured on 60 loose phrases, such as "people die" and "mo
 ### How we know one name is not given to two meanings
 
 - Each short form has one definition. `check.py` fails if two entries share a short form or a full term.
-- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 206 example names read back to a description that gives the same name again.
+- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 221 example names read back to a description that gives the same name again.
 - Two different descriptions that give the same name are either the same variable in different words, or one of them left out a detail. "Check a list" flags every such pair for a person to decide.
 
 ### What it cannot do
@@ -141,8 +141,8 @@ There is no public hosted API. The server listens on your own machine by default
 | File | What it holds |
 |---|---|
 | `standard.md` | The grammar: characters, length, the seven slots, measures, time, bases, parties, extensions |
-| `glossary.md` | The controlled word list: 272 terms in 22 families, 257 in the core and 15 in the South African extension set. This file is the master. |
-| `examples.md` | 206 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
+| `glossary.md` | The controlled word list: 293 terms in 22 families, 278 in the core and 15 in the South African extension set. This file is the master. |
+| `examples.md` | 221 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
 | `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
 | `tools/groups.json` | The group of every item |
@@ -186,7 +186,7 @@ Only the item is always required. Gross of reinsurance and plain amounts are imp
 
 ## What the definitions were checked against
 
-92 of the 272 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
+94 of the 293 entries carry a "source checked" line that names the public text the definition was compared with. Definitions are written in this standard's own words and do not quote the sources.
 
 | Source | What was read | Result |
 |---|---|---|
@@ -204,8 +204,10 @@ Points to know about the South African guidance. PGNs were renamed SAPs and APNs
 - The check scripts test form. They cannot test that a definition is right. That needs actuarial review.
 - The checks against published texts were done by AI research and spot-checked. They have not been reviewed by a second actuary.
 - Not confirmed from a primary source: later amendments to the Delegated Regulation and to the South African standards since 2018, the current rand cap on funeral cover, the annual premium equivalent formula (a market convention), and any formal definition of paid-up, partial withdrawal and not taken up.
-- The 180 entries with no source line are general actuarial terms that these texts do not define.
-- The namer passes all 206 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
+- The 199 entries with no source line are general actuarial terms that these texts do not define.
+- The namer passes all 221 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
+- The namer was tried, privately, on the 2,863 variable descriptions of one real production model. Only 9 in 100 gave a clean name and another 33 gave a name with a warning. The rest were refused. Real models describe variables in terse house abbreviations and product codes, which a rule-based namer cannot read. Nothing from that model was copied into this standard: it was used only to find general concepts that were missing, and 21 terms were added in the standard's own words.
+- A description may use the standard's own short forms, such as "pup" or "prem", as well as full words.
 - No name has yet been tried in a real model on a real platform.
 
 ## Where the grammar strained during testing, and what changed
@@ -240,7 +242,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 7. Should the denominator of a ratio be allowed to carry qualifiers?
 8. Are the definitions of lapse, surrender, partial withdrawal, discontinuance, paid-up, maturity and expiry right for every market?
 9. Are initial and acquisition, and renewal and maintenance, usefully different, or does the split cause more trouble than it saves?
-10. Which terms are missing? 60 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
+10. Which terms are missing? 66 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
 11. Should the solvency capital terms be in the core, as now, because Solvency II and South Africa share them? Should the five tax funds stay in the extension?
 12. Embedded value: the glossary follows APN 107, where the value of in-force is before the cost of required capital. Other frameworks quote it after. Is one fixed meaning right for an international standard?
 13. The namer keeps its own list of items that are balances, so that it can ask for a time point. Should that tag move into the glossary?
