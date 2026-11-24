@@ -8,7 +8,7 @@ Reminders from `standard.md`:
 
 - Slot order: ITEM, KIND, MOVE, PARTY, BASIS, MEASURE, TIME.
 - No party token means gross of reinsurance. No measure token means an amount. No basis token means the basis of the run.
-- A flow over the period has no time point. A value at an instant must have one.
+- A time point is written only when the description states one. The standard never asks for it.
 
 ## Part A. Description to name
 
@@ -331,6 +331,14 @@ A table is named with the table token first, followed by the name of the variabl
 | 220 | Cohort | `COH` |
 | 221 | Taxable profit in the period | `PROF_TXBL` |
 
+### A19. A time point is written only when the description gives one
+
+| No. | Description | Name |
+|---|---|---|
+| 222 | Best estimate liability | `BEL` |
+| 223 | Number of policies in force | `POL_IF_CNT` |
+| 224 | Value of in-force | `VIF` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.
@@ -382,7 +390,7 @@ The user must say what is counted and what happens to the policy.
 
 ### C4. "The reserve"
 
-The user must give the basis and the time point, and must say whether a named liability is meant.
+The user must say which reserve is meant. The basis and the time point are written only if the description gives them.
 
 - A reserve on the prudent basis at the end of the period: `RES_PRU_EOP`.
 - The best estimate liability at the start of the period: `BEL_BOP`.

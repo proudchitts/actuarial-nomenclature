@@ -46,7 +46,7 @@ ITEM _ KIND _ MOVE _ PARTY _ BASIS _ MEASURE _ TIME
 | 4 | PARTY | Whose share? | No | 0 or 1 |
 | 5 | BASIS | On which assumptions and rules? | No | 0 or 1 |
 | 6 | MEASURE | What kind of number is it? | No | See section 6 |
-| 7 | TIME | Over what span, at what instant, in what order? | Depends on the value | See section 7 |
+| 7 | TIME | Over what span, at what instant, in what order? | No, except the time base of a rate | See section 7 |
 
 The glossary gives the slot of every token. A token can only be used in its own slot. Some terms can be an ITEM or a KIND, for example `DTH` in `DTH_CNT` (number of deaths) and in `CLM_DTH` (death claims). The first token of a name is always the ITEM, so there is never any doubt.
 
@@ -130,18 +130,18 @@ The measure says what kind of number the variable holds. With no measure token t
 | Rate | `RATE` | Must be followed by a time base. See section 7. |
 | Probability | `PROB` | Probability of a state at a time point. No time base. |
 | Force | `FORCE` | Instantaneous annual rate. |
-| Present value | `PV` | Must have a time point. |
+| Present value | `PV` | Measured at the start of the period. Never takes a time point. |
 | Factor | `FAC` | A multiplier with no units. |
 | Indicator | `IND` | 1 or 0, calculated by the model, can vary with time. |
 | Flag | `FLG` | A setting fixed for the run. |
-| Index | `IDX` | Level of an index. Must have a time point. |
+| Index | `IDX` | Level of an index. |
 | In years | `YRS` | Only for lengths of time and ages. |
 | In months | `MTHS` | Only for lengths of time and ages. |
 
 The slot can hold up to three parts, in this order.
 
 1. One measure token from the table above.
-2. One aggregation token: `CUM` (sum to date, no interest), `ACC` (sum to date with interest), `FUT` (sum of future periods, not discounted) or `AVG` (average over the period). `CUM`, `ACC` and `FUT` must have a time point.
+2. One aggregation token: `CUM` (sum to date, no interest), `ACC` (sum to date with interest), `FUT` (sum of future periods, not discounted) or `AVG` (average over the period). `CUM`, `ACC` and `FUT` carry their own time point and never take one. See section 7.1.
 3. One ratio clause: `PER` followed by exactly one item token, which is the denominator.
 
 ### 6.1 Counts
@@ -184,9 +184,10 @@ The slot can hold up to three parts, in this order.
 2. **Time point**: `BOP` (start of period), `MOP` (middle of period), `EOP` (end of period) or `INC` (policy inception). There is no valuation date token. The value at the valuation date is the value at the first time step.
 3. **Order clause**: `BEF` or `AFT` followed by exactly one token.
 
-### 7.1 When a time point is required
+### 7.1 When a time point is written
 
-- A value measured at an instant must have a time point. This covers balances, reserves, numbers in force, benefit levels, fund values, indexes and probabilities.
+- A time point is written only when the description states one. The standard never asks for it and never adds one. The person describing the variable knows whether the instant matters. `BEL` is the best estimate liability. `BEL_EOP` is the best estimate liability at the end of the period. Both are valid names, and they are different variables only if the model holds both.
+- A value whose instant is fixed by its definition needs no time point. The value of new business and the value of in-force are present values at the valuation date, so they are `VNB` and `VIF`.
 - Some measures carry their own time point, and never take one. A present value (`PV`) and a future total (`FUT`) look forward from the start of the period. An accumulated value (`ACC`) and a cumulative total (`CUM`) look back from the end of it. `PREM_PV` is the present value of future premiums at the start of each period, and at the first time step that is the valuation date.
 - A flow is a total over the model period and has no time point. `PREM` is the premium of the period. When within the period it is assumed to be paid is a model assumption and not part of the name.
 - A constant that does not change through the projection has no time point. Examples are a retention limit, a flag and a policy term.
@@ -241,7 +242,7 @@ A description cannot be named until each of these points is clear.
 2. **Gross of what.** "Gross" and "net" must say gross or net of reinsurance, or before or after tax. "Gross premium" in the sense of the premium charged to the policyholder is the office premium.
 3. **Dependent or independent.** For a decrement rate in a model with several decrements.
 4. **The time base of a rate.** Annual, monthly or per model period.
-5. **The time point of a value.** Start, middle or end of the period, or inception. If events happen at the same instant, before or after which of them.
+5. **The time point of a value, where it matters.** A name carries a time point only if the description states one. If a model holds the same value at the start and at the end of the period, the two descriptions must say which is which. If events happen at the same instant, say before or after which of them.
 6. **Policies or lives.** For any count on joint life, group or family business.
 7. **The basis.** Whenever more than one basis exists in the same run.
 8. **The event or the risk.** Death and lapse are events. Mortality risk and lapse risk are capital risks with wider regulatory meanings, and they have their own tokens.

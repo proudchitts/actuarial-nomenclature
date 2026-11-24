@@ -12,7 +12,6 @@
   var BASE = ["ANN", "MTH", "PRD"];
   var POINT = ["BOP", "MOP", "EOP", "INC"];
   var NEVER = ["GRS", "AMT"];
-  var NEED_POINT = ["IDX", "PROB"];
   // PV and FUT are measured at the start of the period, ACC and CUM at the end. They never take a time point.
   var OWN_POINT = ["PV", "FUT", "ACC", "CUM"];
   var INSTANCE = /^[LBF][0-9]+$/;
@@ -143,7 +142,6 @@
       if (i < rest.length) { p.push("Out of slot order at " + rest[i] + " (" + T[rest[i]].slot + ")."); return out; }
       if (prim === "RATE" && !base) { p.push("A RATE must state its time base: ANN, MTH or PRD."); }
       [prim, aggr].forEach(function (m) {
-        if (m && has(NEED_POINT, m) && !point) { p.push(m + " needs a time point: BOP, MOP, EOP or INC."); }
         if (m && has(OWN_POINT, m) && point) { p.push(m + " carries its own time point, so " + point + " must go."); }
       });
       if (inst) { S.push({ slot: "INSTANCE", tok: inst }); }
@@ -395,23 +393,12 @@
         res.questions.push({ hard: true, text: "A rate must state its time base. Which one?", options: [
           { label: "Annual", append: ", annual" }, { label: "Monthly", append: ", monthly" }, { label: "Per model period", append: ", per model period" }] });
       }
-      var pointOpts = [
-        { label: "Start of period", append: ", at the start of the period" }, { label: "End of period", append: ", at the end of the period" },
-        { label: "Inception", append: ", at inception" }];
       var own = [prim, aggr].filter(function (m) { return m && has(OWN_POINT, m); })[0];
       if (own && point) {
         res.notes.push(T[own].full + " carries its own time point (" + (own === "PV" || own === "FUT" ? "the start of the period" : "the end of the period") + "), so \"" + lc(point) + "\" is not written.");
         point = null;
       }
-      var needs = [prim, aggr].filter(function (m) { return m && has(NEED_POINT, m); });
-      var inForce = (item.t === "POL" || item.t === "LIFE") && (has(kinds, "IF") || has(kinds, "PUP")) && !move;
-      var stock = has(LX.stock, item.t) && !move && (!prim || prim === "IND") && !isTable;
-      if (isTable) { inForce = false; }
-      if (!point && needs.length) {
-        res.questions.push({ hard: true, text: "A " + lc(needs[0]) + " must say at which instant it is measured. Which one?", options: pointOpts });
-      } else if (!point && (inForce || stock) && prim !== "FLG") {
-        res.questions.push({ hard: true, text: (inForce ? "A number in force" : T[item.t].full) + " is a value at an instant. At which instant?", options: pointOpts });
-      }
+      // A time point is never asked for. It is written only when the description states one.
       if (prim === "RATE" && has(LX.decrements, item.t) && !has(kinds, "DEP") && !has(kinds, "INDP")) {
         res.questions.push({ hard: false, text: "If the model has more than one decrement, say whether this rate is dependent or independent.", options: [
           { label: "Dependent", prepend: "Dependent " }, { label: "Independent", prepend: "Independent " }] });

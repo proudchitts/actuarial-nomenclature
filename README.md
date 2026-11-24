@@ -61,7 +61,7 @@ The name is always built by fixed rules. No AI writes or chooses a name, and not
 
 1. It looks for words and phrases it knows. These are the full terms in the glossary, the "also called" words, and a list of everyday phrases in `tools/lexicon.json`. It does not need your wording to match a definition. It needs your wording to contain terms it knows.
 2. It puts each term in its slot. The head noun becomes the item. Words such as "rate of", "number of" and "present value" become the measure. Words such as "reinsurance", "best estimate" and "end of the period" fill the party, basis and time.
-3. It refuses to guess. If a word has two meanings, such as withdrawal or gross premium, it asks which one. If a rate has no time base or a balance has no time point, it asks. Each answer rewrites your description, so the description itself becomes exact.
+3. It refuses to guess. If a word has two meanings, such as withdrawal or gross premium, it asks which one. If a rate has no time base, it asks. It never asks for a time point: that is written only when the description states one. Each answer rewrites your description, so the description itself becomes exact.
 4. It shows what it did not use. Words it does not know are listed under the name. The name ignores them, so you can see at once if something that matters was lost. If most of the description was not understood, it gives no name at all.
 5. It suggests terms for the words it did not use. See the next section.
 6. It reads the name back. If the reading is not what you meant, the description needs another word.
@@ -84,7 +84,7 @@ How much it helps was measured on 60 loose phrases, such as "people die" and "mo
 ### How we know one name is not given to two meanings
 
 - Each short form has one definition. `check.py` fails if two entries share a short form or a full term.
-- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 221 example names read back to a description that gives the same name again.
+- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 224 example names read back to a description that gives the same name again.
 - Two different descriptions that give the same name are either the same variable in different words, or one of them left out a detail. "Check a list" flags every such pair for a person to decide.
 
 ### What it cannot do
@@ -175,7 +175,7 @@ There is no public hosted API. The server listens on your own machine by default
 |---|---|
 | `standard.md` | The grammar: characters, length, the seven slots, measures, time, bases, parties, extensions |
 | `glossary.md` | The controlled word list: 293 terms in 22 families, 278 in the core, which is for every market, and 15 in the first market extension set (South Africa). This file is the master. |
-| `examples.md` | 221 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
+| `examples.md` | 224 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
 | `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
 | `tools/groups.json` | The group of every item |
@@ -241,7 +241,7 @@ Points to know about the South African guidance. PGNs were renamed SAPs and APNs
 - The checks against published texts were done by AI research and spot-checked. They have not been reviewed by a second actuary.
 - Not confirmed from a primary source: later amendments to the Delegated Regulation and to the South African standards since 2018, the current rand cap on funeral cover, the annual premium equivalent formula (a market convention), and any formal definition of paid-up, partial withdrawal and not taken up.
 - The 199 entries with no source line are general actuarial terms that these texts do not define.
-- The namer passes all 221 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
+- The namer passes all 224 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
 - The namer was tried, privately, on the 2,863 variable descriptions of one real production model. Only 9 in 100 gave a clean name and another 33 gave a name with a warning. The rest were refused. Real models describe variables in terse house abbreviations and product codes, which a rule-based namer cannot read. Nothing from that model was copied into this standard: it was used only to find general concepts that were missing, and 21 terms were added in the standard's own words.
 - A description may use the standard's own short forms, such as "pup" or "prem", as well as full words.
 - No name has yet been tried in a real model on a real platform.
@@ -272,7 +272,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 1. Is seven slots the right number? Could MOVE be folded into KIND without losing the ability to check names by program?
 2. Is the mechanical order for two kind tokens acceptable, or should a small table of preferred orders replace it?
 3. Should gross of reinsurance be written out after all, for safety in reinsurance heavy models?
-4. Should a time point be required on every balance, or should end of period be the default?
+4. A time point is written only when the description states one. Is that right, or should a model that holds a balance at both ends of the period be made to mark both?
 5. Is 40 characters the right limit? Some platforms allow fewer. The longest example is 26.
 6. How should stressed and scenario results be named when they must sit beside the base result?
 7. Should the denominator of a ratio be allowed to carry qualifiers?
@@ -281,7 +281,7 @@ The starting point was a six slot order: quantity, cause or benefit, party, basi
 10. Which terms are missing? 66 glossary terms have no worked example yet. Group business, pensions, health, asset modelling and deferred tax are thin or absent.
 11. Which markets need their own extension set first, and which of their terms belong in the core? Should the solvency capital terms stay in the core, as now, because several regimes share them?
 12. Embedded value: the glossary follows APN 107, where the value of in-force is before the cost of required capital. Other frameworks quote it after. Is one fixed meaning right for an international standard?
-13. The namer keeps its own list of items that are balances, so that it can ask for a time point. Should that tag move into the glossary?
+13. The namer keeps its own list of items that are balances, so that it can report the kind of value. Should that tag move into the glossary?
 14. Should a public hosted API be offered, and who would run it?
 
 ## How to take part

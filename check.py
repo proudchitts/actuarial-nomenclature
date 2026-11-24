@@ -102,7 +102,7 @@ BASE = {"ANN", "MTH", "PRD"}
 POINT = {"BOP", "MOP", "EOP", "INC"}
 ORDER = {"BEF", "AFT"}
 NEVER = {"GRS", "AMT"}
-NEED_POINT = {"IDX", "PROB"}
+# A time point is never required. It is written only when the description states one.
 # These measures carry their own time point: PV and FUT look forward from the start of the period,
 # ACC and CUM look back from the end of it. They never take a time point.
 OWN_POINT = {"PV", "FUT", "ACC", "CUM"}
@@ -189,8 +189,6 @@ def check_name(name, where):
     if prim == "RATE" and not base:
         p.append("%s: %s is a RATE with no time base" % (where, name))
     for m in (prim, aggr):
-        if m in NEED_POINT and not point:
-            p.append("%s: %s uses %s with no time point" % (where, name, m))
         if m in OWN_POINT and point:
             p.append("%s: %s uses %s, which carries its own time point, so %s must go" % (where, name, m, point))
     return p
