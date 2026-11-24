@@ -56,11 +56,11 @@ Reminders from `standard.md`:
 | 28 | Regular premiums from new business in the period | `PREM_REG_NB` |
 | 29 | Annualised premium per policy | `PREM_PER_POL_ANN` |
 | 30 | Risk premium in the period | `PREM_RISK` |
-| 31 | Present value at the start of the period of future premiums, best estimate | `PREM_BE_PV_BOP` |
+| 31 | Present value at the start of the period of future premiums, best estimate | `PREM_BE_PV` |
 | 32 | Annual rate of premium escalation | `ESC_PREM_RATE_ANN` |
 | 33 | Premium allocated to the unit fund in the period | `PREM_ALLOC` |
 | 34 | Allocated premium as a proportion of premium | `PREM_ALLOC_PER_PREM` |
-| 35 | Total premiums paid to date at the end of the period, without interest | `PREM_CUM_EOP` |
+| 35 | Total premiums paid to date at the end of the period, without interest | `PREM_CUM` |
 
 ### A4. Claims and benefits
 
@@ -79,7 +79,7 @@ Reminders from `standard.md`:
 | 46 | Sum assured at inception | `SA_INC` |
 | 47 | Sum at risk at the start of the period | `SAR_BOP` |
 | 48 | Surrender value per policy at the end of the period | `SV_EOP` |
-| 49 | Present value at the valuation date of future death claims, net of reinsurance | `CLM_DTH_NET_PV_T0` |
+| 49 | Present value at the valuation date of future death claims, net of reinsurance | `CLM_DTH_NET_PV` |
 
 ### A5. Expenses and commission
 
@@ -124,7 +124,7 @@ Reminders from `standard.md`:
 | 76 | Fund value at the end of the period before charges | `FV_EOP_BEF_CHRG` |
 | 77 | Fund management charges in the period | `CHRG_FMC` |
 | 78 | Reversionary bonus added in the period | `BON_RVS` |
-| 79 | Time value of options and guarantees at the valuation date, risk neutral | `TVOG_RN_T0` |
+| 79 | Time value of options and guarantees at the valuation date, risk neutral | `TVOG_RN_BOP` |
 
 ### A8. IFRS 17
 
@@ -139,7 +139,7 @@ Reminders from `standard.md`:
 | 86 | Risk adjustment released in the period | `RA_REL` |
 | 87 | Reinsurers' share of the risk adjustment at the end of the period | `RA_RI_EOP` |
 | 88 | Coverage units provided in the period | `CU` |
-| 89 | Coverage units of all future periods, as at the end of the period | `CU_FUT_EOP` |
+| 89 | Coverage units of all future periods, as at the end of the period | `CU_FUT` |
 | 90 | Insurance acquisition cash flows in the period | `IACF` |
 | 91 | Insurance finance expense presented in profit or loss | `IFE_PL` |
 | 92 | Insurance finance expense presented in other comprehensive income | `IFE_OCI` |
@@ -178,10 +178,10 @@ Reminders from `standard.md`:
 | 115 | Profit after tax in the period | `PROF_AFT_TAX` |
 | 116 | Transfer to shareholders in the period | `TRF_SH` |
 | 117 | Distributable earnings in the period | `DISTE` |
-| 118 | Present value at the valuation date of future profits after tax, embedded value basis | `PROF_EV_PV_T0_AFT_TAX` |
-| 119 | Value of in-force at the valuation date | `VIF_T0` |
-| 120 | Adjusted net worth at the valuation date | `ANW_T0` |
-| 121 | Embedded value at the valuation date | `EV_T0` |
+| 118 | Present value at the valuation date of future profits after tax, embedded value basis | `PROF_EV_PV_AFT_TAX` |
+| 119 | Value of in-force at the valuation date | `VIF_BOP` |
+| 120 | Adjusted net worth at the valuation date | `ANW_BOP` |
+| 121 | Embedded value at the valuation date | `EV_BOP` |
 | 122 | Value of new business written in the period | `VNB` |
 | 123 | Annual premium equivalent in the period | `APE` |
 | 124 | Value of new business as a proportion of annual premium equivalent | `VNB_PER_APE` |
@@ -189,7 +189,7 @@ Reminders from `standard.md`:
 | 126 | Investment return in the period | `INVR` |
 | 127 | Tax borne by policyholders in the period | `TAX_PH` |
 | 128 | Present value of new business premiums | `PVNBP` |
-| 129 | Cost of required capital at the valuation date, embedded value basis | `COC_EV_T0` |
+| 129 | Cost of required capital at the valuation date, embedded value basis | `COC_EV_BOP` |
 | 130 | Solvency capital requirement for interest rate risk at the end of the period | `SCR_INT_EOP` |
 | 131 | Solvency capital requirement for revision risk at the end of the period | `SCR_REVN_EOP` |
 | 132 | Loss-absorbing capacity within the solvency capital requirement at the end of the period | `SCR_LAC_EOP` |
@@ -283,7 +283,7 @@ A table is named with the table token first, followed by the name of the variabl
 | 187 | Mismatching reserve at the end of the period | `RES_MISM_EOP` |
 | 188 | Reserve on the fair value basis at the end of the period | `RES_FAIR_EOP` |
 | 189 | Bonus earning capacity | `BEC` |
-| 190 | Appraisal value at the valuation date | `APV_T0` |
+| 190 | Appraisal value at the valuation date | `APV_BOP` |
 | 191 | Aggregate asset share at the end of the period | `ASHR_AGG_EOP` |
 | 192 | Financial reinsurance premiums in the period | `PREM_FINRE` |
 | 193 | Requirement for capital at inception | `CAPRQ_INC` |
@@ -337,16 +337,16 @@ Each name is split into its slots and then read measure first.
 
 | No. | Name | Slots | Reads as |
 |---|---|---|---|
-| 1 | `CLM_DTH_RI_BE_PV_EOP` | item claim, kind death, party reinsurance, basis best estimate, measure present value, time end of period | Present value at the end of the period of future death claims recovered from reinsurers, on the best estimate basis |
+| 1 | `CLM_DTH_RI_BE_PV` | item claim, kind death, party reinsurance, basis best estimate, measure present value, time end of period | Present value of future death claims recovered from reinsurers, on the best estimate basis |
 | 2 | `LPS_INDP_PRC_RATE_ANN` | item lapse, kind independent, basis pricing, measure rate, time base annual | Independent annual rate of lapse on the pricing basis |
 | 3 | `EXP_ATTR_MAINT_PER_POL_ANN` | item expense, kinds directly attributable then maintenance, measure per policy, time base annual | Directly attributable maintenance expense per policy per year |
 | 4 | `CSM_ESTCH_RI` | item contractual service margin, move change in estimates, party reinsurance | Change in estimates that adjusts the contractual service margin on reinsurance held, in the period |
 | 5 | `DISC_SPOT_IFC_RATE_ANN` | item discount, kind spot, basis IFRS 17 current, measure rate, time base annual | Annual spot discount rate at current IFRS 17 rates |
-| 6 | `DTH_CNT_CUM_EOP` | item death, measure count then cumulative, time end of period | Number of deaths from the valuation date to the end of the period |
+| 6 | `DTH_CNT_CUM` | item death, measure count then cumulative | Number of deaths from the valuation date to the end of the period |
 | 7 | `SCR_LPSR_MASS_EOP` | item solvency capital requirement, kinds lapse risk then mass, time end of period | Solvency capital requirement for the mass shock for lapse risk at the end of the period |
-| 8 | `PROF_SH_EV_PV_T0_AFT_TAX` | item profit, party shareholder, basis embedded value, measure present value, time valuation date, order after tax | Present value at the valuation date of future shareholder profits after tax, on the embedded value basis |
+| 8 | `PROF_SH_EV_PV_AFT_TAX` | item profit, party shareholder, basis embedded value, measure present value, order after tax | Present value at the valuation date of future shareholder profits after tax, on the embedded value basis |
 | 9 | `SAR_NET_BOP` | item sum at risk, party net, time start of period | Sum at risk net of reinsurance at the start of the period |
-| 10 | `PREM_WAIV_ACC_EOP` | item premium, kind waiver, measure accumulated, time end of period | Waived premiums to date, accumulated with interest to the end of the period |
+| 10 | `PREM_WAIV_ACC` | item premium, kind waiver, measure accumulated, time end of period | Waived premiums to date, accumulated with interest to the end of the period |
 
 ## Part C. Descriptions that cannot be named yet
 

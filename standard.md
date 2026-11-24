@@ -168,7 +168,7 @@ The denominator is one item token with no qualifiers. Whether the ratio is held 
 
 ### 6.4 Present values
 
-`PV` is the discounted, probability-weighted value of the future amounts of the item, as seen from the stated time point. `PREM_BE_PV_BOP` is the present value at the start of the period of future premiums on the best estimate basis.
+`PV` is the discounted, probability-weighted value of the future amounts of the item, as seen from the start of the period. `PREM_BE_PV` is the present value of future premiums on the best estimate basis.
 
 Where a framework defines a named present value, use the named item and not a built name. The best estimate liability is `BEL_EOP`, not a present value of claims less premiums.
 
@@ -181,12 +181,13 @@ An indicator is calculated by the model and may change from period to period: `P
 The slot can hold up to three parts, in this order.
 
 1. **Time base**: `ANN` (per year), `MTH` (per month) or `PRD` (per model period).
-2. **Time point**: `BOP` (start of period), `MOP` (middle of period), `EOP` (end of period), `T0` (valuation date) or `INC` (policy inception).
+2. **Time point**: `BOP` (start of period), `MOP` (middle of period), `EOP` (end of period) or `INC` (policy inception). There is no valuation date token. The value at the valuation date is the value at the first time step.
 3. **Order clause**: `BEF` or `AFT` followed by exactly one token.
 
 ### 7.1 When a time point is required
 
-- A value measured at an instant must have a time point. This covers balances, reserves, numbers in force, benefit levels, fund values, indexes, probabilities, present values and cumulative totals.
+- A value measured at an instant must have a time point. This covers balances, reserves, numbers in force, benefit levels, fund values, indexes and probabilities.
+- Some measures carry their own time point, and never take one. A present value (`PV`) and a future total (`FUT`) look forward from the start of the period. An accumulated value (`ACC`) and a cumulative total (`CUM`) look back from the end of it. `PREM_PV` is the present value of future premiums at the start of each period, and at the first time step that is the valuation date.
 - A flow is a total over the model period and has no time point. `PREM` is the premium of the period. When within the period it is assumed to be paid is a model assumption and not part of the name.
 - A constant that does not change through the projection has no time point. Examples are a retention limit, a flag and a policy term.
 
@@ -240,7 +241,7 @@ A description cannot be named until each of these points is clear.
 2. **Gross of what.** "Gross" and "net" must say gross or net of reinsurance, or before or after tax. "Gross premium" in the sense of the premium charged to the policyholder is the office premium.
 3. **Dependent or independent.** For a decrement rate in a model with several decrements.
 4. **The time base of a rate.** Annual, monthly or per model period.
-5. **The time point of a value.** Start, middle or end of the period, valuation date or inception. If events happen at the same instant, before or after which of them.
+5. **The time point of a value.** Start, middle or end of the period, or inception. If events happen at the same instant, before or after which of them.
 6. **Policies or lives.** For any count on joint life, group or family business.
 7. **The basis.** Whenever more than one basis exists in the same run.
 8. **The event or the risk.** Death and lapse are events. Mortality risk and lapse risk are capital risks with wider regulatory meanings, and they have their own tokens.
@@ -255,7 +256,7 @@ Every name has one canonical description, built from the full terms in the gloss
 [measure] of [kinds] [item] [move], [party], [basis], [time base], [time point], [order clause]
 ```
 
-Example: `CLM_DTH_RI_BE_PV_EOP` reads "Present value of death claims, reinsurance ceded, best estimate, at end of period".
+Example: `CLM_DTH_RI_BE_PV` reads "Present value of death claims, reinsurance ceded, best estimate".
 
 A user may write a description in any natural wording. It is acceptable when it maps to exactly one canonical description.
 

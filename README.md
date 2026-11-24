@@ -31,7 +31,7 @@ There is a shared notation for the mathematics, the International Actuarial Nota
 
 It gives a rule that turns a plain English description of a variable into one predictable name, and turns a name back into English.
 
-- "Present value at the end of the period of future death claims recovered from reinsurers, best estimate" becomes `CLM_DTH_RI_BE_PV_EOP`.
+- "Present value of future death claims recovered from reinsurers, best estimate" becomes `CLM_DTH_RI_BE_PV`.
 - `LPS_DEP_RATE_MTH` reads as "dependent monthly rate of lapse".
 
 It also gives a controlled list of terms. Each term has one short form, one precise definition, a note on what it is often confused with, and links to its related terms.
@@ -145,7 +145,7 @@ The server offers six tools.
 
 ```bash
 npx -y github:proudchitts/actuarial-nomenclature name "Death claims in the period"
-npx -y github:proudchitts/actuarial-nomenclature read CLM_DTH_RI_BE_PV_EOP
+npx -y github:proudchitts/actuarial-nomenclature read CLM_DTH_RI_BE_PV
 npx -y github:proudchitts/actuarial-nomenclature check variables.txt
 ```
 

@@ -10,9 +10,11 @@
   var UNIT = ["YRS", "MTHS"];
   var AGGR = ["CUM", "ACC", "FUT", "AVG", "MAX", "MIN"];
   var BASE = ["ANN", "MTH", "PRD"];
-  var POINT = ["BOP", "MOP", "EOP", "T0", "INC"];
+  var POINT = ["BOP", "MOP", "EOP", "INC"];
   var NEVER = ["GRS", "AMT"];
-  var NEED_POINT = ["PV", "CUM", "ACC", "FUT", "IDX", "PROB"];
+  var NEED_POINT = ["IDX", "PROB"];
+  // PV and FUT are measured at the start of the period, ACC and CUM at the end. They never take a time point.
+  var OWN_POINT = ["PV", "FUT", "ACC", "CUM"];
   var INSTANCE = /^[LBF][0-9]+$/;
 
   function has(list, x) { return list.indexOf(x) >= 0; }
@@ -140,7 +142,10 @@
       }
       if (i < rest.length) { p.push("Out of slot order at " + rest[i] + " (" + T[rest[i]].slot + ")."); return out; }
       if (prim === "RATE" && !base) { p.push("A RATE must state its time base: ANN, MTH or PRD."); }
-      [prim, aggr].forEach(function (m) { if (m && has(NEED_POINT, m) && !point) { p.push(m + " needs a time point: BOP, MOP, EOP, T0 or INC."); } });
+      [prim, aggr].forEach(function (m) {
+        if (m && has(NEED_POINT, m) && !point) { p.push(m + " needs a time point: BOP, MOP, EOP or INC."); }
+        if (m && has(OWN_POINT, m) && point) { p.push(m + " carries its own time point, so " + point + " must go."); }
+      });
       if (inst) { S.push({ slot: "INSTANCE", tok: inst }); }
       out.ok = p.length === 0;
       return out;
@@ -392,7 +397,12 @@
       }
       var pointOpts = [
         { label: "Start of period", append: ", at the start of the period" }, { label: "End of period", append: ", at the end of the period" },
-        { label: "Valuation date", append: ", at the valuation date" }, { label: "Inception", append: ", at inception" }];
+        { label: "Inception", append: ", at inception" }];
+      var own = [prim, aggr].filter(function (m) { return m && has(OWN_POINT, m); })[0];
+      if (own && point) {
+        res.notes.push(T[own].full + " carries its own time point (" + (own === "PV" || own === "FUT" ? "the start of the period" : "the end of the period") + "), so \"" + lc(point) + "\" is not written.");
+        point = null;
+      }
       var needs = [prim, aggr].filter(function (m) { return m && has(NEED_POINT, m); });
       var inForce = (item.t === "POL" || item.t === "LIFE") && (has(kinds, "IF") || has(kinds, "PUP")) && !move;
       var stock = has(LX.stock, item.t) && !move && (!prim || prim === "IND") && !isTable;

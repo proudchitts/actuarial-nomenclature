@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 293 terms: 278 in the core, which is for every market, and 15 in market extension sets.
+There are 292 terms: 277 in the core, which is for every market, and 15 in market extension sets.
 
 ## How to read an entry
 
@@ -19,7 +19,7 @@ There are 293 terms: 278 in the core, which is for every market, and 15 in marke
 
 | Family | Terms |
 |---|---|
-| [Time points and time bases](#time-points-and-time-bases) | [BOP](#bop) [EOP](#eop) [MOP](#mop) [T0](#t0) [INC](#inc) [BEF](#bef) [AFT](#aft) [ANN](#ann) [MTH](#mth) [PRD](#prd) |
+| [Time points and time bases](#time-points-and-time-bases) | [BOP](#bop) [EOP](#eop) [MOP](#mop) [INC](#inc) [BEF](#bef) [AFT](#aft) [ANN](#ann) [MTH](#mth) [PRD](#prd) |
 | [Time and age items](#time-and-age-items) | [TIME](#time) [DUR](#dur) [TERM](#term) [REM](#rem) [AGE](#age) [DATE](#date) [DEFP](#defp) [WAITP](#waitp) [POLYR](#polyr) [ANNIV](#anniv) [CALYR](#calyr) [CALMTH](#calmth) [DOB](#dob) [ALB](#alb) [ANB](#anb) [ANRB](#anrb) |
 | [Measures](#measures) | [AMT](#amt) [CNT](#cnt) [RATE](#rate) [PROB](#prob) [FORCE](#force) [PV](#pv) [FAC](#fac) [IND](#ind) [FLG](#flg) [IDX](#idx) [PER](#per) [CUM](#cum) [FUT](#fut) [ACC](#acc) [AVG](#avg) [YRS](#yrs) [MTHS](#mths) [MAX](#max) [MIN](#min) |
 | [Party](#party) | [GRS](#grs) [RI](#ri) [NET](#net) [SH](#sh) [PH](#ph) |
@@ -52,8 +52,8 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Slot:** TIME
 - **Also called:** beginning of period, opening
 - **Definition:** The instant at the start of the model period, before anything happens in that period.
-- **Not to be confused with:** Not T0, which is one fixed date. BOP moves with each projection period.
-- **Related terms:** [EOP](#eop) end of period, [MOP](#mop) middle of period, [T0](#t0) valuation date, [INC](#inc) inception, [BEF](#bef) before, [AFT](#aft) after
+- **Not to be confused with:** Not INC, which is the start of each policy. At the first time step BOP is the valuation date.
+- **Related terms:** [EOP](#eop) end of period, [MOP](#mop) middle of period, [INC](#inc) inception, [BEF](#bef) before, [AFT](#aft) after
 
 ### EOP
 
@@ -62,7 +62,7 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Also called:** closing
 - **Definition:** The instant at the end of the model period, after everything in that period has happened unless a BEF clause says otherwise.
 - **Not to be confused with:** Not EXPY (expiry of a policy) and not MAT (maturity). EOP is about the model period, not the policy.
-- **Related terms:** [BOP](#bop) start of period, [MOP](#mop) middle of period, [T0](#t0) valuation date, [BEF](#bef) before, [AFT](#aft) after
+- **Related terms:** [BOP](#bop) start of period, [MOP](#mop) middle of period, [BEF](#bef) before, [AFT](#aft) after
 
 ### MOP
 
@@ -73,23 +73,14 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Not to be confused with:** Not AVG. A mid-period value is measured at one instant. An average is taken over the whole period.
 - **Related terms:** [BOP](#bop) start of period, [EOP](#eop) end of period, [AVG](#avg) average
 
-### T0
-
-- **Full term:** Valuation date
-- **Slot:** TIME
-- **Also called:** time zero, calculation date, reporting date
-- **Definition:** The fixed date at which the projection starts. Values at T0 do not vary by projection period.
-- **Not to be confused with:** Not INC, which is the start of each policy. Not BOP, which moves with the period.
-- **Related terms:** [BOP](#bop) start of period, [EOP](#eop) end of period, [INC](#inc) inception, [TIME](#time) projection time, [DATE](#date) calendar date
-
 ### INC
 
 - **Full term:** Inception
 - **Slot:** TIME
 - **Also called:** issue, entry, commencement, outset
 - **Definition:** The date on which the policy starts. A value at INC is fixed for the life of the policy.
-- **Not to be confused with:** Not INCM (income benefit). Not INIT, which describes costs that arise around inception. Not T0.
-- **Related terms:** [T0](#t0) valuation date, [BOP](#bop) start of period, [INIT](#init) initial, [NB](#nb) new business, [DUR](#dur) policy duration, [WAITP](#waitp) waiting period, [POLYR](#polyr) policy year, [ANNIV](#anniv) policy anniversary, [COH](#coh) cohort
+- **Not to be confused with:** Not INCM (income benefit). Not INIT, which describes costs that arise around inception. Not BOP, which moves with the projection.
+- **Related terms:** [BOP](#bop) start of period, [INIT](#init) initial, [NB](#nb) new business, [DUR](#dur) policy duration, [WAITP](#waitp) waiting period, [POLYR](#polyr) policy year, [ANNIV](#anniv) policy anniversary, [COH](#coh) cohort
 
 ### BEF
 
@@ -145,7 +136,7 @@ Items that measure time itself.
 - **Also called:** t, projection period number
 - **Definition:** The number of model periods elapsed since the valuation date.
 - **Not to be confused with:** Not DUR, which counts from policy inception. Not TERM, which is a contractual length.
-- **Related terms:** [DUR](#dur) policy duration, [TERM](#term) policy term, [T0](#t0) valuation date, [DATE](#date) calendar date, [AGE](#age) age, [CALYR](#calyr) calendar year, [CALMTH](#calmth) calendar month, [YRS](#yrs) in years, [MTHS](#mths) in months
+- **Related terms:** [DUR](#dur) policy duration, [TERM](#term) policy term, [DATE](#date) calendar date, [AGE](#age) age, [CALYR](#calyr) calendar year, [CALMTH](#calmth) calendar month, [YRS](#yrs) in years, [MTHS](#mths) in months
 
 ### DUR
 
@@ -189,7 +180,7 @@ Items that measure time itself.
 - **Slot:** ITEM
 - **Definition:** A calendar date for the stated time point.
 - **Not to be confused with:** Not TIME, which is a count of periods and not a date.
-- **Related terms:** [TIME](#time) projection time, [T0](#t0) valuation date, [AGE](#age) age, [ANNIV](#anniv) policy anniversary, [CALYR](#calyr) calendar year, [CALMTH](#calmth) calendar month, [DOB](#dob) date of birth
+- **Related terms:** [TIME](#time) projection time, [AGE](#age) age, [ANNIV](#anniv) policy anniversary, [CALYR](#calyr) calendar year, [CALMTH](#calmth) calendar month, [DOB](#dob) date of birth
 
 ### DEFP
 
@@ -331,7 +322,7 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Full term:** Present value
 - **Slot:** MEASURE
 - **Also called:** discounted value, EPV
-- **Definition:** The value at the stated time point of all amounts of the item due after that point, discounted and weighted by the probability of payment. A time point is required.
+- **Definition:** The value at the start of the period of all amounts of the item due from then on, discounted and weighted by the probability of payment. It carries its own time point, so no time point is written. At the first time step it is the value at the valuation date.
 - **Not to be confused with:** Not FUT (future amounts summed without discounting). Not ACC (past amounts rolled forward). Not BEL, which is a specific net present value defined by a reporting basis.
 - **Related terms:** [FUT](#fut) future total, [ACC](#acc) accumulated, [CUM](#cum) cumulative, [DISC](#disc) discount, [AMT](#amt) amount, [BEL](#bel) best estimate liability
 
@@ -385,7 +376,7 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Full term:** Cumulative
 - **Slot:** MEASURE
 - **Also called:** to date, running total
-- **Definition:** The simple sum of the item over all periods up to the stated time point, with no interest. A time point is required.
+- **Definition:** The simple sum of the item over all periods up to the end of the period, with no interest. It carries its own time point, so no time point is written.
 - **Not to be confused with:** Not ACC, which adds interest. Not FUT, which looks forward.
 - **Related terms:** [ACC](#acc) accumulated, [FUT](#fut) future total, [PV](#pv) present value, [AVG](#avg) average, [MAX](#max) maximum
 
@@ -394,7 +385,7 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Full term:** Future total
 - **Slot:** MEASURE
 - **Also called:** remaining, undiscounted future
-- **Definition:** The simple sum of the item over all periods after the stated time point, with no discounting. A time point is required.
+- **Definition:** The simple sum of the item over all periods from the start of the period on, with no discounting. It carries its own time point, so no time point is written.
 - **Not to be confused with:** Not PV, which discounts. Not REM, which narrows a contractual length. Not CUM, which looks back.
 - **Related terms:** [PV](#pv) present value, [CUM](#cum) cumulative, [ACC](#acc) accumulated, [REM](#rem) remaining, [CU](#cu) coverage units
 
@@ -403,7 +394,7 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Full term:** Accumulated
 - **Slot:** MEASURE
 - **Also called:** rolled up, with interest
-- **Definition:** The sum of the item over all periods up to the stated time point, with interest added. A time point is required.
+- **Definition:** The sum of the item over all periods up to the end of the period, with interest added. It carries its own time point, so no time point is written.
 - **Not to be confused with:** Not CUM (no interest). Not ACCD (accident). Not ACCR (interest accreted on the CSM).
 - **Related terms:** [CUM](#cum) cumulative, [PV](#pv) present value, [FUT](#fut) future total, [INT](#int) interest, [ACCD](#accd) accident, [ACCR](#accr) interest accretion
 
@@ -602,7 +593,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Slot:** BASIS
 - **Also called:** valuation basis, statutory basis, reporting basis
 - **Definition:** The basis used for the insurer's formal valuation of its liabilities at the reporting date, whatever rules it follows.
-- **Not to be confused with:** Not T0, which is the valuation date. Not PRU or BE: a valuation basis may be either. Use a named basis such as SAM, SII or FSV when the description gives one.
+- **Not to be confused with:** Not PRU or BE: a valuation basis may be either. Use a named basis such as SAM, SII or FSV when the description gives one.
 - **Related terms:** [PRU](#pru) prudent, [BE](#be) best estimate, [PRC](#prc) pricing, [FSV](#fsv) financial soundness valuation, [SAM](#sam) Solvency Assessment and Management, [SII](#sii) Solvency II, [RES](#res) reserve
 
 ## Decrements and policy status
@@ -3072,7 +3063,6 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [SURP](#surp) | Surplus | ITEM | Profit, embedded value and new business |
 | [SV](#sv) | Surrender value | ITEM | Policy values, unit-linked and with-profits |
 | [SWCH](#swch) | Fund switch | ITEM or KIND | Decrements and policy status |
-| [T0](#t0) | Valuation date | TIME | Time points and time bases |
 | [TAX](#tax) | Tax | ITEM or KIND | Cash flows in general |
 | [TBL](#tbl) | Table | ITEM or KIND | Assumption building |
 | [TERM](#term) | Policy term | ITEM or KIND | Time and age items |
@@ -3165,7 +3155,6 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | brokerage | [COMM](#comm) |
 | building block approach | [GMM](#gmm) |
 | burial cover | [FUN](#fun) |
-| calculation date | [T0](#t0) |
 | cancellation price | [BID](#bid) |
 | cancellation price of the fund | [EXPR](#expr) |
 | cancelled from inception | [NTU](#ntu) |
@@ -3450,7 +3439,6 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | remaining | [FUT](#fut) |
 | renewal date | [ANNIV](#anniv) |
 | reporting basis | [VAL](#val) |
-| reporting date | [T0](#t0) |
 | reserving basis | [PRU](#pru) |
 | resilience reserve | [MISM](#mism) |
 | retained | [NET](#net) |
@@ -3507,7 +3495,6 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | taxable income | [TXBL](#txbl) |
 | termination | [EXIT](#exit) |
 | termination (older South African guidance) | [DCON](#dcon) |
-| time zero | [T0](#t0) |
 | to date | [CUM](#cum) |
 | tobacco status | [SMK](#smk) |
 | total across policies | [AGG](#agg) |

@@ -29,7 +29,7 @@ function mcp() {
     w({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "test", version: "0" } } });
     w({ jsonrpc: "2.0", method: "notifications/initialized" });
     w({ jsonrpc: "2.0", id: 2, method: "tools/list" });
-    w({ jsonrpc: "2.0", id: 3, method: "tools/call", params: { name: "name_variable", arguments: { description: "Present value at the end of the period of future death claims recovered from reinsurers, best estimate" } } });
+    w({ jsonrpc: "2.0", id: 3, method: "tools/call", params: { name: "name_variable", arguments: { description: "Present value of future death claims recovered from reinsurers, best estimate" } } });
     w({ jsonrpc: "2.0", id: 4, method: "tools/call", params: { name: "name_variable", arguments: { description: "Withdrawals in the period" } } });
     w({ jsonrpc: "2.0", id: 5, method: "tools/call", params: { name: "check_list", arguments: { items: [{ description: "Death claims in the period" }, { description: "Claims on death in the period" }, { name: "BEL_EOP", description: "Best estimate liability at the start of the period" }] } } });
     w({ jsonrpc: "2.0", id: 6, method: "nope" });
@@ -54,7 +54,7 @@ function httpTest() {
   const g = await mcp();
   ok(g[1] && g[1].result.protocolVersion === "2025-06-18" && g[1].result.capabilities.tools, "mcp initialize");
   ok(g[2] && g[2].result.tools.length === 6, "mcp lists 6 tools");
-  ok(g[3] && g[3].result.structuredContent.name === "CLM_DTH_RI_BE_PV_EOP" && !g[3].result.isError, "mcp name_variable");
+  ok(g[3] && g[3].result.structuredContent.name === "CLM_DTH_RI_BE_PV" && !g[3].result.isError, "mcp name_variable");
   ok(g[4] && g[4].result.structuredContent.status === "needs_detail" && g[4].result.structuredContent.name === null, "mcp refuses a vague description");
   const c = g[5] && g[5].result.structuredContent;
   ok(c && c.lines_sharing_a_name === 2 && c.results[2].status === "fix", "mcp check_list flags a shared name and a mismatch");

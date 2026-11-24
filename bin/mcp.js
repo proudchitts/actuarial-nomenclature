@@ -20,7 +20,7 @@ const TOOLS = [
   {
     name: "read_name",
     description: "Read a standard variable name back into English and check it against the naming rules. Use it to understand a name in model code or to validate a name before using it.",
-    inputSchema: { type: "object", properties: { name: { type: "string", description: "A variable name such as CLM_DTH_RI_BE_PV_EOP." } }, required: ["name"] },
+    inputSchema: { type: "object", properties: { name: { type: "string", description: "A variable name such as CLM_DTH_RI_BE_PV." } }, required: ["name"] },
   },
   {
     name: "check_list",

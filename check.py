@@ -99,10 +99,13 @@ slot = {t: e.get("Slot", "") for t, e in entries.items()}
 PRIMARY = {"CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"}
 AGGR = {"CUM", "ACC", "FUT", "AVG", "MAX", "MIN"}
 BASE = {"ANN", "MTH", "PRD"}
-POINT = {"BOP", "MOP", "EOP", "T0", "INC"}
+POINT = {"BOP", "MOP", "EOP", "INC"}
 ORDER = {"BEF", "AFT"}
 NEVER = {"GRS", "AMT"}
-NEED_POINT = {"PV", "CUM", "ACC", "FUT", "IDX", "PROB"}
+NEED_POINT = {"IDX", "PROB"}
+# These measures carry their own time point: PV and FUT look forward from the start of the period,
+# ACC and CUM look back from the end of it. They never take a time point.
+OWN_POINT = {"PV", "FUT", "ACC", "CUM"}
 
 
 def check_name(name, where):
@@ -188,6 +191,8 @@ def check_name(name, where):
     for m in (prim, aggr):
         if m in NEED_POINT and not point:
             p.append("%s: %s uses %s with no time point" % (where, name, m))
+        if m in OWN_POINT and point:
+            p.append("%s: %s uses %s, which carries its own time point, so %s must go" % (where, name, m, point))
     return p
 
 

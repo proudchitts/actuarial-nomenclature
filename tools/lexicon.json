@@ -119,10 +119,10 @@
       "MOP"
     ],
     "valuation date": [
-      "T0"
+      "BOP"
     ],
     "time zero": [
-      "T0"
+      "BOP"
     ],
     "at inception": [
       "INC"
@@ -1890,7 +1890,6 @@
     "FLG",
     "TBL",
     "PV",
-    "T0",
     "PRD",
     "LS",
     "PL",

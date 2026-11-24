@@ -3,7 +3,7 @@
  *
  *   actuarial-nomenclature name "Death claims in the period"
  *   actuarial-nomenclature suggest "Money paid to the broker in the period"
- *   actuarial-nomenclature read CLM_DTH_RI_BE_PV_EOP
+ *   actuarial-nomenclature read CLM_DTH_RI_BE_PV
  *   actuarial-nomenclature check variables.txt
  *   actuarial-nomenclature find "dread disease"
  *   actuarial-nomenclature serve --port 8787
