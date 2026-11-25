@@ -68,7 +68,7 @@ A kind token narrows the item. `CLM_DTH` is the claims that arise on death. `EXP
 
 - If the kind is left out, the variable is the total over all kinds. `CLM` is all claims of every type.
 - A second kind token is allowed. `CLM_DTH_ACCD` is death claims, and of those the accidental ones.
-- When there are two kind tokens their order is fixed by a mechanical rule, so that no judgement is needed. A token that the glossary marks "ITEM or KIND" comes first. These are the events, causes and benefits. A token marked "KIND" only comes second. These are the qualifiers.
+- When there are two kind tokens their order is fixed by a mechanical rule, so that no judgement is needed. A token that says what the thing is about comes first. These are the tokens the glossary marks "ITEM or KIND" (events, causes and benefits), the capital risks (such as `MORT`, `LPSR`, `LUW`, `MKT` and `OPR`) and the asset classes (`EQ`, `PROP`, `GOVB`, `CORPB`, `CASH`). Any other qualifier comes second, such as `AGG` or `PROJ`. So the aggregate capital for mortality and for expenses are `SCR_MORT_AGG` and `SCR_EXP_AGG`.
 - A direction token (`UP`, `DOWN` or `MASS`) always comes last, so that a shock up and a shock down give names of the same shape: `DISC_SPOT_UP_RATE_ANN` and `DISC_SPOT_DOWN_RATE_ANN`.
 - If both tokens are of the same type, they are written in alphabetical order. `COMM_CLAW_INIT` is clawback of initial commission. `DTH_HIV_INDP_RATE_ANN` has the kinds `HIV` and `INDP` in that order.
 

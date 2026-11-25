@@ -8,6 +8,8 @@
 
   var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"];
   var UNIT = ["YRS", "MTHS"];
+  // kinds that say what the thing is about, like an event or a benefit: capital risks and asset classes
+  var SUBJECT = ["MORT", "LONG", "MORB", "LPSR", "LUW", "CAT", "MKT", "SPRD", "FX", "CPTY", "OPR", "CONC", "REVN", "DIV", "LAC", "EQ", "PROP", "GOVB", "CORPB", "CASH"];
   var DIRECTION = ["UP", "DOWN", "MASS"]; // direction tokens always come last among the kinds
   var AGGR = ["CUM", "ACC", "FUT", "AVG", "MAX", "MIN"];
   var BASE = ["ANN", "MTH", "PRD"];
@@ -160,7 +162,7 @@
 
     function orderKinds(kinds) {
       return kinds.sort(function (a, b) {
-        var rk = function (t) { return has(DIRECTION, t) ? 2 : T[t].slot === "ITEM or KIND" ? 0 : 1; };
+        var rk = function (t) { return has(DIRECTION, t) ? 2 : (T[t].slot === "ITEM or KIND" || has(SUBJECT, t)) ? 0 : 1; };
         var ra = rk(a), rb = rk(b);
         if (ra !== rb) { return ra - rb; }
         return a < b ? -1 : a > b ? 1 : 0;
