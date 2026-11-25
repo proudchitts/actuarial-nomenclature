@@ -369,6 +369,10 @@ The table is named after what its columns share, so `DISC_FAC_BOP` is found in `
 | 241 | Monthly real world rate of investment return on government bonds | `INVR_GOVB_RW_RATE_MTH` |
 | 242 | Annual spot discount rate, down shock | `DISC_SPOT_DOWN_RATE_ANN` |
 | 243 | Projected solvency capital requirement | `SCR_PROJ` |
+| 244 | Policy number | `POL_ID` |
+| 245 | Asset identifier | `ASSET_ID` |
+| 246 | Asset class code | `ASSET_CLS` |
+| 247 | Par value of government bond assets | `ASSET_GOVB_PAR` |
 
 ## Part B. Name to description
 

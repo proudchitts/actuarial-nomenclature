@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 307 terms: 292 in the core, which is for every market, and 15 in market extension sets.
+There are 310 terms: 295 in the core, which is for every market, and 15 in market extension sets.
 
 ## How to read an entry
 
@@ -21,7 +21,7 @@ There are 307 terms: 292 in the core, which is for every market, and 15 in marke
 |---|---|
 | [Time points and time bases](#time-points-and-time-bases) | [BOP](#bop) [EOP](#eop) [MOP](#mop) [INC](#inc) [BEF](#bef) [AFT](#aft) [ANN](#ann) [MTH](#mth) [PRD](#prd) |
 | [Time and age items](#time-and-age-items) | [TIME](#time) [DUR](#dur) [TERM](#term) [REM](#rem) [AGE](#age) [DATE](#date) [DEFP](#defp) [WAITP](#waitp) [POLYR](#polyr) [ANNIV](#anniv) [CALYR](#calyr) [CALMTH](#calmth) [DOB](#dob) [ALB](#alb) [ANB](#anb) [ANRB](#anrb) |
-| [Measures](#measures) | [AMT](#amt) [CNT](#cnt) [RATE](#rate) [PROB](#prob) [FORCE](#force) [PV](#pv) [FAC](#fac) [IND](#ind) [FLG](#flg) [IDX](#idx) [PER](#per) [CUM](#cum) [FUT](#fut) [ACC](#acc) [AVG](#avg) [YRS](#yrs) [MTHS](#mths) [MAX](#max) [MIN](#min) |
+| [Measures](#measures) | [AMT](#amt) [CNT](#cnt) [RATE](#rate) [PROB](#prob) [FORCE](#force) [PV](#pv) [FAC](#fac) [IND](#ind) [FLG](#flg) [IDX](#idx) [ID](#id) [CLS](#cls) [PER](#per) [CUM](#cum) [FUT](#fut) [ACC](#acc) [AVG](#avg) [YRS](#yrs) [MTHS](#mths) [MAX](#max) [MIN](#min) |
 | [Party](#party) | [GRS](#grs) [RI](#ri) [NET](#net) [SH](#sh) [PH](#ph) |
 | [Basis](#basis) | [BE](#be) [PRU](#pru) [PRC](#prc) [IFL](#ifl) [IFC](#ifc) [SII](#sii) [EV](#ev) [RN](#rn) [RW](#rw) [FAIR](#fair) [VAL](#val) |
 | [Decrements and policy status](#decrements-and-policy-status) | [DEC](#dec) [EXIT](#exit) [DTH](#dth) [LPS](#lps) [SUR](#sur) [WDL](#wdl) [DCON](#dcon) [PUP](#pup) [RINST](#rinst) [PERS](#pers) [MAT](#mat) [EXPY](#expy) [NTU](#ntu) [DIS](#dis) [REC](#rec) [CI](#ci) [ACCD](#accd) [IF](#if) [POL](#pol) [LIFE](#life) [ALTR](#altr) [CONV](#conv) [SWCH](#swch) |
@@ -31,7 +31,7 @@ There are 307 terms: 292 in the core, which is for every market, and 15 in marke
 | [Claims and benefits](#claims-and-benefits) | [CLM](#clm) [BEN](#ben) [SA](#sa) [SAR](#sar) [ANTY](#anty) [LS](#ls) [INCM](#incm) [ACEL](#acel) [SALN](#saln) |
 | [Expenses and commission](#expenses-and-commission) | [EXP](#exp) [INIT](#init) [REN](#ren) [ACQ](#acq) [MAINT](#maint) [ATTR](#attr) [NATTR](#nattr) [INV](#inv) [COMM](#comm) [CLAW](#claw) [INFL](#infl) [OH](#oh) [MARG](#marg) [FULL](#full) [NOACQ](#noacq) [FIX](#fix) [VAR](#var) [VAT](#vat) [DAC](#dac) |
 | [Policy values, unit-linked and with-profits](#policy-values-unit-linked-and-with-profits) | [FV](#fv) [SV](#sv) [UNIT](#unit) [NUNIT](#nunit) [UPRC](#uprc) [ALLOC](#alloc) [CHRG](#chrg) [FMC](#fmc) [BON](#bon) [RVS](#rvs) [TMNL](#tmnl) [ASHR](#ashr) [GTEE](#gtee) [BID](#bid) [OFFER](#offer) [MVR](#mvr) [POLF](#polf) [WP](#wp) [NPAR](#npar) [APPR](#appr) [EXPR](#expr) [BEC](#bec) [AGG](#agg) [ACTF](#actf) [NOML](#noml) [FND](#fnd) [UNFND](#unfnd) [CAPU](#capu) [ACMU](#acmu) [LOY](#loy) [LOAN](#loan) |
-| [Economic and investment](#economic-and-investment) | [GOVB](#govb) [CORPB](#corpb) [CASH](#cash) [CPN](#cpn) [CSPR](#cspr) [RTG](#rtg) [MDUR](#mdur) [RF](#rf) [DISC](#disc) [INT](#int) [FWD](#fwd) [SPOT](#spot) [INVI](#invi) [INVR](#invr) [ASSET](#asset) [EQ](#eq) [GAIN](#gain) |
+| [Economic and investment](#economic-and-investment) | [GOVB](#govb) [CORPB](#corpb) [CASH](#cash) [CPN](#cpn) [PAR](#par) [CSPR](#cspr) [RTG](#rtg) [MDUR](#mdur) [RF](#rf) [DISC](#disc) [INT](#int) [FWD](#fwd) [SPOT](#spot) [INVI](#invi) [INVR](#invr) [ASSET](#asset) [EQ](#eq) [GAIN](#gain) |
 | [Reinsurance](#reinsurance) | [RET](#ret) [QS](#qs) [XL](#xl) [FACL](#facl) [TRTY](#trty) [COINS](#coins) [FINRE](#finre) |
 | [Reserves and liabilities](#reserves-and-liabilities) | [LIAB](#liab) [RES](#res) [BEL](#bel) [TP](#tp) [RM](#rm) [UPR](#upr) [IBNR](#ibnr) [OCR](#ocr) [NEG](#neg) [MISM](#mism) [FLUC](#fluc) [CTGY](#ctgy) [OVRN](#ovrn) |
 | [IFRS 17](#ifrs-17) | [CSM](#csm) [RA](#ra) [LC](#lc) [LOREC](#lorec) [LRC](#lrc) [LIC](#lic) [FCF](#fcf) [CU](#cu) [IACF](#iacf) [IFE](#ife) [IREV](#irev) [ISE](#ise) [ISR](#isr) [OCI](#oci) [PL](#pl) [INVC](#invc) [ONER](#oner) [GMM](#gmm) [PAA](#paa) [VFA](#vfa) [UNDL](#undl) [COH](#coh) [TRNS](#trns) |
@@ -288,7 +288,7 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Also called:** number of
 - **Definition:** The number of units of the item, such as policies, lives, events or units. Counts may be fractional in a projection because they are expected values.
 - **Not to be confused with:** Not PROB. A count scales with the size of the business. A probability lies between 0 and 1.
-- **Related terms:** [AMT](#amt) amount, [PROB](#prob) probability, [POL](#pol) policy, [LIFE](#life) life assured, [PER](#per) per
+- **Related terms:** [AMT](#amt) amount, [PROB](#prob) probability, [POL](#pol) policy, [LIFE](#life) life assured, [PER](#per) per, [ID](#id) identifier
 
 ### RATE
 
@@ -360,7 +360,25 @@ Tokens for the MEASURE slot. They say what kind of number the variable holds.
 - **Also called:** index level
 - **Definition:** The level of an index at the stated time point, relative to a base level of 1 at a stated origin.
 - **Not to be confused with:** Not RATE. The index is the accumulated effect of the rates. Not IND. Not an array subscript.
-- **Related terms:** [RATE](#rate) rate, [FAC](#fac) factor, [INFL](#infl) inflation, [ESC](#esc) escalation
+- **Related terms:** [RATE](#rate) rate, [FAC](#fac) factor, [INFL](#infl) inflation, [ESC](#esc) escalation, [ID](#id) identifier
+
+### ID
+
+- **Full term:** Identifier
+- **Slot:** MEASURE
+- **Also called:** reference number, identifying number, key
+- **Definition:** A code that picks out one record, such as one policy or one asset. It is a label and not a quantity, so it is never summed or averaged.
+- **Not to be confused with:** Not CNT, which counts records. Not IDX, which is the level of an index. Not IND. Not CLS, which many records share.
+- **Related terms:** [CLS](#cls) class code, [CNT](#cnt) count, [IDX](#idx) index, [POL](#pol) policy, [ASSET](#asset) assets
+
+### CLS
+
+- **Full term:** Class code
+- **Slot:** MEASURE
+- **Also called:** class, category, category code
+- **Definition:** A code that says which class a record belongs to, such as the asset class of an asset. It is a label and not a quantity, and the description should say how it is coded.
+- **Not to be confused with:** Not ID, which is different for every record. Not OCC, which is the occupation class of a life. Not IND or FLG, which hold 1 or 0.
+- **Related terms:** [ID](#id) identifier, [OCC](#occ) occupation class, [ASSET](#asset) assets, [RTG](#rtg) credit rating
 
 ### PER
 
@@ -585,7 +603,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Also called:** market consistent value, market value
 - **Definition:** A basis that values assets and liabilities at the amount for which they could be exchanged between willing and informed parties.
 - **Not to be confused with:** Not FV (fund value). Not RN, which is one way of reaching a market consistent value.
-- **Related terms:** [RN](#rn) risk neutral, [BE](#be) best estimate, [RES](#res) reserve, [ASSET](#asset) assets, [IFC](#ifc) IFRS 17 current
+- **Related terms:** [RN](#rn) risk neutral, [BE](#be) best estimate, [RES](#res) reserve, [ASSET](#asset) assets, [IFC](#ifc) IFRS 17 current, [PAR](#par) par value
 
 ### VAL
 
@@ -773,7 +791,7 @@ Events that change the state of a policy, and the states themselves.
 - **Also called:** contract
 - **Definition:** One insurance contract as the unit of count. Amounts per policy use PER with POL.
 - **Not to be confused with:** Not PH (policyholder as a party). Not LIFE: one policy can cover several lives and one life can hold several policies.
-- **Related terms:** [LIFE](#life) life assured, [IF](#if) in force, [NB](#nb) new business, [CNT](#cnt) count, [PER](#per) per, [PH](#ph) policyholder, [PUP](#pup) paid-up, [AGG](#agg) aggregate, [MPT](#mpt) model point
+- **Related terms:** [LIFE](#life) life assured, [IF](#if) in force, [NB](#nb) new business, [CNT](#cnt) count, [PER](#per) per, [PH](#ph) policyholder, [PUP](#pup) paid-up, [AGG](#agg) aggregate, [MPT](#mpt) model point, [ID](#id) identifier
 
 ### LIFE
 
@@ -1560,7 +1578,7 @@ Values attached to one policy and the features of savings business.
 - **Slot:** KIND
 - **Also called:** allocated, face value of units
 - **Definition:** Narrows units or fund value to the amount allocated to the policy and shown to the policyholder, before any actuarial funding.
-- **Not to be confused with:** Not FND, which is what the insurer actually holds. Not a nominal interest rate, which this version does not name.
+- **Not to be confused with:** Not FND, which is what the insurer actually holds. Not a nominal interest rate, which this version does not name. Not PAR, which is the face value of a bond.
 - **Related terms:** [FND](#fnd) funded, [UNFND](#unfnd) unfunded, [ACTF](#actf) actuarial funding, [UNIT](#unit) unit, [FV](#fv) fund value
 
 ### FND
@@ -1628,7 +1646,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** government stock, gilts, sovereign bonds
 - **Definition:** Narrows assets, returns or capital to bonds issued by a government.
 - **Not to be confused with:** Not CORPB. Not RF: a government bond is not always treated as free of risk.
-- **Related terms:** [CORPB](#corpb) corporate bonds, [CASH](#cash) cash, [EQ](#eq) equity, [PROP](#prop) property, [ASSET](#asset) assets, [CPN](#cpn) coupon, [RF](#rf) risk-free
+- **Related terms:** [CORPB](#corpb) corporate bonds, [CASH](#cash) cash, [EQ](#eq) equity, [PROP](#prop) property, [ASSET](#asset) assets, [CPN](#cpn) coupon, [RF](#rf) risk-free, [PAR](#par) par value
 
 ### CORPB
 
@@ -1637,7 +1655,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** credit, corporate debt
 - **Definition:** Narrows assets, returns or capital to bonds issued by companies.
 - **Not to be confused with:** Not GOVB. Not CORF or CPF, which are tax funds.
-- **Related terms:** [GOVB](#govb) government bonds, [CASH](#cash) cash, [EQ](#eq) equity, [ASSET](#asset) assets, [CPN](#cpn) coupon, [CSPR](#cspr) credit spread, [RTG](#rtg) credit rating
+- **Related terms:** [GOVB](#govb) government bonds, [CASH](#cash) cash, [EQ](#eq) equity, [ASSET](#asset) assets, [CPN](#cpn) coupon, [CSPR](#cspr) credit spread, [RTG](#rtg) credit rating, [PAR](#par) par value
 
 ### CASH
 
@@ -1655,7 +1673,16 @@ Interest, discounting, investment return and assets.
 - **Also called:** coupon rate, running yield of a bond
 - **Definition:** The interest a bond pays, as an amount or as a rate on its nominal value.
 - **Not to be confused with:** Not INVR, which also includes changes in price. Not a yield to redemption.
-- **Related terms:** [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [INVI](#invi) investment income, [INT](#int) interest
+- **Related terms:** [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [INVI](#invi) investment income, [INT](#int) interest, [PAR](#par) par value
+
+### PAR
+
+- **Full term:** Par value
+- **Slot:** KIND
+- **Also called:** face value, nominal value
+- **Definition:** Narrows an asset to the amount on which its coupons are worked out and which is repaid at redemption, as opposed to its market value.
+- **Not to be confused with:** Not FAIR, which values the asset at its market price. Not NOML, which is about units allocated to a policy.
+- **Related terms:** [CPN](#cpn) coupon, [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [ASSET](#asset) assets, [FAIR](#fair) fair value
 
 ### CSPR
 
@@ -1673,7 +1700,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** rating, credit quality
 - **Definition:** The grade given to a bond or counterparty for its credit quality. It is a code, and a table is usually indexed by it.
 - **Not to be confused with:** Not a rating of a life for extra risk, which uses EXTRA.
-- **Related terms:** [CSPR](#cspr) credit spread, [CORPB](#corpb) corporate bonds, [CPTY](#cpty) counterparty default risk, [SPRD](#sprd) spread risk
+- **Related terms:** [CSPR](#cspr) credit spread, [CORPB](#corpb) corporate bonds, [CPTY](#cpty) counterparty default risk, [SPRD](#sprd) spread risk, [CLS](#cls) class code
 
 ### MDUR
 
@@ -1754,7 +1781,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** investments
 - **Definition:** The assets held to back liabilities or capital, valued at the stated time point.
 - **Not to be confused with:** Not ASHR (asset share). Not FV.
-- **Related terms:** [INVI](#invi) investment income, [INVR](#invr) investment return, [INV](#inv) investment, [EQ](#eq) equity, [RES](#res) reserve, [OF](#of) own funds, [FAIR](#fair) fair value, [GAIN](#gain) capital gain, [MISM](#mism) mismatching, [UNDL](#undl) underlying items, [PROP](#prop) property, [SURP](#surp) surplus, [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [CASH](#cash) cash, [MDUR](#mdur) modified duration, [LIAB](#liab) liabilities
+- **Related terms:** [INVI](#invi) investment income, [INVR](#invr) investment return, [INV](#inv) investment, [EQ](#eq) equity, [RES](#res) reserve, [OF](#of) own funds, [FAIR](#fair) fair value, [GAIN](#gain) capital gain, [MISM](#mism) mismatching, [UNDL](#undl) underlying items, [PROP](#prop) property, [SURP](#surp) surplus, [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [CASH](#cash) cash, [MDUR](#mdur) modified duration, [LIAB](#liab) liabilities, [ID](#id) identifier, [CLS](#cls) class code, [PAR](#par) par value
 
 ### EQ
 
@@ -2707,7 +2734,7 @@ Facts about the policy and the life that the model reads as input.
 - **Also called:** occupational class
 - **Definition:** The class that the occupation of the life assured falls in for rating disability and accident benefits.
 - **Not to be confused with:** Not the occupation itself.
-- **Related terms:** [SEX](#sex) sex, [SMK](#smk) smoker status, [DIS](#dis) disability, [ACCD](#accd) accident
+- **Related terms:** [SEX](#sex) sex, [SMK](#smk) smoker status, [DIS](#dis) disability, [ACCD](#accd) accident, [CLS](#cls) class code
 
 ### FREQ
 
@@ -2993,6 +3020,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [CI](#ci) | Critical illness | ITEM or KIND | Decrements and policy status |
 | [CLAW](#claw) | Clawback | KIND | Expenses and commission |
 | [CLM](#clm) | Claim | ITEM or KIND | Claims and benefits |
+| [CLS](#cls) | Class code | MEASURE | Measures |
 | [CNT](#cnt) | Count | MEASURE | Measures |
 | [COC](#coc) | Cost of capital | ITEM | Profit, embedded value and new business |
 | [COH](#coh) | Cohort | ITEM | IFRS 17 |
@@ -3072,6 +3100,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [HIV](#hiv) | HIV and AIDS | KIND | ZA extension: South Africa |
 | [IACF](#iacf) | Insurance acquisition cash flows | ITEM | IFRS 17 |
 | [IBNR](#ibnr) | Incurred but not reported | ITEM | Reserves and liabilities |
+| [ID](#id) | Identifier | MEASURE | Measures |
 | [IDX](#idx) | Index | MEASURE | Measures |
 | [IF](#if) | In force | KIND | Decrements and policy status |
 | [IFC](#ifc) | IFRS 17 current | BASIS | Basis |
@@ -3151,6 +3180,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [OPR](#opr) | Operational risk | KIND | Capital and risk |
 | [OVRN](#ovrn) | Expense overrun | KIND | Reserves and liabilities |
 | [PAA](#paa) | Premium allocation approach | ITEM or KIND | IFRS 17 |
+| [PAR](#par) | Par value | KIND | Economic and investment |
 | [PER](#per) | Per | MEASURE | Measures |
 | [PERS](#pers) | Persistency | ITEM | Decrements and policy status |
 | [PH](#ph) | Policyholder | PARTY | Party |
@@ -3322,11 +3352,14 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | case reserve | [OCR](#ocr) |
 | cash value | [SV](#sv) |
 | cash-in | [SUR](#sur) |
+| category | [CLS](#cls) |
+| category code | [CLS](#cls) |
 | ceded | [RI](#ri) |
 | central estimate | [BE](#be) |
 | change of terms | [ALTR](#altr) |
 | charged premium | [OFF](#off) |
 | claim termination by recovery | [REC](#rec) |
+| class | [CLS](#cls) |
 | closing | [EOP](#eop) |
 | commencement | [INC](#inc) |
 | commission recovery | [CLAW](#claw) |
@@ -3410,6 +3443,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | extra premium | [EXTRA](#extra) |
 | extra risk | [EXTRA](#extra) |
 | face amount | [SA](#sa) |
+| face value | [PAR](#par) |
 | face value of units | [NOML](#noml) |
 | fee | [CHRG](#chrg) |
 | final bonus | [TMNL](#tmnl) |
@@ -3448,6 +3482,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | GST | [VAT](#vat) |
 | guaranteed benefit | [GTEE](#gtee) |
 | hazard rate | [FORCE](#force) |
+| identifying number | [ID](#id) |
 | in-force factor | [PROB](#prob) |
 | incapacity | [DIS](#dis) |
 | incidence rate | [RATE](#rate) |
@@ -3476,6 +3511,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | involuntary unemployment | [RETR](#retr) |
 | issue | [INC](#inc) |
 | issue year cohort | [COH](#coh) |
+| key | [ID](#id) |
 | LAC DT | [LAC](#lac) |
 | LAC TP | [LAC](#lac) |
 | largest | [MAX](#max) |
@@ -3522,6 +3558,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | new business value | [VNB](#vnb) |
 | new contracts | [NB](#nb) |
 | no-claim period | [WAITP](#waitp) |
+| nominal value | [PAR](#par) |
 | non-attributable | [NATTR](#nattr) |
 | non-economic | [DEMOG](#demog) |
 | non-participating | [NPAR](#npar) |
@@ -3605,6 +3642,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | recurring | [REN](#ren) |
 | reduced paid-up | [PUP](#pup) |
 | redundancy cover | [RETR](#retr) |
+| reference number | [ID](#id) |
 | regular bonus | [RVS](#rvs) |
 | reinsurance held | [RI](#ri) |
 | reinsurers' share | [RI](#ri) |

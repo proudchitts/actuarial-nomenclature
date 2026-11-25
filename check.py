@@ -96,7 +96,7 @@ for tok in entries:
 slot = {t: e.get("Slot", "") for t, e in entries.items()}
 
 # ---------- grammar ----------
-PRIMARY = {"CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"}
+PRIMARY = {"CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "ID", "CLS", "YRS", "MTHS"}
 AGGR = {"CUM", "ACC", "FUT", "AVG", "MAX", "MIN"}
 BASE = {"ANN", "MTH", "PRD"}
 POINT = {"BOP", "MOP", "EOP", "INC"}

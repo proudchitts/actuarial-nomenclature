@@ -1316,6 +1316,26 @@
     ],
     "sensitivity": [
       "DELTA"
+    ],
+    "policy number": [
+      "POL",
+      "ID"
+    ],
+    "policy id": [
+      "POL",
+      "ID"
+    ],
+    "asset number": [
+      "ASSET",
+      "ID"
+    ],
+    "asset id": [
+      "ASSET",
+      "ID"
+    ],
+    "asset class": [
+      "ASSET",
+      "CLS"
     ]
   },
   "special": {

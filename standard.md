@@ -137,6 +137,8 @@ The measure says what kind of number the variable holds. With no measure token t
 | Indicator | `IND` | 1 or 0, calculated by the model, can vary with time. |
 | Flag | `FLG` | A setting fixed for the run. |
 | Index | `IDX` | Level of an index. |
+| Identifier | `ID` | A code that picks out one record. A label, not a quantity. |
+| Class code | `CLS` | A code that says which class a record is in. A label, not a quantity. |
 | In years | `YRS` | Only for lengths of time and ages. |
 | In months | `MTHS` | Only for lengths of time and ages. |
 
@@ -354,6 +356,7 @@ The rules are applied in this order, and the first one that fits decides.
 3. A name whose item is an IFRS 17 term, or whose basis is `IFL` or `IFC`, is in IFRS 17.
 4. A name with the party `RI` is in Reinsurance.
 5. A count of a decrement, such as `DTH_CNT`, is in Policy counts.
-6. Otherwise the group is the group of the item. `tools/groups.json` lists the group of every item.
+6. An identifier or class code of a policy, life or model point, such as `POL_ID`, is in Time and policy data.
+7. Otherwise the group is the group of the item. `tools/groups.json` lists the group of every item.
 
 A group says what a variable is about. It does not say what the variable is used for. Roles such as output, data check or alternative basis depend on the model and are not part of this standard. A platform can add them as its own tags.
