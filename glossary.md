@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 292 terms: 277 in the core, which is for every market, and 15 in market extension sets.
+There are 293 terms: 278 in the core, which is for every market, and 15 in market extension sets.
 
 ## How to read an entry
 
@@ -39,7 +39,7 @@ There are 292 terms: 277 in the core, which is for every market, and 15 in marke
 | [Capital and risk](#capital-and-risk) | [CAP](#cap) [RCAP](#rcap) [SCR](#scr) [MCR](#mcr) [OF](#of) [MORT](#mort) [LONG](#long) [MORB](#morb) [CAT](#cat) [MKT](#mkt) [SPRD](#sprd) [FX](#fx) [CPTY](#cpty) [OPR](#opr) [DIV](#div) [UP](#up) [DOWN](#down) [MASS](#mass) [LPSR](#lpsr) [REVN](#revn) [PROP](#prop) [CONC](#conc) [LAC](#lac) |
 | [Profit, embedded value and new business](#profit-embedded-value-and-new-business) | [PROF](#prof) [DISTE](#diste) [TRF](#trf) [ANW](#anw) [VIF](#vif) [VNB](#vnb) [APE](#ape) [COC](#coc) [TVOG](#tvog) [FSUR](#fsur) [SURP](#surp) [NBS](#nbs) [IRR](#irr) [DPP](#dpp) [APV](#apv) [CAPRQ](#caprq) [PVNBP](#pvnbp) |
 | [Policy data](#policy-data) | [SEX](#sex) [SMK](#smk) [OCC](#occ) [FREQ](#freq) |
-| [Tables, assumptions and model data](#tables-assumptions-and-model-data) | [ASM](#asm) [ECON](#econ) [DEMOG](#demog) [MPT](#mpt) [SCEN](#scen) |
+| [Tables, assumptions and model data](#tables-assumptions-and-model-data) | [MOD](#mod) [ASM](#asm) [ECON](#econ) [DEMOG](#demog) [MPT](#mpt) [SCEN](#scen) |
 | [ZA extension: South Africa](#za-extension-south-africa) | [SAM](#sam) [FSV](#fsv) [FUN](#fun) [HIV](#hiv) [RETR](#retr) [IPF](#ipf) [CPF](#cpf) [UPF](#upf) [RPF](#rpf) [BSR](#bsr) [CORF](#corf) [CRDL](#crdl) [COMP](#comp) [DISCR](#discr) [CAR](#car) |
 
 ## Time points and time bases
@@ -857,7 +857,7 @@ Tokens that describe how a rate or assumption is built up.
 - **Also called:** base table, standard table
 - **Definition:** As a kind, narrows a rate to the value read from a published or company base table, before any adjustment. As the first token of a name, it marks the table itself: the rest of the name is the variable that the table holds.
 - **Not to be confused with:** Not the adjusted rate the model finally uses, which carries no TBL token. Not ASM, which is the assumption and not the table that stores it.
-- **Related terms:** [ADJ](#adj) adjustment, [SEL](#sel) select, [ULT](#ult) ultimate, [IMP](#imp) improvement, [DTH](#dth) death, [INDP](#indp) independent, [ASM](#asm) assumption, [ECON](#econ) economic, [DEMOG](#demog) demographic
+- **Related terms:** [ADJ](#adj) adjustment, [SEL](#sel) select, [ULT](#ult) ultimate, [IMP](#imp) improvement, [DTH](#dth) death, [INDP](#indp) independent, [ASM](#asm) assumption, [ECON](#econ) economic, [DEMOG](#demog) demographic, [MOD](#mod) compute module
 
 ### ADJ
 
@@ -2605,6 +2605,15 @@ Facts about the policy and the life that the model reads as input.
 
 The inputs a model reads: assumption sets, the tables that hold them, model points and scenarios.
 
+### MOD
+
+- **Full term:** Compute module
+- **Slot:** ITEM
+- **Also called:** module, generator, calculation block, engine
+- **Definition:** A block of model logic that produces variables or tables. As the first token of a name it marks the module itself: the rest of the name says what the module produces.
+- **Not to be confused with:** Not TBL, which is the table a module may write. Not the variable it produces, which has the same name without MOD. Not MPT (model point).
+- **Related terms:** [TBL](#tbl) table, [ASM](#asm) assumption, [SCEN](#scen) scenario, [MPT](#mpt) model point
+
 ### ASM
 
 - **Full term:** Assumption
@@ -2612,7 +2621,7 @@ The inputs a model reads: assumption sets, the tables that hold them, model poin
 - **Also called:** assumption set, basis item, parameter
 - **Definition:** A value or set of values that the model takes as given and does not calculate. As a kind it narrows a table to one that holds assumptions.
 - **Not to be confused with:** Not TBL, which is the table that stores it. Not a basis: a basis such as BE is the whole collection of assumptions used together.
-- **Related terms:** [TBL](#tbl) table, [ECON](#econ) economic, [DEMOG](#demog) demographic, [BE](#be) best estimate, [MGN](#mgn) margin, [ESTCH](#estch) change in estimates, [MPT](#mpt) model point
+- **Related terms:** [TBL](#tbl) table, [ECON](#econ) economic, [DEMOG](#demog) demographic, [BE](#be) best estimate, [MGN](#mgn) margin, [ESTCH](#estch) change in estimates, [MPT](#mpt) model point, [MOD](#mod) compute module
 
 ### ECON
 
@@ -2639,7 +2648,7 @@ The inputs a model reads: assumption sets, the tables that hold them, model poin
 - **Also called:** model point record, policy record
 - **Definition:** One record of policy data that the model projects, standing for a single policy or a group of similar policies.
 - **Not to be confused with:** Not POL. One model point can stand for many policies.
-- **Related terms:** [POL](#pol) policy, [LIFE](#life) life assured, [SCEN](#scen) scenario, [ASM](#asm) assumption
+- **Related terms:** [POL](#pol) policy, [LIFE](#life) life assured, [SCEN](#scen) scenario, [ASM](#asm) assumption, [MOD](#mod) compute module
 
 ### SCEN
 
@@ -2648,7 +2657,7 @@ The inputs a model reads: assumption sets, the tables that hold them, model poin
 - **Also called:** scenario number, simulation, trial
 - **Definition:** The identifier of one set of economic or other conditions under which the model is run.
 - **Not to be confused with:** Not a basis. Results under a scenario keep the same names and the run carries the scenario.
-- **Related terms:** [ECON](#econ) economic, [RN](#rn) risk neutral, [RW](#rw) real world, [SHK](#shk) shock, [MPT](#mpt) model point
+- **Related terms:** [ECON](#econ) economic, [RN](#rn) risk neutral, [RW](#rw) real world, [SHK](#shk) shock, [MPT](#mpt) model point, [MOD](#mod) compute module
 
 ## ZA extension: South Africa
 
@@ -2974,6 +2983,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [MIN](#min) | Minimum | MEASURE | Measures |
 | [MISM](#mism) | Mismatching | KIND | Reserves and liabilities |
 | [MKT](#mkt) | Market risk | KIND | Capital and risk |
+| [MOD](#mod) | Compute module | ITEM | Tables, assumptions and model data |
 | [MOP](#mop) | Middle of period | TIME | Time points and time bases |
 | [MORB](#morb) | Morbidity risk | KIND | Capital and risk |
 | [MORT](#mort) | Mortality risk | KIND | Capital and risk |
@@ -3155,6 +3165,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | brokerage | [COMM](#comm) |
 | building block approach | [GMM](#gmm) |
 | burial cover | [FUN](#fun) |
+| calculation block | [MOD](#mod) |
 | cancellation price | [BID](#bid) |
 | cancellation price of the fund | [EXPR](#expr) |
 | cancelled from inception | [NTU](#ntu) |
@@ -3230,6 +3241,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | encashment value | [SV](#sv) |
 | end of cover | [EXPY](#expy) |
 | endowment maturity | [MAT](#mat) |
+| engine | [MOD](#mod) |
 | entry | [INC](#inc) |
 | EPV | [PV](#pv) |
 | equalisation reserve | [FLUC](#fluc) |
@@ -3278,6 +3290,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | gender | [SEX](#sex) |
 | general model | [GMM](#gmm) |
 | general reserve | [CTGY](#ctgy) |
+| generator | [MOD](#mod) |
 | gross premium | [OFF](#off) |
 | GST | [VAT](#vat) |
 | guaranteed benefit | [GTEE](#gtee) |
@@ -3335,6 +3348,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | mode | [FREQ](#freq) |
 | mode of exit | [DEC](#dec) |
 | model point record | [MPT](#mpt) |
+| module | [MOD](#mod) |
 | money amount | [AMT](#amt) |
 | month of year | [CALMTH](#calmth) |
 | months | [MTHS](#mths) |

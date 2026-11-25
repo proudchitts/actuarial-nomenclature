@@ -92,6 +92,15 @@
       if (name.length > 40) { p.push("The name is longer than 40 characters."); }
       var toks = name.split("_");
       if (toks.length > 9) { p.push("The name has more than 9 tokens."); }
+      if (toks[0] === "MOD" && toks.length > 1) {
+        // a compute module is named MOD plus the name of what it produces
+        var made = validate(toks.slice(1).join("_"));
+        made.problems.forEach(function (x) { p.push(x); });
+        out.slots = [{ slot: "MODULE", tok: "MOD" }].concat(made.slots);
+        out.private = made.private;
+        out.ok = p.length === 0;
+        return out;
+      }
       if (toks[0] === "TBL" && toks.length > 1) {
         // a table is named TBL plus the name of the variable it holds
         var inner = validate(toks.slice(1).join("_"));
@@ -163,6 +172,7 @@
       var get = function (s) { return slots.filter(function (x) { return x.slot === s; }); };
       var item = get("ITEM")[0];
       if (!item) { return null; }
+      if (get("MODULE").length) { return "Modules"; }
       if (get("TABLE").length) { return "Assumptions and tables"; }
       var meas = get("MEASURE").map(function (x) { return x.tok; });
       if (has(meas, "IND") || has(meas, "FLG")) { return "Indicators and flags"; }
@@ -181,6 +191,7 @@
       var point = time.filter(function (t) { return has(POINT, t); })[0];
       var item = get("ITEM")[0];
       var k;
+      if (get("MODULE").length) { return { value_type: "compute module", unit: "not a number" }; }
       if (get("TABLE").length) { return { value_type: "table", unit: "not a single number" }; }
       if (has(meas, "IND")) { k = ["indicator", "0 or 1"]; }
       else if (has(meas, "FLG")) { k = ["flag", "a setting"]; }
@@ -213,6 +224,7 @@
       var head = by("KIND").map(function (x) { return x.tok === "TBL" ? "base table" : lc(x.tok); }).concat(lc(by("ITEM")[0].tok)).join(" ");
       var s = m.length ? m.join(" ") + " of " + head : head;
       if (by("TABLE").length) { s = "table of " + s; }
+      if (by("MODULE").length) { s = "compute module for " + s; }
       if (unit) { s += ", " + lc(unit.tok); }
       by("MOVE").forEach(function (x) { s += ", " + lc(x.tok); });
       by("PARTY").forEach(function (x) { s += ", " + lc(x.tok); });
@@ -252,7 +264,12 @@
         }
         if (hit) {
           if (hit.e.alts.length > 1) { els.push({ k: "amb", w: hit.ph, alts: hit.e.alts, seg: seg }); i += hit.n; continue; }
-          hit.e.toks.forEach(function (t, ti) { els.push({ k: t.charAt(0) === "@" ? "sp" : "tok", t: t, w: hit.ph, seg: seg, sub: ti > 0 }); });
+          var real = 0;
+          hit.e.toks.forEach(function (t) {
+            var sp = t.charAt(0) === "@";
+            els.push({ k: sp ? "sp" : "tok", t: t, w: hit.ph, seg: seg, sub: !sp && real > 0 });
+            if (!sp) { real++; }
+          });
           i += hit.n;
           continue;
         }
@@ -286,7 +303,7 @@
       if (!norm(description)) { res.notes.push("Write a description first."); return res; }
       res.questions = vagueChecks(description);
       var els = scan(description);
-      var per = null, order = null, inst = null, basis = null, party = null, move = null, isTable = false;
+      var per = null, order = null, inst = null, basis = null, party = null, move = null, isTable = false, isModule = false;
       var prim = null, aggr = null, base = null, point = null;
       var cands = [];
       var i, e, j;
@@ -309,6 +326,8 @@
           } else { order = { tok: e.t === "@BEF" ? "BEF" : "AFT", arg: found.t }; }
         } else if (e.t === "@PERPOL") {
           if (!per) { per = "POL"; }
+        } else if (e.t === "@MODULE") {
+          isModule = true;
         } else if (e.t === "@TABLE") {
           isTable = true;
         } else if (e.t === "@GROSS") {
@@ -421,7 +440,7 @@
       if (point) { toks.push(point); }
       if (order) { toks.push(order.tok, order.arg); }
       if (inst) { toks.push(inst); }
-      var name = (isTable ? "TBL_" : "") + toks.join("_");
+      var name = (isModule ? "MOD_" : "") + (isTable ? "TBL_" : "") + toks.join("_");
       var hard = res.questions.filter(function (q) { return q.hard; });
       var v = validate(name);
       res.slots = v.slots;

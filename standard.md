@@ -213,15 +213,30 @@ A name says what a variable means. It does not say where the variable lives or h
 - Whether the variable is an input, an output or an intermediate step.
 - Array dimensions and time subscripts.
 
-### 8.1 Tables and assumption sets
+### 8.1 Tables, their columns and compute modules
 
-A model reads tables as well as calculating variables. A table is named with `TBL` as the first token, followed by the full name of the variable that the table holds. The part after `TBL` must be a valid name by itself.
+A model reads tables and runs modules as well as calculating variables. These get names too, built from the same tokens, so that a table, the variables read from it and the module that writes it visibly belong together.
+
+**A table that holds one variable** is named with `TBL` as the first token, followed by the full name of that variable. The part after `TBL` must be a valid name by itself.
 
 - `TBL_DTH` is a mortality table.
 - `TBL_LPS_INDP_RATE_ANN` is a table of independent annual lapse rates. The variable read from it is `LPS_INDP_RATE_ANN`.
 - `TBL_ASM_ECON` is the table of economic assumptions. `ASM_DEMOG` is the demographic assumption set.
 
-As a kind, in any later position, the same token means a value read from a base table before adjustment: `DTH_TBL_INDP_RATE_ANN`.
+**A table that holds several columns** follows two rules.
+
+1. Each column is a variable with its own valid name.
+2. The table is named `TBL` followed by the tokens that all its columns share. So every token of the table's name appears in the name of every column.
+
+A yield curve table with a spot rate, two discount factors and a forward rate has the columns `DISC_SPOT_RATE_ANN`, `DISC_FAC_BOP`, `DISC_FAC_EOP` and `DISC_FWD_RATE_MTH`. They share `DISC`, so the table is `TBL_DISC`.
+
+This makes the table findable from the variable name alone, with no separate list. The table of a variable is the table whose name tokens are all in the variable's name. If more than one fits, it is the one with the most tokens. A curve after an upward shock is `TBL_DISC_UP`, and its spot rate is `DISC_SPOT_UP_RATE_ANN`, which points to `TBL_DISC_UP` and not to `TBL_DISC`.
+
+**A compute module** is named with `MOD` as the first token, followed by the name of what it produces. `MOD_SCEN_ECON` is the module that produces the economic scenarios. `MOD_BEL` is the module that calculates the best estimate liability. A module that produces several tables or variables is named after what they share, in the same way as a table.
+
+So one chain reads: `MOD_SCEN_ECON` writes `TBL_DISC`, and `DISC_SPOT_RATE_ANN` is read from it.
+
+As a kind, in any later position, `TBL` means a value read from a base table before adjustment: `DTH_TBL_INDP_RATE_ANN`.
 
 What a table is indexed by, such as age, sex or duration, is not part of its name.
 
@@ -329,11 +344,11 @@ A model conforms to version 0.1 when all of these hold.
 
 A model with hundreds of variables needs them sorted into a few groups for browsing. Every name falls in exactly one group. The group is worked out from the tokens of the name, so nobody chooses it and two people cannot file the same variable in different places.
 
-The thirteen groups are: Time and policy data. Assumptions and tables. Decrements. Policy counts. Premiums and benefits. Commission and expenses. Unit funds and bonuses. Investment and tax. Reinsurance. Reserving and capital. IFRS 17. Profit, EV and VNB. Indicators and flags.
+The fourteen groups are: Modules. Time and policy data. Assumptions and tables. Decrements. Policy counts. Premiums and benefits. Commission and expenses. Unit funds and bonuses. Investment and tax. Reinsurance. Reserving and capital. IFRS 17. Profit, EV and VNB. Indicators and flags.
 
 The rules are applied in this order, and the first one that fits decides.
 
-1. A name that starts with `TBL` is in Assumptions and tables.
+1. A name that starts with `MOD` is in Modules. A name that starts with `TBL` is in Assumptions and tables.
 2. A name whose measure is `IND` or `FLG` is in Indicators and flags.
 3. A name whose item is an IFRS 17 term, or whose basis is `IFL` or `IFC`, is in IFRS 17.
 4. A name with the party `RI` is in Reinsurance.

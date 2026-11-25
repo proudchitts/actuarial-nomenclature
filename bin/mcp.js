@@ -33,6 +33,16 @@ const TOOLS = [
     inputSchema: { type: "object", properties: { query: { type: "string" }, limit: { type: "integer", description: "Most terms to return. Default 10." } }, required: ["query"] },
   },
   {
+    name: "check_table",
+    description: "Check a table that has several columns. Each column must be a valid variable name, and every token of the table name must appear in every column name, so that the table can be found from the variable name. Also returns the table name the columns themselves point to.",
+    inputSchema: { type: "object", properties: { table: { type: "string", description: "The table name, such as TBL_DISC. Optional: leave it out to get a suggested name." }, columns: { type: "array", items: { type: "string" }, description: "The column names, such as DISC_SPOT_RATE_ANN." } }, required: ["columns"] },
+  },
+  {
+    name: "table_of",
+    description: "Find which table holds a variable, from the names alone: the table whose name tokens are all in the variable name.",
+    inputSchema: { type: "object", properties: { variable: { type: "string" }, tables: { type: "array", items: { type: "string" } } }, required: ["variable", "tables"] },
+  },
+  {
     name: "naming_rules",
     description: "A short summary of the naming grammar: the slot order, the defaults and the points on which a description must be explicit.",
     inputSchema: { type: "object", properties: {} },
@@ -45,6 +55,8 @@ function call(name, args) {
   if (name === "read_name") { return api.readName(args.name); }
   if (name === "check_list") { return api.checkList(args.items); }
   if (name === "search_glossary") { return api.searchGlossary(args.query, args.limit); }
+  if (name === "check_table") { return api.checkTable(args.table, args.columns); }
+  if (name === "table_of") { return api.tableOf(args.variable, args.tables); }
   if (name === "naming_rules") { return { rules: api.RULES }; }
   throw new Error("Unknown tool: " + name);
 }

@@ -1,6 +1,21 @@
 {
   "comment": "Variable groups. Every name falls in exactly one group, worked out from its tokens by the rules in standard.md section 14. Each glossary family gives a default group for its items, and 'items' overrides single tokens.",
-  "order": ["Time and policy data", "Assumptions and tables", "Decrements", "Policy counts", "Premiums and benefits", "Commission and expenses", "Unit funds and bonuses", "Investment and tax", "Reinsurance", "Reserving and capital", "IFRS 17", "Profit, EV and VNB", "Indicators and flags"],
+  "order": [
+    "Time and policy data",
+    "Assumptions and tables",
+    "Decrements",
+    "Policy counts",
+    "Premiums and benefits",
+    "Commission and expenses",
+    "Unit funds and bonuses",
+    "Investment and tax",
+    "Reinsurance",
+    "Reserving and capital",
+    "IFRS 17",
+    "Profit, EV and VNB",
+    "Indicators and flags",
+    "Modules"
+  ],
   "families": {
     "Time and age items": "Time and policy data",
     "Policy data": "Time and policy data",
@@ -22,8 +37,15 @@
     "ZA extension: South Africa": "Reserving and capital"
   },
   "items": {
-    "POL": "Policy counts", "LIFE": "Policy counts", "MPT": "Policy counts",
-    "TAX": "Investment and tax", "SV": "Premiums and benefits", "BSR": "Unit funds and bonuses", "RETR": "Decrements",
-    "SURP": "Reserving and capital", "CAPRQ": "Reserving and capital"
+    "POL": "Policy counts",
+    "LIFE": "Policy counts",
+    "MPT": "Policy counts",
+    "TAX": "Investment and tax",
+    "SV": "Premiums and benefits",
+    "BSR": "Unit funds and bonuses",
+    "RETR": "Decrements",
+    "SURP": "Reserving and capital",
+    "CAPRQ": "Reserving and capital",
+    "MOD": "Modules"
   }
 }

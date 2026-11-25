@@ -28,7 +28,7 @@ function serve(port, host) {
     if (req.method === "OPTIONS") { return send(res, 204, {}); }
     if (req.method === "GET") {
       const q = url.searchParams;
-      if (url.pathname === "/") { return send(res, 200, { service: "actuarial-nomenclature", version: api.version, terms: api.termCount, routes: ["GET or POST /name (description)", "GET or POST /read (name)", "POST /check (items)", "GET or POST /suggest (description)", "GET /glossary?q=", "GET /rules"] }); }
+      if (url.pathname === "/") { return send(res, 200, { service: "actuarial-nomenclature", version: api.version, terms: api.termCount, routes: ["GET or POST /name (description)", "GET or POST /read (name)", "POST /check (items)", "POST /table (table, columns)", "POST /table-of (variable, tables)", "GET or POST /suggest (description)", "GET /glossary?q=", "GET /rules"] }); }
       if (url.pathname === "/name") { return send(res, 200, api.nameVariable(q.get("description"))); }
       if (url.pathname === "/read") { return send(res, 200, api.readName(q.get("name"))); }
       if (url.pathname === "/suggest") { return api.suggestTerms(q.get("description")).then((r) => send(res, 200, r)); }
@@ -45,6 +45,8 @@ function serve(port, host) {
       if (url.pathname === "/name") { return send(res, 200, api.nameVariable(j.description)); }
       if (url.pathname === "/read") { return send(res, 200, api.readName(j.name)); }
       if (url.pathname === "/check") { return send(res, 200, api.checkList(j.items)); }
+      if (url.pathname === "/table") { return send(res, 200, api.checkTable(j.table, j.columns)); }
+      if (url.pathname === "/table-of") { return send(res, 200, api.tableOf(j.variable, j.tables)); }
       if (url.pathname === "/suggest") { return api.suggestTerms(j.description).then((r) => send(res, 200, r)); }
       send(res, 404, { error: "Not found" });
     });
@@ -71,6 +73,10 @@ if (cmd === "mcp") {
   process.exitCode = r.fix ? 2 : 0;
 } else if (cmd === "suggest" && args[1]) {
   api.suggestTerms(args.slice(1).filter((a) => a !== "--no-meaning").join(" "), { semantic: args.indexOf("--no-meaning") < 0 }).then(print);
+} else if (cmd === "table" && args[2]) {
+  const r = api.checkTable(args[1], args.slice(2));
+  print(r);
+  process.exitCode = r.valid ? 0 : 2;
 } else if (cmd === "find" && args[1]) {
   print(api.searchGlossary(args.slice(1).join(" "), 10));
 } else if (cmd === "rules") {
@@ -85,6 +91,7 @@ if (cmd === "mcp") {
     "  suggest \"<description>\" closest glossary terms for the words that were not used",
     "  read <NAME>            name to English, with a rule check",
     "  check <file|->         one variable per line: a description, or NAME | description",
+    "  table <TBL_NAME> <COLUMN> <COLUMN> ...   check a table and its columns",
     "  find \"<word>\"          search the glossary",
     "  rules                  the naming grammar in short",
     "  serve [--port 8787] [--host 127.0.0.1]   HTTP API",

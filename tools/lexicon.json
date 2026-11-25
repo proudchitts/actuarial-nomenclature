@@ -1231,6 +1231,22 @@
     ],
     "expected for the period": [
       "EXPC"
+    ],
+    "yield curve": [
+      "@TABLE",
+      "DISC"
+    ],
+    "yield curves": [
+      "@TABLE",
+      "DISC"
+    ],
+    "discount curve": [
+      "@TABLE",
+      "DISC"
+    ],
+    "risk free curve": [
+      "@TABLE",
+      "DISC"
     ]
   },
   "special": {
@@ -1248,7 +1264,16 @@
     "table of": "@TABLE",
     "tables of": "@TABLE",
     "lookup table": "@TABLE",
-    "lookup table of": "@TABLE"
+    "lookup table of": "@TABLE",
+    "module": "@MODULE",
+    "modules": "@MODULE",
+    "compute module": "@MODULE",
+    "compute module for": "@MODULE",
+    "module for": "@MODULE",
+    "module that produces": "@MODULE",
+    "module that calculates": "@MODULE",
+    "generator": "@MODULE",
+    "calculation block": "@MODULE"
   },
   "dropAliases": [
     "t",
@@ -1322,7 +1347,11 @@
     "experienced",
     "appreciation",
     "gst",
-    "sales tax"
+    "sales tax",
+    "module",
+    "generator",
+    "engine",
+    "calculation block"
   ],
   "stock": [
     "BEL",
@@ -1905,6 +1934,7 @@
     "DIV",
     "EQ",
     "REM",
-    "VAL"
+    "VAL",
+    "MOD"
   ]
 }

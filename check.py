@@ -129,6 +129,9 @@ def check_name(name, where):
             p.append("%s: %s writes %s, which is implied and never written" % (where, name, t))
     if p:
         return p
+    if toks[0] == "MOD" and len(toks) > 1:
+        # a compute module is named MOD plus the name of what it produces
+        return [x for x in check_name("_".join(name.split("_")[1:]), where) if "longer than" not in x and "more than 9" not in x]
     if toks[0] == "TBL" and len(toks) > 1:
         # a table is named TBL plus the name of the variable it holds
         return [x for x in check_name("_".join(name.split("_")[1:]), where) if "longer than" not in x and "more than 9" not in x]

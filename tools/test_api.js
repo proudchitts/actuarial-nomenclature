@@ -53,7 +53,7 @@ function httpTest() {
 (async () => {
   const g = await mcp();
   ok(g[1] && g[1].result.protocolVersion === "2025-06-18" && g[1].result.capabilities.tools, "mcp initialize");
-  ok(g[2] && g[2].result.tools.length === 6, "mcp lists 6 tools");
+  ok(g[2] && g[2].result.tools.length === 8, "mcp lists 8 tools");
   ok(g[3] && g[3].result.structuredContent.name === "CLM_DTH_RI_BE_PV" && !g[3].result.isError, "mcp name_variable");
   ok(g[4] && g[4].result.structuredContent.status === "needs_detail" && g[4].result.structuredContent.name === null, "mcp refuses a vague description");
   const c = g[5] && g[5].result.structuredContent;
@@ -72,6 +72,11 @@ function httpTest() {
   const fresh = require(path.join(path.dirname(__dirname), "docs", "embeddings.js")).key === SG.key;
   if (process.argv.includes("--release")) { ok(fresh, "docs/embeddings.js is up to date with the glossary"); }
   else if (!fresh) { console.log("note: docs/embeddings.js is out of date. The maintainer rebuilds it before a release (node tools/build_embeddings.mjs)."); }
+  const tb = api.checkTable("TBL_DISC", ["DISC_SPOT_RATE_ANN", "DISC_FAC_BOP", "DISC_FAC_EOP", "DISC_FWD_RATE_MTH"]);
+  ok(tb.valid && tb.suggested_table_name === "TBL_DISC", "a table and its columns check out");
+  ok(!api.checkTable("TBL_DISC_UP", ["DISC_SPOT_RATE_ANN"]).valid, "a column that lacks a table token is flagged");
+  ok(api.tableOf("DISC_SPOT_UP_RATE_ANN", ["TBL_DISC", "TBL_DISC_UP", "TBL_DTH"]).table === "TBL_DISC_UP", "the table is found from the variable name");
+  ok(api.nameVariable("Module that produces economic scenarios").name === "MOD_SCEN_ECON" && api.readName("MOD_SCEN_ECON").group === "Modules", "a compute module is named with MOD");
   const full = api.nameVariable("Death claims recovered from reinsurers in the period");
   ok(full.group === "Reinsurance" && full.value_type && full.terms.length === 3 && full.see_also.some((s) => s.name === "CLM_DTH") && full.standard_version, "the response carries group, value type, terms and see_also");
   if (fail) { console.log("\nFAILED: " + fail); process.exit(1); }

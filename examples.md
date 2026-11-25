@@ -341,6 +341,20 @@ A table is named with the table token first, followed by the name of the variabl
 | 225 | Rate of lapse | `LPS_RATE` |
 | 226 | Discount rate | `DISC_RATE` |
 
+### A20. Tables with several columns, and compute modules
+
+The table is named after what its columns share, so `DISC_FAC_BOP` is found in `TBL_DISC`.
+
+| No. | Description | Name |
+|---|---|---|
+| 227 | Yield curve | `TBL_DISC` |
+| 228 | Annual spot discount rate | `DISC_SPOT_RATE_ANN` |
+| 229 | Discount factor at the start of the period | `DISC_FAC_BOP` |
+| 230 | Monthly forward discount rate | `DISC_FWD_RATE_MTH` |
+| 231 | Yield curve, up shock | `TBL_DISC_UP` |
+| 232 | Module that produces economic scenarios | `MOD_SCEN_ECON` |
+| 233 | Compute module for the best estimate liability | `MOD_BEL` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.

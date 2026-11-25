@@ -67,9 +67,13 @@ The name is always built by fixed rules. No AI writes or chooses a name, and not
 6. It suggests terms for the words it did not use. See the next section.
 7. It reads the name back. If the reading is not what you meant, the description needs another word.
 
+### Tables and compute modules
+
+A table is named after the variables it holds, and a compute module after what it produces. A yield curve table whose columns are `DISC_SPOT_RATE_ANN`, `DISC_FAC_BOP` and `DISC_FWD_RATE_MTH` is `TBL_DISC`, and the module that writes it could be `MOD_SCEN_ECON`. Because every column carries the tokens of its table, the table can be found from the variable name with no separate list. Section 8.1 of `standard.md` has the rules.
+
 ### Groups
 
-Every name falls in one of thirteen groups, such as Decrements, Policy counts, Premiums and benefits, Reinsurance, IFRS 17, and Profit, EV and VNB. The group is worked out from the name by the rules in section 14 of `standard.md`, so it needs no extra input. The page shows it, "Check a list" has a group column, and the API and MCP server return it with every name.
+Every name falls in one of fourteen groups, such as Decrements, Policy counts, Premiums and benefits, Reinsurance, IFRS 17, and Profit, EV and VNB. The group is worked out from the name by the rules in section 14 of `standard.md`, so it needs no extra input. The page shows it, "Check a list" has a group column, and the API and MCP server return it with every name.
 
 ### Suggestions for words it does not know
 
@@ -85,7 +89,7 @@ How much it helps was measured on 60 loose phrases, such as "people die" and "mo
 ### How we know one name is not given to two meanings
 
 - Each short form has one definition. `check.py` fails if two entries share a short form or a full term.
-- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 226 example names read back to a description that gives the same name again.
+- Each token has one slot and the slots have one order. So a name can be read back in exactly one way. `tools/test.js` checks that all 233 example names read back to a description that gives the same name again.
 - Two different descriptions that give the same name are either the same variable in different words, or one of them left out a detail. "Check a list" flags every such pair for a person to decide.
 
 ### What it cannot do
@@ -131,7 +135,7 @@ Add this to the MCP settings of the AI tool.
 }
 ```
 
-The server offers six tools.
+The server offers eight tools.
 
 | Tool | What it does |
 |---|---|
@@ -139,6 +143,8 @@ The server offers six tools.
 | `suggest_terms` | The closest glossary terms for each part of a description that was not used. Candidates to confirm, never a final answer. |
 | `read_name` | Name to English, with a check against the rules. |
 | `check_list` | Many variables at once. Flags vague lines, names that break the rules, names that do not match their description, and different descriptions that share a name. |
+| `check_table` | Checks a table with several columns: every column is a valid name and carries the tokens of the table name. Also suggests the table name the columns point to. |
+| `table_of` | Finds which table holds a variable, from the names alone. |
 | `search_glossary` | Look up terms by short form, full term, everyday word or definition. |
 | `naming_rules` | The grammar in short, for the AI to read. |
 
@@ -176,7 +182,7 @@ There is no public hosted API. The server listens on your own machine by default
 |---|---|
 | `standard.md` | The grammar: characters, length, the seven slots, measures, time, bases, parties, extensions |
 | `glossary.md` | The controlled word list: 293 terms in 22 families, 278 in the core, which is for every market, and 15 in the first market extension set (South Africa). This file is the master. |
-| `examples.md` | 226 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
+| `examples.md` | 233 descriptions turned into names, 10 names read back into English, 9 descriptions that are too vague to name |
 | `docs/` | The web page: `index.html`, the namer `namer.js`, the suggester `suggest.js`, and two built files: `data.js` from the glossary and `embeddings.js` for search by meaning |
 | `tools/lexicon.json` | Everyday phrases and vague words for the namer |
 | `tools/groups.json` | The group of every item |
@@ -242,7 +248,7 @@ Points to know about the South African guidance. PGNs were renamed SAPs and APNs
 - The checks against published texts were done by AI research and spot-checked. They have not been reviewed by a second actuary.
 - Not confirmed from a primary source: later amendments to the Delegated Regulation and to the South African standards since 2018, the current rand cap on funeral cover, the annual premium equivalent formula (a market convention), and any formal definition of paid-up, partial withdrawal and not taken up.
 - The 199 entries with no source line are general actuarial terms that these texts do not define.
-- The namer passes all 226 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
+- The namer passes all 233 examples, but those examples were also used to build its phrase list. On 30 everyday descriptions it had not seen, about two thirds gave a clean name at the first try. The rest gave a name with a warning, or a question.
 - The namer was tried, privately, on the 2,863 variable descriptions of one real production model. Only 9 in 100 gave a clean name and another 33 gave a name with a warning. The rest were refused. Real models describe variables in terse house abbreviations and product codes, which a rule-based namer cannot read. Nothing from that model was copied into this standard: it was used only to find general concepts that were missing, and 21 terms were added in the standard's own words.
 - A description may use the standard's own short forms, such as "pup" or "prem", as well as full words.
 - No name has yet been tried in a real model on a real platform.
