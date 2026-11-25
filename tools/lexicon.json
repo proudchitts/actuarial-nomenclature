@@ -1247,6 +1247,75 @@
     "risk free curve": [
       "@TABLE",
       "DISC"
+    ],
+    "life scr": [
+      "SCR",
+      "LUW"
+    ],
+    "life underwriting": [
+      "LUW"
+    ],
+    "solvency ratio": [
+      "OF",
+      "@PER",
+      "SCR"
+    ],
+    "solvency cover": [
+      "OF",
+      "@PER",
+      "SCR"
+    ],
+    "market value": [
+      "FAIR"
+    ],
+    "risk free": [
+      "RF"
+    ],
+    "risk free rate": [
+      "DISC",
+      "RF",
+      "RATE"
+    ],
+    "government bond": [
+      "GOVB"
+    ],
+    "corporate bond": [
+      "CORPB"
+    ],
+    "coupon rate": [
+      "CPN",
+      "RATE"
+    ],
+    "credit spreads": [
+      "CSPR"
+    ],
+    "spread": [
+      "CSPR"
+    ],
+    "correlations": [
+      "CORR"
+    ],
+    "basic scr": [
+      "BSCR"
+    ],
+    "bscr": [
+      "BSCR"
+    ],
+    "total liabilities": [
+      "LIAB"
+    ],
+    "under the": [],
+    "stressed less base": [
+      "DELTA"
+    ],
+    "change under": [
+      "DELTA"
+    ],
+    "impact of": [
+      "DELTA"
+    ],
+    "sensitivity": [
+      "DELTA"
     ]
   },
   "special": {
@@ -1351,7 +1420,14 @@
     "module",
     "generator",
     "engine",
-    "calculation block"
+    "calculation block",
+    "credit",
+    "rating",
+    "sensitivity",
+    "forecast",
+    "run off",
+    "deposits",
+    "life risk"
   ],
   "stock": [
     "BEL",
@@ -1935,6 +2011,11 @@
     "EQ",
     "REM",
     "VAL",
-    "MOD"
+    "MOD",
+    "CASH",
+    "CORR",
+    "RF",
+    "DELTA",
+    "PROJ"
   ]
 }

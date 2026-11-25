@@ -155,7 +155,8 @@ def check_name(name, where):
     if len(kinds) > 2:
         p.append("%s: %s has more than two KIND tokens" % (where, name))
     if len(kinds) == 2:
-        rank = [(0 if slot[k] == "ITEM or KIND" else 1, k) for k in kinds]
+        # events and benefits first, plain qualifiers second, the direction of a shock last
+        rank = [(2 if k in ("UP", "DOWN", "MASS") else 0 if slot[k] == "ITEM or KIND" else 1, k) for k in kinds]
         if rank != sorted(rank):
             p.append("%s: %s has its KIND tokens in the wrong order" % (where, name))
     for want in ("MOVE", "PARTY", "BASIS"):

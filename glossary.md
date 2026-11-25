@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 293 terms: 278 in the core, which is for every market, and 15 in market extension sets.
+There are 307 terms: 292 in the core, which is for every market, and 15 in market extension sets.
 
 ## How to read an entry
 
@@ -31,15 +31,15 @@ There are 293 terms: 278 in the core, which is for every market, and 15 in marke
 | [Claims and benefits](#claims-and-benefits) | [CLM](#clm) [BEN](#ben) [SA](#sa) [SAR](#sar) [ANTY](#anty) [LS](#ls) [INCM](#incm) [ACEL](#acel) [SALN](#saln) |
 | [Expenses and commission](#expenses-and-commission) | [EXP](#exp) [INIT](#init) [REN](#ren) [ACQ](#acq) [MAINT](#maint) [ATTR](#attr) [NATTR](#nattr) [INV](#inv) [COMM](#comm) [CLAW](#claw) [INFL](#infl) [OH](#oh) [MARG](#marg) [FULL](#full) [NOACQ](#noacq) [FIX](#fix) [VAR](#var) [VAT](#vat) [DAC](#dac) |
 | [Policy values, unit-linked and with-profits](#policy-values-unit-linked-and-with-profits) | [FV](#fv) [SV](#sv) [UNIT](#unit) [NUNIT](#nunit) [UPRC](#uprc) [ALLOC](#alloc) [CHRG](#chrg) [FMC](#fmc) [BON](#bon) [RVS](#rvs) [TMNL](#tmnl) [ASHR](#ashr) [GTEE](#gtee) [BID](#bid) [OFFER](#offer) [MVR](#mvr) [POLF](#polf) [WP](#wp) [NPAR](#npar) [APPR](#appr) [EXPR](#expr) [BEC](#bec) [AGG](#agg) [ACTF](#actf) [NOML](#noml) [FND](#fnd) [UNFND](#unfnd) [CAPU](#capu) [ACMU](#acmu) [LOY](#loy) [LOAN](#loan) |
-| [Economic and investment](#economic-and-investment) | [DISC](#disc) [INT](#int) [FWD](#fwd) [SPOT](#spot) [INVI](#invi) [INVR](#invr) [ASSET](#asset) [EQ](#eq) [GAIN](#gain) |
+| [Economic and investment](#economic-and-investment) | [GOVB](#govb) [CORPB](#corpb) [CASH](#cash) [CPN](#cpn) [CSPR](#cspr) [RTG](#rtg) [MDUR](#mdur) [RF](#rf) [DISC](#disc) [INT](#int) [FWD](#fwd) [SPOT](#spot) [INVI](#invi) [INVR](#invr) [ASSET](#asset) [EQ](#eq) [GAIN](#gain) |
 | [Reinsurance](#reinsurance) | [RET](#ret) [QS](#qs) [XL](#xl) [FACL](#facl) [TRTY](#trty) [COINS](#coins) [FINRE](#finre) |
-| [Reserves and liabilities](#reserves-and-liabilities) | [RES](#res) [BEL](#bel) [TP](#tp) [RM](#rm) [UPR](#upr) [IBNR](#ibnr) [OCR](#ocr) [NEG](#neg) [MISM](#mism) [FLUC](#fluc) [CTGY](#ctgy) [OVRN](#ovrn) |
+| [Reserves and liabilities](#reserves-and-liabilities) | [LIAB](#liab) [RES](#res) [BEL](#bel) [TP](#tp) [RM](#rm) [UPR](#upr) [IBNR](#ibnr) [OCR](#ocr) [NEG](#neg) [MISM](#mism) [FLUC](#fluc) [CTGY](#ctgy) [OVRN](#ovrn) |
 | [IFRS 17](#ifrs-17) | [CSM](#csm) [RA](#ra) [LC](#lc) [LOREC](#lorec) [LRC](#lrc) [LIC](#lic) [FCF](#fcf) [CU](#cu) [IACF](#iacf) [IFE](#ife) [IREV](#irev) [ISE](#ise) [ISR](#isr) [OCI](#oci) [PL](#pl) [INVC](#invc) [ONER](#oner) [GMM](#gmm) [PAA](#paa) [VFA](#vfa) [UNDL](#undl) [COH](#coh) [TRNS](#trns) |
-| [Movements](#movements) | [NB](#nb) [CHG](#chg) [ACCR](#accr) [UNW](#unw) [REL](#rel) [ESTCH](#estch) [EXPV](#expv) |
-| [Capital and risk](#capital-and-risk) | [CAP](#cap) [RCAP](#rcap) [SCR](#scr) [MCR](#mcr) [OF](#of) [MORT](#mort) [LONG](#long) [MORB](#morb) [CAT](#cat) [MKT](#mkt) [SPRD](#sprd) [FX](#fx) [CPTY](#cpty) [OPR](#opr) [DIV](#div) [UP](#up) [DOWN](#down) [MASS](#mass) [LPSR](#lpsr) [REVN](#revn) [PROP](#prop) [CONC](#conc) [LAC](#lac) |
+| [Movements](#movements) | [DELTA](#delta) [NB](#nb) [CHG](#chg) [ACCR](#accr) [UNW](#unw) [REL](#rel) [ESTCH](#estch) [EXPV](#expv) |
+| [Capital and risk](#capital-and-risk) | [LUW](#luw) [BSCR](#bscr) [CORR](#corr) [CAP](#cap) [RCAP](#rcap) [SCR](#scr) [MCR](#mcr) [OF](#of) [MORT](#mort) [LONG](#long) [MORB](#morb) [CAT](#cat) [MKT](#mkt) [SPRD](#sprd) [FX](#fx) [CPTY](#cpty) [OPR](#opr) [DIV](#div) [UP](#up) [DOWN](#down) [MASS](#mass) [LPSR](#lpsr) [REVN](#revn) [PROP](#prop) [CONC](#conc) [LAC](#lac) |
 | [Profit, embedded value and new business](#profit-embedded-value-and-new-business) | [PROF](#prof) [DISTE](#diste) [TRF](#trf) [ANW](#anw) [VIF](#vif) [VNB](#vnb) [APE](#ape) [COC](#coc) [TVOG](#tvog) [FSUR](#fsur) [SURP](#surp) [NBS](#nbs) [IRR](#irr) [DPP](#dpp) [APV](#apv) [CAPRQ](#caprq) [PVNBP](#pvnbp) |
 | [Policy data](#policy-data) | [SEX](#sex) [SMK](#smk) [OCC](#occ) [FREQ](#freq) |
-| [Tables, assumptions and model data](#tables-assumptions-and-model-data) | [MOD](#mod) [ASM](#asm) [ECON](#econ) [DEMOG](#demog) [MPT](#mpt) [SCEN](#scen) |
+| [Tables, assumptions and model data](#tables-assumptions-and-model-data) | [PROJ](#proj) [MOD](#mod) [ASM](#asm) [ECON](#econ) [DEMOG](#demog) [MPT](#mpt) [SCEN](#scen) |
 | [ZA extension: South Africa](#za-extension-south-africa) | [SAM](#sam) [FSV](#fsv) [FUN](#fun) [HIV](#hiv) [RETR](#retr) [IPF](#ipf) [CPF](#cpf) [UPF](#upf) [RPF](#rpf) [BSR](#bsr) [CORF](#corf) [CRDL](#crdl) [COMP](#comp) [DISCR](#discr) [CAR](#car) |
 
 ## Time points and time bases
@@ -123,7 +123,7 @@ Tokens for the TIME slot. They say when a value is measured or over what span a 
 - **Also called:** per time step
 - **Definition:** Time base equal to one model period, whatever its length. Use it only when the period is not fixed at a month or a year.
 - **Not to be confused with:** Not PER, which builds a ratio. Not PERS (persistency).
-- **Related terms:** [ANN](#ann) annual, [MTH](#mth) monthly, [RATE](#rate) rate
+- **Related terms:** [ANN](#ann) annual, [MTH](#mth) monthly, [RATE](#rate) rate, [PROJ](#proj) projected
 
 ## Time and age items
 
@@ -145,7 +145,7 @@ Items that measure time itself.
 - **Also called:** duration in force, curtate duration
 - **Definition:** The time elapsed since the policy started, measured at the stated time point.
 - **Not to be confused with:** Not TERM (the full contractual length). Not POLYR, which is the number of the policy year and starts at 1. Not the financial sense of duration as interest rate sensitivity, which this version does not cover. Say the unit with YRS or MTHS.
-- **Related terms:** [TIME](#time) projection time, [TERM](#term) policy term, [INC](#inc) inception, [REM](#rem) remaining, [AGE](#age) age, [POLYR](#polyr) policy year, [ANNIV](#anniv) policy anniversary, [YRS](#yrs) in years, [MTHS](#mths) in months, [DPP](#dpp) discounted payback period
+- **Related terms:** [TIME](#time) projection time, [TERM](#term) policy term, [INC](#inc) inception, [REM](#rem) remaining, [AGE](#age) age, [POLYR](#polyr) policy year, [ANNIV](#anniv) policy anniversary, [YRS](#yrs) in years, [MTHS](#mths) in months, [DPP](#dpp) discounted payback period, [MDUR](#mdur) modified duration
 
 ### TERM
 
@@ -568,7 +568,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 - **Definition:** An economic basis in which all assets are expected to earn the risk-free rate, used to value options and guarantees.
 - **Not to be confused with:** Not RW. Not a statement about how prudent the non-economic assumptions are. Not the same as market consistent, which means reproducing market prices and can also be done with real world scenarios and deflators.
 - **Source checked:** ASSA APN 110 version 5 appendices 2 and 3
-- **Related terms:** [RW](#rw) real world, [TVOG](#tvog) time value of options and guarantees, [GTEE](#gtee) guarantee, [DISC](#disc) discount, [FAIR](#fair) fair value, [SCEN](#scen) scenario
+- **Related terms:** [RW](#rw) real world, [TVOG](#tvog) time value of options and guarantees, [GTEE](#gtee) guarantee, [DISC](#disc) discount, [FAIR](#fair) fair value, [SCEN](#scen) scenario, [RF](#rf) risk-free
 
 ### RW
 
@@ -582,7 +582,7 @@ Tokens for the BASIS slot. They say which set of assumptions and rules the value
 
 - **Full term:** Fair value
 - **Slot:** BASIS
-- **Also called:** market consistent value
+- **Also called:** market consistent value, market value
 - **Definition:** A basis that values assets and liabilities at the amount for which they could be exchanged between willing and informed parties.
 - **Not to be confused with:** Not FV (fund value). Not RN, which is one way of reaching a market consistent value.
 - **Related terms:** [RN](#rn) risk neutral, [BE](#be) best estimate, [RES](#res) reserve, [ASSET](#asset) assets, [IFC](#ifc) IFRS 17 current
@@ -903,7 +903,7 @@ Tokens that describe how a rate or assumption is built up.
 - **Also called:** stress size
 - **Definition:** The size of the change applied to an assumption in a stress test or capital calculation.
 - **Not to be confused with:** Not the result of the stress, which is a capital amount such as SCR. Not EXPV.
-- **Related terms:** [SCR](#scr) Solvency capital requirement, [UP](#up) up, [DOWN](#down) down, [MASS](#mass) mass, [MORT](#mort) mortality risk, [CAT](#cat) catastrophe risk, [LPSR](#lpsr) lapse risk, [REVN](#revn) revision risk, [SCEN](#scen) scenario
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [UP](#up) up, [DOWN](#down) down, [MASS](#mass) mass, [MORT](#mort) mortality risk, [CAT](#cat) catastrophe risk, [LPSR](#lpsr) lapse risk, [REVN](#revn) revision risk, [SCEN](#scen) scenario, [DELTA](#delta) change under a shock
 
 ## Cash flows in general
 
@@ -1621,6 +1621,78 @@ Values attached to one policy and the features of savings business.
 
 Interest, discounting, investment return and assets.
 
+### GOVB
+
+- **Full term:** Government bonds
+- **Slot:** KIND
+- **Also called:** government stock, gilts, sovereign bonds
+- **Definition:** Narrows assets, returns or capital to bonds issued by a government.
+- **Not to be confused with:** Not CORPB. Not RF: a government bond is not always treated as free of risk.
+- **Related terms:** [CORPB](#corpb) corporate bonds, [CASH](#cash) cash, [EQ](#eq) equity, [PROP](#prop) property, [ASSET](#asset) assets, [CPN](#cpn) coupon, [RF](#rf) risk-free
+
+### CORPB
+
+- **Full term:** Corporate bonds
+- **Slot:** KIND
+- **Also called:** credit, corporate debt
+- **Definition:** Narrows assets, returns or capital to bonds issued by companies.
+- **Not to be confused with:** Not GOVB. Not CORF or CPF, which are tax funds.
+- **Related terms:** [GOVB](#govb) government bonds, [CASH](#cash) cash, [EQ](#eq) equity, [ASSET](#asset) assets, [CPN](#cpn) coupon, [CSPR](#cspr) credit spread, [RTG](#rtg) credit rating
+
+### CASH
+
+- **Full term:** Cash
+- **Slot:** KIND
+- **Also called:** deposits, money market
+- **Definition:** Narrows assets or returns to cash and short-term deposits.
+- **Not to be confused with:** Not CF (cash flow). Not a cash value, which is SV.
+- **Related terms:** [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [EQ](#eq) equity, [ASSET](#asset) assets
+
+### CPN
+
+- **Full term:** Coupon
+- **Slot:** ITEM
+- **Also called:** coupon rate, running yield of a bond
+- **Definition:** The interest a bond pays, as an amount or as a rate on its nominal value.
+- **Not to be confused with:** Not INVR, which also includes changes in price. Not a yield to redemption.
+- **Related terms:** [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [INVI](#invi) investment income, [INT](#int) interest
+
+### CSPR
+
+- **Full term:** Credit spread
+- **Slot:** ITEM
+- **Also called:** spread over risk-free
+- **Definition:** The extra yield on a bond or loan above the risk-free rate for the same term.
+- **Not to be confused with:** Not SPRD, which is the capital risk that spreads change. Not a bid and offer spread on unit prices.
+- **Related terms:** [SPRD](#sprd) spread risk, [CORPB](#corpb) corporate bonds, [RTG](#rtg) credit rating, [RF](#rf) risk-free, [DISC](#disc) discount, [MDUR](#mdur) modified duration
+
+### RTG
+
+- **Full term:** Credit rating
+- **Slot:** ITEM
+- **Also called:** rating, credit quality
+- **Definition:** The grade given to a bond or counterparty for its credit quality. It is a code, and a table is usually indexed by it.
+- **Not to be confused with:** Not a rating of a life for extra risk, which uses EXTRA.
+- **Related terms:** [CSPR](#cspr) credit spread, [CORPB](#corpb) corporate bonds, [CPTY](#cpty) counterparty default risk, [SPRD](#sprd) spread risk
+
+### MDUR
+
+- **Full term:** Modified duration
+- **Slot:** ITEM
+- **Also called:** asset duration, interest rate sensitivity
+- **Definition:** The proportionate fall in the value of an asset or liability for a small rise in interest rates.
+- **Not to be confused with:** Not DUR, which is the time a policy has been in force.
+- **Related terms:** [DUR](#dur) policy duration, [ASSET](#asset) assets, [CSPR](#cspr) credit spread, [INT](#int) interest
+
+### RF
+
+- **Full term:** Risk-free
+- **Slot:** KIND
+- **Also called:** risk-free rate, default-free
+- **Definition:** Narrows a rate or return to the one that carries no credit risk, as set by the basis in use.
+- **Not to be confused with:** Not RN, which is a basis in which every asset earns this rate. Not GOVB.
+- **Related terms:** [RN](#rn) risk neutral, [DISC](#disc) discount, [CSPR](#cspr) credit spread, [GOVB](#govb) government bonds, [INVR](#invr) investment return
+
 ### DISC
 
 - **Full term:** Discount
@@ -1628,7 +1700,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** discounting, valuation interest
 - **Definition:** The interest allowance used to turn future amounts into present values. It takes RATE, FORCE or FAC as its measure.
 - **Not to be confused with:** Not DIS (disability). Not DCON (discontinuance). Not a premium discount. Not INT or INVR, which describe what is earned or credited.
-- **Related terms:** [INT](#int) interest, [INVR](#invr) investment return, [FWD](#fwd) forward, [SPOT](#spot) spot, [PV](#pv) present value, [FAC](#fac) factor, [FORCE](#force) force, [IFL](#ifl) IFRS 17 locked-in, [IFC](#ifc) IFRS 17 current, [RN](#rn) risk neutral, [INFL](#infl) inflation, [UNW](#unw) unwind of discount, [IRR](#irr) internal rate of return, [ECON](#econ) economic
+- **Related terms:** [INT](#int) interest, [INVR](#invr) investment return, [FWD](#fwd) forward, [SPOT](#spot) spot, [PV](#pv) present value, [FAC](#fac) factor, [FORCE](#force) force, [IFL](#ifl) IFRS 17 locked-in, [IFC](#ifc) IFRS 17 current, [RN](#rn) risk neutral, [INFL](#infl) inflation, [UNW](#unw) unwind of discount, [IRR](#irr) internal rate of return, [ECON](#econ) economic, [CSPR](#cspr) credit spread, [RF](#rf) risk-free
 
 ### INT
 
@@ -1637,7 +1709,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** credited interest
 - **Definition:** Interest earned on or credited to a stated balance in the model period.
 - **Not to be confused with:** Not DISC, which is used for valuing. Not INVR, which includes capital gains. Not INIT.
-- **Related terms:** [DISC](#disc) discount, [INVR](#invr) investment return, [INVI](#invi) investment income, [ACC](#acc) accumulated, [ACCR](#accr) interest accretion, [FWD](#fwd) forward, [SPOT](#spot) spot, [LOAN](#loan) policy loan
+- **Related terms:** [DISC](#disc) discount, [INVR](#invr) investment return, [INVI](#invi) investment income, [ACC](#acc) accumulated, [ACCR](#accr) interest accretion, [FWD](#fwd) forward, [SPOT](#spot) spot, [LOAN](#loan) policy loan, [CPN](#cpn) coupon, [MDUR](#mdur) modified duration
 
 ### FWD
 
@@ -1664,7 +1736,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** interest, dividends and rent
 - **Definition:** Income received from assets in the model period as interest, dividends and rent. It excludes changes in asset values.
 - **Not to be confused with:** Not INVR, which includes gains. Not INCM (income benefit). Not INVC.
-- **Related terms:** [INVR](#invr) investment return, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [TAX](#tax) tax, [TXBL](#txbl) taxable, [GAIN](#gain) capital gain
+- **Related terms:** [INVR](#invr) investment return, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [TAX](#tax) tax, [TXBL](#txbl) taxable, [GAIN](#gain) capital gain, [CPN](#cpn) coupon
 
 ### INVR
 
@@ -1673,7 +1745,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** total return
 - **Definition:** Investment income plus realised and unrealised changes in asset values in the model period.
 - **Not to be confused with:** Not INVI. Not INT. Not DISC.
-- **Related terms:** [INVI](#invi) investment income, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [DISC](#disc) discount, [RW](#rw) real world, [UPRC](#uprc) unit price, [EQ](#eq) equity, [GAIN](#gain) capital gain, [ECON](#econ) economic
+- **Related terms:** [INVI](#invi) investment income, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [DISC](#disc) discount, [RW](#rw) real world, [UPRC](#uprc) unit price, [EQ](#eq) equity, [GAIN](#gain) capital gain, [ECON](#econ) economic, [RF](#rf) risk-free
 
 ### ASSET
 
@@ -1682,7 +1754,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** investments
 - **Definition:** The assets held to back liabilities or capital, valued at the stated time point.
 - **Not to be confused with:** Not ASHR (asset share). Not FV.
-- **Related terms:** [INVI](#invi) investment income, [INVR](#invr) investment return, [INV](#inv) investment, [EQ](#eq) equity, [RES](#res) reserve, [OF](#of) own funds, [FAIR](#fair) fair value, [GAIN](#gain) capital gain, [MISM](#mism) mismatching, [UNDL](#undl) underlying items, [PROP](#prop) property, [SURP](#surp) surplus
+- **Related terms:** [INVI](#invi) investment income, [INVR](#invr) investment return, [INV](#inv) investment, [EQ](#eq) equity, [RES](#res) reserve, [OF](#of) own funds, [FAIR](#fair) fair value, [GAIN](#gain) capital gain, [MISM](#mism) mismatching, [UNDL](#undl) underlying items, [PROP](#prop) property, [SURP](#surp) surplus, [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [CASH](#cash) cash, [MDUR](#mdur) modified duration, [LIAB](#liab) liabilities
 
 ### EQ
 
@@ -1692,7 +1764,7 @@ Interest, discounting, investment return and assets.
 - **Definition:** Narrows assets, returns or capital to listed or unlisted shares.
 - **Not to be confused with:** Not shareholders' equity on the balance sheet, which this version does not name. Not equalisation.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(5)(b)
-- **Related terms:** [ASSET](#asset) assets, [INVR](#invr) investment return, [MKT](#mkt) market risk, [GAIN](#gain) capital gain, [PROP](#prop) property
+- **Related terms:** [ASSET](#asset) assets, [INVR](#invr) investment return, [MKT](#mkt) market risk, [GAIN](#gain) capital gain, [PROP](#prop) property, [GOVB](#govb) government bonds, [CORPB](#corpb) corporate bonds, [CASH](#cash) cash
 
 ### GAIN
 
@@ -1774,6 +1846,15 @@ Tokens specific to reinsurance. The parties RI and NET are in the Party family.
 
 Amounts held for future obligations, outside IFRS 17 specific terms.
 
+### LIAB
+
+- **Full term:** Liabilities
+- **Slot:** ITEM
+- **Also called:** total liabilities
+- **Definition:** The total of what the insurer owes at the stated time point, on the stated basis: its reserves for policies plus its other obligations.
+- **Not to be confused with:** Not RES or BEL, which cover policy obligations only. Not LAC or LC.
+- **Related terms:** [RES](#res) reserve, [BEL](#bel) best estimate liability, [TP](#tp) technical provisions, [ASSET](#asset) assets, [SURP](#surp) surplus
+
 ### RES
 
 - **Full term:** Reserve
@@ -1781,7 +1862,7 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Also called:** provision, policy liability, mathematical reserve
 - **Definition:** The amount held at the stated time point to meet future obligations on the stated basis. It is the generic term and the description must give the basis.
 - **Not to be confused with:** Not BEL, TP or LRC, which are reserves defined by a specific framework. Not REC or REM.
-- **Related terms:** [BEL](#bel) best estimate liability, [TP](#tp) technical provisions, [UPR](#upr) unearned premium reserve, [IBNR](#ibnr) incurred but not reported, [OCR](#ocr) outstanding claims reserve, [UNIT](#unit) unit, [NUNIT](#nunit) non-unit, [SAR](#sar) sum at risk, [CHG](#chg) change, [ASSET](#asset) assets, [LRC](#lrc) liability for remaining coverage, [LIC](#lic) liability for incurred claims, [FAIR](#fair) fair value, [VAL](#val) valuation, [NETP](#netp) net premium, [ACTF](#actf) actuarial funding, [NEG](#neg) negative, [MISM](#mism) mismatching, [FLUC](#fluc) fluctuation, [CTGY](#ctgy) contingency, [OVRN](#ovrn) expense overrun, [SURP](#surp) surplus
+- **Related terms:** [BEL](#bel) best estimate liability, [TP](#tp) technical provisions, [UPR](#upr) unearned premium reserve, [IBNR](#ibnr) incurred but not reported, [OCR](#ocr) outstanding claims reserve, [UNIT](#unit) unit, [NUNIT](#nunit) non-unit, [SAR](#sar) sum at risk, [CHG](#chg) change, [ASSET](#asset) assets, [LRC](#lrc) liability for remaining coverage, [LIC](#lic) liability for incurred claims, [FAIR](#fair) fair value, [VAL](#val) valuation, [NETP](#netp) net premium, [ACTF](#actf) actuarial funding, [NEG](#neg) negative, [MISM](#mism) mismatching, [FLUC](#fluc) fluctuation, [CTGY](#ctgy) contingency, [OVRN](#ovrn) expense overrun, [SURP](#surp) surplus, [LIAB](#liab) liabilities
 
 ### BEL
 
@@ -1791,7 +1872,7 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Definition:** The probability-weighted present value of future cash outflows less inflows on best estimate assumptions, with no margins. Under Solvency II and the South African standards it is discounted at the prescribed risk-free rates.
 - **Not to be confused with:** Not BE, which is the basis. Not TP, which adds the risk margin. Not FCF, which adds the IFRS 17 risk adjustment.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 77(2). South African Prudential Standard FSI 2.2 section 6
-- **Related terms:** [BE](#be) best estimate, [TP](#tp) technical provisions, [RM](#rm) risk margin, [RES](#res) reserve, [FCF](#fcf) fulfilment cash flows, [PV](#pv) present value, [UNW](#unw) unwind of discount, [TVOG](#tvog) time value of options and guarantees, [NEG](#neg) negative
+- **Related terms:** [BE](#be) best estimate, [TP](#tp) technical provisions, [RM](#rm) risk margin, [RES](#res) reserve, [FCF](#fcf) fulfilment cash flows, [PV](#pv) present value, [UNW](#unw) unwind of discount, [TVOG](#tvog) time value of options and guarantees, [NEG](#neg) negative, [LIAB](#liab) liabilities
 
 ### TP
 
@@ -1800,7 +1881,7 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Definition:** The amount the insurer would have to pay to transfer its insurance obligations to another insurer today. It is the best estimate liability plus the risk margin.
 - **Not to be confused with:** Not BEL alone. Not total and permanent disability.
 - **Source checked:** Solvency II Directive 2009/138/EC Articles 76 and 77. South African Prudential Standard FSI 2.2
-- **Related terms:** [BEL](#bel) best estimate liability, [RM](#rm) risk margin, [OF](#of) own funds, [SCR](#scr) Solvency capital requirement, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [RES](#res) reserve
+- **Related terms:** [BEL](#bel) best estimate liability, [RM](#rm) risk margin, [OF](#of) own funds, [SCR](#scr) Solvency capital requirement, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [RES](#res) reserve, [LIAB](#liab) liabilities
 
 ### RM
 
@@ -1810,7 +1891,7 @@ Amounts held for future obligations, outside IFRS 17 specific terms.
 - **Definition:** The amount added to the best estimate liability under a Solvency II style regime. It is the cost of holding own funds equal to the SCR for as long as the obligations take to run off.
 - **Not to be confused with:** Not RA, which is the IFRS 17 measure and can use other methods. Not MGN. The cost of capital rate is 6% a year under Solvency II and in South Africa. The Solvency II rate changes to 4.75% from 30 January 2027.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 77(3) and 77(5), Delegated Regulation (EU) 2015/35 Articles 37 to 39, Directive (EU) 2025/2. South African Prudential Standard FSI 2.2 section 14
-- **Related terms:** [RA](#ra) risk adjustment, [TP](#tp) technical provisions, [BEL](#bel) best estimate liability, [COC](#coc) cost of capital, [SCR](#scr) Solvency capital requirement, [MGN](#mgn) margin, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management
+- **Related terms:** [RA](#ra) risk adjustment, [TP](#tp) technical provisions, [BEL](#bel) best estimate liability, [COC](#coc) cost of capital, [SCR](#scr) Solvency capital requirement, [MGN](#mgn) margin, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [PROJ](#proj) projected
 
 ### UPR
 
@@ -2111,6 +2192,15 @@ Terms defined by IFRS 17 Insurance Contracts.
 
 Tokens for the MOVE slot. They turn a balance into the flow that explains part of its change.
 
+### DELTA
+
+- **Full term:** Change under a shock
+- **Slot:** MOVE
+- **Also called:** stress impact, sensitivity, stressed less base
+- **Definition:** The value of an item after a stated shock less its value before the shock, at the same time point.
+- **Not to be confused with:** Not CHG, which is the change from the start to the end of the period. Not SHK, which is the size of the shock and not its effect.
+- **Related terms:** [SHK](#shk) shock, [CHG](#chg) change, [SCR](#scr) Solvency capital requirement, [UP](#up) up, [DOWN](#down) down
+
 ### NB
 
 - **Full term:** New business
@@ -2127,7 +2217,7 @@ Tokens for the MOVE slot. They turn a balance into the flow that explains part o
 - **Also called:** movement, increase
 - **Definition:** The closing balance less the opening balance over the model period.
 - **Not to be confused with:** Not CHRG (a charge). Not ESTCH, which is one cause of change.
-- **Related terms:** [CHRG](#chrg) charge, [ESTCH](#estch) change in estimates, [EXPV](#expv) experience variance, [UNW](#unw) unwind of discount, [REL](#rel) release, [NB](#nb) new business, [RES](#res) reserve
+- **Related terms:** [CHRG](#chrg) charge, [ESTCH](#estch) change in estimates, [EXPV](#expv) experience variance, [UNW](#unw) unwind of discount, [REL](#rel) release, [NB](#nb) new business, [RES](#res) reserve, [DELTA](#delta) change under a shock
 
 ### ACCR
 
@@ -2183,6 +2273,33 @@ Tokens for the MOVE slot. They turn a balance into the flow that explains part o
 
 Capital amounts and the risks they are held for.
 
+### LUW
+
+- **Full term:** Life underwriting risk
+- **Slot:** KIND
+- **Also called:** life risk, life underwriting module
+- **Definition:** Narrows a capital amount to the whole of life underwriting risk: mortality, longevity, morbidity, lapse, expense and catastrophe risks taken together.
+- **Not to be confused with:** Not LIFE, which is one life assured as a unit of count. Not MORT, which is one part of it.
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [BSCR](#bscr) basic solvency capital requirement, [MORT](#mort) mortality risk, [LONG](#long) longevity risk, [MORB](#morb) morbidity risk, [LPSR](#lpsr) lapse risk, [CAT](#cat) catastrophe risk, [MKT](#mkt) market risk, [CORR](#corr) correlation
+
+### BSCR
+
+- **Full term:** Basic solvency capital requirement
+- **Slot:** ITEM
+- **Also called:** basic SCR
+- **Definition:** The solvency capital requirement after the risk modules are combined and before operational risk and loss-absorbing adjustments are applied.
+- **Not to be confused with:** Not SCR, which is the final figure. Not MCR.
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [LUW](#luw) life underwriting risk, [MKT](#mkt) market risk, [OPR](#opr) operational risk, [LAC](#lac) loss-absorbing capacity, [DIV](#div) diversification, [CORR](#corr) correlation
+
+### CORR
+
+- **Full term:** Correlation
+- **Slot:** ITEM
+- **Also called:** correlation coefficient, correlation factor
+- **Definition:** The coefficient, between minus one and one, used to combine two capital amounts or to link two random variables. A full set is usually held as a table.
+- **Not to be confused with:** Not DIV, which is the money amount of the saving that correlations below one produce.
+- **Related terms:** [DIV](#div) diversification, [SCR](#scr) Solvency capital requirement, [BSCR](#bscr) basic solvency capital requirement, [LUW](#luw) life underwriting risk, [MKT](#mkt) market risk
+
 ### CAP
 
 - **Full term:** Capital
@@ -2199,7 +2316,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Assets held above liabilities whose distribution to shareholders is restricted, on the stated basis. It reflects the company's own targets and is at least the regulatory requirement.
 - **Not to be confused with:** Not SCR, which is one regulatory definition of it. Not FSUR.
 - **Source checked:** ASSA APN 107 version 8 sections 2.5 and 3.5
-- **Related terms:** [CAP](#cap) capital, [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [FSUR](#fsur) free surplus, [COC](#coc) cost of capital, [EV](#ev) embedded value, [OF](#of) own funds, [DISTE](#diste) distributable earnings, [ANW](#anw) adjusted net worth, [NBS](#nbs) new business strain, [CAPRQ](#caprq) requirement for capital
+- **Related terms:** [CAP](#cap) capital, [SCR](#scr) Solvency capital requirement, [MCR](#mcr) minimum capital requirement, [FSUR](#fsur) free surplus, [COC](#coc) cost of capital, [EV](#ev) embedded value, [OF](#of) own funds, [DISTE](#diste) distributable earnings, [ANW](#anw) adjusted net worth, [NBS](#nbs) new business strain, [CAPRQ](#caprq) requirement for capital, [PROJ](#proj) projected
 
 ### SCR
 
@@ -2208,7 +2325,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** The capital needed so that the insurer's own funds survive the losses of one year with 99.5% confidence, as defined under Solvency II and under the South African standards.
 - **Not to be confused with:** Not MCR. Not SAR. Not RCAP, which may be set higher by the company.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 101. South African Prudential Standard FSI 1 section 6.1
-- **Related terms:** [MCR](#mcr) minimum capital requirement, [OF](#of) own funds, [RCAP](#rcap) required capital, [CAP](#cap) capital, [TP](#tp) technical provisions, [RM](#rm) risk margin, [MORT](#mort) mortality risk, [LONG](#long) longevity risk, [MORB](#morb) morbidity risk, [CAT](#cat) catastrophe risk, [MKT](#mkt) market risk, [SPRD](#sprd) spread risk, [FX](#fx) currency risk, [CPTY](#cpty) counterparty default risk, [OPR](#opr) operational risk, [DIV](#div) diversification, [SHK](#shk) shock, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [LPSR](#lpsr) lapse risk, [REVN](#revn) revision risk, [CONC](#conc) concentration risk, [LAC](#lac) loss-absorbing capacity, [CAR](#car) capital adequacy requirement
+- **Related terms:** [MCR](#mcr) minimum capital requirement, [OF](#of) own funds, [RCAP](#rcap) required capital, [CAP](#cap) capital, [TP](#tp) technical provisions, [RM](#rm) risk margin, [MORT](#mort) mortality risk, [LONG](#long) longevity risk, [MORB](#morb) morbidity risk, [CAT](#cat) catastrophe risk, [MKT](#mkt) market risk, [SPRD](#sprd) spread risk, [FX](#fx) currency risk, [CPTY](#cpty) counterparty default risk, [OPR](#opr) operational risk, [DIV](#div) diversification, [SHK](#shk) shock, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [LPSR](#lpsr) lapse risk, [REVN](#revn) revision risk, [CONC](#conc) concentration risk, [LAC](#lac) loss-absorbing capacity, [CAR](#car) capital adequacy requirement, [DELTA](#delta) change under a shock, [LUW](#luw) life underwriting risk, [BSCR](#bscr) basic solvency capital requirement, [CORR](#corr) correlation, [PROJ](#proj) projected
 
 ### MCR
 
@@ -2217,7 +2334,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** The lowest regulatory capital level. Under Solvency II and in South Africa it is calibrated to 85% confidence over one year and kept between 25% and 45% of the SCR, with an absolute floor in money terms.
 - **Not to be confused with:** Not SCR.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 129. South African Prudential Standard FSI 1 section 6.2 and FSI 3
-- **Related terms:** [SCR](#scr) Solvency capital requirement, [OF](#of) own funds, [CAP](#cap) capital, [RCAP](#rcap) required capital, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [CAR](#car) capital adequacy requirement
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [OF](#of) own funds, [CAP](#cap) capital, [RCAP](#rcap) required capital, [SII](#sii) Solvency II, [SAM](#sam) Solvency Assessment and Management, [CAR](#car) capital adequacy requirement, [BSCR](#bscr) basic solvency capital requirement
 
 ### OF
 
@@ -2236,7 +2353,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk that death rates are higher than expected, in level, trend or volatility.
 - **Not to be confused with:** Not DTH, which is the event of death. Not LONG, which is the opposite risk. The standard formula shock is a permanent 15% rise in death rates under both Solvency II and the South African standards.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(3)(a), Delegated Regulation (EU) 2015/35 Article 137. South African Prudential Standard FSI 4.2 section 5
-- **Related terms:** [LONG](#long) longevity risk, [MORB](#morb) morbidity risk, [CAT](#cat) catastrophe risk, [DTH](#dth) death, [SCR](#scr) Solvency capital requirement, [SHK](#shk) shock
+- **Related terms:** [LONG](#long) longevity risk, [MORB](#morb) morbidity risk, [CAT](#cat) catastrophe risk, [DTH](#dth) death, [SCR](#scr) Solvency capital requirement, [SHK](#shk) shock, [LUW](#luw) life underwriting risk
 
 ### LONG
 
@@ -2245,7 +2362,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk that death rates are lower than expected, so that annuities are paid for longer.
 - **Not to be confused with:** Not MORT. Not a long position or a long term. The Solvency II shock is a permanent 20% fall in death rates. The South African shock is a 10% fall plus an extra 1% a year of improvement.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(3)(b), Delegated Regulation (EU) 2015/35 Article 138. South African Prudential Standard FSI 4.2 section 6
-- **Related terms:** [MORT](#mort) mortality risk, [DTH](#dth) death, [ANTY](#anty) annuity, [SCR](#scr) Solvency capital requirement, [IMP](#imp) improvement, [REVN](#revn) revision risk
+- **Related terms:** [MORT](#mort) mortality risk, [DTH](#dth) death, [ANTY](#anty) annuity, [SCR](#scr) Solvency capital requirement, [IMP](#imp) improvement, [REVN](#revn) revision risk, [LUW](#luw) life underwriting risk
 
 ### MORB
 
@@ -2255,7 +2372,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk that disability or sickness claims are worse than expected, including recoveries that are slower than expected.
 - **Not to be confused with:** Not DIS or CI, which are the events.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(3)(c), Delegated Regulation (EU) 2015/35 Article 139. South African Prudential Standard FSI 4.2 section 7
-- **Related terms:** [MORT](#mort) mortality risk, [DIS](#dis) disability, [CI](#ci) critical illness, [REC](#rec) recovery, [SCR](#scr) Solvency capital requirement, [FLUC](#fluc) fluctuation, [REVN](#revn) revision risk, [HIV](#hiv) HIV and AIDS
+- **Related terms:** [MORT](#mort) mortality risk, [DIS](#dis) disability, [CI](#ci) critical illness, [REC](#rec) recovery, [SCR](#scr) Solvency capital requirement, [FLUC](#fluc) fluctuation, [REVN](#revn) revision risk, [HIV](#hiv) HIV and AIDS, [LUW](#luw) life underwriting risk
 
 ### CAT
 
@@ -2264,7 +2381,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk of loss from extreme or irregular events, such as a pandemic, that cause many claims in a short time.
 - **Not to be confused with:** Not a category.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(3)(g), Delegated Regulation (EU) 2015/35 Article 143. South African Prudential Standard FSI 4.2 section 10
-- **Related terms:** [MORT](#mort) mortality risk, [SCR](#scr) Solvency capital requirement, [SHK](#shk) shock, [XL](#xl) excess of loss, [MASS](#mass) mass, [FLUC](#fluc) fluctuation
+- **Related terms:** [MORT](#mort) mortality risk, [SCR](#scr) Solvency capital requirement, [SHK](#shk) shock, [XL](#xl) excess of loss, [MASS](#mass) mass, [FLUC](#fluc) fluctuation, [LUW](#luw) life underwriting risk
 
 ### MKT
 
@@ -2273,7 +2390,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk of loss from changes in market prices and rates.
 - **Not to be confused with:** Not marketing.
 - **Source checked:** Solvency II Directive 2009/138/EC Articles 13(31) and 105(5)
-- **Related terms:** [EQ](#eq) equity, [SPRD](#sprd) spread risk, [FX](#fx) currency risk, [SCR](#scr) Solvency capital requirement, [MISM](#mism) mismatching, [PROP](#prop) property, [CONC](#conc) concentration risk
+- **Related terms:** [EQ](#eq) equity, [SPRD](#sprd) spread risk, [FX](#fx) currency risk, [SCR](#scr) Solvency capital requirement, [MISM](#mism) mismatching, [PROP](#prop) property, [CONC](#conc) concentration risk, [LUW](#luw) life underwriting risk, [BSCR](#bscr) basic solvency capital requirement, [CORR](#corr) correlation
 
 ### SPRD
 
@@ -2283,7 +2400,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk of loss from changes in credit spreads over the risk-free rate.
 - **Not to be confused with:** Not CPTY, which is loss from a counterparty failing to pay.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(5)(d)
-- **Related terms:** [MKT](#mkt) market risk, [CPTY](#cpty) counterparty default risk, [SCR](#scr) Solvency capital requirement
+- **Related terms:** [MKT](#mkt) market risk, [CPTY](#cpty) counterparty default risk, [SCR](#scr) Solvency capital requirement, [CSPR](#cspr) credit spread, [RTG](#rtg) credit rating
 
 ### FX
 
@@ -2303,7 +2420,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk that a reinsurer, bank or other counterparty defaults or that its credit standing worsens, for exposures not covered by spread risk.
 - **Not to be confused with:** Not SPRD.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(6)
-- **Related terms:** [SPRD](#sprd) spread risk, [RI](#ri) reinsurance ceded, [SCR](#scr) Solvency capital requirement, [CONC](#conc) concentration risk
+- **Related terms:** [SPRD](#sprd) spread risk, [RI](#ri) reinsurance ceded, [SCR](#scr) Solvency capital requirement, [CONC](#conc) concentration risk, [RTG](#rtg) credit rating
 
 ### OPR
 
@@ -2312,7 +2429,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount to the risk of loss from failed processes, people, systems or external events. It includes legal risk and excludes strategic and reputational risk.
 - **Not to be confused with:** Not operating profit.
 - **Source checked:** Solvency II Directive 2009/138/EC Articles 13(33) and 101(4)
-- **Related terms:** [SCR](#scr) Solvency capital requirement
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [BSCR](#bscr) basic solvency capital requirement
 
 ### DIV
 
@@ -2322,7 +2439,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount to the reduction that arises because the separate risks are not expected to happen together.
 - **Not to be confused with:** Not a dividend. Not DIS.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 13(37)
-- **Related terms:** [SCR](#scr) Solvency capital requirement, [LAC](#lac) loss-absorbing capacity
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [LAC](#lac) loss-absorbing capacity, [BSCR](#bscr) basic solvency capital requirement, [CORR](#corr) correlation
 
 ### UP
 
@@ -2332,7 +2449,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a shock or capital amount to the case where the assumption rises.
 - **Not to be confused with:** Not UPR or UPRC.
 - **Source checked:** Delegated Regulation (EU) 2015/35 Article 142
-- **Related terms:** [DOWN](#down) down, [MASS](#mass) mass, [SHK](#shk) shock, [LPSR](#lpsr) lapse risk
+- **Related terms:** [DOWN](#down) down, [MASS](#mass) mass, [SHK](#shk) shock, [LPSR](#lpsr) lapse risk, [DELTA](#delta) change under a shock
 
 ### DOWN
 
@@ -2342,7 +2459,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a shock or capital amount to the case where the assumption falls.
 - **Not to be confused with:** Not a downgrade.
 - **Source checked:** Delegated Regulation (EU) 2015/35 Article 142
-- **Related terms:** [UP](#up) up, [MASS](#mass) mass, [SHK](#shk) shock, [LPSR](#lpsr) lapse risk
+- **Related terms:** [UP](#up) up, [MASS](#mass) mass, [SHK](#shk) shock, [LPSR](#lpsr) lapse risk, [DELTA](#delta) change under a shock
 
 ### MASS
 
@@ -2362,7 +2479,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount or shock to the risk of loss from changes in the rates at which policyholders use their options to stop, surrender, reduce, restrict, renew or resume cover.
 - **Not to be confused with:** Not LPS, which is one narrow event. Regulatory lapse risk covers lapse, surrender, paid-up and every other policyholder option.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(3)(f), Delegated Regulation (EU) 2015/35 Article 142. South African Prudential Standard FSI 4.2 section 8
-- **Related terms:** [LPS](#lps) lapse, [SUR](#sur) surrender, [PUP](#pup) paid-up, [DCON](#dcon) discontinuance, [WDL](#wdl) partial withdrawal, [MASS](#mass) mass, [UP](#up) up, [DOWN](#down) down, [SCR](#scr) Solvency capital requirement, [PERS](#pers) persistency, [SHK](#shk) shock
+- **Related terms:** [LPS](#lps) lapse, [SUR](#sur) surrender, [PUP](#pup) paid-up, [DCON](#dcon) discontinuance, [WDL](#wdl) partial withdrawal, [MASS](#mass) mass, [UP](#up) up, [DOWN](#down) down, [SCR](#scr) Solvency capital requirement, [PERS](#pers) persistency, [SHK](#shk) shock, [LUW](#luw) life underwriting risk
 
 ### REVN
 
@@ -2381,7 +2498,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows assets, returns or capital to land and buildings.
 - **Not to be confused with:** Not a proportion, which uses PER. Not proportional reinsurance, which is QS.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 105(5)(c)
-- **Related terms:** [EQ](#eq) equity, [MKT](#mkt) market risk, [ASSET](#asset) assets, [CONC](#conc) concentration risk
+- **Related terms:** [EQ](#eq) equity, [MKT](#mkt) market risk, [ASSET](#asset) assets, [CONC](#conc) concentration risk, [GOVB](#govb) government bonds
 
 ### CONC
 
@@ -2400,7 +2517,7 @@ Capital amounts and the risks they are held for.
 - **Definition:** Narrows a capital amount to the reduction allowed because losses would be shared with policyholders through lower future bonuses, or with the tax authority through deferred tax.
 - **Not to be confused with:** Not LC (loss component). Not DIV, which arises from risks not happening together.
 - **Source checked:** Solvency II Directive 2009/138/EC Article 108
-- **Related terms:** [SCR](#scr) Solvency capital requirement, [DIV](#div) diversification, [BON](#bon) bonus, [TAX](#tax) tax
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [DIV](#div) diversification, [BON](#bon) bonus, [TAX](#tax) tax, [BSCR](#bscr) basic solvency capital requirement
 
 ## Profit, embedded value and new business
 
@@ -2508,7 +2625,7 @@ Measures of profit and of value to shareholders.
 - **Also called:** solvency margin, free assets, estate
 - **Definition:** The value of assets less the value of liabilities at the stated time point, on the stated basis.
 - **Not to be confused with:** Not PROF, which is the surplus arising in a period. Not FSUR, which also deducts required capital. The description must give the basis, because the answer depends on how assets and liabilities are valued.
-- **Related terms:** [PROF](#prof) profit, [FSUR](#fsur) free surplus, [OF](#of) own funds, [ASSET](#asset) assets, [RES](#res) reserve, [NBS](#nbs) new business strain, [NEG](#neg) negative
+- **Related terms:** [PROF](#prof) profit, [FSUR](#fsur) free surplus, [OF](#of) own funds, [ASSET](#asset) assets, [RES](#res) reserve, [NBS](#nbs) new business strain, [NEG](#neg) negative, [LIAB](#liab) liabilities
 
 ### NBS
 
@@ -2604,6 +2721,15 @@ Facts about the policy and the life that the model reads as input.
 ## Tables, assumptions and model data
 
 The inputs a model reads: assumption sets, the tables that hold them, model points and scenarios.
+
+### PROJ
+
+- **Full term:** Projected
+- **Slot:** KIND
+- **Also called:** run-off, forecast
+- **Definition:** Narrows a balance to its estimated value at future time steps where that value is not recalculated in full, such as capital run off in line with a driver.
+- **Not to be confused with:** Not EXPC. Every variable in a projection is projected: use this token only where a model holds both a fully calculated value and a projected estimate of it.
+- **Related terms:** [SCR](#scr) Solvency capital requirement, [RCAP](#rcap) required capital, [RM](#rm) risk margin, [PRD](#prd) per model period
 
 ### MOD
 
@@ -2851,6 +2977,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [BID](#bid) | Bid | KIND | Policy values, unit-linked and with-profits |
 | [BON](#bon) | Bonus | ITEM | Policy values, unit-linked and with-profits |
 | [BOP](#bop) | Start of period | TIME | Time points and time bases |
+| [BSCR](#bscr) | Basic solvency capital requirement | ITEM | Capital and risk |
 | [BSR](#bsr) | Bonus stabilisation reserve | ITEM | ZA extension: South Africa |
 | [CALMTH](#calmth) | Calendar month | ITEM | Time and age items |
 | [CALYR](#calyr) | Calendar year | ITEM | Time and age items |
@@ -2858,6 +2985,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [CAPRQ](#caprq) | Requirement for capital | ITEM | Profit, embedded value and new business |
 | [CAPU](#capu) | Capital units | KIND | Policy values, unit-linked and with-profits |
 | [CAR](#car) | Capital adequacy requirement | ITEM | ZA extension: South Africa |
+| [CASH](#cash) | Cash | KIND | Economic and investment |
 | [CAT](#cat) | Catastrophe risk | KIND | Capital and risk |
 | [CF](#cf) | Cash flow | ITEM | Cash flows in general |
 | [CHG](#chg) | Change | MOVE | Movements |
@@ -2874,10 +3002,14 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [CONC](#conc) | Concentration risk | KIND | Capital and risk |
 | [CONV](#conv) | Conversion | ITEM or KIND | Decrements and policy status |
 | [CORF](#corf) | Corporate fund | KIND | ZA extension: South Africa |
+| [CORPB](#corpb) | Corporate bonds | KIND | Economic and investment |
+| [CORR](#corr) | Correlation | ITEM | Capital and risk |
 | [CPF](#cpf) | Company policyholder fund | KIND | ZA extension: South Africa |
+| [CPN](#cpn) | Coupon | ITEM | Economic and investment |
 | [CPTY](#cpty) | Counterparty default risk | KIND | Capital and risk |
 | [CRDL](#crdl) | Credit life | KIND | ZA extension: South Africa |
 | [CSM](#csm) | Contractual service margin | ITEM | IFRS 17 |
+| [CSPR](#cspr) | Credit spread | ITEM | Economic and investment |
 | [CTGY](#ctgy) | Contingency | KIND | Reserves and liabilities |
 | [CU](#cu) | Coverage units | ITEM | IFRS 17 |
 | [CUM](#cum) | Cumulative | MEASURE | Measures |
@@ -2886,6 +3018,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [DCON](#dcon) | Discontinuance | ITEM | Decrements and policy status |
 | [DEC](#dec) | Decrement | ITEM | Decrements and policy status |
 | [DEFP](#defp) | Deferred period | ITEM | Time and age items |
+| [DELTA](#delta) | Change under a shock | MOVE | Movements |
 | [DEMOG](#demog) | Demographic | KIND | Tables, assumptions and model data |
 | [DEP](#dep) | Dependent | KIND | Assumption building |
 | [DIS](#dis) | Disability | ITEM or KIND | Decrements and policy status |
@@ -2933,6 +3066,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [FX](#fx) | Currency risk | KIND | Capital and risk |
 | [GAIN](#gain) | Capital gain | ITEM | Economic and investment |
 | [GMM](#gmm) | General measurement model | ITEM or KIND | IFRS 17 |
+| [GOVB](#govb) | Government bonds | KIND | Economic and investment |
 | [GRS](#grs) | Gross of reinsurance | PARTY | Party |
 | [GTEE](#gtee) | Guarantee | ITEM or KIND | Policy values, unit-linked and with-profits |
 | [HIV](#hiv) | HIV and AIDS | KIND | ZA extension: South Africa |
@@ -2962,6 +3096,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [ISR](#isr) | Insurance service result | ITEM | IFRS 17 |
 | [LAC](#lac) | Loss-absorbing capacity | KIND | Capital and risk |
 | [LC](#lc) | Loss component | ITEM | IFRS 17 |
+| [LIAB](#liab) | Liabilities | ITEM | Reserves and liabilities |
 | [LIC](#lic) | Liability for incurred claims | ITEM | IFRS 17 |
 | [LIFE](#life) | Life assured | ITEM | Decrements and policy status |
 | [LOAD](#load) | Loading | ITEM | Assumption building |
@@ -2973,12 +3108,14 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [LPSR](#lpsr) | Lapse risk | KIND | Capital and risk |
 | [LRC](#lrc) | Liability for remaining coverage | ITEM | IFRS 17 |
 | [LS](#ls) | Lump sum | KIND | Claims and benefits |
+| [LUW](#luw) | Life underwriting risk | KIND | Capital and risk |
 | [MAINT](#maint) | Maintenance | KIND | Expenses and commission |
 | [MARG](#marg) | Marginal cost | KIND | Expenses and commission |
 | [MASS](#mass) | Mass | KIND | Capital and risk |
 | [MAT](#mat) | Maturity | ITEM or KIND | Decrements and policy status |
 | [MAX](#max) | Maximum | MEASURE | Measures |
 | [MCR](#mcr) | Minimum capital requirement | ITEM | Capital and risk |
+| [MDUR](#mdur) | Modified duration | ITEM | Economic and investment |
 | [MGN](#mgn) | Margin | ITEM or KIND | Assumption building |
 | [MIN](#min) | Minimum | MEASURE | Measures |
 | [MISM](#mism) | Mismatching | KIND | Reserves and liabilities |
@@ -3026,6 +3163,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [PREM](#prem) | Premium | ITEM or KIND | Premiums |
 | [PROB](#prob) | Probability | MEASURE | Measures |
 | [PROF](#prof) | Profit | ITEM or KIND | Profit, embedded value and new business |
+| [PROJ](#proj) | Projected | KIND | Tables, assumptions and model data |
 | [PROP](#prop) | Property | KIND | Capital and risk |
 | [PRU](#pru) | Prudent | BASIS | Basis |
 | [PUP](#pup) | Paid-up | ITEM or KIND | Decrements and policy status |
@@ -3045,12 +3183,14 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [RET](#ret) | Retention | ITEM | Reinsurance |
 | [RETR](#retr) | Retrenchment | ITEM or KIND | ZA extension: South Africa |
 | [REVN](#revn) | Revision risk | KIND | Capital and risk |
+| [RF](#rf) | Risk-free | KIND | Economic and investment |
 | [RI](#ri) | Reinsurance ceded | PARTY | Party |
 | [RINST](#rinst) | Reinstatement | ITEM | Decrements and policy status |
 | [RISK](#risk) | Risk premium | KIND | Premiums |
 | [RM](#rm) | Risk margin | ITEM | Reserves and liabilities |
 | [RN](#rn) | Risk neutral | BASIS | Basis |
 | [RPF](#rpf) | Risk policy fund | KIND | ZA extension: South Africa |
+| [RTG](#rtg) | Credit rating | ITEM | Economic and investment |
 | [RVS](#rvs) | Reversionary | KIND | Policy values, unit-linked and with-profits |
 | [RW](#rw) | Real world | BASIS | Basis |
 | [SA](#sa) | Sum assured | ITEM | Claims and benefits |
@@ -3139,6 +3279,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | appreciation | [GAIN](#gain) |
 | appropriation price | [APPR](#appr) |
 | as a proportion of | [PER](#per) |
+| asset duration | [MDUR](#mdur) |
 | asset management | [INV](#inv) |
 | asset-based fee | [FMC](#fmc) |
 | assumption change | [ESTCH](#estch) |
@@ -3148,6 +3289,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | automatic reinsurance | [TRTY](#trty) |
 | available capital | [OF](#of) |
 | base table | [TBL](#tbl) |
+| basic SCR | [BSCR](#bscr) |
 | basis change | [ESTCH](#estch) |
 | basis item | [ASM](#asm) |
 | before acquisition expenses | [NOACQ](#noacq) |
@@ -3195,17 +3337,23 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | contract | [POL](#pol) |
 | contract term | [TERM](#term) |
 | contribution | [PREM](#prem) |
+| corporate debt | [CORPB](#corpb) |
+| correlation coefficient | [CORR](#corr) |
+| correlation factor | [CORR](#corr) |
 | cost | [EXP](#exp) |
 | cost escalation | [INFL](#infl) |
 | cost of capital margin | [RM](#rm) |
 | cost of cover | [RISK](#risk) |
 | cost of required capital | [COC](#coc) |
+| coupon rate | [CPN](#cpn) |
 | cover | [SA](#sa) |
 | cover amount | [BEN](#ben) |
 | creation price | [APPR](#appr) |
 | creation price for the policyholder | [OFFER](#offer) |
+| credit | [CORPB](#corpb) |
 | credit default risk | [CPTY](#cpty) |
 | credit protection | [CRDL](#crdl) |
+| credit quality | [RTG](#rtg) |
 | credit spread risk | [SPRD](#sprd) |
 | credited interest | [INT](#int) |
 | current rates | [IFC](#ifc) |
@@ -3216,6 +3364,8 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | decrease | [DOWN](#down) |
 | decrement | [DEMOG](#demog) |
 | deduction | [CHRG](#chrg) |
+| default-free | [RF](#rf) |
+| deposits | [CASH](#cash) |
 | direct | [GRS](#grs) |
 | direct participating contracts | [VFA](#vfa) |
 | disability income | [INCM](#incm) |
@@ -3273,6 +3423,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | flat fee | [POLF](#polf) |
 | floor | [MIN](#min) |
 | fluctuation reserve | [FLUC](#fluc) |
+| forecast | [PROJ](#proj) |
 | foreign exchange risk | [FX](#fx) |
 | forfeiture | [LPS](#lps) |
 | forward rate | [FWD](#fwd) |
@@ -3291,6 +3442,8 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | general model | [GMM](#gmm) |
 | general reserve | [CTGY](#ctgy) |
 | generator | [MOD](#mod) |
+| gilts | [GOVB](#govb) |
+| government stock | [GOVB](#govb) |
 | gross premium | [OFF](#off) |
 | GST | [VAT](#vat) |
 | guaranteed benefit | [GTEE](#gtee) |
@@ -3315,6 +3468,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | interest accreted | [ACCR](#accr) |
 | interest on the liability | [UNW](#unw) |
 | interest rate | [RATE](#rate) |
+| interest rate sensitivity | [MDUR](#mdur) |
 | intermediary remuneration | [COMM](#comm) |
 | invested premium | [ALLOC](#alloc) |
 | investment element | [SAV](#sav) |
@@ -3325,6 +3479,8 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | LAC DT | [LAC](#lac) |
 | LAC TP | [LAC](#lac) |
 | largest | [MAX](#max) |
+| life risk | [LUW](#luw) |
+| life underwriting module | [LUW](#luw) |
 | loan against the policy | [LOAN](#loan) |
 | loan protection | [CRDL](#crdl) |
 | locked-in capital | [RCAP](#rcap) |
@@ -3338,6 +3494,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | marginal | [MARG](#marg) |
 | market | [ECON](#econ) |
 | market consistent value | [FAIR](#fair) |
+| market value | [FAIR](#fair) |
 | market value adjustment | [MVR](#mvr) |
 | mass lapse | [MASS](#mass) |
 | mathematical reserve | [RES](#res) |
@@ -3350,6 +3507,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | model point record | [MPT](#mpt) |
 | module | [MOD](#mod) |
 | money amount | [AMT](#amt) |
+| money market | [CASH](#cash) |
 | month of year | [CALMTH](#calmth) |
 | months | [MTHS](#mths) |
 | mortality | [DTH](#dth) |
@@ -3438,6 +3596,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | rand or dollar reserve | [NUNIT](#nunit) |
 | rated | [EXTRA](#extra) |
 | rates at initial recognition | [IFL](#ifl) |
+| rating | [RTG](#rtg) |
 | reactivation | [RINST](#rinst) |
 | real estate | [PROP](#prop) |
 | realistic | [BE](#be) |
@@ -3463,10 +3622,13 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | revival | [RINST](#rinst) |
 | rider benefit | [ACEL](#acel) |
 | risk adjustment for non-financial risk | [RA](#ra) |
+| risk-free rate | [RF](#rf) |
 | rolled up | [ACC](#acc) |
 | run-off | [EXPY](#expy) |
+| run-off | [PROJ](#proj) |
 | run-off | [REL](#rel) |
 | running total | [CUM](#cum) |
+| running yield of a bond | [CPN](#cpn) |
 | sales | [NB](#nb) |
 | sales tax | [VAT](#vat) |
 | savings element | [SAV](#sav) |
@@ -3475,6 +3637,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | scenario number | [SCEN](#scen) |
 | second tier margin | [DISCR](#discr) |
 | select period | [SEL](#sel) |
+| sensitivity | [DELTA](#delta) |
 | servicing | [MAINT](#maint) |
 | setting | [FLG](#flg) |
 | severe illness | [CI](#ci) |
@@ -3489,10 +3652,14 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | smoker indicator | [SMK](#smk) |
 | solvency margin | [SURP](#surp) |
 | South African solvency basis | [SAM](#sam) |
+| sovereign bonds | [GOVB](#govb) |
+| spread over risk-free | [CSPR](#cspr) |
 | standard table | [TBL](#tbl) |
 | statutory basis | [VAL](#val) |
 | sterling | [NUNIT](#nunit) |
+| stress impact | [DELTA](#delta) |
 | stress size | [SHK](#shk) |
+| stressed less base | [DELTA](#delta) |
 | substandard | [EXTRA](#extra) |
 | sum insured | [SA](#sa) |
 | supportable bonus rate | [BEC](#bec) |
@@ -3512,6 +3679,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | to date | [CUM](#cum) |
 | tobacco status | [SMK](#smk) |
 | total across policies | [AGG](#agg) |
+| total liabilities | [LIAB](#liab) |
 | total return | [INVR](#invr) |
 | transition approach | [TRNS](#trns) |
 | transition date | [TRNS](#trns) |

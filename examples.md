@@ -355,6 +355,21 @@ The table is named after what its columns share, so `DISC_FAC_BOP` is found in `
 | 232 | Module that produces economic scenarios | `MOD_SCEN_ECON` |
 | 233 | Compute module for the best estimate liability | `MOD_BEL` |
 
+### A21. Capital steps, assets and shocks
+
+| No. | Description | Name |
+|---|---|---|
+| 234 | Solvency capital requirement for life underwriting risk | `SCR_LUW` |
+| 235 | Basic solvency capital requirement | `BSCR` |
+| 236 | Solvency ratio | `OF_PER_SCR` |
+| 237 | Annual coupon rate on government bonds | `CPN_GOVB_RATE_ANN` |
+| 238 | Table of correlations | `TBL_CORR` |
+| 239 | Best estimate liability, equity sensitivity | `BEL_EQ_DELTA` |
+| 240 | Government bond assets as a proportion of liabilities | `ASSET_GOVB_PER_LIAB` |
+| 241 | Monthly real world rate of investment return on government bonds | `INVR_GOVB_RW_RATE_MTH` |
+| 242 | Annual spot discount rate, down shock | `DISC_SPOT_DOWN_RATE_ANN` |
+| 243 | Projected solvency capital requirement | `SCR_PROJ` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.

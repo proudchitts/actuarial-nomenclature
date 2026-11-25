@@ -8,6 +8,7 @@
 
   var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "YRS", "MTHS"];
   var UNIT = ["YRS", "MTHS"];
+  var DIRECTION = ["UP", "DOWN", "MASS"]; // direction tokens always come last among the kinds
   var AGGR = ["CUM", "ACC", "FUT", "AVG", "MAX", "MIN"];
   var BASE = ["ANN", "MTH", "PRD"];
   var POINT = ["BOP", "MOP", "EOP", "INC"];
@@ -159,7 +160,8 @@
 
     function orderKinds(kinds) {
       return kinds.sort(function (a, b) {
-        var ra = T[a].slot === "ITEM or KIND" ? 0 : 1, rb = T[b].slot === "ITEM or KIND" ? 0 : 1;
+        var rk = function (t) { return has(DIRECTION, t) ? 2 : T[t].slot === "ITEM or KIND" ? 0 : 1; };
+        var ra = rk(a), rb = rk(b);
         if (ra !== rb) { return ra - rb; }
         return a < b ? -1 : a > b ? 1 : 0;
       });
