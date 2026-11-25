@@ -1319,23 +1319,23 @@
     ],
     "policy number": [
       "POL",
-      "ID"
+      "NUMBER"
     ],
     "policy id": [
       "POL",
-      "ID"
+      "NUMBER"
     ],
     "asset number": [
       "ASSET",
-      "ID"
+      "NUMBER"
     ],
     "asset id": [
       "ASSET",
-      "ID"
+      "NUMBER"
     ],
     "asset class": [
       "ASSET",
-      "CLS"
+      "CLASS"
     ]
   },
   "special": {

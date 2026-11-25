@@ -6,7 +6,7 @@
 (function (root) {
   "use strict";
 
-  var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "ID", "CLS", "YRS", "MTHS"];
+  var PRIMARY = ["CNT", "RATE", "PROB", "FORCE", "PV", "FAC", "IND", "FLG", "IDX", "NUMBER", "CLASS", "YRS", "MTHS"];
   var UNIT = ["YRS", "MTHS"];
   // kinds that say what the thing is about, like an event or a benefit: capital risks and asset classes
   var SUBJECT = ["MORT", "LONG", "MORB", "LPSR", "LUW", "CAT", "MKT", "SPRD", "FX", "CPTY", "OPR", "CONC", "REVN", "DIV", "LAC", "EQ", "PROP", "GOVB", "CORPB", "CASH"];
@@ -184,7 +184,7 @@
       if (G[item.tok] === "IFRS 17" || has(basis, "IFL") || has(basis, "IFC")) { return "IFRS 17"; }
       if (get("PARTY").some(function (x) { return x.tok === "RI"; })) { return "Reinsurance"; }
       if (G[item.tok] === "Decrements" && has(meas, "CNT")) { return "Policy counts"; }
-      if (G[item.tok] === "Policy counts" && (has(meas, "ID") || has(meas, "CLS"))) { return "Time and policy data"; }
+      if (G[item.tok] === "Policy counts" && (has(meas, "NUMBER") || has(meas, "CLASS"))) { return "Time and policy data"; }
       return G[item.tok] || null;
     }
 
@@ -206,8 +206,8 @@
       else if (has(meas, "FORCE")) { k = ["force", "a rate per year"]; }
       else if (has(meas, "FAC")) { k = ["factor", "no unit"]; }
       else if (has(meas, "IDX")) { k = ["index", "no unit"]; }
-      else if (has(meas, "ID")) { k = ["identifier", "a code, not a quantity"]; }
-      else if (has(meas, "CLS")) { k = ["class code", "a code, not a quantity"]; }
+      else if (has(meas, "NUMBER")) { k = ["identifier", "a code, not a quantity"]; }
+      else if (has(meas, "CLASS")) { k = ["class code", "a code, not a quantity"]; }
       else if (has(meas, "YRS")) { k = ["length of time", "years"]; }
       else if (has(meas, "MTHS")) { k = ["length of time", "months"]; }
       else if (has(meas, "PER")) { k = ["ratio", "a proportion"]; }
