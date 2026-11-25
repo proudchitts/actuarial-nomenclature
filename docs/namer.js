@@ -140,7 +140,6 @@
         S.push({ slot: "TIME", tok: rest[i], arg: rest[i + 1] }); i += 2;
       }
       if (i < rest.length) { p.push("Out of slot order at " + rest[i] + " (" + T[rest[i]].slot + ")."); return out; }
-      if (prim === "RATE" && !base) { p.push("A RATE must state its time base: ANN, MTH or PRD."); }
       [prim, aggr].forEach(function (m) {
         if (m && has(OWN_POINT, m) && point) { p.push(m + " carries its own time point, so " + point + " must go."); }
       });
@@ -186,7 +185,7 @@
       if (has(meas, "IND")) { k = ["indicator", "0 or 1"]; }
       else if (has(meas, "FLG")) { k = ["flag", "a setting"]; }
       else if (has(meas, "CNT")) { k = ["count", "a number"]; }
-      else if (has(meas, "RATE")) { k = ["rate", "a proportion per " + (has(time, "ANN") ? "year" : has(time, "MTH") ? "month" : "model period")]; }
+      else if (has(meas, "RATE")) { k = ["rate", (has(time, "ANN") ? "a proportion per year" : has(time, "MTH") ? "a proportion per month" : has(time, "PRD") ? "a proportion per model period" : "a proportion, time base not stated")]; }
       else if (has(meas, "PROB")) { k = ["probability", "a proportion"]; }
       else if (has(meas, "FORCE")) { k = ["force", "a rate per year"]; }
       else if (has(meas, "FAC")) { k = ["factor", "no unit"]; }
@@ -389,10 +388,6 @@
       }
 
       // points on which the description must be explicit
-      if (prim === "RATE" && !base) {
-        res.questions.push({ hard: true, text: "A rate must state its time base. Which one?", options: [
-          { label: "Annual", append: ", annual" }, { label: "Monthly", append: ", monthly" }, { label: "Per model period", append: ", per model period" }] });
-      }
       var own = [prim, aggr].filter(function (m) { return m && has(OWN_POINT, m); })[0];
       if (own && point) {
         res.notes.push(T[own].full + " carries its own time point (" + (own === "PV" || own === "FUT" ? "the start of the period" : "the end of the period") + "), so \"" + lc(point) + "\" is not written.");
@@ -400,12 +395,12 @@
       }
       // A time point is never asked for. It is written only when the description states one.
       if (prim === "RATE" && has(LX.decrements, item.t) && !has(kinds, "DEP") && !has(kinds, "INDP")) {
-        res.questions.push({ hard: false, text: "If the model has more than one decrement, say whether this rate is dependent or independent.", options: [
+        res.questions.push({ hard: false, text: "Optional. If your model holds both a dependent and an independent rate, say which this is.", options: [
           { label: "Dependent", prepend: "Dependent " }, { label: "Independent", prepend: "Independent " }] });
       }
 
       if (prim === "CNT" && has(LX.decrements, item.t)) {
-        res.questions.push({ hard: false, text: "This counts policies that leave by this cause. On joint life, group or family business, say \"number of lives\" if lives are meant.", options: [] });
+        res.questions.push({ hard: false, text: "Optional. This counts policies that leave by this cause. Say \"number of lives\" if lives are meant.", options: [] });
       }
 
       // refuse when most of the description was not understood

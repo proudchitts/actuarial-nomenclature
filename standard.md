@@ -16,11 +16,12 @@ The standard has three parts.
 2. `glossary.md`: the controlled list of terms. A name may use only terms on that list.
 3. `examples.md`: worked examples and hard cases.
 
-## 2. The three principles
+## 2. The four principles
 
 1. **The description comes first.** The description is the specification of the variable. The name is derived from it by rule. Nobody invents a name.
 2. **One concept, one short form.** Each concept has exactly one short form and each short form has exactly one meaning. Words that sound alike but mean different things, such as lapse, surrender and withdrawal, are separate terms with separate definitions.
-3. **The standard never guesses.** If a description could mean two things, it cannot be named. The person describing the variable must say which one they mean. Section 9 lists the points on which a description must be explicit.
+3. **The standard never guesses.** If a word in a description could mean two things, the description cannot be named. The person describing the variable must say which one they mean.
+4. **Only what is said.** A name carries only what the description states. Nothing is added because a reader knows it must be true. If the description gives no time point, the name has none. The same holds for the time base of a rate, the basis, the party and every other slot. The person describing the variable decides what matters. Leaving something out is not vagueness, and the standard does not ask for it.
 
 ## 3. Characters and length
 
@@ -46,7 +47,7 @@ ITEM _ KIND _ MOVE _ PARTY _ BASIS _ MEASURE _ TIME
 | 4 | PARTY | Whose share? | No | 0 or 1 |
 | 5 | BASIS | On which assumptions and rules? | No | 0 or 1 |
 | 6 | MEASURE | What kind of number is it? | No | See section 6 |
-| 7 | TIME | Over what span, at what instant, in what order? | No, except the time base of a rate | See section 7 |
+| 7 | TIME | Over what span, at what instant, in what order? | No | See section 7 |
 
 The glossary gives the slot of every token. A token can only be used in its own slot. Some terms can be an ITEM or a KIND, for example `DTH` in `DTH_CNT` (number of deaths) and in `CLM_DTH` (death claims). The first token of a name is always the ITEM, so there is never any doubt.
 
@@ -127,7 +128,7 @@ The measure says what kind of number the variable holds. With no measure token t
 |---|---|---|
 | Amount | none | Implied. `AMT` is defined in the glossary and never written. |
 | Count | `CNT` | Number of policies, lives, events or units. |
-| Rate | `RATE` | Must be followed by a time base. See section 7. |
+| Rate | `RATE` | Takes a time base when the description gives one. See section 7. |
 | Probability | `PROB` | Probability of a state at a time point. No time base. |
 | Force | `FORCE` | Instantaneous annual rate. |
 | Present value | `PV` | Measured at the start of the period. Never takes a time point. |
@@ -152,9 +153,9 @@ A count of a decrement counts policies leaving by that decrement. If lives are m
 
 ### 6.2 Rates
 
-A rate of an event is the probability that the event happens within the time base. A rate of interest, inflation or growth is the effective rate over the time base. Every rate states its time base: `LPS_DEP_RATE_MTH`, `DISC_FWD_RATE_ANN`.
+A rate of an event is the probability that the event happens within the time base. A rate of interest, inflation or growth is the effective rate over the time base. The time base is written when the description gives it: `LPS_DEP_RATE_MTH`, `DISC_FWD_RATE_ANN`. A description that says only "lapse rate" in the strict sense gives `LPS_RATE`.
 
-A description of a decrement rate in a model with more than one decrement should say whether the rate is dependent (`DEP`) or independent (`INDP`).
+In a model with more than one decrement, a description can say whether the rate is dependent (`DEP`) or independent (`INDP`). That too is written only when it is said.
 
 ### 6.3 Ratios
 
@@ -194,7 +195,7 @@ The slot can hold up to three parts, in this order.
 
 ### 7.2 Time base
 
-A rate always has a time base. An amount has a time base only when it is expressed per year or per month and not per model period. `PREM_PER_POL_ANN` is the annualised premium per policy.
+A rate has a time base when the description gives one. An amount has a time base only when the description says it is expressed per year or per month. `PREM_PER_POL_ANN` is the annualised premium per policy.
 
 ### 7.3 Order clause
 
@@ -234,14 +235,16 @@ Some platforms cannot hold a dimension and need separate variables for the first
 
 No glossary token has the form of an instance token.
 
-## 9. Where the description must be explicit
+## 9. What stops a name, and what does not
 
-A description cannot be named until each of these points is clear.
+Only one thing stops a name: a word with two meanings. Points 1 and 2 below are the common cases, and the namer asks which meaning is meant.
+
+The other points are things a description can say when they matter to the model. The standard never asks for them and never adds them. If a model holds two variables that differ on one of these points, their two descriptions must differ on it, or they will get the same name.
 
 1. **How a policy ends.** Lapse, surrender, partial withdrawal, paid-up, maturity and expiry are six different things. "Withdrawal" on its own is not enough. Say which one, or say discontinuance (`DCON`) if lapse and surrender together are meant.
 2. **Gross of what.** "Gross" and "net" must say gross or net of reinsurance, or before or after tax. "Gross premium" in the sense of the premium charged to the policyholder is the office premium.
 3. **Dependent or independent.** For a decrement rate in a model with several decrements.
-4. **The time base of a rate.** Annual, monthly or per model period.
+4. **The time base of a rate.** Annual, monthly or per model period, when it matters.
 5. **The time point of a value, where it matters.** A name carries a time point only if the description states one. If a model holds the same value at the start and at the end of the period, the two descriptions must say which is which. If events happen at the same instant, say before or after which of them.
 6. **Policies or lives.** For any count on joint life, group or family business.
 7. **The basis.** Whenever more than one basis exists in the same run.

@@ -9,8 +9,8 @@ const SUPPORTED = ["2025-06-18", "2025-03-26", "2024-11-05"];
 const TOOLS = [
   {
     name: "name_variable",
-    description: "Turn a plain English description of a life insurance projection model variable into its standard name. Rule-based and deterministic: the same description always gives the same name. Returns status ok (use the name), needs_detail (the description is vague: ask the listed questions, then call again with the chosen revised_description), or failed. Never invent a name yourself.",
-    inputSchema: { type: "object", properties: { description: { type: "string", description: "What the variable is, in plain English. Say whose share (reinsurance, net), the basis if one is stated, the kind of number (rate, count, present value) and when (start or end of period, valuation date)." } }, required: ["description"] },
+    description: "Turn a plain English description of a life insurance projection model variable into its standard name. Rule-based and deterministic: the same description always gives the same name. The name carries only what the description states, so pass the description exactly as the user gave it and add nothing to it. Returns status ok (use the name), needs_detail (a word has two meanings: ask the user the must_answer questions, then call again with the chosen revised_description), or failed. Never invent a name yourself.",
+    inputSchema: { type: "object", properties: { description: { type: "string", description: "What the variable is, in plain English, in the user's own terms. Do not add a time point, time base, basis or party that the user did not state." } }, required: ["description"] },
   },
   {
     name: "suggest_terms",
@@ -61,7 +61,7 @@ async function handle(msg) {
         protocolVersion: SUPPORTED.indexOf(want) >= 0 ? want : SUPPORTED[0],
         capabilities: { tools: {} },
         serverInfo: { name: "actuarial-nomenclature", version: api.version },
-        instructions: "Use name_variable to get the standard name for any life insurance projection model variable. Do not make up names or tokens. If the answer is needs_detail, ask the user the questions it lists.",
+        instructions: "Use name_variable to get the standard name for any life insurance projection model variable. Pass the description as the user gave it. Do not add a time point (start or end of period), a time base, a basis or a party that the user did not state, even if you know the value depends on it: a name carries only what was said. Do not make up names or tokens. If the answer is needs_detail, ask the user the must_answer questions. Questions that are not must_answer are optional hints: never answer them yourself.",
       } });
     }
     if (msg.method === "ping") { return send({ jsonrpc: "2.0", id, result: {} }); }

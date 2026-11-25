@@ -186,8 +186,6 @@ def check_name(name, where):
     if i < len(rest):
         p.append("%s: %s is out of slot order at %s (%s)" % (where, name, rest[i], slot[rest[i]]))
         return p
-    if prim == "RATE" and not base:
-        p.append("%s: %s is a RATE with no time base" % (where, name))
     for m in (prim, aggr):
         if m in OWN_POINT and point:
             p.append("%s: %s uses %s, which carries its own time point, so %s must go" % (where, name, m, point))

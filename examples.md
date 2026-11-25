@@ -331,13 +331,15 @@ A table is named with the table token first, followed by the name of the variabl
 | 220 | Cohort | `COH` |
 | 221 | Taxable profit in the period | `PROF_TXBL` |
 
-### A19. A time point is written only when the description gives one
+### A19. A name carries only what the description gives
 
 | No. | Description | Name |
 |---|---|---|
 | 222 | Best estimate liability | `BEL` |
 | 223 | Number of policies in force | `POL_IF_CNT` |
 | 224 | Value of in-force | `VIF` |
+| 225 | Rate of lapse | `LPS_RATE` |
+| 226 | Discount rate | `DISC_RATE` |
 
 ## Part B. Name to description
 
@@ -362,13 +364,11 @@ The rule: when a description is ambiguous, the user must be explicit. The standa
 
 ### C1. "The lapse rate"
 
-Three things are missing.
+One word has two meanings. Does "lapse" mean lapse in the strict sense (the policy ends through non-payment and nothing is paid), or does it include surrenders? If both are meant, the term is discontinuance.
 
-1. Does "lapse" mean lapse in the strict sense (the policy ends through non-payment and nothing is paid), or does it include surrenders? If both are meant, the term is discontinuance.
-2. Is the rate dependent or independent?
-3. Is it annual, monthly or per model period?
+Once the user answers, the name follows: `LPS_RATE` or `DCON_RATE`.
 
-Once the user answers, the name follows. Two possible outcomes are `LPS_INDP_RATE_ANN` and `DCON_DEP_RATE_MTH`.
+Whether the rate is dependent or independent, and whether it is annual or monthly, is written only if the user says it. Two fuller descriptions give `LPS_INDP_RATE_ANN` and `DCON_DEP_RATE_MTH`.
 
 ### C2. "Gross premium"
 
@@ -405,7 +405,7 @@ The user must say whether lives or policies are counted. A death of one life may
 
 ### C6. "The discount rate"
 
-The user must say whether it is a spot or forward rate, give its time base, and give the basis if more than one is held.
+"The discount rate" on its own gives `DISC_RATE`. A model that holds more than one must say how they differ: spot or forward, the time base, and the basis.
 
 - `DISC_FWD_RATE_ANN` is the annual forward rate on the basis of the run.
 - `DISC_SPOT_IFL_RATE_ANN` is the annual spot rate locked in under IFRS 17.
