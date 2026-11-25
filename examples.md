@@ -374,6 +374,22 @@ The table is named after what its columns share, so `DISC_FAC_BOP` is found in `
 | 246 | Asset class code | `ASSET_CLASS` |
 | 247 | Par value of government bond assets | `ASSET_GOVB_PAR` |
 
+### A22. Tax timing, annuity features and policy states
+
+| No. | Description | Name |
+|---|---|---|
+| 248 | Deferred tax at the end of the period | `TAX_DFR_EOP` |
+| 249 | Change in deferred tax | `TAX_DFR_CHG` |
+| 250 | Current tax | `TAX_CUR` |
+| 251 | Guaranteed period in months | `GTEEP_MTHS` |
+| 252 | Survivor annuity as a proportion of the annuity | `ANTY_SURV_PER_ANTY` |
+| 253 | Age of the spouse | `AGE_L2` |
+| 254 | Premium holiday indicator | `PHOL_IND` |
+| 255 | Number of recovered policies at the start of the period | `POL_REC_CNT_BOP` |
+| 256 | Number of deaths of recovered lives | `DTH_REC_CNT` |
+| 257 | Trail commission | `COMM_TRAIL` |
+| 258 | Profit commission from the reinsurer | `COMM_PROF_RI` |
+
 ## Part B. Name to description
 
 Each name is split into its slots and then read measure first.

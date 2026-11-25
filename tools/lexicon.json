@@ -1336,6 +1336,28 @@
     "asset class": [
       "ASSET",
       "CLASS"
+    ],
+    "deferred tax": [
+      "TAX",
+      "DFR"
+    ],
+    "current tax": [
+      "TAX",
+      "CUR"
+    ],
+    "trail commission": [
+      "COMM",
+      "TRAIL"
+    ],
+    "profit commission": [
+      "COMM",
+      "PROF"
+    ],
+    "spouse": [
+      "@L2"
+    ],
+    "spouse's": [
+      "@L2"
     ]
   },
   "special": {
@@ -1901,7 +1923,13 @@
     },
     {
       "word": "period in years",
-      "unless": [],
+      "unless": [
+        "certain period",
+        "deferred period",
+        "guarantee period",
+        "guaranteed period",
+        "waiting period"
+      ],
       "question": "Which period, in years?",
       "options": [
         [
@@ -1920,7 +1948,13 @@
     },
     {
       "word": "period in months",
-      "unless": [],
+      "unless": [
+        "certain period",
+        "deferred period",
+        "guarantee period",
+        "guaranteed period",
+        "waiting period"
+      ],
       "question": "Which period, in months?",
       "options": [
         [

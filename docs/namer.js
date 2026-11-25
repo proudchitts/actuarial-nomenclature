@@ -228,7 +228,7 @@
       var m = meas.filter(function (x) { return x.tok !== "PER" && !has(UNIT, x.tok); }).map(function (x) { return lc(x.tok); });
       var unit = meas.filter(function (x) { return has(UNIT, x.tok); })[0];
       var per = meas.filter(function (x) { return x.tok === "PER"; })[0];
-      var head = by("KIND").map(function (x) { return x.tok === "TBL" ? "base table" : lc(x.tok); }).concat(lc(by("ITEM")[0].tok)).join(" ");
+      var head = by("KIND").map(function (x) { return x.tok === "TBL" ? "base table" : x.tok === "DFR" ? "deferred" : x.tok === "CUR" ? "current" : lc(x.tok); }).concat(lc(by("ITEM")[0].tok)).join(" ");
       var s = m.length ? m.join(" ") + " of " + head : head;
       if (by("TABLE").length) { s = "table of " + s; }
       if (by("MODULE").length) { s = "compute module for " + s; }
