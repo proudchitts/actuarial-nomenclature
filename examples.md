@@ -34,18 +34,18 @@ Reminders from `standard.md`:
 
 | No. | Description | Name |
 |---|---|---|
-| 14 | Number of policies in force at the start of the period | `POL_IF_CNT_BOP` |
+| 14 | Number of policies in force | `POL_IF_CNT` |
 | 15 | Number of policies in force at the end of the period, before maturities are taken off | `POL_IF_CNT_EOP_BEF_MAT` |
-| 16 | Number of paid-up policies at the end of the period | `POL_PUP_CNT_EOP` |
+| 16 | Number of paid-up policies | `POL_PUP_CNT` |
 | 17 | Number of new policies added in the period | `POL_NB_CNT` |
 | 18 | Number of deaths in the period | `DTH_CNT` |
 | 19 | Number of lapses in the period | `LPS_CNT` |
 | 20 | Number of surrenders in the period | `SUR_CNT` |
 | 21 | Number of policies that become paid-up in the period | `PUP_CNT` |
 | 22 | Number of reinstatements in the period | `RINST_CNT` |
-| 23 | Number of lives in force at the end of the period | `LIFE_IF_CNT_EOP` |
-| 24 | Probability that the policy is in force at the end of the period | `POL_IF_PROB_EOP` |
-| 25 | Indicator that the policy is in force at the start of the period | `POL_IF_IND_BOP` |
+| 23 | Number of lives in force | `LIFE_IF_CNT` |
+| 24 | Probability that the policy is in force | `POL_IF_PROB` |
+| 25 | Indicator that the policy is in force | `POL_IF_IND` |
 
 ### A3. Premiums
 
@@ -75,10 +75,10 @@ Reminders from `standard.md`:
 | 42 | Annuity payments in the period | `CLM_ANTY` |
 | 43 | Disability income claims in the period | `CLM_DIS_INCM` |
 | 44 | Lump sum critical illness claims in the period | `CLM_CI_LS` |
-| 45 | Death benefit per policy at the end of the period | `BEN_DTH_EOP` |
+| 45 | Death benefit per policy | `BEN_DTH` |
 | 46 | Sum assured at inception | `SA_INC` |
-| 47 | Sum at risk at the start of the period | `SAR_BOP` |
-| 48 | Surrender value per policy at the end of the period | `SV_EOP` |
+| 47 | Sum at risk | `SAR` |
+| 48 | Surrender value per policy | `SV` |
 | 49 | Present value at the valuation date of future death claims, net of reinsurance | `CLM_DTH_NET_PV` |
 
 ### A5. Expenses and commission
@@ -91,7 +91,7 @@ Reminders from `standard.md`:
 | 53 | Claim handling expenses in the period | `EXP_CLM` |
 | 54 | Annual investment expense as a proportion of fund value | `EXP_INV_PER_FV_ANN` |
 | 55 | Annual rate of expense inflation | `INFL_EXP_RATE_ANN` |
-| 56 | Expense inflation index at the end of the period | `INFL_EXP_IDX_EOP` |
+| 56 | Expense inflation index | `INFL_EXP_IDX` |
 | 57 | Initial commission in the period | `COMM_INIT` |
 | 58 | Initial commission as a proportion of premium | `COMM_INIT_PER_PREM` |
 | 59 | Clawback of initial commission in the period | `COMM_CLAW_INIT` |
@@ -106,7 +106,7 @@ Reminders from `standard.md`:
 | 63 | Annual reinsurance premium per unit of sum at risk | `PREM_RI_PER_SAR_ANN` |
 | 64 | Death claims recovered from reinsurers in the period | `CLM_DTH_RI` |
 | 65 | Reinsurance commission in the period | `COMM_RI` |
-| 66 | Reinsured sum at risk at the start of the period | `SAR_RI_BOP` |
+| 66 | Reinsured sum at risk | `SAR_RI` |
 | 67 | Reinsured sum assured as a proportion of sum assured | `SA_RI_PER_SA` |
 | 68 | Retention limit | `RET` |
 
@@ -114,43 +114,43 @@ Reminders from `standard.md`:
 
 | No. | Description | Name |
 |---|---|---|
-| 69 | Best estimate liability at the end of the period | `BEL_EOP` |
-| 70 | Reinsurers' share of the best estimate liability at the end of the period | `BEL_RI_EOP` |
+| 69 | Best estimate liability | `BEL` |
+| 70 | Reinsurers' share of the best estimate liability | `BEL_RI` |
 | 71 | Unwind of discount on the best estimate liability in the period | `BEL_UNW` |
-| 72 | Reserve on the pricing basis at the end of the period | `RES_PRC_EOP` |
-| 73 | Non-unit reserve at the end of the period | `RES_NUNIT_EOP` |
+| 72 | Reserve on the pricing basis | `RES_PRC` |
+| 73 | Non-unit reserve | `RES_NUNIT` |
 | 74 | Change in reserve over the period | `RES_CHG` |
-| 75 | Incurred but not reported reserve at the end of the period | `IBNR_EOP` |
+| 75 | Incurred but not reported reserve | `IBNR` |
 | 76 | Fund value at the end of the period before charges | `FV_EOP_BEF_CHRG` |
 | 77 | Fund management charges in the period | `CHRG_FMC` |
 | 78 | Reversionary bonus added in the period | `BON_RVS` |
-| 79 | Time value of options and guarantees at the valuation date, risk neutral | `TVOG_RN_BOP` |
+| 79 | Time value of options and guarantees at the valuation date, risk neutral | `TVOG_RN` |
 
 ### A8. IFRS 17
 
 | No. | Description | Name |
 |---|---|---|
-| 80 | Contractual service margin at the end of the period | `CSM_EOP` |
+| 80 | Contractual service margin | `CSM` |
 | 81 | Contractual service margin added by new business in the period | `CSM_NB` |
 | 82 | Interest accreted on the contractual service margin in the period | `CSM_ACCR` |
 | 83 | Contractual service margin released in the period | `CSM_REL` |
 | 84 | Change in estimates that adjusts the contractual service margin | `CSM_ESTCH` |
-| 85 | Risk adjustment at the end of the period | `RA_EOP` |
+| 85 | Risk adjustment | `RA` |
 | 86 | Risk adjustment released in the period | `RA_REL` |
-| 87 | Reinsurers' share of the risk adjustment at the end of the period | `RA_RI_EOP` |
+| 87 | Reinsurers' share of the risk adjustment | `RA_RI` |
 | 88 | Coverage units provided in the period | `CU` |
 | 89 | Coverage units of all future periods, as at the end of the period | `CU_FUT` |
 | 90 | Insurance acquisition cash flows in the period | `IACF` |
 | 91 | Insurance finance expense presented in profit or loss | `IFE_PL` |
 | 92 | Insurance finance expense presented in other comprehensive income | `IFE_OCI` |
 | 93 | Annual forward discount rate, IFRS 17 locked-in | `DISC_FWD_IFL_RATE_ANN` |
-| 94 | Fulfilment cash flows at current rates at the end of the period | `FCF_IFC_EOP` |
-| 95 | Best estimate liability at locked-in rates at the end of the period | `BEL_IFL_EOP` |
-| 96 | Loss component at the end of the period | `LC_EOP` |
+| 94 | Fulfilment cash flows at current rates | `FCF_IFC` |
+| 95 | Best estimate liability at locked-in rates | `BEL_IFL` |
+| 96 | Loss component | `LC` |
 | 97 | Indicator that the group of contracts is onerous | `ONER_IND` |
 | 98 | Insurance revenue in the period | `IREV` |
 | 99 | Insurance service result in the period | `ISR` |
-| 100 | Liability for remaining coverage at the end of the period | `LRC_EOP` |
+| 100 | Liability for remaining coverage | `LRC` |
 | 101 | Experience variance on premiums in the period | `PREM_EXPV` |
 | 102 | Claims in the period that are repayments of investment components | `CLM_INVC` |
 
@@ -158,15 +158,15 @@ Reminders from `standard.md`:
 
 | No. | Description | Name |
 |---|---|---|
-| 103 | Solvency capital requirement at the end of the period | `SCR_EOP` |
-| 104 | Solvency capital requirement for mortality risk at the end of the period | `SCR_MORT_EOP` |
-| 105 | Solvency capital requirement for lapse risk, up shock, at the end of the period | `SCR_LPSR_UP_EOP` |
-| 106 | Diversification benefit within the solvency capital requirement at the end of the period | `SCR_DIV_EOP` |
-| 107 | Minimum capital requirement at the end of the period | `MCR_EOP` |
-| 108 | Own funds at the end of the period | `OF_EOP` |
-| 109 | Risk margin at the end of the period | `RM_EOP` |
+| 103 | Solvency capital requirement | `SCR` |
+| 104 | Solvency capital requirement for mortality risk | `SCR_MORT` |
+| 105 | Solvency capital requirement for lapse risk, up shock | `SCR_LPSR_UP` |
+| 106 | Diversification benefit within the solvency capital requirement | `SCR_DIV` |
+| 107 | Minimum capital requirement | `MCR` |
+| 108 | Own funds | `OF` |
+| 109 | Risk margin | `RM` |
 | 110 | Shock size for mass lapse risk | `SHK_LPSR_MASS` |
-| 111 | Required capital at the end of the period | `RCAP_EOP` |
+| 111 | Required capital | `RCAP` |
 | 112 | Annual cost of capital rate | `COC_RATE_ANN` |
 
 ### A10. Profit, embedded value and value of new business
@@ -179,9 +179,9 @@ Reminders from `standard.md`:
 | 116 | Transfer to shareholders in the period | `TRF_SH` |
 | 117 | Distributable earnings in the period | `DISTE` |
 | 118 | Present value at the valuation date of future profits after tax, embedded value basis | `PROF_EV_PV_AFT_TAX` |
-| 119 | Value of in-force at the valuation date | `VIF_BOP` |
-| 120 | Adjusted net worth at the valuation date | `ANW_BOP` |
-| 121 | Embedded value at the valuation date | `EV_BOP` |
+| 119 | Value of in-force at the valuation date | `VIF` |
+| 120 | Adjusted net worth at the valuation date | `ANW` |
+| 121 | Embedded value at the valuation date | `EV` |
 | 122 | Value of new business written in the period | `VNB` |
 | 123 | Annual premium equivalent in the period | `APE` |
 | 124 | Value of new business as a proportion of annual premium equivalent | `VNB_PER_APE` |
@@ -189,12 +189,12 @@ Reminders from `standard.md`:
 | 126 | Investment return in the period | `INVR` |
 | 127 | Tax borne by policyholders in the period | `TAX_PH` |
 | 128 | Present value of new business premiums | `PVNBP` |
-| 129 | Cost of required capital at the valuation date, embedded value basis | `COC_EV_BOP` |
-| 130 | Solvency capital requirement for interest rate risk at the end of the period | `SCR_INT_EOP` |
-| 131 | Solvency capital requirement for revision risk at the end of the period | `SCR_REVN_EOP` |
-| 132 | Loss-absorbing capacity within the solvency capital requirement at the end of the period | `SCR_LAC_EOP` |
+| 129 | Cost of required capital at the valuation date, embedded value basis | `COC_EV` |
+| 130 | Solvency capital requirement for interest rate risk | `SCR_INT` |
+| 131 | Solvency capital requirement for revision risk | `SCR_REVN` |
+| 132 | Loss-absorbing capacity within the solvency capital requirement | `SCR_LAC` |
 | 133 | Indicator that the group is measured under the variable fee approach | `VFA_IND` |
-| 134 | Value of underlying items at the end of the period | `UNDL_EOP` |
+| 134 | Value of underlying items | `UNDL` |
 
 ### A11. South African extension (ZA)
 
@@ -202,20 +202,20 @@ These names are valid only in a model that declares the ZA set.
 
 | No. | Description | Name |
 |---|---|---|
-| 135 | Best estimate liability on the SAM basis at the end of the period | `BEL_SAM_EOP` |
-| 136 | Reserve on the financial soundness valuation basis at the end of the period | `RES_FSV_EOP` |
+| 135 | Best estimate liability on the SAM basis | `BEL_SAM` |
+| 136 | Reserve on the financial soundness valuation basis | `RES_FSV` |
 | 137 | Funeral cover claims in the period | `CLM_FUN` |
-| 138 | Sum assured for funeral cover at the start of the period | `SA_FUN_BOP` |
+| 138 | Sum assured for funeral cover | `SA_FUN` |
 | 139 | Number of lives per policy | `LIFE_CNT_PER_POL` |
 | 140 | Independent annual rate of death from HIV and AIDS | `DTH_HIV_INDP_RATE_ANN` |
 | 141 | Loading for death from HIV and AIDS | `LOAD_DTH_HIV` |
 | 142 | Retrenchment claims in the period | `CLM_RETR` |
 | 143 | Tax in the individual policyholder fund in the period | `TAX_IPF` |
-| 144 | Bonus stabilisation reserve at the end of the period | `BSR_EOP` |
+| 144 | Bonus stabilisation reserve | `BSR` |
 | 145 | Tax in the corporate fund in the period | `TAX_CORF` |
 | 146 | Compulsory margin on lapse | `MGN_LPS_COMP` |
 | 147 | Credit life claims on retrenchment in the period | `CLM_RETR_CRDL` |
-| 148 | Capital adequacy requirement at the end of the period | `CAR_EOP` |
+| 148 | Capital adequacy requirement | `CAR` |
 
 Dread disease is the South African name for critical illness. It is the same concept, so it uses the core token. A dread disease claim is `CLM_CI`.
 
@@ -225,8 +225,8 @@ Dread disease is the South African name for critical illness. It is the same con
 |---|---|---|
 | 149 | Extra premiums in the period | `PREM_EXTRA` |
 | 150 | Policy fees in the period | `CHRG_POLF` |
-| 151 | Bid price at the end of the period | `UPRC_BID_EOP` |
-| 152 | Surplus on the prudent basis at the end of the period | `SURP_PRU_EOP` |
+| 151 | Bid price | `UPRC_BID` |
+| 152 | Surplus on the prudent basis | `SURP_PRU` |
 | 153 | New business strain in the period | `NBS` |
 | 154 | Market value reduction in the period | `MVR` |
 | 155 | Internal rate of return | `IRR` |
@@ -240,17 +240,17 @@ A length of time or an age says its unit. This is the one place where a name car
 
 | No. | Description | Name |
 |---|---|---|
-| 159 | Policy duration in months at the end of the period | `DUR_MTHS_EOP` |
+| 159 | Policy duration in months | `DUR_MTHS` |
 | 160 | Policy term in years | `TERM_YRS` |
 | 161 | Premium payment term in years | `TERM_PREM_YRS` |
-| 162 | Remaining policy term in months at the start of the period | `TERM_REM_MTHS_BOP` |
+| 162 | Remaining policy term in months | `TERM_REM_MTHS` |
 | 163 | Projection time in months | `TIME_MTHS` |
-| 164 | Policy year at the start of the period | `POLYR_BOP` |
+| 164 | Policy year | `POLYR` |
 | 165 | Indicator that the period contains a policy anniversary | `ANNIV_IND` |
 | 166 | Inception date | `DATE_INC` |
 | 167 | Maturity date | `DATE_MAT` |
 | 168 | Date of birth | `DOB` |
-| 169 | Calendar year at the end of the period | `CALYR_EOP` |
+| 169 | Calendar year | `CALYR` |
 | 170 | Age last birthday at inception | `AGE_ALB_INC` |
 | 171 | Sex | `SEX` |
 | 172 | Smoker status | `SMK` |
@@ -277,14 +277,14 @@ A table is named with the table token first, followed by the name of the variabl
 
 | No. | Description | Name |
 |---|---|---|
-| 184 | Appropriation price at the end of the period | `UPRC_APPR_EOP` |
-| 185 | Expropriation price at the end of the period | `UPRC_EXPR_EOP` |
-| 186 | Negative non-unit reserve at the end of the period | `RES_NEG_NUNIT_EOP` |
-| 187 | Mismatching reserve at the end of the period | `RES_MISM_EOP` |
-| 188 | Reserve on the fair value basis at the end of the period | `RES_FAIR_EOP` |
+| 184 | Appropriation price | `UPRC_APPR` |
+| 185 | Expropriation price | `UPRC_EXPR` |
+| 186 | Negative non-unit reserve | `RES_NEG_NUNIT` |
+| 187 | Mismatching reserve | `RES_MISM` |
+| 188 | Reserve on the fair value basis | `RES_FAIR` |
 | 189 | Bonus earning capacity | `BEC` |
-| 190 | Appraisal value at the valuation date | `APV_BOP` |
-| 191 | Aggregate asset share at the end of the period | `ASHR_AGG_EOP` |
+| 190 | Appraisal value at the valuation date | `APV` |
+| 191 | Aggregate asset share | `ASHR_AGG` |
 | 192 | Financial reinsurance premiums in the period | `PREM_FINRE` |
 | 193 | Requirement for capital at inception | `CAPRQ_INC` |
 
@@ -292,14 +292,14 @@ A table is named with the table token first, followed by the name of the variabl
 
 | No. | Description | Name |
 |---|---|---|
-| 194 | Actuarially funded fund value at the end of the period | `FV_FND_EOP` |
-| 195 | Unfunded fund value at the end of the period | `FV_UNFND_EOP` |
-| 196 | Nominal fund value at the end of the period | `FV_NOML_EOP` |
+| 194 | Actuarially funded fund value | `FV_FND` |
+| 195 | Unfunded fund value | `FV_UNFND` |
+| 196 | Nominal fund value | `FV_NOML` |
 | 197 | Actuarial funding factor | `ACTF_FAC` |
-| 198 | Number of capital units at the end of the period | `UNIT_CAPU_CNT_EOP` |
-| 199 | Mortality fluctuation reserve at the end of the period | `RES_DTH_FLUC_EOP` |
-| 200 | Contingency reserve at the end of the period | `RES_CTGY_EOP` |
-| 201 | Expense overrun reserve at the end of the period | `RES_OVRN_EOP` |
+| 198 | Number of capital units | `UNIT_CAPU_CNT` |
+| 199 | Mortality fluctuation reserve | `RES_DTH_FLUC` |
+| 200 | Contingency reserve | `RES_CTGY` |
+| 201 | Expense overrun reserve | `RES_OVRN` |
 
 ### A17. Expense bases for value of new business
 
@@ -320,14 +320,14 @@ A table is named with the table token first, followed by the name of the variabl
 | 209 | Top-up premiums in the period | `PREM_TOPUP` |
 | 210 | Savings premiums in the period | `PREM_SAV` |
 | 211 | Loyalty bonus added in the period | `BON_LOY` |
-| 212 | Policy loan at the end of the period | `LOAN_EOP` |
+| 212 | Policy loan | `LOAN` |
 | 213 | Capital gains in the period | `GAIN` |
-| 214 | Deferred acquisition costs at the end of the period | `DAC_EOP` |
+| 214 | Deferred acquisition costs | `DAC` |
 | 215 | Number of fund switches in the period | `SWCH_CNT` |
 | 216 | Number of policy alterations in the period | `ALTR_CNT` |
 | 217 | Actual premiums in the period | `PREM_ACTL` |
 | 218 | Maximum fund management charge | `CHRG_FMC_MAX` |
-| 219 | Reserve on the valuation basis at the end of the period | `RES_VAL_EOP` |
+| 219 | Reserve on the valuation basis | `RES_VAL` |
 | 220 | Cohort | `COH` |
 | 221 | Taxable profit in the period | `PROF_TXBL` |
 
@@ -335,11 +335,8 @@ A table is named with the table token first, followed by the name of the variabl
 
 | No. | Description | Name |
 |---|---|---|
-| 222 | Best estimate liability | `BEL` |
-| 223 | Number of policies in force | `POL_IF_CNT` |
-| 224 | Value of in-force | `VIF` |
-| 225 | Rate of lapse | `LPS_RATE` |
-| 226 | Discount rate | `DISC_RATE` |
+| 222 | Rate of lapse | `LPS_RATE` |
+| 223 | Discount rate | `DISC_RATE` |
 
 ### A20. Tables with several columns, and compute modules
 
@@ -347,48 +344,48 @@ The table is named after what its columns share, so `DISC_FAC_BOP` is found in `
 
 | No. | Description | Name |
 |---|---|---|
-| 227 | Yield curve | `TBL_DISC` |
-| 228 | Annual spot discount rate | `DISC_SPOT_RATE_ANN` |
-| 229 | Discount factor at the start of the period | `DISC_FAC_BOP` |
-| 230 | Monthly forward discount rate | `DISC_FWD_RATE_MTH` |
-| 231 | Yield curve, up shock | `TBL_DISC_UP` |
-| 232 | Module that produces economic scenarios | `MOD_SCEN_ECON` |
-| 233 | Compute module for the best estimate liability | `MOD_BEL` |
+| 224 | Yield curve | `TBL_DISC` |
+| 225 | Annual spot discount rate | `DISC_SPOT_RATE_ANN` |
+| 226 | Discount factor | `DISC_FAC` |
+| 227 | Monthly forward discount rate | `DISC_FWD_RATE_MTH` |
+| 228 | Yield curve, up shock | `TBL_DISC_UP` |
+| 229 | Module that produces economic scenarios | `MOD_SCEN_ECON` |
+| 230 | Compute module for the best estimate liability | `MOD_BEL` |
 
 ### A21. Capital steps, assets and shocks
 
 | No. | Description | Name |
 |---|---|---|
-| 234 | Solvency capital requirement for life underwriting risk | `SCR_LUW` |
-| 235 | Basic solvency capital requirement | `BSCR` |
-| 236 | Solvency ratio | `OF_PER_SCR` |
-| 237 | Annual coupon rate on government bonds | `CPN_GOVB_RATE_ANN` |
-| 238 | Table of correlations | `TBL_CORR` |
-| 239 | Best estimate liability, equity sensitivity | `BEL_EQ_DELTA` |
-| 240 | Government bond assets as a proportion of liabilities | `ASSET_GOVB_PER_LIAB` |
-| 241 | Monthly real world rate of investment return on government bonds | `INVR_GOVB_RW_RATE_MTH` |
-| 242 | Annual spot discount rate, down shock | `DISC_SPOT_DOWN_RATE_ANN` |
-| 243 | Projected solvency capital requirement | `SCR_PROJ` |
-| 244 | Policy number | `POL_NUMBER` |
-| 245 | Asset identifier | `ASSET_NUMBER` |
-| 246 | Asset class code | `ASSET_CLASS` |
-| 247 | Par value of government bond assets | `ASSET_GOVB_PAR` |
+| 231 | Solvency capital requirement for life underwriting risk | `SCR_LUW` |
+| 232 | Basic solvency capital requirement | `BSCR` |
+| 233 | Solvency ratio | `OF_PER_SCR` |
+| 234 | Annual coupon rate on government bonds | `CPN_GOVB_RATE_ANN` |
+| 235 | Table of correlations | `TBL_CORR` |
+| 236 | Best estimate liability, equity sensitivity | `BEL_EQ_DELTA` |
+| 237 | Government bond assets as a proportion of liabilities | `ASSET_GOVB_PER_LIAB` |
+| 238 | Monthly real world rate of investment return on government bonds | `INVR_GOVB_RW_RATE_MTH` |
+| 239 | Annual spot discount rate, down shock | `DISC_SPOT_DOWN_RATE_ANN` |
+| 240 | Projected solvency capital requirement | `SCR_PROJ` |
+| 241 | Policy number | `POL_NUMBER` |
+| 242 | Asset identifier | `ASSET_NUMBER` |
+| 243 | Asset class code | `ASSET_CLASS` |
+| 244 | Par value of government bond assets | `ASSET_GOVB_PAR` |
 
 ### A22. Tax timing, annuity features and policy states
 
 | No. | Description | Name |
 |---|---|---|
-| 248 | Deferred tax at the end of the period | `TAX_DFR_EOP` |
-| 249 | Change in deferred tax | `TAX_DFR_CHG` |
-| 250 | Current tax | `TAX_CUR` |
-| 251 | Guaranteed period in months | `GTEEP_MTHS` |
-| 252 | Survivor annuity as a proportion of the annuity | `ANTY_SURV_PER_ANTY` |
-| 253 | Age of the spouse | `AGE_L2` |
-| 254 | Premium holiday indicator | `PHOL_IND` |
-| 255 | Number of recovered policies at the start of the period | `POL_REC_CNT_BOP` |
-| 256 | Number of deaths of recovered lives | `DTH_REC_CNT` |
-| 257 | Trail commission | `COMM_TRAIL` |
-| 258 | Profit commission from the reinsurer | `COMM_PROF_RI` |
+| 245 | Deferred tax | `TAX_DFR` |
+| 246 | Change in deferred tax | `TAX_DFR_CHG` |
+| 247 | Current tax | `TAX_CUR` |
+| 248 | Guaranteed period in months | `GTEEP_MTHS` |
+| 249 | Survivor annuity as a proportion of the annuity | `ANTY_SURV_PER_ANTY` |
+| 250 | Age of the spouse | `AGE_L2` |
+| 251 | Premium holiday indicator | `PHOL_IND` |
+| 252 | Number of recovered policies | `POL_REC_CNT` |
+| 253 | Number of deaths of recovered lives | `DTH_REC_CNT` |
+| 254 | Trail commission | `COMM_TRAIL` |
+| 255 | Profit commission from the reinsurer | `COMM_PROF_RI` |
 
 ## Part B. Name to description
 
@@ -402,9 +399,9 @@ Each name is split into its slots and then read measure first.
 | 4 | `CSM_ESTCH_RI` | item contractual service margin, move change in estimates, party reinsurance | Change in estimates that adjusts the contractual service margin on reinsurance held, in the period |
 | 5 | `DISC_SPOT_IFC_RATE_ANN` | item discount, kind spot, basis IFRS 17 current, measure rate, time base annual | Annual spot discount rate at current IFRS 17 rates |
 | 6 | `DTH_CNT_CUM` | item death, measure count then cumulative | Number of deaths from the valuation date to the end of the period |
-| 7 | `SCR_LPSR_MASS_EOP` | item solvency capital requirement, kinds lapse risk then mass, time end of period | Solvency capital requirement for the mass shock for lapse risk at the end of the period |
+| 7 | `SCR_LPSR_MASS` | item solvency capital requirement, kinds lapse risk then mass | Solvency capital requirement for the mass shock for lapse risk |
 | 8 | `PROF_SH_EV_PV_AFT_TAX` | item profit, party shareholder, basis embedded value, measure present value, order after tax | Present value at the valuation date of future shareholder profits after tax, on the embedded value basis |
-| 9 | `SAR_NET_BOP` | item sum at risk, party net, time start of period | Sum at risk net of reinsurance at the start of the period |
+| 9 | `SAR_NET` | item sum at risk, party net | Sum at risk net of reinsurance |
 | 10 | `PREM_WAIV_ACC` | item premium, kind waiver, measure accumulated, time end of period | Waived premiums to date, accumulated with interest to the end of the period |
 
 ## Part C. Descriptions that cannot be named yet
@@ -441,9 +438,9 @@ The user must say what is counted and what happens to the policy.
 
 The user must say which reserve is meant. The basis and the time point are written only if the description gives them.
 
-- A reserve on the prudent basis at the end of the period: `RES_PRU_EOP`.
-- The best estimate liability at the start of the period: `BEL_BOP`.
-- The unit reserve only: `RES_UNIT_EOP`.
+- A reserve on the prudent basis: `RES_PRU`.
+- The best estimate liability: `BEL`. Only if the model holds it at both the start and the end of the period: `BEL_BOP` and `BEL_EOP`.
+- The unit reserve only: `RES_UNIT`.
 
 ### C5. "Number of deaths" on joint life or family business
 
@@ -458,7 +455,7 @@ The user must say whether lives or policies are counted. A death of one life may
 
 - `DISC_FWD_RATE_ANN` is the annual forward rate on the basis of the run.
 - `DISC_SPOT_IFL_RATE_ANN` is the annual spot rate locked in under IFRS 17.
-- A discount factor is a different variable again: `DISC_FAC_EOP`.
+- A discount factor is a different variable again: `DISC_FAC`.
 
 ### C7. "Disability claims"
 
@@ -473,7 +470,7 @@ The user must say whether lump sum or income benefits are meant, or both, and wh
 The user must say which period.
 
 - Time since the valuation date: `TIME_YRS`.
-- Time since the policy started, at the start of the period: `DUR_YRS_BOP`.
+- Time since the policy started: `DUR_YRS`.
 - The full length of the policy: `TERM_YRS`.
 
 ### C9. "New business margin"

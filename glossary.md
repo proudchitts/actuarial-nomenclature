@@ -2,7 +2,7 @@
 
 This is the controlled word list of the standard. A name may only use short forms that are listed here, or tokens added under the extension rules in `standard.md`.
 
-There are 316 terms: 301 in the core, which is for every market, and 15 in market extension sets.
+There are 317 terms: 302 in the core, which is for every market, and 15 in market extension sets.
 
 ## How to read an entry
 
@@ -26,7 +26,7 @@ There are 316 terms: 301 in the core, which is for every market, and 15 in marke
 | [Basis](#basis) | [BE](#be) [PRU](#pru) [PRC](#prc) [IFL](#ifl) [IFC](#ifc) [SII](#sii) [EV](#ev) [RN](#rn) [RW](#rw) [FAIR](#fair) [VAL](#val) |
 | [Decrements and policy status](#decrements-and-policy-status) | [DEC](#dec) [PHOL](#phol) [EXIT](#exit) [DTH](#dth) [LPS](#lps) [SUR](#sur) [WDL](#wdl) [DCON](#dcon) [PUP](#pup) [RINST](#rinst) [PERS](#pers) [MAT](#mat) [EXPY](#expy) [NTU](#ntu) [DIS](#dis) [REC](#rec) [CI](#ci) [ACCD](#accd) [IF](#if) [POL](#pol) [LIFE](#life) [ALTR](#altr) [CONV](#conv) [SWCH](#swch) |
 | [Assumption building](#assumption-building) | [DEP](#dep) [INDP](#indp) [SEL](#sel) [ULT](#ult) [TBL](#tbl) [ADJ](#adj) [IMP](#imp) [LOAD](#load) [MGN](#mgn) [SHK](#shk) |
-| [Cash flows in general](#cash-flows-in-general) | [CF](#cf) [NCF](#ncf) [TAX](#tax) [DFR](#dfr) [CUR](#cur) [TXBL](#txbl) [RELF](#relf) [ACTL](#actl) [EXPC](#expc) |
+| [Cash flows in general](#cash-flows-in-general) | [CF](#cf) [NCF](#ncf) [TAX](#tax) [DFR](#dfr) [CUR](#cur) [TXBL](#txbl) [EXCS](#excs) [RELF](#relf) [ACTL](#actl) [EXPC](#expc) |
 | [Premiums](#premiums) | [PREM](#prem) [SGL](#sgl) [REG](#reg) [OFF](#off) [RISK](#risk) [WAIV](#waiv) [ESC](#esc) [EXTRA](#extra) [NETP](#netp) [TOPUP](#topup) [SAV](#sav) |
 | [Claims and benefits](#claims-and-benefits) | [CLM](#clm) [BEN](#ben) [SA](#sa) [SAR](#sar) [ANTY](#anty) [LS](#ls) [SURV](#surv) [INCM](#incm) [ACEL](#acel) [SALN](#saln) |
 | [Expenses and commission](#expenses-and-commission) | [EXP](#exp) [INIT](#init) [REN](#ren) [ACQ](#acq) [MAINT](#maint) [ATTR](#attr) [NATTR](#nattr) [INV](#inv) [COMM](#comm) [TRAIL](#trail) [CLAW](#claw) [INFL](#infl) [OH](#oh) [MARG](#marg) [FULL](#full) [NOACQ](#noacq) [FIX](#fix) [VAR](#var) [VAT](#vat) [DAC](#dac) |
@@ -968,7 +968,7 @@ Items that describe flows of money without saying what kind.
 - **Slot:** ITEM or KIND
 - **Definition:** Tax payable by the insurer. The description must say on what and for whose account.
 - **Not to be confused with:** Deferred tax is TAX with DFR and current tax is TAX with CUR. Profit before or after tax uses BEF or AFT with TAX.
-- **Related terms:** [SH](#sh) shareholder, [PH](#ph) policyholder, [PROF](#prof) profit, [CF](#cf) cash flow, [INVI](#invi) investment income, [TXBL](#txbl) taxable, [RELF](#relf) tax relief, [VAT](#vat) value added tax, [GAIN](#gain) capital gain, [LAC](#lac) loss-absorbing capacity, [IPF](#ipf) individual policyholder fund, [CPF](#cpf) company policyholder fund, [UPF](#upf) untaxed policyholder fund, [RPF](#rpf) risk policy fund, [CORF](#corf) corporate fund, [DFR](#dfr) deferred tax, [CUR](#cur) current tax
+- **Related terms:** [SH](#sh) shareholder, [PH](#ph) policyholder, [PROF](#prof) profit, [CF](#cf) cash flow, [INVI](#invi) investment income, [TXBL](#txbl) taxable, [RELF](#relf) tax relief, [VAT](#vat) value added tax, [GAIN](#gain) capital gain, [LAC](#lac) loss-absorbing capacity, [IPF](#ipf) individual policyholder fund, [CPF](#cpf) company policyholder fund, [UPF](#upf) untaxed policyholder fund, [RPF](#rpf) risk policy fund, [CORF](#corf) corporate fund, [DFR](#dfr) deferred tax, [CUR](#cur) current tax, [EXCS](#excs) excess
 
 ### DFR
 
@@ -995,7 +995,16 @@ Items that describe flows of money without saying what kind.
 - **Also called:** taxable income, taxable amount
 - **Definition:** Narrows an item to the amount on which tax is charged under the tax rules.
 - **Not to be confused with:** Not the tax itself, which is TAX.
-- **Related terms:** [TAX](#tax) tax, [RELF](#relf) tax relief, [PROF](#prof) profit, [INVI](#invi) investment income, [DFR](#dfr) deferred tax, [CUR](#cur) current tax
+- **Related terms:** [TAX](#tax) tax, [RELF](#relf) tax relief, [PROF](#prof) profit, [INVI](#invi) investment income, [DFR](#dfr) deferred tax, [CUR](#cur) current tax, [EXCS](#excs) excess
+
+### EXCS
+
+- **Full term:** Excess
+- **Slot:** KIND
+- **Also called:** excess expenses, excess carried forward, unused deduction
+- **Definition:** Narrows an item to the part not yet used up, carried to later periods to be set against future amounts, such as expenses above the investment income of a policyholder fund.
+- **Not to be confused with:** Not XL, which is excess of loss reinsurance. Not ACC, which rolls past amounts forward with interest and is never used up.
+- **Related terms:** [TAX](#tax) tax, [TXBL](#txbl) taxable, [EXP](#exp) expense, [INVI](#invi) investment income, [RELF](#relf) tax relief
 
 ### RELF
 
@@ -1004,7 +1013,7 @@ Items that describe flows of money without saying what kind.
 - **Also called:** expense relief, relief
 - **Definition:** Narrows an item to the reduction in tax that arises because an expense or loss can be set against taxable income.
 - **Not to be confused with:** Not a refund of premium.
-- **Related terms:** [TAX](#tax) tax, [TXBL](#txbl) taxable, [EXP](#exp) expense
+- **Related terms:** [TAX](#tax) tax, [TXBL](#txbl) taxable, [EXP](#exp) expense, [EXCS](#excs) excess
 
 ### ACTL
 
@@ -1232,7 +1241,7 @@ The insurer's own costs and what it pays to intermediaries.
 - **Also called:** cost
 - **Definition:** A cost the insurer incurs in running its business, other than claims, commission and tax.
 - **Not to be confused with:** Not EXPY (expiry). Not EXPV (experience variance). Not COMM: commission is a separate item in this standard and is never included in EXP.
-- **Related terms:** [COMM](#comm) commission, [INIT](#init) initial, [REN](#ren) renewal, [ACQ](#acq) acquisition, [MAINT](#maint) maintenance, [ATTR](#attr) directly attributable, [NATTR](#nattr) not directly attributable, [INV](#inv) investment, [INFL](#infl) inflation, [CF](#cf) cash flow, [IACF](#iacf) insurance acquisition cash flows, [ISE](#ise) insurance service expenses, [RELF](#relf) tax relief, [OH](#oh) overhead, [MARG](#marg) marginal cost, [FULL](#full) full cost, [NOACQ](#noacq) zero acquisition cost, [FIX](#fix) fixed, [VAR](#var) variable, [VAT](#vat) value added tax, [DAC](#dac) deferred acquisition costs, [OVRN](#ovrn) expense overrun
+- **Related terms:** [COMM](#comm) commission, [INIT](#init) initial, [REN](#ren) renewal, [ACQ](#acq) acquisition, [MAINT](#maint) maintenance, [ATTR](#attr) directly attributable, [NATTR](#nattr) not directly attributable, [INV](#inv) investment, [INFL](#infl) inflation, [CF](#cf) cash flow, [IACF](#iacf) insurance acquisition cash flows, [ISE](#ise) insurance service expenses, [RELF](#relf) tax relief, [OH](#oh) overhead, [MARG](#marg) marginal cost, [FULL](#full) full cost, [NOACQ](#noacq) zero acquisition cost, [FIX](#fix) fixed, [VAR](#var) variable, [VAT](#vat) value added tax, [DAC](#dac) deferred acquisition costs, [OVRN](#ovrn) expense overrun, [EXCS](#excs) excess
 
 ### INIT
 
@@ -1817,7 +1826,7 @@ Interest, discounting, investment return and assets.
 - **Also called:** interest, dividends and rent
 - **Definition:** Income received from assets in the model period as interest, dividends and rent. It excludes changes in asset values.
 - **Not to be confused with:** Not INVR, which includes gains. Not INCM (income benefit). Not INVC.
-- **Related terms:** [INVR](#invr) investment return, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [TAX](#tax) tax, [TXBL](#txbl) taxable, [GAIN](#gain) capital gain, [CPN](#cpn) coupon
+- **Related terms:** [INVR](#invr) investment return, [INT](#int) interest, [INV](#inv) investment, [ASSET](#asset) assets, [TAX](#tax) tax, [TXBL](#txbl) taxable, [GAIN](#gain) capital gain, [CPN](#cpn) coupon, [EXCS](#excs) excess
 
 ### INVR
 
@@ -3121,6 +3130,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | [ESC](#esc) | Escalation | ITEM or KIND | Premiums |
 | [ESTCH](#estch) | Change in estimates | MOVE | Movements |
 | [EV](#ev) | Embedded value | ITEM or BASIS | Basis |
+| [EXCS](#excs) | Excess | KIND | Cash flows in general |
 | [EXIT](#exit) | Exit | ITEM | Decrements and policy status |
 | [EXP](#exp) | Expense | ITEM or KIND | Expenses and commission |
 | [EXPC](#expc) | Expected | KIND | Cash flows in general |
@@ -3494,6 +3504,8 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | EPV | [PV](#pv) |
 | equalisation reserve | [FLUC](#fluc) |
 | estate | [SURP](#surp) |
+| excess carried forward | [EXCS](#excs) |
+| excess expenses | [EXCS](#excs) |
 | exclusion period | [WAITP](#waitp) |
 | exit cause | [DEC](#dec) |
 | expected | [BE](#be) |
@@ -3807,6 +3819,7 @@ Market extension set ZA, for terms used only in South Africa. These tokens are p
 | unfunded units | [UNFND](#unfnd) |
 | unit fund | [FV](#fv) |
 | unit-linked | [UNIT](#unit) |
+| unused deduction | [EXCS](#excs) |
 | upfront | [INIT](#init) |
 | upper limit | [MAX](#max) |
 | upward shock | [UP](#up) |

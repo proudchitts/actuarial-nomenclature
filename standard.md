@@ -74,7 +74,7 @@ A kind token narrows the item. `CLM_DTH` is the claims that arise on death. `EXP
 
 ### 4.3 MOVE
 
-A move token turns a balance into one part of the change in that balance over the period. `CSM_EOP` is a balance. `CSM_REL` is the amount of CSM released in the period. `POL_NB_CNT` is the number of policies added by new business.
+A move token turns a balance into one part of the change in that balance over the period. `CSM` is a balance. `CSM_REL` is the amount of CSM released in the period. `POL_NB_CNT` is the number of policies added by new business.
 
 A move token can also follow a flow. `PREM_NB` is premium from new business. `PREM_EXPV` is the experience variance on premiums.
 
@@ -119,7 +119,7 @@ A stress or scenario is not a basis. See section 8.
 - Every amount is stored as a positive number in its natural direction. Premiums are positive income. Claims and expenses are positive outgo.
 - Items that are a difference, such as `NCF` and `PROF`, are income less outgo.
 - Names carry no sign, no unit and no currency. Whether a rate is held as 0.05 or as 5 is a matter for the model's metadata, not for the name.
-- There is one exception. A length of time or an age says whether it is in years or in months, because models often hold both side by side. `DUR_MTHS_EOP` is the policy duration in months and `TERM_YRS` is the policy term in years.
+- There is one exception. A length of time or an age says whether it is in years or in months, because models often hold both side by side. `DUR_MTHS` is the policy duration in months and `TERM_YRS` is the policy term in years.
 
 ## 6. The MEASURE slot
 
@@ -150,7 +150,7 @@ The slot can hold up to three parts, in this order.
 
 ### 6.1 Counts
 
-A count takes the thing counted as its item. `POL_IF_CNT_EOP` is the number of policies in force at the end of the period. `DTH_CNT` is the number of deaths in the period.
+A count takes the thing counted as its item. `POL_IF_CNT` is the number of policies in force. `DTH_CNT` is the number of deaths in the period.
 
 A count of a decrement counts policies leaving by that decrement. If lives are meant, the description must say so and the item is `LIFE`.
 
@@ -174,11 +174,11 @@ The denominator is one item token with no qualifiers. Whether the ratio is held 
 
 `PV` is the discounted, probability-weighted value of the future amounts of the item, as seen from the start of the period. `PREM_BE_PV` is the present value of future premiums on the best estimate basis.
 
-Where a framework defines a named present value, use the named item and not a built name. The best estimate liability is `BEL_EOP`, not a present value of claims less premiums.
+Where a framework defines a named present value, use the named item and not a built name. The best estimate liability is `BEL`, not a present value of claims less premiums.
 
 ### 6.5 Indicators and flags
 
-An indicator is calculated by the model and may change from period to period: `POL_IF_IND_BOP`, `ONER_IND`. A flag is chosen by the user for the whole run. Both are named after the condition or feature they refer to.
+An indicator is calculated by the model and may change from period to period: `POL_IF_IND`, `ONER_IND`. A flag is chosen by the user for the whole run. Both are named after the condition or feature they refer to.
 
 ## 7. The TIME slot
 

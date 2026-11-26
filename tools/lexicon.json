@@ -118,12 +118,8 @@
     "mid period": [
       "MOP"
     ],
-    "valuation date": [
-      "BOP"
-    ],
-    "time zero": [
-      "BOP"
-    ],
+    "valuation date": [],
+    "time zero": [],
     "at inception": [
       "INC"
     ],
@@ -1358,7 +1354,8 @@
     ],
     "spouse's": [
       "@L2"
-    ]
+    ],
+    "at the valuation date": []
   },
   "special": {
     "per": "@PER",
